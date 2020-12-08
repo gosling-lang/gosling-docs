@@ -3,18 +3,24 @@
     - [track.title](#tracktitle)
     - [track.data](#trackdata)
     - [track.metadata](#trackmetadata)
-    - [track.x](#trackx)
-    - [track.y](#tracky)
-    - [track.row](#trackrow)
     - [track.mark](#trackmark)
+    - [track.x](#trackx)
+    - [track.xe](#trackxe)
+    - [track.y](#tracky)
+    - [track.ye](#trackye)
+    - [track.row](#trackrow)
     - [track.color](#trackcolor)
     - [track.stroke](#trackstroke)
     - [track.strokeWidth](#trackstrokewidth)
     - [track.opacity](#trackopacity)
+    - [track.style](#trackstyle)
     - [track.superpose](#tracksuperpose)
+    - [track.innerRadius](#trackinnerradius)
+    - [track.outterRadius](#trackoutterradius)
 
 # layout
-`object`
+`object`  
+specify the layout of tracks
 
 |  property | type | description |  
 |---        |---   |     ---   |  
@@ -31,31 +37,50 @@
 <!-- is it possible that several tracks under one layout have different type (linear and circular) -->
 <!-- https://github.com/sehilyi/geminid/blob/3f8e6db2fa80945de95266f4ea70a26387603d53/src/core/geminid.schema.ts -->
 # tracks
-`array`
-one track is defined by the following options
+an `array` of single tracks  
+one single track is defined by the following options
 ### track.title
 `string`, 
 ### track.data
 - url
 - type
 ### track.metadata
+<!-- this is most confusing part -->
+### track.mark
+<!-- it seems that, based on the value of mark, a track has different options, i am not sure whether this is confusing -->
 ### track.x
+### track.xe
 ### track.y
+### track.ye
 ### track.row
 <!-- is there also a track.column? -->
-### track.mark
+
 <!-- it is a littel bit confusing for me to understand the difference between rect and bar. Also confused about the encoding of width and height-->
 
 <!-- a little bit confusing that x, y indicate both the axes and the encoding of the mark, even though vega lite employs the same strategy -->
 
 <!-- Another question, how can I rotate a chart, for example, the area chart in basic marks, 90 degree? (maybe this is a rare case in gemonic visualization?)
  -->
+
+---
+
 ### track.color
 <!-- I didn't see the legend (when set legend: true) of color when {"type": "quantitative"} -->
 ### track.stroke
 ### track.strokeWidth
 ### track.opacity
 <!-- will it be better if we merge stroke, strokeWidth, background, opacity into a style option? -->
+### track.style
+
+---
+
 ### track.superpose
 overlay another track on the original track. 
 Superpose share the same options as the original track unless it is specified.
+
+---
+
+only useful when `{"type": "circular"}`
+
+### track.innerRadius
+### track.outterRadius
