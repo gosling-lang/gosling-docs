@@ -27,10 +27,10 @@ specify the layout of tracks
 | layout.type  | `string`  |**Required**, specify the type of layout (`linear` or `circular`)|
 | layout.direction | `string`| **Required**, the layout direction of tracks (`vertical`   or `horizontal`)|  
 | layout.wrap | `number` | specify the number of tracks at each row (when `direction:horizontal`) or at each column (when `direction:vertical`). default value = infinite |  
-| layout.rowSizes | `number|Array<number>` |  |  
-| layout.rowGaps | `number|Array<number>` |  |  
-| layout.columnSizes | `number|Array<number>` |  |  
-| layout.columnGaps | `number|Array<number>` |  |  
+| layout.rowSizes | `number` \| `Array<number>` |  |  
+| layout.rowGaps | `number` \| `Array<number>` |  |  
+| layout.columnSizes | `number` \| `Array<number>` |  |  
+| layout.columnGaps |`number` \| `Array<number>`  |  |  
 
 <img src="images/layout_demo.png" alt="layout demo" width="400">
 

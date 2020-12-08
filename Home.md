@@ -1,26 +1,5 @@
 Welcome to the Geminid wiki!
-### [Examples](#examples)
-### [Documentations](#documentations)
-
-## Examples
+### [Examples]([#examples](https://github.com/sehilyi/geminid/wiki/Examples))
+### [Documentations]([#documentations](https://github.com/sehilyi/geminid/wiki/Docs))
 
 
-## Documentations
-
-- layout
-    - type
-    - direction
-    - rowSizes
-    - columnSizes
-- tracks
-    - data
-    - metadata
-    - x
-    - y
-    - row
-    - mark
-    - superpose
-    - color
-    - stroke
-    - strokeWidth
-    - opacity
