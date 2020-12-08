@@ -35,8 +35,11 @@ specify the layout of tracks
 <img src="images/layout_demo.png" alt="layout demo" width="400">
 
 <!-- is it possible that several tracks under one layout have different type (linear and circular) -->
-<!-- https://github.com/sehilyi/geminid/blob/3f8e6db2fa80945de95266f4ea70a26387603d53/src/core/geminid.schema.ts -->
+
 # tracks
+
+<!-- it seems that, based on the value of mark, a track has different options, i am not sure whether this is confusing -->
+
 an `array` of single tracks  
 one single track is defined by the following options
 ### track.title
@@ -47,15 +50,15 @@ one single track is defined by the following options
 ### track.metadata
 <!-- this is most confusing part -->
 ### track.mark
-<!-- it seems that, based on the value of mark, a track has different options, i am not sure whether this is confusing -->
+<!-- it is a littel bit confusing for me to understand the difference between rect and bar. Also confused about the encoding of width and height-->
+
 ### track.x
 ### track.xe
 ### track.y
 ### track.ye
 ### track.row
-<!-- is there also a track.column? -->
 
-<!-- it is a littel bit confusing for me to understand the difference between rect and bar. Also confused about the encoding of width and height-->
+
 
 <!-- a little bit confusing that x, y indicate both the axes and the encoding of the mark, even though vega lite employs the same strategy -->
 
