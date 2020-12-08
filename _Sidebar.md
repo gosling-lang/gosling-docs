@@ -1,4 +1,5 @@
-* Home
-* Get Started
-* Examples
-* Docs
+* [Home](https://github.com/sehilyi/geminid/wiki)
+* [Get Started]()
+* [Examples](https://github.com/sehilyi/geminid/wiki/Examples)
+* [Docs](https://github.com/sehilyi/geminid/wiki/Docs)
+* [FAQ]()
