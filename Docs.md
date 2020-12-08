@@ -20,13 +20,15 @@
 |---        |---   |     ---   |  
 | layout.type  | `string`  |**Required**, specify the type of layout (`linear` or `circular`)|
 | layout.direction | `string`| **Required**, the layout direction of tracks (`vertical`   or `horizontal`)|  
-| layout.wrap | `number` |  |  
+| layout.wrap | `number` | specify the number of tracks at each row (when `direction:horizontal`) or at each column (when `direction:vertical`). default value = infinite |  
 | layout.rowSizes | `number|Array<number>` |  |  
 | layout.rowGaps | `number|Array<number>` |  |  
 | layout.columnSizes | `number|Array<number>` |  |  
 | layout.columnGaps | `number|Array<number>` |  |  
 
+<img src="images/layout_demo.png" alt="layout demo" width="400">
 
+<!-- is it possible that several tracks under one layout have different type (linear and circular) -->
 <!-- https://github.com/sehilyi/geminid/blob/3f8e6db2fa80945de95266f4ea70a26387603d53/src/core/geminid.schema.ts -->
 # tracks
 `array`
