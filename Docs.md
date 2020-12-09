@@ -32,7 +32,7 @@ specify the layout of tracks
 | layout.columnSizes | `number` \| `Array<number>` |  |  
 | layout.columnGaps |`number` \| `Array<number>`  |  |  
 
-<img src="images/layout_demo.png" alt="layout demo" width="400">
+<img src="https://github.com/sehilyi/geminid/wiki/images/layout_demo.png" alt="layout demo" width="400">
 
 <!-- is it possible that several tracks under one layout have different type (linear and circular) -->
 
