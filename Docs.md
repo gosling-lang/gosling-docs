@@ -24,7 +24,7 @@ specify the layout of tracks
 
 |  property | type | description |  
 |---        |---   |     ---   |  
-| layout.type  | `string`  |**Required**, specify the type of layout (`linear` or `circular`)|
+| layout.type  | `string`  |**Required**, specify the type of track layouts (`linear` or `circular`). User can override `layout.type` and redefine the type of a simple track using `track.type`|
 | layout.direction | `string`| **Required**, the layout direction of tracks (`vertical`   or `horizontal`)|  
 | layout.wrap | `number` | specify the number of tracks at each row (when `direction:horizontal`) or at each column (when `direction:vertical`). default value = infinite |  
 | layout.rowSizes | `number` \| `Array<number>` |  |  
