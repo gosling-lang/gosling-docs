@@ -1,25 +1,55 @@
+- [Overview](#Overview)
 - [Data](#Data)
-- [layout](#layout)
-- [tracks](#tracks)
-    - [track.title](#tracktitle)
-    - [track.data](#trackdata)
-    - [track.metadata](#trackmetadata)
-    - [track.mark](#trackmark)
-    - [track.x](#trackx)
-    - [track.xe](#trackxe)
-    - [track.y](#tracky)
-    - [track.ye](#trackye)
-    - [track.row](#trackrow)
-    - [track.color](#trackcolor)
-    - [track.stroke](#trackstroke)
-    - [track.strokeWidth](#trackstrokewidth)
-    - [track.opacity](#trackopacity)
-    - [track.style](#trackstyle)
-    - [track.superpose](#tracksuperpose)
-    - [track.innerRadius](#trackinnerradius)
-    - [track.outterRadius](#trackoutterradius)
+    - [Multivec (HiGlass)](#Multivec-HiGlass)
+    - [BED (HiGlass)](#BED-HiGlass)
+    - [BED](#BED)
+    - [Vector (HiGlass)](#Vector-HiGlass)
+    - [CSV](#CSV)
+    - ...
+- [Data Transform](#Data-Transform) <!--https://github.com/sehilyi/geminid/blob/00a7b5c6a95528dbabdb2444ef469a1448689d3b/src/core/geminid.schema.ts#L98-->
+- [Mark](#Mark)
+    - [Point](#Point)
+    - [Line](#Line)
+    - [Area](#Area)
+    - [Bar](#Bar)
+    - [Rect](#Rect)
+    - [Text](#Text)
+    - [Link](#Link)
+    - [Rule](#Rule)
+    - [Triangle](#Triangle)
+    - [Brush](#Brush)
+    - [Glyph](#Glyph)
+- [Encoding](#tracks)
+    - [title](#tracktitle)
+    - [x](#trackx)
+    - [xe](#trackxe)
+    - [y](#tracky)
+    - [ye](#trackye)
+    - [row](#trackrow)
+    - [color](#trackcolor)
+    - [stroke](#trackstroke)
+    - [strokeWidth](#trackstrokewidth)
+    - [opacity](#trackopacity)
+    - [style](#trackstyle)
+    - [superpose](#tracksuperpose) <!--I think this can be moved to Arrangement section-->
+    - [innerRadius](#trackinnerradius) <!--I think this can be moved to Circular Layout section-->
+    - [outterRadius](#trackoutterradius) <!--I think this can be moved to Circular Layout section-->
+- [Layout](#Layout) <!--https://github.com/sehilyi/geminid/blob/00a7b5c6a95528dbabdb2444ef469a1448689d3b/src/core/geminid.schema.ts#L22-->
+    - [Linear Layout](#Linear-Layout)
+    - [Circular Layout](#Circular-Layout)
+- [Arrangement](#Arrangement)
+    - [Grid-based Arrangement](#Grid-based-Arrangement) <!--https://github.com/sehilyi/geminid/blob/00a7b5c6a95528dbabdb2444ef469a1448689d3b/src/core/geminid.schema.ts#L20-->
+    - [Superposition](#Superposition) <!--https://github.com/sehilyi/geminid/blob/00a7b5c6a95528dbabdb2444ef469a1448689d3b/src/core/geminid.schema.ts#L213-->
+- [Semantic Zoom](#Semantic-Zoom) <!--https://github.com/sehilyi/geminid/blob/00a7b5c6a95528dbabdb2444ef469a1448689d3b/src/core/geminid.schema.ts#L203-->
+- [Interaction](#Interaction)
+    - [Zooming and Panning](#Zooming-and-Panning) <!--https://github.com/sehilyi/geminid/blob/00a7b5c6a95528dbabdb2444ef469a1448689d3b/src/core/geminid.schema.ts#L7-->
+    - [Linking Views](#Linking) <!--https://github.com/sehilyi/geminid/blob/00a7b5c6a95528dbabdb2444ef469a1448689d3b/src/core/geminid.schema.ts#L328-->
+    - [Tooltip](#Tooltip) <!--https://github.com/sehilyi/geminid/blob/00a7b5c6a95528dbabdb2444ef469a1448689d3b/src/core/geminid.schema.ts#L168-->
+
+# Overview
 
 # Data
+
 ### Multivec (HiGlass)
 
 ```json
@@ -62,21 +92,42 @@
 ...
 ```
 ### BED
+### Vector (HiGlass)
 ### CSV
 
-# layout
-`object`  
-specify the layout of tracks
+# Mark
+### Point
+### Line
+### Area
+### Bar
+### Rect
+### Text
+### Link
+### Rule
+### Triangle
+### Brush
+### Glyph
+<!-- This will cover the `superpose`, mostly in the perspective of making a glyph (e.g., gene annotation) -->
+
+# Layout
+This determines the layout of a track, either `circular` or `linear`.
 
 |  property | type | description |  
 |---        |---   |     ---   |  
-| layout.type  | `string`  |**Required**, specify the type of layout (`linear` or `circular`)|
-| layout.direction | `string`| **Required**, the layout direction of tracks (`vertical`   or `horizontal`)|  
-| layout.wrap | `number` | specify the number of tracks at each row (when `direction:horizontal`) or at each column (when `direction:vertical`). default value = infinite |  
-| layout.rowSizes | `number` \| `Array<number>` |  |  
-| layout.rowGaps | `number` \| `Array<number>` |  |  
-| layout.columnSizes | `number` \| `Array<number>` |  |  
-| layout.columnGaps |`number` \| `Array<number>`  |  |  
+| layout    | `string`  |**Required**, specify the type of layout (`linear` or `circular`)|
+
+# Arrangement
+`object`  
+specify the arrangement of tracks
+
+|  property | type | description |  
+|---        |---   |     ---   |  
+| arrangement.direction | `string`| **Required**, the layout direction of tracks (`vertical`   or `horizontal`)|  
+| arrangement.wrap | `number` | specify the number of tracks at each row (when `direction:horizontal`) or at each column (when `direction:vertical`). default value = infinite |  
+| arrangement.rowSizes | `number` \| `Array<number>` |  |  
+| arrangement.rowGaps | `number` \| `Array<number>` |  |  
+| arrangement.columnSizes | `number` \| `Array<number>` |  |  
+| arrangement.columnGaps |`number` \| `Array<number>`  |  |  
 
 <img src="https://github.com/sehilyi/geminid/wiki/images/layout_demo.png" alt="layout demo" width="400">
 
@@ -90,13 +141,6 @@ an `array` of single tracks
 one single track is defined by the following options
 ### track.title
 `string`, 
-### track.data
-- url
-- type
-### track.metadata
-<!-- this is most confusing part -->
-### track.mark
-<!-- it is a littel bit confusing for me to understand the difference between rect and bar. Also confused about the encoding of width and height-->
 
 ### track.x
 ### track.xe
