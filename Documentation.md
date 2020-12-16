@@ -1,3 +1,4 @@
+- [Data](#Data)
 - [layout](#layout)
 - [tracks](#tracks)
     - [track.title](#tracktitle)
@@ -17,6 +18,51 @@
     - [track.superpose](#tracksuperpose)
     - [track.innerRadius](#trackinnerradius)
     - [track.outterRadius](#trackoutterradius)
+
+# Data
+### Multivec (HiGlass)
+
+```json
+...
+"data": {
+    "url": "https://resgen.io/api/v1/tileset_info/?d=UvVPeLHuRDiYA3qwFlm7xQ",
+    "type": "tileset"
+},
+"metadata": {
+    "type": "higlass-multivec",
+    "row": "sample",
+    "column": "position",
+    "value": "peak",
+    "categories": ["sample 1", "sample 2", "sample 3", "sample 4"]
+},
+...
+```
+### BED (HiGlass)
+```json
+...
+"data": {
+    "url": "https://higlass.io/api/v1/tileset_info/?d=OHJakQICQD6gTD7skx4EWA",
+    "type": "tileset"
+},
+"metadata": {
+    "type": "higlass-bed",
+    "genomicFields": [
+        {"index": 1, "name": "start"},
+        {"index": 2, "name": "end"}
+    ],
+    "valueFields": [
+        {"index": 5, "name": "strand", "type": "nominal"},
+        {"index": 3, "name": "name", "type": "nominal"}
+    ],
+    "exonIntervalFields": [
+        {"index": 12, "name": "start"},
+        {"index": 13, "name": "end"}
+    ]
+},
+...
+```
+### BED
+### CSV
 
 # layout
 `object`  
