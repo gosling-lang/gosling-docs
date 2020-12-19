@@ -6,7 +6,7 @@
     - [Vector (HiGlass)](#vector-higlass)
     - [CSV](#csv)
 - [Mark](#mark)
-  - [Mark types](#mark-types)
+  - [Type](#type)
     - [Point](#point)
     - [Line](#line)
     - [Area](#area)
@@ -18,7 +18,7 @@
     - [Triangle](#triangle)
     - [Brush](#brush)
     - [Glyph](#glyph)
-  - [Mark channels](#mark-channels)
+  - [Visual channel](#visual-channel)
     - [x](#x)
     - [xe](#xe)
     - [y](#y)
@@ -36,33 +36,15 @@
   - [Layout](#layout)
   - [style](#style-1)
   - [Arrangement](#arrangement)
+    - [Grid-based arrangement](#grid-based-arrangement)
+    - [Superposition](#superposition)
+- [Interactions](#interactions)
+  - [Linking Views](#linking-views)
+  - [Zooming and Panning](#zooming-and-panning)
+  - [Semantic Zoom](#semantic-zoom)
+  - [Tooltip](#tooltip)
 
-- [Encoding](#tracks)
-    - [title](#tracktitle)
-    - [x](#trackx)
-    - [xe](#trackxe)
-    - [y](#tracky)
-    - [ye](#trackye)
-    - [row](#trackrow)
-    - [color](#trackcolor)
-    - [stroke](#trackstroke)
-    - [strokeWidth](#trackstrokewidth)
-    - [opacity](#trackopacity)
-    - [style](#trackstyle)
-    - [superpose](#tracksuperpose) 
-    - [innerRadius](#trackinnerradius) <!--I think this can be moved to Circular Layout section-->
-    - [outterRadius](#trackoutterradius) <!--I think this can be moved to Circular Layout section-->
-- [Layout](#Layout) <!--https://github.com/sehilyi/geminid/blob/00a7b5c6a95528dbabdb2444ef469a1448689d3b/src/core/geminid.schema.ts#L22-->
-    - [Linear Layout](#Linear-Layout)
-    - [Circular Layout](#Circular-Layout)
-- [Arrangement](#Arrangement)
-    - [Grid-based Arrangement](#Grid-based-Arrangement) <!--https://github.com/sehilyi/geminid/blob/00a7b5c6a95528dbabdb2444ef469a1448689d3b/src/core/geminid.schema.ts#L20-->
-    - [Superposition](#Superposition) <!--https://github.com/sehilyi/geminid/blob/00a7b5c6a95528dbabdb2444ef469a1448689d3b/src/core/geminid.schema.ts#L213-->
-- [Semantic Zoom](#Semantic-Zoom) <!--https://github.com/sehilyi/geminid/blob/00a7b5c6a95528dbabdb2444ef469a1448689d3b/src/core/geminid.schema.ts#L203-->
-- [Interaction](#Interaction)
-    - [Zooming and Panning](#Zooming-and-Panning) <!--https://github.com/sehilyi/geminid/blob/00a7b5c6a95528dbabdb2444ef469a1448689d3b/src/core/geminid.schema.ts#L7-->
-    - [Linking Views](#Linking) <!--https://github.com/sehilyi/geminid/blob/00a7b5c6a95528dbabdb2444ef469a1448689d3b/src/core/geminid.schema.ts#L328-->
-    - [Tooltip](#Tooltip) <!--https://github.com/sehilyi/geminid/blob/00a7b5c6a95528dbabdb2444ef469a1448689d3b/src/core/geminid.schema.ts#L168-->
+
 
 # Overview
 
@@ -119,7 +101,7 @@
 Marks (e.g., points, lines) are the basic graphical elements of a visualization.
 The core of a visualization is to bind selected data fields to the visual channels (e.g., size, color, position) of a chosen mark type.
 
-## Mark types  
+## Type  
 The `mark` property of a track is defined by a string that describe the mark type.
 ```
 // an example
@@ -137,6 +119,11 @@ Geminid supports the following primitive `mark` types: `point`, `line`, `area`, 
 
 ### Point
 [source code](https://github.com/sehilyi/geminid/blob/master/src/core/mark/point.ts)
+
+<image src="https://github.com/sehilyi/geminid/wiki/images/point_example.png" width="800" alt="point_example">  
+
+[open the example in online editor]()
+
 ```
 // example
 {
@@ -145,19 +132,17 @@ Geminid supports the following primitive `mark` types: `point`, `line`, `area`, 
             "url": ...,
             "type": ...
         },
+        // mark type
         "mark": "point",
-        // encoding of the mark visual channels
+        // mark visual channels
         "x": {
-            ...
+            "field": "position", // data field
+            "type": "genomic", // type of data field
+            "axis": "top"
         },
         "y": {
-            ...
-        },
-        "size":{
-            ...
-        },
-        "color":{
-            ...
+            "field": "peak", 
+            "type": "quantitative"
         },
         ... // other encodings and styles
     }]
@@ -179,7 +164,7 @@ Support three types of triangle marks: `triangle-l`, `triangle-r`, `triangle-d`
 ### Glyph
 <!-- This will cover the `superpose`, mostly in the perspective of making a glyph (e.g., gene annotation) -->
 
-## Mark channels  
+## Visual channel  
 The visual appearance of a mark is controlled by a set of visual channels (e.g., size, position, color hue), which are binded with data fields.
 Different marks have different visual channels.
 Overall,
@@ -266,6 +251,7 @@ only useful when `{"type": "circular"}`
 
 # Track
 ## Layout
+[source code](https://github.com/sehilyi/geminid/blob/00a7b5c6a95528dbabdb2444ef469a1448689d3b/src/core/geminid.schema.ts#L22)
 This determines the layout of a track, either `circular` or `linear`.
 
 | property | type     | description                                                       |
@@ -276,6 +262,9 @@ This determines the layout of a track, either `circular` or `linear`.
 
 ## Arrangement
 `object`  
+
+### Grid-based arrangement
+[source code](https://github.com/sehilyi/geminid/blob/00a7b5c6a95528dbabdb2444ef469a1448689d3b/src/core/geminid.schema.ts#L20)
 specify the grid arrangement of multiple tracks
 
 | property                | type                        | description                                                                                                                                    |
@@ -291,5 +280,22 @@ specify the grid arrangement of multiple tracks
 
 <!-- is it possible that several tracks under one layout have different type (linear and circular) -->
 
+### Superposition
+[source code](https://github.com/sehilyi/geminid/blob/00a7b5c6a95528dbabdb2444ef469a1448689d3b/src/core/geminid.schema.ts#L213)
+
+# Interactions
 
 
+
+## Linking Views
+[source code](ttps://github.com/sehilyi/geminid/blob/00a7b5c6a95528dbabdb2444ef469a1448689d3b/src/core/geminid.schema.ts#L328)
+
+
+## Zooming and Panning
+[source code](https://github.com/sehilyi/geminid/blob/00a7b5c6a95528dbabdb2444ef469a1448689d3b/src/core/geminid.schema.ts#L7)
+
+## Semantic Zoom
+[source code](https://github.com/sehilyi/geminid/blob/00a7b5c6a95528dbabdb2444ef469a1448689d3b/src/core/geminid.schema.ts#L203)
+
+## Tooltip
+[source code](https://github.com/sehilyi/geminid/blob/00a7b5c6a95528dbabdb2444ef469a1448689d3b/src/core/geminid.schema.ts#L168)
