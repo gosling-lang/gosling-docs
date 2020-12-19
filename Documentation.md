@@ -99,11 +99,11 @@
 [source code](https://github.com/sehilyi/geminid/tree/master/src/core/mark)
 
 Marks (e.g., points, lines) are the basic graphical elements of a visualization.
-The core of a visualization is to bind selected data fields to the visual channels (e.g., size, color, position) of a chosen mark type.
+The core of a visualization is to bind selected **data fields** to the **visual channels** (e.g., size, color, position) of a chosen **mark type**.
 
 ## Type  
 The `mark` property of a track is defined by a string that describe the mark type.
-```
+```javascript
 // an example
 
 {
@@ -120,11 +120,11 @@ Geminid supports the following primitive `mark` types: `point`, `line`, `area`, 
 ### Point
 [source code](https://github.com/sehilyi/geminid/blob/master/src/core/mark/point.ts)
 
-<image src="https://github.com/sehilyi/geminid/wiki/images/point_example.png" width="800" alt="point_example">  
+<img src="https://github.com/sehilyi/geminid/wiki/images/point_example.png" width="800" alt="point_example">  
 
 [open the example in online editor]()
 
-```
+```javascript
 // example
 {
     "tracks":[{
@@ -184,7 +184,7 @@ Geminid supports the following general visual channels:
 
 
 
-```
+```javascript
 // an example configuration for a line chart (x and y are encoded)
 
 {
