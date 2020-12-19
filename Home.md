@@ -1,3 +1,5 @@
 Welcome to the Geminid wiki!
 ### [Examples](https://github.com/sehilyi/geminid/wiki/Examples)
-### [Documentations](https://github.com/sehilyi/geminid/wiki/Docs)
+### [Documentation](https://github.com/sehilyi/geminid/wiki/Documentation)
+### [Getting Started](https://github.com/sehilyi/geminid/wiki/GettingStarted)
+
