@@ -32,10 +32,10 @@
     - [style](#style)
 - [Track](#track)
   - [Layout](#layout)
-  - [style](#style-1)
   - [Arrangement](#arrangement)
     - [Grid-based arrangement](#grid-based-arrangement)
     - [Superposition](#superposition)
+  - [Style](#style-1)
 - [Interactions](#interactions)
   - [Linking Views](#linking-views)
   - [Zooming and Panning](#zooming-and-panning)
@@ -312,7 +312,7 @@ In Geminid, the `rect` mark is designed for representing genomic intervals.
       },
       "mark": "text", // specify the type of mark
 
-      // specify stypes of the mark
+      // specify styles of the mark
       "style": {"textStrokeWidth": 0},
       "stretch": true,
 
@@ -367,7 +367,7 @@ The link mark is designed to show the connections between genomes.
       },
       "x1e": {"field": "e2", "type": "genomic"},
 
-      // specify stypes of the mark
+      // specify styles of the mark
       "stroke": {"value": "steelblue"},
       "style": {"circularLink": true}
     }
@@ -385,22 +385,8 @@ Support three types of triangle marks: `triangle-l`, `triangle-r`, `triangle-d`
 <!-- This will cover the `superpose`, mostly in the perspective of making a glyph (e.g., gene annotation) -->
 
 ## Visual Channels of Mark  
-The visual appearance of a mark is controlled by a set of visual channels (e.g., size, position, color hue), which are binded with data fields.
-Different marks have different visual channels.
-Overall,
-Geminid supports the following general visual channels:
-`x`, `y`, `xe`, `ye`, `color`, `size`.
-
-| mark channel property | type    | description                                                                                                                                         |
-| --------------------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
-| field                 | string  | the data field name |
-| type                  | string  | specify type of the data field. support `"genomic"`, `"nominal"`, `"quantitative"`|
-| aggregate             | string  | support `"max"`, `"min"`, `"mean"`, `"bin"`, `"count"` |
-| domain                | |  |
-| range                 |         |        |
-| axis                  | string  | This property is only used for visual channels `x` and `y`. It specifies the position of the axis. Support `"none"`, `"top"`, `"bottom"`, `"left"`, `"right"` |
-| baseline              |         |         |
-| legend                | boolean | whether show the legend of this visual channel|
+The visual appearance of a mark is controlled by a set of visual channels (e.g., size, position, color hue).
+One visual channel can be either binded with a data field or assigned a constant value.
 
 
 
@@ -413,22 +399,47 @@ Geminid supports the following general visual channels:
         "url": ...,
         "type": ...
       },
+      // specify the mark type
       "mark": "line",
-      // below are the visual channels of the line
+      // visual channel x is bound with the data field genomic
       "x": {
         "field": "position",
         "type": "genomic",
-        "domain": {"chromosome": "1", "interval": [1, 3000500]},
         "axis": "top"
       },
+      // visual channel y is bound with the data field peak
       "y": {
           "field": "peak", 
           "type": "quantitative"
-          }
+          },
+      // visual channel color is assigned a constant value
+      "color": {"value": "steelblue"}
     }]
 }
 
 ```
+
+
+Overall, different marks have different visual channels and different visual channels have different properties.
+
+<!-- 
+| mark type | [`x`](#x)|[`xe`](#xe)| [`y`](#y)|[`ye`](#ye)|  [`size`](#size)| [`row`](#row)| 
+|----| ----|---|---|---|--|--|---|
+| [`point`](#point) | | | radius of the point |
+| [`line`](#line) | | | |
+| [`rect`](#rect)| position of the left edge | - |
+| [`bar`](#bar)| | height of the bar | |
+| [`area`](#area)| | |  | 
+-->
+
+
+| mark type |supported visual channels| 
+|----| ----|
+| [`point`](#point) | `x`, `y`, `size`, `color`, `strokeWidth`, `opacity` |
+| [`line`](#line) |  `x`, `y`, `color`, `strokeWidth`, `opacity`|
+| [`rect`](#rect)| `x`, `xe`, `color`, `strokeWidth`, `opacity` |
+| [`bar`](#bar)| `x`, `y` |
+| [`area`](#area)| `x`, `y` |
 
 
 ### x
@@ -440,12 +451,6 @@ Geminid supports the following general visual channels:
 ### size
 ### text
 
-<!-- a little bit confusing that x, y indicate both the axes and the encoding of the mark, even though vega lite employs the same strategy -->
-
-<!-- Another question, how can I rotate a chart, for example, the area chart in basic marks, 90 degree? (maybe this is a rare case in gemonic visualization?)
- -->
-
----
 
 ### color
 <!-- I didn't see the legend (when set legend: true) of color when {"type": "quantitative"} -->
@@ -455,7 +460,20 @@ Geminid supports the following general visual channels:
 <!-- will it be better if we merge stroke, strokeWidth, background, opacity into a style option? -->
 ### style
 
----
+properties shared by all visual channels 
+| visual channel properties | type    | description |
+| --------------------- | ------- | ---------- |
+| field                 | string  | the data field name |
+| type                  | string  | specify type of the data field. support `"genomic"`, `"nominal"`, `"quantitative"`|
+| aggregate             | string  | support `"max"`, `"min"`, `"mean"`, `"bin"`, `"count"` |
+| domain                | |  |
+| range                 |         |        |
+
+properties that are only used by certain visual channels 
+| visual channel properties | type    | description |
+| --------------------- | ------- | ---------- |
+| axis                  | string  | This property is only used for visual channels `x` and `y`. It specifies the position of the axis. Support `"none"`, `"top"`, `"bottom"`, `"left"`, `"right"` |
+| baseline              |         |         |
 
 <!-- ### superpose
 overlay another track on the original track. 
@@ -471,17 +489,41 @@ only useful when `{"type": "circular"}`
 
 # Track
 ## Layout
-[source code](https://github.com/sehilyi/geminid/blob/00a7b5c6a95528dbabdb2444ef469a1448689d3b/src/core/geminid.schema.ts#L22)
+[source code](https://github.com/sehilyi/geminid/blob/00a7b5c6a95528dbabdb2444ef469a1448689d3b/src/core/geminid.schema.ts#L22)    
 This determines the layout of a track, either `circular` or `linear`.
 
-| property | type     | description                                                       |
-| -------- | -------- | ----------------------------------------------------------------- |
-| layout   | `string` | **Required**, specify the type of layout (`linear` or `circular`) |
 
-## style
+<img src="https://github.com/sehilyi/geminid/wiki/images/linear_circular.png" alt="linear vs circular" width="400">    
+The top is a `linear` layout and the bottom is a `circular` layout.
+
+Users can either specify the layout of all tracks using 
+```javascript
+{
+    "layout":{
+        "type": "linear", //specify the layout of all tracks
+    },
+    "tracks":[...]
+}
+```
+or overwrite the layout of one track using
+```javascript
+{
+    "tracks"[
+      {
+        "circularLayout": false, // specify the layout of this track
+        ...
+      },
+      {
+        "circularLayout": true,
+        ...
+      }
+    ]
+    ...//
+}
+```
 
 ## Arrangement
-`object`  
+How to arrange multiple tracks?
 
 ### Grid-based arrangement
 [source code](https://github.com/sehilyi/geminid/blob/00a7b5c6a95528dbabdb2444ef469a1448689d3b/src/core/geminid.schema.ts#L20)  
@@ -502,6 +544,10 @@ specify the grid arrangement of multiple tracks
 
 ### Superposition
 [source code](https://github.com/sehilyi/geminid/blob/00a7b5c6a95528dbabdb2444ef469a1448689d3b/src/core/geminid.schema.ts#L213)
+
+## Style
+
+`style` specifies the visual appearance of a track that are not bound with data fields.
 
 # Interactions
 
