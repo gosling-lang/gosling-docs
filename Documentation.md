@@ -1,10 +1,58 @@
+# Overview
+Geminid is a declarative visualization grammar tailored for interative genomic visualizations.  
+In Geminid, users construct visualizations through a JSON syntax.  
+This documentation describes how to write the JSON specification language to create interactive visualizations.  
+You are welcome to try the [Geminid online edtior](https://sehilyi.github.io/geminid/). 
 
+  <!-- "title": "title of the visualizations",
+  "subtitile": "subtitile of the visualizations",
+  "description": "a detailed description of the visualizations",
+  "width": 800,
+  "height": 200,
+  "static":  false -->
+
+```javascript
+// Geminid generates visualizations through a JSON specification language
+
+{
+  // one track is one visualization
+  "tracks":[
+    {
+      // specify the data source and format of this track
+      "data": {
+        "url": ...,
+        "type":...
+      },
+      // specify the mark types and visual encodings
+      "mark": ...,
+      "x": ...,
+      ...
+    },
+    {
+      ... // another track
+    },
+    ...
+  ],
+  // specify the layout and the grid-based arrangement of multiple tracks
+  "layout":{
+    ...
+  }
+}
+```
+
+# Table of Contents
+
+
+- [Overview](#overview)
+- [Table of Contents](#table-of-contents)
 - [Data](#data)
+  - [Supported Data Formats](#supported-data-formats)
     - [Multivec (HiGlass)](#multivec-higlass)
     - [BED (HiGlass)](#bed-higlass)
     - [BED](#bed)
     - [Vector (HiGlass)](#vector-higlass)
     - [CSV](#csv)
+  - [Data Transform](#data-transform)
 - [Mark](#mark)
   - [Types of Mark](#types-of-mark)
     - [Point](#point)
@@ -30,7 +78,7 @@
     - [strokeWidth](#strokewidth)
     - [opacity](#opacity)
     - [style](#style)
-- [Track](#track)
+- [Tracks](#tracks)
   - [Layout](#layout)
   - [Arrangement](#arrangement)
     - [Grid-based arrangement](#grid-based-arrangement)
@@ -47,6 +95,8 @@
 
 
 # Data
+
+## Supported Data Formats
 
 ### Multivec (HiGlass)
 
@@ -92,6 +142,8 @@
 ### BED
 ### Vector (HiGlass)
 ### CSV
+
+## Data Transform
 
 # Mark
 [source code](https://github.com/sehilyi/geminid/tree/master/src/core/mark)
@@ -435,11 +487,11 @@ Overall, different marks have different visual channels and different visual cha
 
 | mark type |supported visual channels| 
 |----| ----|
-| [`point`](#point) | `x`, `y`, `size`, `color`, `strokeWidth`, `opacity` |
-| [`line`](#line) |  `x`, `y`, `color`, `strokeWidth`, `opacity`|
-| [`rect`](#rect)| `x`, `xe`, `color`, `strokeWidth`, `opacity` |
-| [`bar`](#bar)| `x`, `y` |
-| [`area`](#area)| `x`, `y` |
+| [`point`](#point) | [`x`](#x), [`y`](#y), `size`, `color`, `strokeWidth`, `opacity` |
+| [`line`](#line) |  [`x`](#x), [`y`](#y), `color`, `strokeWidth`, `opacity`|
+| [`rect`](#rect)| [`x`](#x), `xe`, `color`, `strokeWidth`, `opacity` |
+| [`bar`](#bar)| [`x`](#x), [`y`](#y) |
+| [`area`](#area)| [`x`](#x), [`y`](#y) |
 
 
 ### x
@@ -447,6 +499,49 @@ Overall, different marks have different visual channels and different visual cha
 ### y
 ### ye
 ### row
+
+<img src="https://github.com/sehilyi/geminid/wiki/images/without_row.png" width="500" alt="with row example">  
+<img src="https://github.com/sehilyi/geminid/wiki/images/with_row.png" width="500" alt="without row example">  
+
+**Left**: without specifying rows; **Right**: rows are bound with the sample field
+
+```javascript
+{
+  "tracks":[
+    {
+      // specify data source
+      "data": {
+        "url": "https://resgen.io/api/v1/tileset_info/?d=UvVPeLHuRDiYA3qwFlm7xQ",
+        "type": "tileset"
+      },
+      "metadata": {
+        "type": "higlass-multivec",
+        "row": "sample",
+        "column": "position",
+        "value": "peak",
+        "categories": ["sample 1", "sample 2", "sample 3", "sample 4"]
+      },
+      // specify the mark type
+      "mark": "line",
+      // specify visual channels
+      "x": {
+        "field": "position",
+        "type": "genomic",
+        "domain": {"chromosome": "1", "interval": [1, 3000500]},
+        "axis": "top"
+      },
+      "y": {"field": "peak", "type": "quantitative"},
+      "color": {"field": "sample", "type": "nominal", "legend": true},
+      // visual channel row is bound with the data field: sample
+      "row": {"field": "sample", "type": "nominal"}
+    }
+  ]
+      
+}
+```
+
+
+
 
 ### size
 ### text
@@ -487,14 +582,29 @@ only useful when `{"type": "circular"}`
 ### outerRadius -->
 
 
-# Track
+# Tracks
+In Geminid, we call one visualization a track.
+A Geminid configuration specifies an array of `tracks`.
+
+```javascript
+{
+  "tracks":[
+    {...}, // each object specifies a track 
+    {...},
+    ...
+  ]
+}
+```
+
+
 ## Layout
-[source code](https://github.com/sehilyi/geminid/blob/00a7b5c6a95528dbabdb2444ef469a1448689d3b/src/core/geminid.schema.ts#L22)    
-This determines the layout of a track, either `circular` or `linear`.
+[source code](https://github.com/sehilyi/geminid/blob/00a7b5c6a95528dbabdb2444ef469a1448689d3b/src/core/geminid.schema.ts#L22)  
+In geminid, each track is in either `circular` or `linear` layout.
 
 
-<img src="https://github.com/sehilyi/geminid/wiki/images/linear_circular.png" alt="linear vs circular" width="400">    
-The top is a `linear` layout and the bottom is a `circular` layout.
+<img src="https://github.com/sehilyi/geminid/wiki/images/linear_circular.png" alt="linear vs circular" width="600">    
+
+**Top:** a `linear` layout; **Bottom:** a `circular` layout.
 
 Users can either specify the layout of all tracks using 
 ```javascript
@@ -516,8 +626,9 @@ or overwrite the layout of one track using
       {
         "circularLayout": true,
         ...
-      }
-    ]
+      },
+      ...
+    ],
     ...//
 }
 ```
@@ -547,7 +658,25 @@ specify the grid arrangement of multiple tracks
 
 ## Style
 
-`style` specifies the visual appearance of a track that are not bound with data fields.
+`style` specifies the visual appearances of a track that are not bound with data fields.
+
+style properties | type | description
+-- | -- | --
+background | string | color of the background
+dashed | [number, number] |
+linePatterns| { "type": "triangle-l" \| "triangle-r"; size: number } | 
+curve| string | support "top", "bottom", "left", "right" 
+align| string | support "left", "right"
+dy | number | 
+outline | string |
+outlineWidth | number |
+circularLink | boolean |
+textFontSize | number |
+textStroke | string |
+textStrokeWidth | number |
+textFontWeight| string | support "bold", "normal"
+
+
 
 # Interactions
 
