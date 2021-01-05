@@ -487,11 +487,14 @@ Overall, different marks have different visual channels and different visual cha
 
 | mark type |supported visual channels| 
 |----| ----|
-| [`point`](#point) | [`x`](#x), [`y`](#y), `size`, `color`, `strokeWidth`, `opacity` |
-| [`line`](#line) |  [`x`](#x), [`y`](#y), `color`, `strokeWidth`, `opacity`|
-| [`rect`](#rect)| [`x`](#x), `xe`, `color`, `strokeWidth`, `opacity` |
-| [`bar`](#bar)| [`x`](#x), [`y`](#y) |
-| [`area`](#area)| [`x`](#x), [`y`](#y) |
+| [`point`](#point) | [`x`](#x), [`y`](#y), [`row`](#row), [`size`](#size), [`color`](#color), [`strokeWidth`](#strokeWidth), [`opacity`](#opacity) |
+| [`line`](#line) |  [`x`](#x), [`y`](#y), [`row`](#row), [`color`](#color), [`strokeWidth`](#strokeWidth)|
+| [`rect`](#rect)| [`x`](#x), [`xe`](#xe), [`row`](#row), [`color`](#color), [`strokeWidth`](#strokeWidth), [`opacity`](#opacity) |
+| [`bar`](#bar)| [`x`](#x), [`y`](#y), [`row`](#row), [`color`](#color), [`strokeWidth`](#strokeWidth), [`opacity`](#opacity)|
+| [`area`](#area)| [`x`](#x), [`y`](#y), [`row`](#row), [`color`](#color), [`strokeWidth`](#strokeWidth) |
+| [`link`](#link)| [`x`](#x), [`xe`](#xe), [`x1`](#x1), [`x1e`](#x1e), [`color`](#color), [`opacity`](#opacity) |
+| [`triangle`](#triangle)| [`x`](#x), [`xe`](#xe), [`row`](#row), [`size`](#size), [`color`](#color), [`opacity`](#opacity) |
+| [`text`](#text)| [`x`](#x), [`xe`](#xe), [`row`](#row), [`color`](#color), [`opacity`](#opacity) |
 
 
 ### x
