@@ -69,6 +69,7 @@ You are welcome to try the [Geminid online edtior](https://sehilyi.github.io/gem
     - [xe](#xe)
     - [y](#y)
     - [ye](#ye)
+    - [x1 y1 x1e y1e](#x1-y1-x1e-y1e)
     - [row](#row)
     - [size](#size)
     - [text](#text-1)
@@ -169,6 +170,10 @@ Geminid supports the following primitive `mark` types: `point`, `line`, `area`, 
 ### Point
 [source code](https://github.com/sehilyi/geminid/blob/master/src/core/mark/point.ts)
 
+The mark `point` represents one data point using a circle.
+Visual channels of the circle, e.g., radius, color, vertical position, horizontal position, are used to represent values of the data point.
+Popular charts such as scatter plot and bubble charts use `point` mark.
+
 <img src="https://github.com/sehilyi/geminid/wiki/images/point_example.png" width="800" alt="point_example">  
 
 [open the example in online editor](<https://sehilyi.github.io/geminid/?full=false&spec=(6'ZtleJBasic%20Marks%3A%20Point'NsubZtleJTutorial%20ExOs'NlayoutJlinear'Narrangement4('direcZonJverZcal'G'rowSizes4180G'columnSizes4800)Ntracks4%5B6*(K'~'urlJhttps%3A%2F%2Fresgen.io%2Fapi%2Fv1%2FZleset_info%2F%3Fd%3DUvVPeLHuRDiYA3qwFlm7xQXIZleset'Kjmeta~Ihiglass-mulZvecX'rowJsOX'columnJposiZonX'valueJpeakX'categories4%5B'sO%201'%5DKjmarkJpoint'2'x4(K*WposiZonXIgenomicX'domain4('chromosomeJ1'G'interval4%5B1G3000500%5D)2*'axisJtop'Kjy4Csize4Ccolor4(WsO'GInominal'G'legend4truejopacity4('value40.9)6*)6%5D%0A)*%20%202%2CK4!%206%0A*C(Wpeak'GIquanZtaZve'jG%2C%20I'typeJJ4'K6**N%2C6'OampleW'fieldJX'2*Ztij)2'~data4(K*%01~jZXWONKJIGC642*_>)
@@ -199,6 +204,8 @@ Geminid supports the following primitive `mark` types: `point`, `line`, `area`, 
 ```
 ### Line
 
+The mark `line` represents a set of data points using a line that connects these points.
+
 <img src="https://github.com/sehilyi/geminid/wiki/images/line_example.png" width="800" alt="line_example">  
 
 [open the example in online editor](<https://sehilyi.github.io/geminid/?full=false&spec=(9'NtleJBasic%20Marks%3A%20Line'4'subNtleJTutorial%20ExWs'4'layoutJlinear'4'arrangement~direcNonJverNcal'G'rowSizes6180G'columnSizes6800)4'tracksj9*(9CdataXurlJhttps%3A%2F%2Fresgen.io%2Fapi%2Fv1%2FNleset_info%2F%3Fd%3DUvVPeLHuRDiYA3qwFlm7xQIKNleset'OmetadataXKhiglass-mulNvecIrowJsWIcolumnZvalueJpeakIcategoriesj'sW%201'%5DOmarkJline'4CxXfieldZKgenomicIdomain~chromosomeJ1'G'intervalj1G3000500%5D)4*CaxisJbottom'Oy~fieldJpeak'G'KquanNtaNve')4Csize~value62)9*)9%5D%0A)*%20%204%2C96!%209%0A*C**'G%2C%20I'4*CJ6'KtypeJNtiO9**)4CWampleX6(9*CZJposiNonIj6%5B~6('%01~jZXWONKJIGC964*_>)
@@ -228,6 +235,8 @@ Geminid supports the following primitive `mark` types: `point`, `line`, `area`, 
 }
 ```
 ### Area
+The mark `area` represents a set of data points as an area shape.
+The upper edge of the are shape is a line that connects all the points and the bottom edge is the x axis.
 
 
 <img src="https://github.com/sehilyi/geminid/wiki/images/area_example.png" width="800" alt="area_example">  
@@ -261,7 +270,7 @@ Geminid supports the following primitive `mark` types: `point`, `line`, `area`, 
 
 ### Bar
 
-In Geminid, the `bar` mark is designed to draw bar charts.
+In Geminid, the `bar` mark is designed for drawing bar charts.
 Each bar mark show the value of one data point through the height of the bar.
 
 <img src="https://github.com/sehilyi/geminid/wiki/images/bar_example.png" width="800" alt="bar_example">  
@@ -294,7 +303,8 @@ Each bar mark show the value of one data point through the height of the bar.
 ```
 
 ### Rect
-In Geminid, the `rect` mark is designed for representing genomic intervals.
+In Geminid, the `rect` mark is designed for representing genomic intervals using reactangle shapes.
+Left and right edge of the rectangle indicate the start and the end position of a chromosome.
 
 <img src="https://github.com/sehilyi/geminid/wiki/images/rect_example.png" width="800" alt="rect_example">  
 
@@ -490,7 +500,7 @@ Overall, different marks have different visual channels and different visual cha
 | [`rect`](#rect)| [`x`](#x), [`xe`](#xe), [`row`](#row), [`color`](#color), [`strokeWidth`](#strokeWidth), [`opacity`](#opacity) |
 | [`bar`](#bar)| [`x`](#x), [`y`](#y), [`row`](#row), [`color`](#color), [`strokeWidth`](#strokeWidth), [`opacity`](#opacity)|
 | [`area`](#area)| [`x`](#x), [`y`](#y), [`row`](#row), [`color`](#color), [`strokeWidth`](#strokeWidth) |
-| [`link`](#link)| [`x`](#x), [`xe`](#xe), [`x1`](#x1), [`x1e`](#x1e), [`color`](#color), [`opacity`](#opacity) |
+| [`link`](#link)| [`x`](#x), [`xe`](#xe), [`x1`](#x1-y1-x1e-y1e), [`x1e`](#x1-y1-x1e-y1e), [`color`](#color), [`opacity`](#opacity) |
 | [`triangle`](#triangle)| [`x`](#x), [`xe`](#xe), [`row`](#row), [`size`](#size), [`color`](#color), [`opacity`](#opacity) |
 | [`text`](#text)| [`x`](#x), [`xe`](#xe), [`row`](#row), [`color`](#color), [`opacity`](#opacity) |
 
@@ -499,10 +509,15 @@ Overall, different marks have different visual channels and different visual cha
 `x` specify the horizontal position of a visual mark
 ### xe
 `xe` stands for the end of x axis. `xe` is usually used with `x` to specify the start horizontal position and the end horizontal position of a visual mark.
+
 ### y
 `y` specify the vertical position of a visual mark
 ### ye
 `ye` stands for the end of y axis. `ye` is usually used with `x` to specify the start vertical position and the end vertical position of a visual mark.
+
+### x1 y1 x1e y1e
+the four channels are only used in `link` mark.
+`x1` specify the horizontal position of end of the link
 
 ### row
 
@@ -613,9 +628,7 @@ In geminid, each track is in either `circular` or `linear` layout.
 Users can either specify the layout of all tracks using 
 ```javascript
 {
-    "layout":{
-        "type": "linear", //specify the layout of all tracks
-    },
+    "layout": "linear", //specify the layout of all tracks
     "tracks":[...]
 }
 ```
@@ -624,11 +637,11 @@ or overwrite the layout of one track using
 {
     "tracks"[
       {
-        "circularLayout": false, // specify the layout of this track
+        "layout": "linear", // specify the layout of this track
         ...
       },
       {
-        "circularLayout": true,
+        "layout": "circular",
         ...
       },
       ...
