@@ -493,15 +493,21 @@ Overall, different marks have different visual channels and different visual cha
 
 
 ### x
+`x` specify the horizontal position of a visual mark
 ### xe
+`xe` stands for the end of x axis. `xe` is usually used with `x` to specify the start horizontal position and the end horizontal position of a visual mark.
 ### y
+`y` specify the vertical position of a visual mark
 ### ye
+`ye` stands for the end of y axis. `ye` is usually used with `x` to specify the start vertical position and the end vertical position of a visual mark.
+
 ### row
 
 <img src="https://github.com/sehilyi/geminid/wiki/images/without_row.png" width="500" alt="with row example">  
+
 <img src="https://github.com/sehilyi/geminid/wiki/images/with_row.png" width="500" alt="without row example">  
 
-**Left**: without specifying rows; **Right**: rows are bound with the sample field
+**Top**: without specifying rows; **Bottom**: rows are bound with the sample field
 
 ```javascript
 {
@@ -537,9 +543,6 @@ Overall, different marks have different visual channels and different visual cha
       
 }
 ```
-
-
-
 
 ### size
 ### text
