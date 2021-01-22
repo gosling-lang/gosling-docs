@@ -1,6 +1,6 @@
 # Overview
 Geminid is a declarative visualization grammar tailored for interative genomic visualizations.  
-In Geminid, users construct visualizations through a JSON syntax.  
+In Geminid, users create interactive visualizations through a JSON syntax.  
 This documentation describes how to write the JSON specification language to create interactive visualizations.  
 You are welcome to try the [Geminid online edtior](https://sehilyi.github.io/geminid/). 
 
@@ -33,18 +33,18 @@ You are welcome to try the [Geminid online edtior](https://sehilyi.github.io/gem
     },
     ...
   ],
-  // specify the layout and the grid-based arrangement of multiple tracks
-  "layout":{
+  // specify the arrangement of multiple tracks
+  "arrangement":{
     ...
   }
 }
 ```
 
-# Table of Contents
+# List of Contents
 
 
 - [Overview](#overview)
-- [Table of Contents](#table-of-contents)
+- [List of Contents](#list-of-contents)
 - [Data](#data)
   - [Supported Data Formats](#supported-data-formats)
     - [Multivec (HiGlass)](#multivec-higlass)
@@ -63,7 +63,6 @@ You are welcome to try the [Geminid online edtior](https://sehilyi.github.io/gem
     - [Text](#text)
     - [Link](#link)
     - [Triangle](#triangle)
-    - [Glyph](#glyph)
   - [Visual Channels of Mark](#visual-channels-of-mark)
     - [x](#x)
     - [xe](#xe)
@@ -157,14 +156,20 @@ The `mark` property of a track is defined by a string that describe the mark typ
 // an example
 
 {
-    "tracks":[{
+    "tracks":[
+      {
         "mark":"rect",
         ... // other track properties
-    }],
+      },
+      {
+        "mark":"line",
+        ... // other track properties
+      }
+    ],
     ... // other visualization properties
 }
 ```
-Geminid supports the following primitive `mark` types: `point`, `line`, `area`, `bar`, `rect`, `text`, `link`, `rule`, `triangle`. Composite mark (i.e., glyph) is also supported through the `"superpose"` property.
+Geminid supports the following primitive `mark` types: `point`, `line`, `area`, `bar`, `rect`, `text`, `link`, `rule`, `triangle`. Composite mark (i.e., glyph) is also supported through the [`superpose`](#superposition) property.
 
 
 ### Point
@@ -211,20 +216,20 @@ The mark `line` represents a set of data points using a line that connects these
 [Try it in the online editor](<https://sehilyi.github.io/geminid/?full=false&spec=(9'NtleJBasic%20Marks%3A%20Line'4'subNtleJTutorial%20ExWs'4'layoutJlinear'4'arrangement~direcNonJverNcal'G'rowSizes6180G'columnSizes6800)4'tracksj9*(9CdataXurlJhttps%3A%2F%2Fresgen.io%2Fapi%2Fv1%2FNleset_info%2F%3Fd%3DUvVPeLHuRDiYA3qwFlm7xQIKNleset'OmetadataXKhiglass-mulNvecIrowJsWIcolumnZvalueJpeakIcategoriesj'sW%201'%5DOmarkJline'4CxXfieldZKgenomicIdomain~chromosomeJ1'G'intervalj1G3000500%5D)4*CaxisJbottom'Oy~fieldJpeak'G'KquanNtaNve')4Csize~value62)9*)9%5D%0A)*%20%204%2C96!%209%0A*C**'G%2C%20I'4*CJ6'KtypeJNtiO9**)4CWampleX6(9*CZJposiNonIj6%5B~6('%01~jZXWONKJIGC964*_>)
 
 ```javascript
-// an example of line marks
+// an example of using line marks
 {
     "tracks":[{
         "data": {
             "url": ...,
             "type": ...
         },
-        // mark type
+        // specify mark type
         "mark": "line",
-        // mark visual channels
+        // specify mark visual channels
         "x": {
             "field": "position", // data field
             "type": "genomic", // type of data field
-            "axis": "top"
+            "axis": "top" // position of the x axis 
         },
         "y": {
             "field": "peak", 
@@ -236,7 +241,7 @@ The mark `line` represents a set of data points using a line that connects these
 ```
 ### Area
 The mark `area` represents a set of data points as an area shape.
-The upper edge of the are shape is a line that connects all the points and the bottom edge is the x axis.
+The upper edge of the area shape is a line that connects all the points and the bottom edge is the x axis.
 
 
 <img src="https://github.com/sehilyi/geminid/wiki/images/area_example.png" width="800" alt="area_example">  
@@ -263,6 +268,7 @@ The upper edge of the are shape is a line that connects all the points and the b
             "field": "peak", 
             "type": "quantitative"
         },
+        "color": ...,
         ... // other encodings and styles
     }]
 }
@@ -271,7 +277,7 @@ The upper edge of the are shape is a line that connects all the points and the b
 ### Bar
 
 In Geminid, the `bar` mark is designed for drawing bar charts.
-Each bar mark show the value of one data point through the height of the bar.
+Each bar mark shows the value of one data point through the height of this bar.
 
 <img src="https://github.com/sehilyi/geminid/wiki/images/bar_example.png" width="800" alt="bar_example">  
 
@@ -293,6 +299,7 @@ Each bar mark show the value of one data point through the height of the bar.
             "type": "genomic", // type of data field
             "axis": "top"
         },
+        // y indicates the visual encoding of the bar height
         "y": {
             "field": "peak", 
             "type": "quantitative"
@@ -304,39 +311,35 @@ Each bar mark show the value of one data point through the height of the bar.
 
 ### Rect
 In Geminid, the `rect` mark is designed for representing genomic intervals using reactangle shapes.
-Left and right edge of the rectangle indicate the start and the end position of a chromosome.
+Left and right edge of the rectangle indicate the start and the end position of a chromosome, respectively.
 
 <img src="https://github.com/sehilyi/geminid/wiki/images/rect_example.png" width="800" alt="rect_example">  
 
 [Try it in the online editor](<https://sehilyi.github.io/geminid/?full=false&spec=(K%20'titleZBasic%20Marks%3A%20Rect'_'subtitleZTutorial%20Examples'_'layoutZlinear'_'arrangementJ(K*'directionZvertical'_*'columnSizesJ800_*'rowSizesX60L180L180L180%5DK)_'tracksXK*(Q'dataJ(KNurlZhttps%3A%2F%2Fraw.githubusercontent.com%2Fsehilyi%2Fgemini-datasets%2Fmaster%2Fdata%2FUCSC.HG38.Human.CytoBandIdeogram.csvV'~csvVPosomeFjZChromosomeV'%22FjsXPStart'LPEnd'%5DQ)4K*NmarkZrectV*'dataTransformJ(QNfilterX('fjZStain'L'oneOfX'acen'%5DL'notJtrue)%5DQ**)4**'colorJ(QNfjZStain'4N~nominal'4NdomainX'gnegY25Y50Y75Y100'L'gvar'%5D4NrangeXQ*NwhiteVN%23D9D9D9VN%23979797VN%23636363VNblackVN%23A0A0F2'Q***%5DQ**)Q*4'xJ(KNfjJPStartV'~%22V'domainJ(PosomeZ1')4*'axisZtop'Q)4'xeJ('fjJPEnd'L'~%22')4'sizeqJ20)4'strokeqZgray')4'strokeWidthqJ0.5)4'styleJ('outlineZwhite')K*)K%5D%0A)*%20%204%2CQJ!%20K%0A*L%2C%20N***'P'chromQK**V'4*XJ%5BY'L'gposZJ'_%2CKjieldqJ('value~typeZ%22genomic%01%22~qj_ZYXVQPNLKJ4*_>)
 
 ```javascript
-// an example of react marks
+// an example of rect marks
 {
     "traks":[
     {
-        "data": {
-            "url": "https://raw.githubusercontent.com/sehilyi/gemini-datasets/master/data/UCSC.HG38.Human.CytoBandIdeogram.csv",
-            "type": "csv",
-            "chromosomeField": "Chromosome",
-            "genomicFields": ["chromStart", "chromEnd"]
-        },
-        "mark": "rect", // specify the type of mark
-        "dataTransform": {
-            "filter": [{"field": "Stain", "oneOf": ["acen"], "not": true}]
-          },
-        "color": { // bind the color of each rect mark to the data field: Stain
+        "data": ...,
+        // specify the type of mark
+        "mark": "rect", 
+        // bind the color of each rect mark to the data field: Stain
+        "color": { 
             "field": "Stain",
             "type": "nominal",,
             "domain": ["gneg", "gpos25", "gpos50", "gpos75", "gpos100", "gvar"],
             "range": ["white", "#D9D9D9", "#979797", "#636363", "black", "#A0A0F2"]
           },
-        "x": { // bind the start position of each rect mark to the data field: chromStart 
+        // bind the start position of each rect mark to the data field: chromStart 
+        "x": { 
             "field": "chromStart",
             "type": "genomic",
             "axis": "top"
         },
-        "xe": { // bind the end position of each rect mark to the data field: chromEnd 
+        // bind the end position of each rect mark to the data field: chromEnd 
+        "xe": { 
             "field": "chromEnd", "type": "genomic"
         },
         "size": {
@@ -357,25 +360,13 @@ Left and right edge of the rectangle indicate the start and the end position of 
 ```javascript
 {
     "tracks":[{
-      "data": {
-        "url": "https://resgen.io/api/v1/tileset_info/?d=UvVPeLHuRDiYA3qwFlm7xQ",
-        "type": "tileset"
-      },
-      "metadata": {
-        "type": "higlass-multivec",
-        "row": "base",
-        "column": "position",
-        "value": "count",
-        "categories": ["A", "T", "G", "C"],
-        "start": "start",
-        "end": "end",
-        "bin": 16
-      },
-      "mark": "text", // specify the type of mark
-
+      "data": ...,
+      
+      // specify the type of mark
+      "mark": "text", 
+      
       // specify styles of the mark
       "style": {"textStrokeWidth": 0},
-      "stretch": true,
 
       // bind visual channels to corresponding data fields
       "x": {"field": "start", "type": "genomic", "axis": "top"},
@@ -386,6 +377,8 @@ Left and right edge of the rectangle indicate the start and the end position of 
         "type": "nominal",
         "domain": ["A", "T", "G", "C"]
       },
+
+      // specify the text content
       "text": {"field": "base", "type": "nominal"} 
     }]
 }
@@ -402,42 +395,37 @@ The `link` mark is designed to show the connections between chromosomes using an
 
 ```javascript
 {
-"tracks": [
-    {
-      "data": {
-        "url": "https://raw.githubusercontent.com/sehilyi/gemini-datasets/master/data/circos-segdup-edited.txt",
-        "type": "csv",
-        "chromosomeField": "c2",
-        "genomicFields": ["s1", "e1", "s2", "e2"]
-      },
+  "tracks": [
+      {
+        "data": ...,
 
-      "mark": "link", // specify the mark type
+        "mark": "link", // specify the mark type
 
-      // bind visual channels to corresponding data fields
+        // bind visual channels to corresponding data fields
 
-      // x and xe indiates the start point of the arc  
-      "x": {
-        "field": "s1",
-        "type": "genomic",
-        "domain": {"chromosome": "1"},
-        "axis": "top"
-      },
-      "xe": {"field": "e1", "type": "genomic"},
+        // x and xe indiates the start point of the arc  
+        "x": {
+          "field": "s1",
+          "type": "genomic",
+          "domain": {"chromosome": "1"},
+          "axis": "top"
+        },
+        "xe": {"field": "e1", "type": "genomic"},
 
-      // x and xe indiates the end point of the arc  
-      "x1": {
-        "field": "s2",
-        "type": "genomic",
-        "domain": {"chromosome": "1"},
-        "axis": "top"
-      },
-      "x1e": {"field": "e2", "type": "genomic"},
+        // x and xe indiates the end point of the arc  
+        "x1": {
+          "field": "s2",
+          "type": "genomic",
+          "domain": {"chromosome": "1"},
+          "axis": "top"
+        },
+        "x1e": {"field": "e2", "type": "genomic"},
 
-      // specify styles of the mark
-      "stroke": {"value": "steelblue"},
-      "style": {"circularLink": true}
-    }
-  ]
+        // specify styles of the mark
+        "stroke": {"value": "steelblue"},
+        "style": {"circularLink": true}
+      }
+    ]
 }
 ```
 
@@ -445,9 +433,11 @@ The `link` mark is designed to show the connections between chromosomes using an
 [source code](https://github.com/sehilyi/geminid/blob/master/src/core/mark/triangle.ts)  
 Support three types of triangle marks: `triangle-l`, `triangle-r`, `triangle-d`
 
-<!-- ### Brush -->
-### Glyph
-<!-- This will cover the `superpose`, mostly in the perspective of making a glyph (e.g., gene annotation) -->
+[Try it in the online editor](<https://sehilyi.github.io/geminid/?full=false&spec=>)
+
+<!-- ### Brush
+### Glyph -->
+
 
 ## Visual Channels of Mark  
 The visual appearance of a mark is controlled by a set of visual channels (e.g., size, position, color hue).
@@ -588,7 +578,7 @@ Channel `row` is used with channel `y`.
 ```
 
 ### size
-Channel `size` indicate the size of the visual mark shape.
+Channel `size` indicates the size of the visual mark shape.
 It specifies the radius of a circle (`mark: point`), the vertical length of a triangle (`mark: triangle-r`, `mark: triangle-l`, `mark: triangle-d`), the vertical length of a rectangle (`mark: rect`), the thickness of a line (`mark: line`).
 
 ### text
@@ -598,11 +588,11 @@ It specifies the content of the text.
 
 ### color
 
-Channel `color` specifies the filling color of the mark shape.
+Channel `color` specifies the filling color of the mark.
 <!-- I didn't see the legend (when set legend: true) of color when {"type": "quantitative"} -->
 
 ### stroke
-Channel `stroke` defines the outline color of the mark shape.
+Channel `stroke` defines the outline color of the mark.
 Geminid supports `stroke` in the following marks: `rect`, `area`, `point`, `bar`, `link`.
 
 ### strokeWidth
@@ -666,7 +656,7 @@ Users can either specify the layout of all tracks using
     "tracks":[...]
 }
 ```
-or overwrite the layout of one track using
+or specify the layout of one track using
 ```javascript
 {
     "tracks"[
@@ -709,7 +699,7 @@ specify the grid arrangement of multiple tracks
 
 
 `superposition` enables users to superpose multiple marks on top of each other.  
-`superpostion` is an array of objects, each object specifies one visual mark. This visual mark share the same property (e.g., `data`, `x`, `y`) of this track, unless these properies are redefined in the object.  
+`superpostion` is an array of objects, each object specifies one visual mark. This visual mark inherit the properties (e.g., `data`, `x`, `y`) defined in this track, unless these properies are redefined in the object.  
 
 ```javascript
 {
@@ -772,7 +762,7 @@ textFontWeight| string | support "bold", "normal"
 ## Zooming and Panning
 [source code](https://github.com/sehilyi/geminid/blob/00a7b5c6a95528dbabdb2444ef469a1448689d3b/src/core/geminid.schema.ts#L7)
 
-Each visualization created by Geminid, by default, supports the Zooming and Panning interaction.
+Each visualization in Geminid, by default, supports the Zooming and Panning interaction.
 Users can zoom in/out a visualization using the scrolling up/down actions.
 Users can pan by clicking on the visualization and then drag it in the desired direction.
 
@@ -813,8 +803,8 @@ Users can link two tracks by assigning the same `linkingID` to the `x` channel o
 ```
 
 ## Brushing and Linking
-In Geminid, **brushing** selecting a subset of the data items in a track by modifying the left and right edge of a rectangle. 
-Users can link another track to the data items selected by the **brushing**.
+In Geminid, users can use **brushing** to select a subset of the data items using a recatangle. User can modify the left and right edge of the rectangle to modify the selection.
+The selected data items can be linked to data items in another track.
 
 [Try it in the online editor](<https://sehilyi.github.io/geminid/?full=false&spec=(W'title~Example%3A%20Brushing%20and%20Linking'%2CW'layout~linear'%2CW'arrangement5('direction~vertical'O'columnSizes5800O'rowSizes5200ZW'tracks5%5B%229uRN*JXM%23G%24MK1'%25*Z*C**%2F%2F%20create%20a%20rectangle%20brush*'superpose5%5B*4()O%2F%2F%20this%20dummy%20object%20cannot%20be%20removed*4('mark~rect-brush'O*4'x5('T)6color5('value!'steelBlue')*4)*%5DW4Z%229uRN*JXM%23G%24MK1'O'interval5%5B200000000O220000000%5D%256T*Z*C*'opacity!('value51)W4)W%5D%0A)*W444%20%205!%206%2C*4'9'https%3A%2F%2Fresgen.io%2Fapi%2Fv1%2Ftileset_info%2F%3Fd%3DUvVPeLHC'y5('field~peak'O'type~quantitative'ZGories5%5B'sample%201'%5D*Z*'mark~line'%2CJ'metadata5(*4'type~higlass-multivec'Ktype~genomic'6domain5('chromosome~M~position'6NDiYA3qwFlm7xQ'6type~tileset'*ZO%2C%20TlinkingID~linking-with-brush'W%0A4X6row~sample'6columnZ)%2C~5'%22W4(*'data5(*4'url5%23value~peak'6categ%24*'x5(*4'field%25)6axis~top'%01%25%24%23%22~ZXWTONMKJGC9654*_>)
 
@@ -843,7 +833,7 @@ Users can link another track to the data items selected by the **brushing**.
       "mark": "point",
       "x": {
         ..., // other properties of x channel
-        "linkingID": "a unique string" // the same linking id links track B and the brushing in track A
+        "linkingID": "a unique string" // the same linking id links track B and the brush in track A
       }
     },
     ... // other tracks
