@@ -515,28 +515,32 @@ When a visual channel is binded with a data field, Geminid creates a mapping fro
 Table: Properties shared by all visual channels 
 | visual channel properties | type    | description |
 | --------------------- | ------- | ---------- |
-| field                 | string  | specify name of the binded data field |
+| field                 | string  | specify name of the data field |
 | type                  | string  | specify type of the data field. support `"genomic"`, `"nominal"`, `"quantitative"`|
 | aggregate             | string  | support `"max"`, `"min"`, `"mean"`, `"bin"`, `"count"` |
-| domain                |   |  |
-| range                 |         |        |
+| domain                | [number, number]\| string[]  | specify values of the data field |
+| range                 |   [number, number]\| string[]      |   specify values of the visual channel     |
 | value | string \| number| assign a constant value to the visual channel |
 
 
 ### x
-`x` specify the horizontal position of a mark.
+`x` specify a mark's position in the horizontal direction.
+
+
 ### xe
-`xe` stands for the end of x axis. `xe` is usually used with `x` to specify the start horizontal position and the end horizontal position of a visual mark.
+`xe` stands for the end of x axis. `xe` is usually used with `x` to specify the start position and the end position of a visual mark in the horizontal direction, respectively.
 
 ### y
-`y` specify the vertical position of a mark
+`y` specify a mark's position in the vertical direction.
 ### ye
-`ye` stands for the end of y axis. `ye` is usually used with `x` to specify the start vertical position and the end vertical position of a mark.
+`ye` stands for the end of y axis. `ye` is usually used with `x` to specify the sstart position and the end position of a visual mark in the vertical direction, respectively.
 
 ### x1 x1e y1 y1e
 the four channels are only used in `link` mark.
 `x1` and `x1e` are used with `x` and `xe` to specify the start and end point of a link, respectively.
 `y1` and `y1e` are used with `y` and `ye` to specify the start and end point of a link, respectively.
+
+<img src="https://github.com/sehilyi/geminid/wiki/images/x_x1_example.png" width="400" alt="x x1 example">  
 
 ### row
 
@@ -596,6 +600,7 @@ It specifies the content of the text.
 
 Channel `color` specifies the filling color of the mark shape.
 <!-- I didn't see the legend (when set legend: true) of color when {"type": "quantitative"} -->
+
 ### stroke
 Channel `stroke` defines the outline color of the mark shape.
 Geminid supports `stroke` in the following marks: `rect`, `area`, `point`, `bar`, `link`.
@@ -680,7 +685,7 @@ or overwrite the layout of one track using
 ```
 
 ## Arrangement
-How to arrange multiple tracks?
+
 
 ### Grid-based arrangement
 [source code](https://github.com/sehilyi/geminid/blob/00a7b5c6a95528dbabdb2444ef469a1448689d3b/src/core/geminid.schema.ts#L20)  
@@ -702,9 +707,47 @@ specify the grid arrangement of multiple tracks
 ### Superposition
 [source code](https://github.com/sehilyi/geminid/blob/00a7b5c6a95528dbabdb2444ef469a1448689d3b/src/core/geminid.schema.ts#L213)
 
+
+`superposition` enables users to superpose multiple marks on top of each other.  
+`superpostion` is an array of objects, each object specifies one visual mark. This visual mark share the same property (e.g., `data`, `x`, `y`) of this track, unless these properies are redefined in the object.  
+
+```javascript
+{
+  "tracks": [
+    {
+      "data": ... , // specify data
+      "x": ...,
+      "y": ...,
+      "color":...,
+      "superpose": [
+        // point mark and line mark have the same data, x, y, color encoding
+        {
+          "mark": "line", 
+        },
+        {
+          "mark": "point", 
+          // specify the size of point mark
+          "size": {"field": "peak", "type": "quantitative", "range": [0, 6]} 
+        }
+      ]
+    }
+  ]
+}
+```
+
+Try it in the online editor  
+[example1: line+point](<https://sehilyi.github.io/geminid/?full=false&spec=(J'jtleXExample%3A%20Superposed%20TracksCJ'layoutXlinearCJ'arrangementB(J*'direcjonXverjcalCJ*'columnSizesB800%2CJ*'rowSizesB450J)%2CJ'tracksZJ*(9'dataB(9*'urlXhttps%3A%2F%2Fresgen.io%2Fapi%2Fv1%2Fjleset_info%2F%3Fd%3DUvVPeLHuRDiYA3qwFlm7xQWIjleset'9M'metadataB(9*Ihiglass-muljvecW'rowBGW'columnXposijonW'valueXpeakW'categoriesZ~1O~2O~3O~4'%5D9M'superposeZ9*('markXline'M*(9**'markXpointW*'sizeKO'rangeZ0%2C%206%5D)9*)9%5D%2C9'xB(9*bXposijonWIgenomicW'domainB('chromosomeX1O'intervalZ1%2C%203000500%5DM*'axisXtop'9M'yK'M'rowNM'colorN)J*)J%5D%0A)*%20%209J**B!%20C'%2CG'sampleI'typeXJ%0A*KB(bXpeakOIquanjtajveM)%2C9NB(bBGOInominal'OC%20WC9*XB'ZB%5Bb'fieldjti~G%20%01~jbZXWONMKJIGCB9*_>)
+
+[example2: bar+point](<https://sehilyi.github.io/geminid/?full=false&spec=(%0A*'titleG'Example%3A%20Superposed%20Tracks'%25*'layoutG'linear'%25*'arrangementG(%0AQ'directionG'vertical'%25Q'columnSizesG800%25Q'rowSizesG200%0A*)%25*'tracksY%0A*%20%0AQ(C'dataG(C*'urlG'https%3A%2F%2Fcgap-higlass.com%2Fapi%2Fv1%2Ftileset_info%2F%3Fd%3Dclinvar_20200824_hg38'A%24tileset'CjmetadataG(C*%24higlass-bed'A'%3EFieldsYCQ%3B1%3Cstart')A*%3B2%3Cend')CqA'valueFieldsY%3B7%3CIZO)%5DCjsuperposeYC*%5Ebar'A*'strokeG(CQ*XIAQOAQ~YC%7BHQ'HQRQ*'JQV%2FJ%40CQ*KQKQKQ%2BQMAQMAQMCQqCQ)A*'strokeWidth%220.5)%601)C*)A%5Epoint'%605)A*'colorG(CQ*XIAQOAQ~YC%7BHQ'HQRQ*'JQV%2FJ%40CQ*KQKQKQ%2BQMAQMAQMCQqAQ'legendGtrueCQ)C*)C%5D%2CC'xG(C*Xstart'A%24%3E'A~G('chromosomeG'3')A'axisG'top'CjxeG(Xend'Z%24%3E'jyG(C*XIAOA~YC*N'AN%2FH'HR*'JV%2FJV'CqA'baselineGR%26150Z20%5DA'gridGtrueCjcolorG(C*XIAOA~YC*N'AN%2FH'HR*'JV%2FJV'CqA%26C*KKK%2BMAMAMCqCjopacity%220.6)%0AQ)%0Aq%0A)*%20%20A%2CC*C%0AQ*G!%20HLikely_pathogenic'A*Isignificance'JLikely_benign'A*K*'%23D45E00'AM*'%23029F73'N*'PathogenicO%24nominal'Q**R'Uncertain_IAV'BenignX'fieldG'YG%5BZ%2C%20j)%2CC'q*%5D~'domain%22G('valueG%24'typeG'%25%2C%0A%26'rangeY%2B*'black'A%3B('indexG%3CZ'nameG'%3Egenomic%40QV'CQqAQ%26%5E(CQ'markG'%60A*'size%22%7BQ*N'AQN%2F%01%7B%60%5E%40%3E%3C%3B%2B%26%25%24%22~qjZYXVRQONMKJIHGCA*_>)
+
+[example3: text+rect+triangle](<https://sehilyi.github.io/geminid/?full=false&spec=(V'titleK'Example%3A%20Superposed%20Tracks'_'layoutK'linear'_'arrangementK(V*'directionK'vertical'_*'columnSizesK800_*'rowSizesK80V)_'tracksK%5BV*(VXdataK(J'urlK'https%3A%2F%2Fraw.githubusercontent.com%2Fsehilyi%2Fgemini-datasets%2Fmaster%2Fdata%2FUCSC.HG38.Human.CytoBandIdeogram.csv'Q'typeK'csv'Q'c%3CFieldK'C%3C'Q'genomicFieldsK%5B'%60LchromEnd'%5DV**)_XsuperposeK%5BJ%7Dtext'QRMtrue)~textK('YNameL%25)Q*'%3BX%25QXZ%22'%40L%40L%40L%40LwhiteL%40'~visibilityK(JXoperationK'less-than'QXconditionK('widthK'%7Cxe-x%7CLtransitionPaddingK10)QXtargetK'mark'J*)Q*'styleK('textS%7BK0%26rect'QRMtrue)~%3BX%25QXZ%22J*Xwhite%3DD9D9D9%3D979797%3D636363'Q*X%40%3DA0A0F2'J**%5DJ*%5E-r'QRJ***M%24'q%3F~%2B%5E-l'QRJ***M%24'p%3F~%2B)J)V**%5D_XxK(J'Y%60'Q'%3EQ'domainK('c%3CK'1')Q'axisK'top'V**)_XxeK('YchromEndL%3E)_Xsizej20)_Xstrokej'gray')_Xs%7Bj0.5)_XstyleK('outlineK'white')V*)V%5D%0A)*%20%20JV***K!%20L'%2C%20'M('YStainLoneOfK%5B'acen'%5D%2C%20'notKQ%2CJR*'dataTransformK(JXfilterK%5BV%0A*X**'YfieldK'ZdomainK%5B'gnegLgpos25Lgpos50Lgpos75Lg_%2CVjK('valueK~%5DJ*)Q*'%22pos100Lgvar'%5DQXrangeK%5B%24false)Q***('YNameLincludeK%25typeK'nominal'%26)J)Q%7D%2Bcolorj'%23B40101'%3BcolorK(JXYStain'Q%3Chromosome%3D'Q*X%23%3EtypeK'genomic'%3FLnotKfalse)J**%40black%5E%26triangle%60chromStart%7BtrokeWidth%7D(J*'markK'%01%7D%7B%60%5E%40%3F%3E%3D%3C%3B%2B%26%25%24%22~j_ZYXVRQMLKJ*_>)
+
+
+
+
 ## Style
 
-`style` specifies the visual appearances of a track that are not bound with data fields.
+`style` specifies the visual appearances of a track that are not binded with data fields.
 
 style properties | type | description
 -- | -- | --
