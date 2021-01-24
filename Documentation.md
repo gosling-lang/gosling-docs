@@ -1,5 +1,5 @@
 # Overview
-Geminid is a declarative visualization grammar tailored for interative genomic visualizations. In Geminid, users can create interactive visualizations through a JSON syntax. This documentation describes how to write the JSON specification language to create interactive visualizations.   You are welcome to try the [Geminid online edtior](https://gosling-lang.github.io/gosling.js/).
+Gosling is a declarative visualization grammar tailored for interative genomic visualizations. In Gosling, users can create interactive visualizations through a JSON syntax. This documentation describes how to write the JSON specification language to create interactive visualizations.   You are welcome to try the [Gosling online edtior](https://gosling-lang.github.io/gosling.js/).
 
   <!-- "title": "title of the visualizations",
   "subtitile": "subtitile of the visualizations",
@@ -9,7 +9,7 @@ Geminid is a declarative visualization grammar tailored for interative genomic v
   "static":  false -->
 
 ```javascript
-// Geminid generates visualizations through a JSON specification language
+// Gosling generates visualizations through a JSON specification language
 
 {
   // each track represent a single visualization
@@ -51,21 +51,21 @@ Geminid is a declarative visualization grammar tailored for interative genomic v
     - [CSV](#csv)
   - [Data Transform](#data-transform)
 - [Mark](#mark)
-  - [Type](#types-of-mark)
-    - [point](#point)
-    - [line](#line)
-    - [area](#area)
-    - [bar](#bar)
-    - [rect](#rect)
-    - [text](#text)
-    - [link](#link)
-    - [triangle](#triangle)
-  - [Visual Channel](#visual-channels-of-mark)
+  - [Types of Mark](#types-of-mark)
+    - [Point](#point)
+    - [Line](#line)
+    - [Area](#area)
+    - [Bar](#bar)
+    - [Rect](#rect)
+    - [Text](#text)
+    - [Link](#link)
+    - [Triangle](#triangle)
+  - [Visual Channels of Mark](#visual-channels-of-mark)
     - [x](#x)
     - [xe](#xe)
     - [y](#y)
     - [ye](#ye)
-    - [x1, x1e, y1, y1e](#x1-x1e-y1-y1e)
+    - [x1 x1e y1 y1e](#x1-x1e-y1-y1e)
     - [row](#row)
     - [size](#size)
     - [text](#text-1)
@@ -140,7 +140,7 @@ Geminid is a declarative visualization grammar tailored for interative genomic v
 # Mark
 [source code](https://github.com/gosling-lang/gosling.jstree/master/src/core/mark)
 
-Marks (e.g., points, lines, and bars) are the basic graphical elements of a visualization (we call one visualization a `track` in Geminid).
+Marks (e.g., points, lines, and bars) are the basic graphical elements of a visualization (we call one visualization a `track` in Gosling).
 The core of constructing a visualization is to bind selected **data fields** to the **visual channels** (e.g., size, color, and position) of a chosen **mark type**.
 
 ## Types of Mark
@@ -160,7 +160,7 @@ The `mark` property of a track is defined by a string that describes the mark ty
     ... // other visualization properties
 }
 ```
-Geminid supports the following primitive `mark` types: `point`, `line`, `area`, `bar`, `rect`, `text`, `link`, `rule`, `triangle`. Composite mark (i.e., glyph) is also supported through the [`superpose`](#superposition) property.
+Gosling supports the following primitive `mark` types: `point`, `line`, `area`, `bar`, `rect`, `text`, `link`, `rule`, `triangle`. Composite mark (i.e., glyph) is also supported through the [`superpose`](#superposition) property.
 
 
 ### Point
@@ -484,7 +484,7 @@ Overall, different marks have different visual channels, and different visual ch
 | [`triangle`](#triangle)| [`x`](#x), [`xe`](#xe), [`row`](#row), [`size`](#size), [`color`](#color), [`opacity`](#opacity) |
 | [`text`](#text)| [`x`](#x), [`xe`](#xe), [`row`](#row), [`color`](#color), [`opacity`](#opacity) |
 
-A visual channel can be either assigned a constant value or bound with a data field. When a visual channel is bound with a data field, Geminid creates a mapping from the values of the data field (**domain**, e.g., [12, 0, ..., 9]) to the values of the visual channel (**range**, e.g., height of a bar)
+A visual channel can be either assigned a constant value or bound with a data field. When a visual channel is bound with a data field, Gosling creates a mapping from the values of the data field (**domain**, e.g., [12, 0, ..., 9]) to the values of the visual channel (**range**, e.g., height of a bar)
 
 Table: Properties shared by all visual channels 
 | visual channel properties | type    | description |
@@ -574,10 +574,10 @@ Channel `color` specifies the filling color of the mark. Binding `color` with ca
 <!-- I didn't see the legend (when set legend: true) of color when {"type": "quantitative"} -->
 
 ### stroke
-Channel `stroke` defines the outline color of the mark. Geminid supports `stroke` in the following marks: `rect`, `area`, `point`, `bar`, `link`.
+Channel `stroke` defines the outline color of the mark. Gosling supports `stroke` in the following marks: `rect`, `area`, `point`, `bar`, `link`.
 
 ### strokeWidth
-Channel `strokeWidth` defines the outline thickness of the mark shape. Geminid supports `strokeWidth` in the following marks: `rect`, `area`, `point`, `bar`, `link`.
+Channel `strokeWidth` defines the outline thickness of the mark shape. Gosling supports `strokeWidth` in the following marks: `rect`, `area`, `point`, `bar`, `link`.
 
 ### opacity
 Channel `opacity` specifies the opacity of the mark shape.
@@ -606,7 +606,7 @@ only useful when `{"type": "circular"}`
 
 
 # Tracks
-In Geminid, we call one visualization a track. A Geminid configuration specifies an array of `tracks`.
+In Gosling, we call one visualization a track. A Gosling configuration specifies an array of `tracks`.
 
 ```javascript
 {
@@ -620,7 +620,7 @@ In Geminid, we call one visualization a track. A Geminid configuration specifies
 
 
 ## Layout
-[source code](https://github.com/gosling-lang/gosling.jsblob/00a7b5c6a95528dbabdb2444ef469a1448689d3b/src/core/geminid.schema.ts#L22)
+[source code](https://github.com/gosling-lang/gosling.jsblob/00a7b5c6a95528dbabdb2444ef469a1448689d3b/src/core/Gosling.schema.ts#L22)
 In each track, genomic coordinate can be represented in either a `circular` or `linear` layout.
 
 <img src="https://github.com/gosling-lang/gosling.js/wiki/images/linear_circular.png" alt="linear vs circular" width="600">    
@@ -658,7 +658,7 @@ or specify the layout of a certain track in each track definition.
 ## Arrangement
 
 ### Grid-based arrangement
-[source code](https://github.com/gosling-lang/gosling.jsblob/00a7b5c6a95528dbabdb2444ef469a1448689d3b/src/core/geminid.schema.ts#L20)  
+[source code](https://github.com/gosling-lang/gosling.jsblob/00a7b5c6a95528dbabdb2444ef469a1448689d3b/src/core/Gosling.schema.ts#L20)  
 specify the grid arrangement of multiple tracks
 
 | property                | type                        | description                                                                                                                                    |
@@ -675,7 +675,7 @@ specify the grid arrangement of multiple tracks
 <!-- is it possible that several tracks under one layout have different type (linear and circular) -->
 
 ### Superposition
-[source code](https://github.com/gosling-lang/gosling.jsblob/00a7b5c6a95528dbabdb2444ef469a1448689d3b/src/core/geminid.schema.ts#L213)
+[source code](https://github.com/gosling-lang/gosling.jsblob/00a7b5c6a95528dbabdb2444ef469a1448689d3b/src/core/Gosling.schema.ts#L213)
 
 
 `superposition` enables users to superpose multiple marks on top of each other.  
@@ -741,16 +741,16 @@ textFontWeight| string | support "bold", "normal"
 # Interactions
 
 ## Zooming and Panning
-[source code](https://github.com/gosling-lang/gosling.jsblob/00a7b5c6a95528dbabdb2444ef469a1448689d3b/src/core/geminid.schema.ts#L7)
+[source code](https://github.com/gosling-lang/gosling.jsblob/00a7b5c6a95528dbabdb2444ef469a1448689d3b/src/core/Gosling.schema.ts#L7)
 
-Each visualization in Geminid, by default, supports the Zooming and Panning interaction.
+Each visualization in Gosling, by default, supports the Zooming and Panning interaction.
 Users can zoom in/out a visualization using the scrolling up/down actions.
 Users can pan by clicking on the visualization and then drag it in the desired direction.
 
 
 
 ## Linking Views
-[source code](ttps://github.com/gosling-lang/gosling.jsblob/00a7b5c6a95528dbabdb2444ef469a1448689d3b/src/core/geminid.schema.ts#L328)
+[source code](ttps://github.com/gosling-lang/gosling.jsblob/00a7b5c6a95528dbabdb2444ef469a1448689d3b/src/core/Gosling.schema.ts#L328)
 
 When two tracks are linked, the zooming and panning performed in one track will be automatically applied to the linked track. 
 
@@ -823,7 +823,7 @@ Users can use **brushing** to select a subset of the data items using a recatang
 
 
 ## Semantic Zoom
-[source code](https://github.com/gosling-lang/gosling.jsblob/00a7b5c6a95528dbabdb2444ef469a1448689d3b/src/core/geminid.schema.ts#L203)
+[source code](https://github.com/gosling-lang/gosling.jsblob/00a7b5c6a95528dbabdb2444ef469a1448689d3b/src/core/Gosling.schema.ts#L203)
 
 ## Tooltip
-[source code](https://github.com/gosling-lang/gosling.jsblob/00a7b5c6a95528dbabdb2444ef469a1448689d3b/src/core/geminid.schema.ts#L168)
+[source code](https://github.com/gosling-lang/gosling.jsblob/00a7b5c6a95528dbabdb2444ef469a1448689d3b/src/core/Gosling.schema.ts#L168)
