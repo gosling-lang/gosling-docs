@@ -84,7 +84,6 @@ Gosling is a declarative visualization grammar tailored for interative genomic v
   - [Linking Views](#linking-views)
   - [Brushing and Linking](#brushing-and-linking)
   - [Semantic Zoom](#semantic-zoom)
-  - [Tooltip](#tooltip)
 
 # Data
 
@@ -164,7 +163,7 @@ Gosling supports the following primitive `mark` types: `point`, `line`, `area`, 
 
 
 ### Point
-[source code](https://github.com/gosling-lang/gosling.jsblob/master/src/core/mark/point.ts)
+[source code](https://github.com/gosling-lang/gosling.js/blob/master/src/core/mark/point.ts)
 
 The mark `point` represents one data point using a circular shape. Visual channels of the circle, such as radius, color, and vertical/horizontal position, are used to represent values of the data point. Popular charts such as scatter plots and bubble charts use `point` mark.
 
@@ -418,7 +417,7 @@ The `link` mark is designed to show connections between chromosomes using an arc
 ```
 
 ### Triangle
-[source code](https://github.com/gosling-lang/gosling.jsblob/master/src/core/mark/triangle.ts)  
+[source code](https://github.com/gosling-lang/gosling.js/blob/master/src/core/mark/triangle.ts)  
 Support three types of triangle marks: `triangle-l`, `triangle-r`, `triangle-d`
 
 [Try it in the online editor](<https://gosling-lang.github.io/gosling.js/?full=false&spec=>)
@@ -620,7 +619,7 @@ In Gosling, we call one visualization a track. A Gosling configuration specifies
 
 
 ## Layout
-[source code](https://github.com/gosling-lang/gosling.jsblob/00a7b5c6a95528dbabdb2444ef469a1448689d3b/src/core/Gosling.schema.ts#L22)
+[source code](https://github.com/gosling-lang/gosling.js/blob/43626eaf21417bf36128a405dceeaa6ee00d0851/src/core/Gosling.schema.ts#L22)
 In each track, genomic coordinate can be represented in either a `circular` or `linear` layout.
 
 <img src="https://github.com/gosling-lang/gosling.js/wiki/images/linear_circular.png" alt="linear vs circular" width="600">    
@@ -658,7 +657,7 @@ or specify the layout of a certain track in each track definition.
 ## Arrangement
 
 ### Grid-based arrangement
-[source code](https://github.com/gosling-lang/gosling.jsblob/00a7b5c6a95528dbabdb2444ef469a1448689d3b/src/core/Gosling.schema.ts#L20)  
+[source code](https://github.com/gosling-lang/gosling.js/blob/43626eaf21417bf36128a405dceeaa6ee00d0851/src/core/Gosling.schema.ts#L20)  
 specify the grid arrangement of multiple tracks
 
 | property                | type                        | description                                                                                                                                    |
@@ -675,7 +674,7 @@ specify the grid arrangement of multiple tracks
 <!-- is it possible that several tracks under one layout have different type (linear and circular) -->
 
 ### Superposition
-[source code](https://github.com/gosling-lang/gosling.jsblob/00a7b5c6a95528dbabdb2444ef469a1448689d3b/src/core/Gosling.schema.ts#L213)
+[source code](https://github.com/gosling-lang/gosling.js/blob/43626eaf21417bf36128a405dceeaa6ee00d0851/src/core/Gosling.schema.ts#L213)
 
 
 `superposition` enables users to superpose multiple marks on top of each other.  
@@ -741,7 +740,7 @@ textFontWeight| string | support "bold", "normal"
 # Interactions
 
 ## Zooming and Panning
-[source code](https://github.com/gosling-lang/gosling.jsblob/00a7b5c6a95528dbabdb2444ef469a1448689d3b/src/core/Gosling.schema.ts#L7)
+[source code](https://github.com/gosling-lang/gosling.js/blob/43626eaf21417bf36128a405dceeaa6ee00d0851/src/core/gosling.schema.ts#L7)
 
 Each visualization in Gosling, by default, supports the Zooming and Panning interaction.
 Users can zoom in/out a visualization using the scrolling up/down actions.
@@ -750,7 +749,7 @@ Users can pan by clicking on the visualization and then drag it in the desired d
 
 
 ## Linking Views
-[source code](ttps://github.com/gosling-lang/gosling.jsblob/00a7b5c6a95528dbabdb2444ef469a1448689d3b/src/core/Gosling.schema.ts#L328)
+[source code](ttps://github.com/gosling-lang/gosling.js/blob/43626eaf21417bf36128a405dceeaa6ee00d0851/src/core/Gosling.schema.ts#L328)
 
 When two tracks are linked, the zooming and panning performed in one track will be automatically applied to the linked track. 
 
@@ -823,7 +822,58 @@ Users can use **brushing** to select a subset of the data items using a recatang
 
 
 ## Semantic Zoom
-[source code](https://github.com/gosling-lang/gosling.jsblob/00a7b5c6a95528dbabdb2444ef469a1448689d3b/src/core/Gosling.schema.ts#L203)
+[source code](https://github.com/gosling-lang/gosling.js/blob/43626eaf21417bf36128a405dceeaa6ee00d0851/src/core/gosling.schema.ts#L278)
 
-## Tooltip
-[source code](https://github.com/gosling-lang/gosling.jsblob/00a7b5c6a95528dbabdb2444ef469a1448689d3b/src/core/Gosling.schema.ts#L168)
+Semantic zoom allows users to switch between different visualizations of the same data through zooming in/out. When zooming in, the same data will be represented in a different way in which more details are shown. 
+
+<img src="https://github.com/gosling-lang/gosling.js/wiki/images/semantic_zoom_0.png" alt="semantic_zoom_coarse" width="400">  
+
+<img src="https://github.com/gosling-lang/gosling.js/wiki/images/semantic_zoom_1.png" alt="semantic_zoom_fine" width="400">
+
+**Top**: only `bar` marks are represented; **Bottom:** text annotations are presented when zooming in.  
+
+[Try this example in the online editor](<https://gosling-lang.github.io/gosling.js/?full=false&spec=(N'titleXExample%3A%20Semantic%20Zooming'%2CN'arrangement6(NQdirecUXvertical'%2CNQcolumnSizes6800%2CNQrowSizes6180N)%2CN'tracks~N*(5'data6(5QurlXhttps%3A%2F%2Fresgen.io%2Fapi%2Fv1%2Ftileset_info%2F%3Fd%3DWipsnEDMStahGPpRfH9adA'7'Ktileset'5)Ymetadata6(5QKhiglass-multivec'7'rowXbase'7'columnXposiU'7'valueXcount'7'categories%25startXstart'7'endXend'5)Ysuperpose~5*('markXbarBV)7(5*QmarkXbar'7QV7Qs%2B('value61)7QstrokeL%3Bgtet%22620%26'%2410)7j7(5*QdataTransform6(5**Qfilter~(JcountBoneOf~0%5D%26'not6true)%5D5**)7QmarkXtext'7Qx6(5***Jstart'7*Q%237*Qdomain6I7*Q%3C**)7Qxe6(JendB%23)7QcolorL%3Bless-than%22X%7Cxe-x%7CB%2430)7j5%5DYx6(5*JposiU'7'%237'domain6I7'%3C)Ycolor6(5*Jbase'7'Knominal'7'domain%25legend6true5)Ytext6(JbaseBKnominal')Ystyle6(5QtextFontSize6247'textS%2B07'textFontWeightXbold'5)N*)N%5D%0A)*%20%205N**6!%207%2C5*B'%26'I('chromosomeX1Binterval~3000000%263000010%5D)J'fieldXKtypeXL6('valueXwhite')7Qvisibility6(N%0A*Q*'UtionVy6(JcountBKquantitative')X6'Y%2C5'j*QtargetXmark'5**)5*)~6%5B%22'7*QcondiU6('width%23Kgenomic'%24transiUPadding6%25~'ABTBGBC'%5D7'%26%2C%20%2BtrokeWidth6%3B5**QoperaUX%3CaxisXtop'5%01%3C%3B%2B%26%25%24%23%22~jYXVUQNLKJIB765*_>)
+
+Semantic zoom through `superpose` and `visibility`.
+[`superpose`](#superposition) overlaps multiple marks on top of one other, thus allowing users to create different visualizations for the same data.
+`visibility` controls the visibility of visual marks, thus allowing the switch between different visualizations based on the zoom level.
+
+`visibility` is an object with three properties:
+| properties  | type  | description|   
+|---|---|---|
+| operation |  string | specify the logical operation <br/> > :"greater-than", "gt", "GT",<br/> < : "less-than", "lt", "LT", <br/> ≥ : "greater-than-or-equal-to", "gtet", "GTET"), <br/> ≤ : "less-than-or-equal-to", "ltet", "LTET"  |
+| condition| object |  |
+|target| string| support "track" \| "mark" \| "glyph" |
+
+ width?: number | '|xe-x|';
+        height?: number;
+        zoomLevel?: number;
+        conditionPadding?: number; // buffer px size of width or height for calculating the condition
+        transitionPadding?: number; //
+
+```javascript
+{
+  "tracks":[{
+    "data":...,
+    "x": ...,
+    "y": ...,
+    // superpose overlaps bar marks and text marks for the same data
+    "superpose":[
+      //normal bar marks
+      {"mark": "bar"},
+      //text marks only shows when its width is larger than 20px
+      {
+        "mark": "text",
+        "visibility": {
+          "operation": "greater-than",
+          "condition": {"width": 20},
+          "target": "mark"
+        }  
+      }
+    ]
+  }]
+}
+```
+
+<!-- ## Tooltip
+[source code](https://github.com/gosling-lang/gosling.js/blob/43626eaf21417bf36128a405dceeaa6ee00d0851/src/core/Gosling.schema.ts#L168) -->
