@@ -678,6 +678,10 @@ or specify the layout of a certain track in each track definition.
       },
       {
         "layout": "circular",
+        "outerRadius": 260;
+        "innerRadius": 100;
+        "startAngle": 180; // [0, 360]
+        "endAngle": 360; // [0, 360]
         ...
       },
       ...
@@ -685,6 +689,15 @@ or specify the layout of a certain track in each track definition.
     ...//
 }
 ```
+
+For `circular` layout, users can specify more details about the layout using the following properites
+| property | type | description |
+|--|--|--|
+|outerRadius| number | default = min(track.width, track.height) / 2|
+|innerRadius| number | default = max(outerRadius - 80, 0)|
+|startAngle| number | default = 0|
+|endAngle| number | default = 360|
+
 
 ## Arrangement
 
