@@ -135,9 +135,41 @@ Gosling is a declarative visualization grammar tailored for interative genomic v
 ### CSV
 
 ## Data Transform
+Gosling supports data transform by applying a set of filters to the input data.  
+Only data points that pass the tests in all filters will be visualized.  
+
+
+```javascript
+{
+  "tracks":[{
+    "data": ...,
+    // only use data whose type is 'gene' and whose strand is NOT '+' 
+    "dataTransform": {
+      filter: [
+          { field: 'type', oneOf: ['gene'], not: false },
+          { field: 'strand', oneOf: ['+'], not: true }
+      ]
+  },
+    "mark": "rect",
+    ...,
+  }]
+}
+```
+
+Users can apply three types of filters: `oneOf`, `inRange`, `include`.
+One filter has the following properties:
+| property|type |description |
+|--|--|--|
+|field|string| **required**, a filter is applied based on the values of the specified data field |
+|inRange| number[] | check whether the value is in a number range |
+|oneOf| string[] \| number[] | check whether the value is an element in the provided list |
+|include| string | check whether the value includes a substring|
+|not| boolean| **required**, specify whether to apply a NOT logical operation to the filter test |
+
+
 
 # Mark
-[source code](https://github.com/gosling-lang/gosling.jstree/master/src/core/mark)
+[source code](https://github.com/gosling-lang/gosling.js/blob/master/src/core/mark)
 
 Marks (e.g., points, lines, and bars) are the basic graphical elements of a visualization (we call one visualization a `track` in Gosling).
 The core of constructing a visualization is to bind selected **data fields** to the **visual channels** (e.g., size, color, and position) of a chosen **mark type**.
