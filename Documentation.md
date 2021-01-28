@@ -146,7 +146,7 @@ Only data points that pass the tests in all filters will be visualized.
     // only use data whose type is 'gene' and whose strand is NOT '+' 
     "dataTransform": {
       filter: [
-          { field: 'type', oneOf: ['gene'], not: false },
+          { field: 'type', oneOf: ['gene'] },
           { field: 'strand', oneOf: ['+'], not: true }
       ]
   },
@@ -164,7 +164,7 @@ One filter has the following properties:
 |inRange| number[] | check whether the value is in a number range |
 |oneOf| string[] \| number[] | check whether the value is an element in the provided list |
 |include| string | check whether the value includes a substring|
-|not| boolean| **required**, specify whether to apply a NOT logical operation to the filter test |
+|not| boolean| when `not = true`, apply a NOT logical operation to the filter test. default = false |
 
 
 
