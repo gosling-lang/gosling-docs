@@ -1,12 +1,7 @@
 # Overview
-Gosling is a declarative visualization grammar tailored for interactive genomic visualizations. In Gosling, users can create interactive visualizations through a JSON syntax. This documentation describes how to write the JSON specification language to create interactive visualizations.   You are welcome to try the [Gosling online editor](https://gosling-lang.github.io/gosling.js/).
+Gosling is a declarative visualization grammar tailored for interactive genomic visualizations. In Gosling, users can create interactive visualizations through a JSON syntax. This documentation describes how to write the JSON specification language to create interactive visualizations.   
+You are welcome to try the [Gosling online editor](https://gosling-lang.github.io/gosling.js/).
 
-  <!-- "title": "title of the visualizations",
-  "subtitile": "subtitile of the visualizations",
-  "description": "a detailed description of the visualizations",
-  "width": 800,
-  "height": 200,
-  "static":  false -->
 
 ```javascript
 // Gosling generates visualizations through a JSON specification language
@@ -39,14 +34,12 @@ Gosling is a declarative visualization grammar tailored for interactive genomic 
 
 # List of Contents
 
-
 - [Overview](#overview)
 - [List of Contents](#list-of-contents)
 - [Data](#data)
   - [Supported Data Formats](#supported-data-formats)
     - [Multivec (HiGlass)](#multivec-higlass)
     - [BED (HiGlass)](#bed-higlass)
-    - [BED](#bed)
     - [Vector (HiGlass)](#vector-higlass)
     - [CSV](#csv)
   - [Data Transform](#data-transform)
@@ -83,7 +76,7 @@ Gosling is a declarative visualization grammar tailored for interactive genomic 
   - [Zooming and Panning](#zooming-and-panning)
   - [Linking Views](#linking-views)
   - [Brushing and Linking](#brushing-and-linking)
-  - [Semantic Zoom](#semantic-zoom)
+  - [Semantic Zooming](#semantic-zooming)
 
 # Data
 
@@ -130,12 +123,12 @@ Gosling is a declarative visualization grammar tailored for interactive genomic 
 },
 ...
 ```
-### BED
+
 ### Vector (HiGlass)
 ### CSV
 
 ## Data Transform
-Gosling supports data transform by applying a set of filters to the input data.  
+Gosling supports data transform through a set of data filters.  
 Only data points that pass the tests in all filters will be visualized.  
 
 
@@ -787,10 +780,28 @@ textFontWeight| string | support "bold", "normal"
 ## Zooming and Panning
 [source code](https://github.com/gosling-lang/gosling.js/blob/43626eaf21417bf36128a405dceeaa6ee00d0851/src/core/gosling.schema.ts#L7)
 
-Each visualization in Gosling, by default, supports the Zooming and Panning interaction.
+Each visualization in Gosling supports the Zooming and Panning interaction.
 Users can zoom in/out a visualization using the scrolling up/down actions.
 Users can pan by clicking on the visualization and then drag it in the desired direction.
 
+Zooming and panning are controlled through the `static` property, which has a default value of `false`.
+When `static = true`, zooming is disabled.
+Users can set the zooming of all tracks at the root level or specifiy the zooming of each track in the track definition. 
+```javascript
+{
+  "static": true, //disable the zooming of all tracks
+  "tracks": [
+    {
+      "static": false, // enable the zooming of this track
+      ...
+    },
+    {
+      ...
+    },
+    ...
+  ]
+}
+```
 
 
 ## Linking Views
@@ -866,7 +877,7 @@ Users can use **brushing** to select a subset of the data items using a rectangl
 ```
 
 
-## Semantic Zoom
+## Semantic Zooming
 [source code](https://github.com/gosling-lang/gosling.js/blob/43626eaf21417bf36128a405dceeaa6ee00d0851/src/core/gosling.schema.ts#L278)
 
 Semantic zoom allows users to switch between different visualizations of the same data through zooming in/out. When zooming in, the same data will be represented in a different way in which more details are shown. 
