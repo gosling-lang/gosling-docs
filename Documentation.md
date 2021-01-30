@@ -1,5 +1,5 @@
 # Overview
-Gosling is a declarative visualization grammar tailored for interative genomic visualizations. In Gosling, users can create interactive visualizations through a JSON syntax. This documentation describes how to write the JSON specification language to create interactive visualizations.   You are welcome to try the [Gosling online edtior](https://gosling-lang.github.io/gosling.js/).
+Gosling is a declarative visualization grammar tailored for interactive genomic visualizations. In Gosling, users can create interactive visualizations through a JSON syntax. This documentation describes how to write the JSON specification language to create interactive visualizations.   You are welcome to try the [Gosling online editor](https://gosling-lang.github.io/gosling.js/).
 
   <!-- "title": "title of the visualizations",
   "subtitile": "subtitile of the visualizations",
@@ -327,7 +327,7 @@ The `bar` mark is designed for drawing bar charts. Each bar shows the value of o
 ```
 
 ### Rect
-The `rect` mark is designed for representing genomic intervals using reactangular shapes. Left and right edge of the rectangle indicate the start and end genomic positions, respectively.
+The `rect` mark is designed for representing genomic intervals using rectangular shapes. Left and right edge of the rectangle indicate the start and end genomic positions, respectively.
 
 <img src="https://github.com/gosling-lang/gosling.js/wiki/images/rect_example.png" width="800" alt="rect_example">  
 
@@ -422,7 +422,7 @@ The `link` mark is designed to show connections between chromosomes using an arc
 
         // bind visual channels to corresponding data fields
 
-        // x and xe indiates the start point of the arc  
+        // x and xe indicates the start point of the arc  
         "x": {
           "field": "s1",
           "type": "genomic",
@@ -431,7 +431,7 @@ The `link` mark is designed to show connections between chromosomes using an arc
         },
         "xe": {"field": "e1", "type": "genomic"},
 
-        // x and xe indiates the end point of the arc  
+        // x and xe indicates the end point of the arc  
         "x1": {
           "field": "s2",
           "type": "genomic",
@@ -539,7 +539,7 @@ Table: Properties shared by all visual channels
 `y` specify a mark's position in the vertical direction.
 
 ### ye
-`ye` stands for the end of y axis. `ye` is usually used with `x` to specify the sstart position and the end position of a visual mark in the vertical direction, respectively.
+`ye` stands for the end of y axis. `ye` is usually used with `x` to specify the start position and the end position of a visual mark in the vertical direction, respectively.
 
 ### x1 x1e y1 y1e
 The four channels are used together only in `link` mark. In this case, `x` and `xe` are used with `x1` and `x1e` to specify a pair of genomic intervals that needs to be connected using band representations. Similarly, `y` and `ye` can be used with `y1` and `y1e` to show band connection along vertical axis.
@@ -690,7 +690,7 @@ or specify the layout of a certain track in each track definition.
 }
 ```
 
-For `circular` layout, users can specify more details about the layout using the following properites
+For `circular` layout, users can specify more details about the layout using the following properties
 | property | type | description |
 |--|--|--|
 |outerRadius| number | default = min(track.width, track.height) / 2|
@@ -723,7 +723,7 @@ specify the grid arrangement of multiple tracks
 
 
 `superposition` enables users to superpose multiple marks on top of each other.  
-`superpostion` is an array of objects, each object specifies one visual mark. This visual mark inherit the properties (e.g., `data`, `x`, `y`) defined in this track, unless these properies are redefined in the object.  
+`superposition` is an array of objects, each object specifies one visual mark. Each visual mark inherits the properties (e.g., `data`, `x`, `y`) defined in this track, unless these properties are redefined in this object.  
 
 ```javascript
 {
@@ -828,7 +828,7 @@ Users can link two tracks by assigning the same `linkingID` to the `x` channel o
 ```
 
 ## Brushing and Linking
-Users can use **brushing** to select a subset of the data items using a recatangle. User can modify the left and right edge of the rectangle to modify the selection. The selected data items can be linked to data items in another track.
+Users can use **brushing** to select a subset of the data items using a rectangle. Users can modify the left and right edge of the rectangle to modify the selection. The selected data items can be linked to data items in another track.
 
 [Try it in the online editor](<https://gosling-lang.github.io/gosling.js/?full=false&spec=(W'title~Example%3A%20Brushing%20and%20Linking'%2CW'layout~linear'%2CW'arrangement5('direction~vertical'O'columnSizes5800O'rowSizes5200ZW'tracks5%5B%229uRN*JXM%23G%24MK1'%25*Z*C**%2F%2F%20create%20a%20rectangle%20brush*'superpose5%5B*4()O%2F%2F%20this%20dummy%20object%20cannot%20be%20removed*4('mark~rect-brush'O*4'x5('T)6color5('value!'steelBlue')*4)*%5DW4Z%229uRN*JXM%23G%24MK1'O'interval5%5B200000000O220000000%5D%256T*Z*C*'opacity!('value51)W4)W%5D%0A)*W444%20%205!%206%2C*4'9'https%3A%2F%2Fresgen.io%2Fapi%2Fv1%2Ftileset_info%2F%3Fd%3DUvVPeLHC'y5('field~peak'O'type~quantitative'ZGories5%5B'sample%201'%5D*Z*'mark~line'%2CJ'metadata5(*4'type~higlass-multivec'Ktype~genomic'6domain5('chromosome~M~position'6NDiYA3qwFlm7xQ'6type~tileset'*ZO%2C%20TlinkingID~linking-with-brush'W%0A4X6row~sample'6columnZ)%2C~5'%22W4(*'data5(*4'url5%23value~peak'6categ%24*'x5(*4'field%25)6axis~top'%01%25%24%23%22~ZXWTONMKJGC9654*_>)
 
@@ -903,7 +903,7 @@ Semantic zoom through `superpose` and `visibility`.
 
 The `visibility` of corresponding marks are decided by whether the `measure` of `target` and the `threshold` satisfy the `operation`.
 
-For example, in the code below, text marks only show when the width (`measure`) of mark (`target`) is great-than (`peration`) 20 (`threshold`).
+For example, in the code below, text marks only show when the width (`measure`) of the mark (`target`) is great-than (`operation`) 20 (`threshold`).
 
 ```javascript
 {
