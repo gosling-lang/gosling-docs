@@ -785,14 +785,14 @@ Users can zoom in/out a visualization using the scrolling up/down actions.
 Users can pan by clicking on the visualization and then drag it in the desired direction.
 
 Zooming and panning are controlled through the `static` property, which has a default value of `false`.
-When `static = true`, zooming is disabled.
-Users can set the zooming of all tracks at the root level or specifiy the zooming of each track in the track definition. 
+When `static = true`, zooming and panning are disabled.
+Users can set the `static` property of all tracks at the root level or specify it in a single track definition. 
 ```javascript
 {
-  "static": true, //disable the zooming of all tracks
+  "static": true, //disable zoom & pan for all tracks
   "tracks": [
     {
-      "static": false, // enable the zooming of this track
+      "static": false, // enable zoom & pan for this track
       ...
     },
     {
