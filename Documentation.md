@@ -520,6 +520,7 @@ Table: Properties shared by all visual channels
 | range                 |   [number, number]\| string[]      |   specify values of the visual channel     |
 | value | string \| number| assign a constant value to the visual channel |
 
+<!-- [TODO: more details about domain & range] -->
 
 ### x
 `x` specify a mark's position in the horizontal direction.
@@ -609,24 +610,13 @@ Channel `opacity` specifies the opacity of the mark shape.
 
 
 
-
+<!-- TODO: explain unique properties of certain visual channels -->
 properties that are only used by certain visual channels 
 | visual channel properties | type    | supported in channels | description |
 | --------------------- | ------- | ---------- | ---|
 | axis                  | string  |`x`, `y` | specify the position of the axis. Support `"none"`, `"top"`, `"bottom"`, `"left"`, `"right"` |
-| baseline              |         |         |
-| legend | | |
+| legend | boolean | color | whether to show the legend |
 
-<!-- ### superpose
-overlay another track on the original track. 
-Superpose share the same options as the original track unless it is specified.
-
----
-
-only useful when `{"type": "circular"}`
-
-### innerRadius
-### outerRadius -->
 
 
 # Tracks
@@ -773,6 +763,8 @@ textStroke | string |
 textStrokeWidth | number |
 textFontWeight| string | support "bold", "normal"
 
+<!-- TODO: add channel.flip, channel.grid and other properties  -->
+
 
 
 # Interactions
@@ -882,9 +874,9 @@ Users can use **brushing** to select a subset of the data items using a rectangl
 
 Semantic zoom allows users to switch between different visualizations of the same data through zooming in/out. When zooming in, the same data will be represented in a different way in which more details are shown. 
 
-<img src="https://github.com/gosling-lang/gosling.js/wiki/images/semantic_zoom_0.png" alt="semantic_zoom_coarse" width="400">  
+<img src="https://github.com/gosling-lang/gosling.js/wiki/images/semantic_zoom_0.png" alt="semantic_zoom_coarse" width="700">  
 
-<img src="https://github.com/gosling-lang/gosling.js/wiki/images/semantic_zoom_1.png" alt="semantic_zoom_fine" width="400">
+<img src="https://github.com/gosling-lang/gosling.js/wiki/images/semantic_zoom_1.png" alt="semantic_zoom_fine" width="700">
 
 **Top**: only `bar` marks are represented; **Bottom:** `text` marks are presented when zooming in.  
 
