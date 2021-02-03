@@ -38,10 +38,11 @@ You are welcome to try the [Gosling online editor](https://gosling-lang.github.i
 - [List of Contents](#list-of-contents)
 - [Data](#data)
   - [Supported Data Formats](#supported-data-formats)
+    - [CSV](#csv)
+    - [JSON](#json)
     - [Multivec (HiGlass)](#multivec-higlass)
     - [BED (HiGlass)](#bed-higlass)
     - [Vector (HiGlass)](#vector-higlass)
-    - [CSV](#csv)
   - [Data Transform](#data-transform)
 - [Mark](#mark)
   - [Types of Mark](#types-of-mark)
@@ -80,9 +81,55 @@ You are welcome to try the [Gosling online editor](https://gosling-lang.github.i
 
 # Data
 
+Users can specify the data of each visualization (i.e., `track`) through `track.data`.
+```javascript
+{
+  "tracks":[{
+    "data": {...}, // specify the data used in this visualization
+    "mark": "rect",
+    "color": ...,
+    ...
+  }]
+}
+```
+
+properties of `track.data`
+
+| property | type | description |
+| --- | --- | --- |
+| type | string | `"csv"` for CSV files <br/> `"json"` for JSON files <br/> `"tileset"` for Multivec, BED, and vector files |
+| url | string | specify the URL address of the data file |
+| sampleLength | number | specify the number of rows loaded from the url. default=1000|
+| quantitativeFields | string[] | |
+| chromosomeField | string | |
+| genomicFields | string[] | |
+
+
 ## Supported Data Formats
 
+Currently, Gosling supports five types of data formats: [CSV](#csv), JSON(#json), [Multivec](#multivec-higlass), [BED](#bed-higlass), [#vector](#vector-higlass).
+Apart from the `data` object, `metaData` configuration is required to process and visualize Multivec, BED, or Vector file.
+
+
+### CSV
+### JSON
+
+
+
+| property | type | description |
+| --- | --- | --- |
+| type | string | support "csv", "json", "higlass-bed", "higlass-vector", "higlass-multivec" |
+| url | string | |
+| sampleLength | number | specify the number of rows loaded from the url. default=1000|
+| quantitativeFields | string[] | |
+| chromosomeField | string | |
+| genomicFields | string[] | |
+| values | object[] | only supported when `type=json`. |
+
+
+
 ### Multivec (HiGlass)
+To visualize muiltivec file, a `metadata` configuration is required
 
 ```json
 ...
@@ -125,7 +172,7 @@ You are welcome to try the [Gosling online editor](https://gosling-lang.github.i
 ```
 
 ### Vector (HiGlass)
-### CSV
+
 
 ## Data Transform
 Gosling supports data transform through a set of data filters.  
@@ -443,7 +490,8 @@ The `link` mark is designed to show connections between chromosomes using an arc
 
 ### Triangle
 [source code](https://github.com/gosling-lang/gosling.js/blob/master/src/core/mark/triangle.ts)  
-Support three types of triangle marks: `triangle-l`, `triangle-r`, `triangle-d`
+
+Gosling supports three types of triangle marks: `triangle-l`, `triangle-r`, `triangle-d`
 
 [Try it in the online editor](<https://gosling-lang.github.io/gosling.js/?full=false&spec=>)
 
@@ -468,8 +516,7 @@ The visual appearance of a mark is controlled by a set of visual channels (e.g.,
       // visual channel x is bound with the data field genomic
       "x": {
         "field": "position",
-        "type": "genomic",
-        "axis": "top"
+        "type": "genomic"
       },
       // visual channel y is bound with the data field peak
       "y": {
@@ -484,18 +531,7 @@ The visual appearance of a mark is controlled by a set of visual channels (e.g.,
 ```
 
 
-Overall, different marks have different visual channels, and different visual channels have different properties.
-
-<!-- 
-| mark type | [`x`](#x)|[`xe`](#xe)| [`y`](#y)|[`ye`](#ye)|  [`size`](#size)| [`row`](#row)| 
-|----| ----|---|---|---|--|--|---|
-| [`point`](#point) | | | radius of the point |
-| [`line`](#line) | | | |
-| [`rect`](#rect)| position of the left edge | - |
-| [`bar`](#bar)| | height of the bar | |
-| [`area`](#area)| | |  | 
--->
-
+As the table shown below, different marks have different visual channels.
 
 | mark type |supported visual channels| 
 |----| ----|
@@ -508,9 +544,10 @@ Overall, different marks have different visual channels, and different visual ch
 | [`triangle`](#triangle)| [`x`](#x), [`xe`](#xe), [`row`](#row), [`size`](#size), [`color`](#color), [`opacity`](#opacity) |
 | [`text`](#text)| [`x`](#x), [`xe`](#xe), [`row`](#row), [`color`](#color), [`opacity`](#opacity) |
 
-A visual channel can be either assigned a constant value or bound with a data field. When a visual channel is bound with a data field, Gosling creates a mapping from the values of the data field (**domain**, e.g., [12, 0, ..., 9]) to the values of the visual channel (**range**, e.g., height of a bar)
+A visual channel can be either assigned a constant value or bound with a data field. When a visual channel is bound with a data field, Gosling creates a mapping from the values of the data field (e.g., [gnes, gpos25, gpos50, ...]) to the values of the visual channel (e.g., position of a bar). We call the values of data field **domain** and the values of the visual channel **range**.
 
-Table: Properties shared by all visual channels 
+**Table: Properties shared by all visual channels**
+
 | visual channel properties | type    | description |
 | --------------------- | ------- | ---------- |
 | field                 | string  | specify name of the data field |
@@ -520,17 +557,53 @@ Table: Properties shared by all visual channels
 | range                 |   [number, number]\| string[]      |   specify values of the visual channel     |
 | value | string \| number| assign a constant value to the visual channel |
 
-<!-- [TODO: more details about domain & range] -->
+
+
+For example, the code below creates a mapping from the data `field` "Stain" to the color of the `rect` mark. 
+"gneg" will show as a white rect mark, "gpos100" will show as a black rect mark.
+```javascript
+{
+  "tracks": [{
+    "mark": "rect",
+    "color": {
+      "field": "Stain",
+      "type": "nominal",
+      "domain": ["gneg", "gpos25", "gpos50", "gpos75", "gpos100", "gvar"],
+      "range": ["white", "#D9D9D9", "#979797", "#636363", "black", "#A0A0F2"]
+    },
+    ... // other visual channels
+  }]
+}
+```
 
 ### x
 `x` specify a mark's position in the horizontal direction.
+
+Apart from the properties shared by all channels, `x` channel have the following unique properties:
+| unique properties | type    | description |
+|--- | --- | --- |
+| aggregate | string | support "max", "min", "count", "mean", "bin" |
+| axis | string | specify the axis position, support "none", "top", "bottom", "left", "right" |
+| linkingID | string | a unique linkingID is needed for [linking views](#linking-views) and [Brushing and Linking](#brushing-and-linking) |
 
 
 ### xe
 `xe` stands for the end of x axis. `xe` is usually used with `x` to specify the start position and the end position of a visual mark in the horizontal direction, respectively.
 
+Apart from the properties shared by all channels, `xe` channel have the following unique properties:
+| unique properties | type    | description |
+|--- | --- | --- |
+| aggregate | string | support "max", "min", "count", "mean", "bin" |
+| axis | string | specify the axis position, support "none", "top", "bottom", "left", "right" |
+
 ### y
 `y` specify a mark's position in the vertical direction.
+
+Apart from the properties shared by all channels, `y` channel have the following unique properties:
+| unique properties | type    | description |
+|--- | --- | --- |
+| axis | string | specify the axis position, support "none", "top", "bottom", "left", "right" |
+| baseline |string \| number | |
 
 ### ye
 `ye` stands for the end of y axis. `ye` is usually used with `x` to specify the start position and the end position of a visual mark in the vertical direction, respectively.
@@ -539,6 +612,8 @@ Table: Properties shared by all visual channels
 The four channels are used together only in `link` mark. In this case, `x` and `xe` are used with `x1` and `x1e` to specify a pair of genomic intervals that needs to be connected using band representations. Similarly, `y` and `ye` can be used with `y1` and `y1e` to show band connection along vertical axis.
 
 <img src="https://github.com/gosling-lang/gosling.js/wiki/images/x_x1_example.png" width="400" alt="x x1 example">  
+
+
 
 ### row
 
@@ -596,7 +671,11 @@ Channel `size` indicates the size of the visual mark. It determines either the r
 
 ### color
 Channel `color` specifies the filling color of the mark. Binding `color` with categorical values in `bar` and `area` marks stack marks that are positioned in the same genomic intervals to better show their cumulative values.
-<!-- I didn't see the legend (when set legend: true) of color when {"type": "quantitative"} -->
+
+Apart from the properties shared by all channels, the `color` channel have the following unique properties:
+| unique properties | type    | description |
+|--- | --- | --- |
+| legend | boolean | whether to show the color legend |
 
 ### stroke
 Channel `stroke` defines the outline color of the mark. Gosling supports `stroke` in the following marks: `rect`, `area`, `point`, `bar`, `link`.
@@ -607,15 +686,6 @@ Channel `strokeWidth` defines the outline thickness of the mark shape. Gosling s
 ### opacity
 Channel `opacity` specifies the opacity of the mark shape.
 <!-- will it be better if we merge stroke, strokeWidth, background, opacity into a style option? -->
-
-
-
-<!-- TODO: explain unique properties of certain visual channels -->
-properties that are only used by certain visual channels 
-| visual channel properties | type    | supported in channels | description |
-| --------------------- | ------- | ---------- | ---|
-| axis                  | string  |`x`, `y` | specify the position of the axis. Support `"none"`, `"top"`, `"bottom"`, `"left"`, `"right"` |
-| legend | boolean | color | whether to show the legend |
 
 
 
