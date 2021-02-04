@@ -40,9 +40,9 @@ You are welcome to try the [Gosling online editor](https://gosling-lang.github.i
   - [Supported Data Formats](#supported-data-formats)
     - [CSV](#csv)
     - [JSON](#json)
-    - [Multivec (HiGlass)](#multivec-higlass)
-    - [BED (HiGlass)](#bed-higlass)
-    - [Vector (HiGlass)](#vector-higlass)
+    - [Vector](#vector)
+    - [Multivec](#multivec)
+    - [BED](#bed)
   - [Data Transform](#data-transform)
 - [Mark](#mark)
   - [Types of Mark](#types-of-mark)
@@ -93,85 +93,182 @@ Users can specify the data of each visualization (i.e., `track`) through `track.
 }
 ```
 
-properties of `track.data`
-
-| property | type | description |
-| --- | --- | --- |
-| type | string | `"csv"` for CSV files <br/> `"json"` for JSON files <br/> `"tileset"` for Multivec, BED, and vector files |
-| url | string | specify the URL address of the data file |
-| sampleLength | number | specify the number of rows loaded from the url. default=1000|
-| quantitativeFields | string[] | |
-| chromosomeField | string | |
-| genomicFields | string[] | |
 
 
 ## Supported Data Formats
 
-Currently, Gosling supports five types of data formats: [CSV](#csv), JSON(#json), [Multivec](#multivec-higlass), [BED](#bed-higlass), [#vector](#vector-higlass).
-Apart from the `data` object, `metaData` configuration is required to process and visualize Multivec, BED, or Vector file.
+Currently, Gosling supports five types of data formats: [CSV](#csv), [JSON](#json), [Multivec](#multivec), [BED](#bed), [Vector](#vector).
 
 
 ### CSV
+```javascript
+{
+  "tracks": [
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/sehilyi/gemini-datasets/master/data/UCSC.HG38.Human.CytoBandIdeogram.csv",
+        "type": "csv",
+        "chromosomeField": "Chromosome",
+        "genomicFields": ["chromStart", "chromEnd"]
+      },
+      ...,
+  }]
+}
+
+```
+
+
+| property           | type     | description                                                  |
+| ------------------ | -------- | ------------------------------------------------------------ |
+| type               | string   | **required**, `"csv"` for CSV files                          |
+| url                | string   | **required**, specify the URL address of the data file       |
+| separator          | string   | specify file separator, default=','                          |
+| sampleLength       | number   | specify the number of rows loaded from the url. default=1000 |
+| quantitativeFields | string[] | specify the name of quantitative data fields                 |
+| chromosomeField    | string   | specify the name of chromosome data fields                   |
+| genomicFields      | string[] | specify the name of genomic data fields                      |
+
 ### JSON
 
-
-
-| property | type | description |
-| --- | --- | --- |
-| type | string | support "csv", "json", "higlass-bed", "higlass-vector", "higlass-multivec" |
-| url | string | |
-| sampleLength | number | specify the number of rows loaded from the url. default=1000|
-| quantitativeFields | string[] | |
-| chromosomeField | string | |
-| genomicFields | string[] | |
-| values | object[] | only supported when `type=json`. |
-
-
-
-### Multivec (HiGlass)
-To visualize muiltivec file, a `metadata` configuration is required
-
-```json
-...
-"data": {
-    "url": "https://resgen.io/api/v1/tileset_info/?d=UvVPeLHuRDiYA3qwFlm7xQ",
-    "type": "tileset"
-},
-"metadata": {
-    "type": "higlass-multivec",
-    "row": "sample",
-    "column": "position",
-    "value": "peak",
-    "categories": ["sample 1", "sample 2", "sample 3", "sample 4"]
-},
-...
-```
-### BED (HiGlass)
-```json
-...
-"data": {
-    "url": "https://higlass.io/api/v1/tileset_info/?d=OHJakQICQD6gTD7skx4EWA",
-    "type": "tileset"
-},
-"metadata": {
-    "type": "higlass-bed",
-    "genomicFields": [
-        {"index": 1, "name": "start"},
-        {"index": 2, "name": "end"}
-    ],
-    "valueFields": [
-        {"index": 5, "name": "strand", "type": "nominal"},
-        {"index": 3, "name": "name", "type": "nominal"}
-    ],
-    "exonIntervalFields": [
-        {"index": 12, "name": "start"},
-        {"index": 13, "name": "end"}
-    ]
-},
-...
+```javascript
+{
+  "tracks":[{
+    "data": {
+      "type": "json",
+      "chromosomeField": "Chromosome",
+      "genomicFields": [
+          "chromStart",
+          "chromEnd"
+      ]
+      "values": [
+        {
+          "Chromosome": "chr1",
+          "chromStart": 0,
+          "chromEnd": 2300000,
+          "Name": "p36.33",
+          "Stain": "gneg"
+        },
+        {
+          "Chromosome": "chr1",
+          "chromStart": 2300000,
+          "chromEnd": 5300000,
+          "Name": "p36.32",
+          "Stain": "gpos25"
+        }
+        .....
+        ]
+    },
+    ... // other configurations of this track
+  }]
+}
 ```
 
-### Vector (HiGlass)
+| property           | type                              | description                                                  |
+| ------------------ | --------------------------------- | ------------------------------------------------------------ |
+| type               | string                            | **required**, `"json"` for JSON files                        |
+| values             | {[key:string]:number \| string}[] | **required**, values in the form of JSON                     |
+| sampleLength       | number                            | specify the number of rows loaded from the url. default=1000 |
+| quantitativeFields | string[]                          | specify the name of quantitative data fields                 |
+| chromosomeField    | string                            | specify the name of chromosome data fields                   |
+| genomicFields      | string[]                          | specify the name of genomic data fields                      |
+
+
+
+### Vector
+
+```javascript
+{
+  "tracks":[{
+    "data": {
+      "url": 'https://resgen.io/api/v1/tileset_info/?d=VLFaiSVjTjW6mkbjRjWREA',
+      "type": "vector",
+      "column": "position",
+      "value": "peak"
+    },
+    ... // other configurations of this track
+  }]
+}
+```
+
+
+| property | type   | description                                            |
+| -------- | ------ | ------------------------------------------------------ |
+| type     | string | **required**, `"vector"`                               |
+| url      | string | **required**, specify the URL address of the data file |
+| column   | string | **required**                                           |
+| value    | string | **required**                                           |
+| bin      | number | bin the genomic interval in tiles                      |
+| start    | string |                                                        |
+| end      | string |                                                        |
+
+### Multivec
+
+
+```javascript
+{
+  "tracks":[{
+    "data": {
+        "url": "https://resgen.io/api/v1/tileset_info/?d=UvVPeLHuRDiYA3qwFlm7xQ",
+        "type": "multivec",
+        "row": "sample",
+        "column": "position",
+        "value": "peak",
+        "categories": ["sample 1", "sample 2", "sample 3", "sample 4"]
+    },
+    ...// other configurations of this track
+  }]
+}
+```
+
+| property   | type     | description                                            |
+| ---------- | -------- | ------------------------------------------------------ |
+| type       | string   | **required**, `"multivec"`                             |
+| url        | string   | **required**, specify the URL address of the data file |
+| column     | string   | **required**                                           |
+| row        | string   | **required**                                           |
+| value      | string   | **required**                                           |
+| categories | string[] |                                                        |
+| bin        | number   | bin the genomic interval in tiles                      |
+| start      | string   |                                                        |
+| end        | string   |                                                        |
+
+### BED
+```javascript
+{
+  "tracks":[{
+    "data": {
+      "url": "https://higlass.io/api/v1/tileset_info/?d=OHJakQICQD6gTD7skx4EWA",
+      "type": "bed",
+      "genomicFields": [
+          {"index": 1, "name": "start"},
+          {"index": 2, "name": "end"}
+      ],
+      "valueFields": [
+          {"index": 5, "name": "strand", "type": "nominal"},
+          {"index": 3, "name": "name", "type": "nominal"}
+      ],
+      "exonIntervalFields": [
+          {"index": 12, "name": "start"},
+          {"index": 13, "name": "end"}
+      ]
+    },
+    ... // other configurations of this track
+  }]
+}
+```
+
+| property           | type                                                                 | description                                            |
+| ------------------ | -------------------------------------------------------------------- | ------------------------------------------------------ |
+| type               | string                                                               | **required**, `"bed"`                                  |
+| url                | string                                                               | **required**, specify the URL address of the data file |
+| genomicFields      | { index: number; name: string }[]                                    | **required**, specify the name of genomic data fields  |
+| valueFields        | { index: number; name: string; type: 'nominal' \| 'quantitative' }[] |                                                        |
+| exonIntervalFields | [{ index: number; name: string }, { index: number; name: string }]   |                                                        |
+
+
+
+
+
 
 
 ## Data Transform
@@ -198,18 +295,18 @@ Only data points that pass the tests in all filters will be visualized.
 
 Users can apply three types of filters: `oneOf`, `inRange`, `include`.
 One filter has the following properties:
-| property|type |description |
-|--|--|--|
-|field|string| **required**, a filter is applied based on the values of the specified data field |
-|inRange| number[] | check whether the value is in a number range |
-|oneOf| string[] \| number[] | check whether the value is an element in the provided list |
-|include| string | check whether the value includes a substring|
-|not| boolean| when `not = true`, apply a NOT logical operation to the filter test. default = false |
+| property | type                 | description                                                                          |
+| -------- | -------------------- | ------------------------------------------------------------------------------------ |
+| field    | string               | **required**, a filter is applied based on the values of the specified data field    |
+| inRange  | number[]             | check whether the value is in a number range                                         |
+| oneOf    | string[] \| number[] | check whether the value is an element in the provided list                           |
+| include  | string               | check whether the value includes a substring                                         |
+| not      | boolean              | when `not = true`, apply a NOT logical operation to the filter test. default = false |
 
-
+Apart from filters, users can aggregate data values (min, max, bin, mean, and count). [Read more about data aggregation](#x)
 
 # Mark
-[source code](https://github.com/gosling-lang/gosling.js/blob/master/src/core/mark)
+[:link: source code](https://github.com/gosling-lang/gosling.js/blob/master/src/core/mark)
 
 Marks (e.g., points, lines, and bars) are the basic graphical elements of a visualization (we call one visualization a `track` in Gosling).
 The core of constructing a visualization is to bind selected **data fields** to the **visual channels** (e.g., size, color, and position) of a chosen **mark type**.
@@ -235,7 +332,7 @@ Gosling supports the following primitive `mark` types: `point`, `line`, `area`, 
 
 
 ### Point
-[source code](https://github.com/gosling-lang/gosling.js/blob/master/src/core/mark/point.ts)
+[:link: source code](https://github.com/gosling-lang/gosling.js/blob/master/src/core/mark/point.ts)
 
 The mark `point` represents one data point using a circular shape. Visual channels of the circle, such as radius, color, and vertical/horizontal position, are used to represent values of the data point. Popular charts such as scatter plots and bubble charts use `point` mark.
 
@@ -489,7 +586,7 @@ The `link` mark is designed to show connections between chromosomes using an arc
 ```
 
 ### Triangle
-[source code](https://github.com/gosling-lang/gosling.js/blob/master/src/core/mark/triangle.ts)  
+[:link: source code](https://github.com/gosling-lang/gosling.js/blob/master/src/core/mark/triangle.ts)  
 
 Gosling supports three types of triangle marks: `triangle-l`, `triangle-r`, `triangle-d`
 
@@ -533,29 +630,29 @@ The visual appearance of a mark is controlled by a set of visual channels (e.g.,
 
 As the table shown below, different marks have different visual channels.
 
-| mark type |supported visual channels| 
-|----| ----|
-| [`point`](#point) | [`x`](#x), [`y`](#y), [`row`](#row), [`size`](#size), [`color`](#color), [`strokeWidth`](#strokeWidth), [`opacity`](#opacity) |
-| [`line`](#line) |  [`x`](#x), [`y`](#y), [`row`](#row), [`color`](#color), [`strokeWidth`](#strokeWidth)|
-| [`rect`](#rect)| [`x`](#x), [`xe`](#xe), [`row`](#row), [`color`](#color), [`strokeWidth`](#strokeWidth), [`opacity`](#opacity) |
-| [`bar`](#bar)| [`x`](#x), [`y`](#y), [`row`](#row), [`color`](#color), [`strokeWidth`](#strokeWidth), [`opacity`](#opacity)|
-| [`area`](#area)| [`x`](#x), [`y`](#y), [`row`](#row), [`color`](#color), [`strokeWidth`](#strokeWidth) |
-| [`link`](#link)| [`x`](#x), [`xe`](#xe), [`x1`](#x1-y1-x1e-y1e), [`x1e`](#x1-y1-x1e-y1e), [`color`](#color), [`opacity`](#opacity) |
-| [`triangle`](#triangle)| [`x`](#x), [`xe`](#xe), [`row`](#row), [`size`](#size), [`color`](#color), [`opacity`](#opacity) |
-| [`text`](#text)| [`x`](#x), [`xe`](#xe), [`row`](#row), [`color`](#color), [`opacity`](#opacity) |
+| mark type               | supported visual channels                                                                                                     |
+| ----------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| [`point`](#point)       | [`x`](#x), [`y`](#y), [`row`](#row), [`size`](#size), [`color`](#color), [`strokeWidth`](#strokeWidth), [`opacity`](#opacity) |
+| [`line`](#line)         | [`x`](#x), [`y`](#y), [`row`](#row), [`color`](#color), [`strokeWidth`](#strokeWidth)                                         |
+| [`rect`](#rect)         | [`x`](#x), [`xe`](#xe), [`row`](#row), [`color`](#color), [`strokeWidth`](#strokeWidth), [`opacity`](#opacity)                |
+| [`bar`](#bar)           | [`x`](#x), [`y`](#y), [`row`](#row), [`color`](#color), [`strokeWidth`](#strokeWidth), [`opacity`](#opacity)                  |
+| [`area`](#area)         | [`x`](#x), [`y`](#y), [`row`](#row), [`color`](#color), [`strokeWidth`](#strokeWidth)                                         |
+| [`link`](#link)         | [`x`](#x), [`xe`](#xe), [`x1`](#x1-y1-x1e-y1e), [`x1e`](#x1-y1-x1e-y1e), [`color`](#color), [`opacity`](#opacity)             |
+| [`triangle`](#triangle) | [`x`](#x), [`xe`](#xe), [`row`](#row), [`size`](#size), [`color`](#color), [`opacity`](#opacity)                              |
+| [`text`](#text)         | [`x`](#x), [`xe`](#xe), [`row`](#row), [`color`](#color), [`opacity`](#opacity)                                               |
 
 A visual channel can be either assigned a constant value or bound with a data field. When a visual channel is bound with a data field, Gosling creates a mapping from the values of the data field (e.g., [gnes, gpos25, gpos50, ...]) to the values of the visual channel (e.g., position of a bar). We call the values of data field **domain** and the values of the visual channel **range**.
 
 **Table: Properties shared by all visual channels**
 
-| visual channel properties | type    | description |
-| --------------------- | ------- | ---------- |
-| field                 | string  | specify name of the data field |
-| type                  | string  | specify type of the data field. support `"genomic"`, `"nominal"`, `"quantitative"`|
-| aggregate             | string  | support `"max"`, `"min"`, `"mean"`, `"bin"`, `"count"` |
-| domain                | [number, number]\| string[]  | specify values of the data field |
-| range                 |   [number, number]\| string[]      |   specify values of the visual channel     |
-| value | string \| number| assign a constant value to the visual channel |
+| visual channel properties | type                        | description                                                                        |
+| ------------------------- | --------------------------- | ---------------------------------------------------------------------------------- |
+| field                     | string                      | specify name of the data field                                                     |
+| type                      | string                      | specify type of the data field. support `"genomic"`, `"nominal"`, `"quantitative"` |
+| aggregate                 | string                      | support `"max"`, `"min"`, `"mean"`, `"bin"`, `"count"`                             |
+| domain                    | [number, number]\| string[] | specify values of the data field                                                   |
+| range                     | [number, number]\| string[] | specify values of the visual channel                                               |
+| value                     | string \| number            | assign a constant value to the visual channel                                      |
 
 
 
@@ -580,30 +677,30 @@ For example, the code below creates a mapping from the data `field` "Stain" to t
 `x` specify a mark's position in the horizontal direction.
 
 Apart from the properties shared by all channels, `x` channel have the following unique properties:
-| unique properties | type    | description |
-|--- | --- | --- |
-| aggregate | string | support "max", "min", "count", "mean", "bin" |
-| axis | string | specify the axis position, support "none", "top", "bottom", "left", "right" |
-| linkingID | string | a unique linkingID is needed for [linking views](#linking-views) and [Brushing and Linking](#brushing-and-linking) |
+| unique properties | type   | description                                                                                                        |
+| ----------------- | ------ | ------------------------------------------------------------------------------------------------------------------ |
+| aggregate         | string | support "max", "min", "count", "mean", "bin"                                                                       |
+| axis              | string | specify the axis position, support "none", "top", "bottom", "left", "right"                                        |
+| linkingID         | string | a unique linkingID is needed for [linking views](#linking-views) and [Brushing and Linking](#brushing-and-linking) |
 
 
 ### xe
 `xe` stands for the end of x axis. `xe` is usually used with `x` to specify the start position and the end position of a visual mark in the horizontal direction, respectively.
 
 Apart from the properties shared by all channels, `xe` channel have the following unique properties:
-| unique properties | type    | description |
-|--- | --- | --- |
-| aggregate | string | support "max", "min", "count", "mean", "bin" |
-| axis | string | specify the axis position, support "none", "top", "bottom", "left", "right" |
+| unique properties | type   | description                                                                 |
+| ----------------- | ------ | --------------------------------------------------------------------------- |
+| aggregate         | string | support "max", "min", "count", "mean", "bin"                                |
+| axis              | string | specify the axis position, support "none", "top", "bottom", "left", "right" |
 
 ### y
 `y` specify a mark's position in the vertical direction.
 
 Apart from the properties shared by all channels, `y` channel have the following unique properties:
-| unique properties | type    | description |
-|--- | --- | --- |
-| axis | string | specify the axis position, support "none", "top", "bottom", "left", "right" |
-| baseline |string \| number | |
+| unique properties | type             | description                                                                 |
+| ----------------- | ---------------- | --------------------------------------------------------------------------- |
+| axis              | string           | specify the axis position, support "none", "top", "bottom", "left", "right" |
+| baseline          | string \| number |                                                                             |
 
 ### ye
 `ye` stands for the end of y axis. `ye` is usually used with `x` to specify the start position and the end position of a visual mark in the vertical direction, respectively.
@@ -673,9 +770,9 @@ Channel `size` indicates the size of the visual mark. It determines either the r
 Channel `color` specifies the filling color of the mark. Binding `color` with categorical values in `bar` and `area` marks stack marks that are positioned in the same genomic intervals to better show their cumulative values.
 
 Apart from the properties shared by all channels, the `color` channel have the following unique properties:
-| unique properties | type    | description |
-|--- | --- | --- |
-| legend | boolean | whether to show the color legend |
+| unique properties | type    | description                      |
+| ----------------- | ------- | -------------------------------- |
+| legend            | boolean | whether to show the color legend |
 
 ### stroke
 Channel `stroke` defines the outline color of the mark. Gosling supports `stroke` in the following marks: `rect`, `area`, `point`, `bar`, `link`.
@@ -704,7 +801,7 @@ In Gosling, we call one visualization a track. A Gosling configuration specifies
 
 
 ## Layout
-[source code](https://github.com/gosling-lang/gosling.js/blob/43626eaf21417bf36128a405dceeaa6ee00d0851/src/core/Gosling.schema.ts#L22)
+[:link: source code](https://github.com/gosling-lang/gosling.js/blob/43626eaf21417bf36128a405dceeaa6ee00d0851/src/core/Gosling.schema.ts#L22)
 In each track, genomic coordinate can be represented in either a `circular` or `linear` layout.
 
 <img src="https://github.com/gosling-lang/gosling.js/wiki/images/linear_circular.png" alt="linear vs circular" width="600">    
@@ -744,18 +841,18 @@ or specify the layout of a certain track in each track definition.
 ```
 
 For `circular` layout, users can specify more details about the layout using the following properties
-| property | type | description |
-|--|--|--|
-|outerRadius| number | default = min(track.width, track.height) / 2|
-|innerRadius| number | default = max(outerRadius - 80, 0)|
-|startAngle| number | default = 0|
-|endAngle| number | default = 360|
+| property    | type   | description                                  |
+| ----------- | ------ | -------------------------------------------- |
+| outerRadius | number | default = min(track.width, track.height) / 2 |
+| innerRadius | number | default = max(outerRadius - 80, 0)           |
+| startAngle  | number | default = 0                                  |
+| endAngle    | number | default = 360                                |
 
 
 ## Arrangement
 
 ### Grid-based arrangement
-[source code](https://github.com/gosling-lang/gosling.js/blob/43626eaf21417bf36128a405dceeaa6ee00d0851/src/core/Gosling.schema.ts#L20)  
+[:link: source code](https://github.com/gosling-lang/gosling.js/blob/43626eaf21417bf36128a405dceeaa6ee00d0851/src/core/Gosling.schema.ts#L20)  
 specify the grid arrangement of multiple tracks
 
 | property                | type                        | description                                                                                                                                    |
@@ -772,7 +869,7 @@ specify the grid arrangement of multiple tracks
 <!-- is it possible that several tracks under one layout have different type (linear and circular) -->
 
 ### Superposition
-[source code](https://github.com/gosling-lang/gosling.js/blob/43626eaf21417bf36128a405dceeaa6ee00d0851/src/core/Gosling.schema.ts#L213)
+[:link: source code](https://github.com/gosling-lang/gosling.js/blob/43626eaf21417bf36128a405dceeaa6ee00d0851/src/core/Gosling.schema.ts#L213)
 
 
 `superposition` enables users to superpose multiple marks on top of each other.  
@@ -817,21 +914,21 @@ Try it in the online editor:
 
 `style` specifies the visual appearances of a track that are not bound with data fields.
 
-style properties | type | description
--- | -- | --
-background | string | color of the background
-dashed | [number, number] |
-linePatterns| { "type": "triangle-l" \| "triangle-r"; size: number } | 
-curve| string | support "top", "bottom", "left", "right" 
-align| string | support "left", "right"
-dy | number | 
-outline | string |
-outlineWidth | number |
-circularLink | boolean |
-textFontSize | number |
-textStroke | string |
-textStrokeWidth | number |
-textFontWeight| string | support "bold", "normal"
+| style properties | type                                                   | description                              |
+| ---------------- | ------------------------------------------------------ | ---------------------------------------- |
+| background       | string                                                 | color of the background                  |
+| dashed           | [number, number]                                       |
+| linePatterns     | { "type": "triangle-l" \| "triangle-r"; size: number } |
+| curve            | string                                                 | support "top", "bottom", "left", "right" |
+| align            | string                                                 | support "left", "right"                  |
+| dy               | number                                                 |
+| outline          | string                                                 |
+| outlineWidth     | number                                                 |
+| circularLink     | boolean                                                |
+| textFontSize     | number                                                 |
+| textStroke       | string                                                 |
+| textStrokeWidth  | number                                                 |
+| textFontWeight   | string                                                 | support "bold", "normal"                 |
 
 <!-- TODO: add channel.flip, channel.grid and other properties  -->
 
@@ -840,7 +937,7 @@ textFontWeight| string | support "bold", "normal"
 # Interactions
 
 ## Zooming and Panning
-[source code](https://github.com/gosling-lang/gosling.js/blob/43626eaf21417bf36128a405dceeaa6ee00d0851/src/core/gosling.schema.ts#L7)
+[:link: source code](https://github.com/gosling-lang/gosling.js/blob/43626eaf21417bf36128a405dceeaa6ee00d0851/src/core/gosling.schema.ts#L7)
 
 Each visualization in Gosling supports the Zooming and Panning interaction.
 Users can zoom in/out a visualization using the scrolling up/down actions.
@@ -867,7 +964,7 @@ Users can set the `static` property of all tracks at the root level or specify i
 
 
 ## Linking Views
-[source code](ttps://github.com/gosling-lang/gosling.js/blob/43626eaf21417bf36128a405dceeaa6ee00d0851/src/core/Gosling.schema.ts#L328)
+[:link: source code](ttps://github.com/gosling-lang/gosling.js/blob/43626eaf21417bf36128a405dceeaa6ee00d0851/src/core/Gosling.schema.ts#L328)
 
 When two tracks are linked, the zooming and panning performed in one track will be automatically applied to the linked track. 
 
@@ -940,7 +1037,7 @@ Users can use **brushing** to select a subset of the data items using a rectangl
 
 
 ## Semantic Zooming
-[source code](https://github.com/gosling-lang/gosling.js/blob/43626eaf21417bf36128a405dceeaa6ee00d0851/src/core/gosling.schema.ts#L278)
+[:link: source code](https://github.com/gosling-lang/gosling.js/blob/43626eaf21417bf36128a405dceeaa6ee00d0851/src/core/gosling.schema.ts#L278)
 
 Semantic zoom allows users to switch between different visualizations of the same data through zooming in/out. When zooming in, the same data will be represented in a different way in which more details are shown. 
 
@@ -965,14 +1062,14 @@ Semantic zoom through `superpose` and `visibility`.
 `visibility` controls the visibility of visual marks, thus allowing the switch between different visualizations based on the zoom level.
 
 `visibility` is an object with the following properties:
-| properties  | type  | description|   
-|---|---|---|
-|target| string| **required**, support "track" \| "mark" |
-| measure | string | **required**, support "width"\|"height"\|"zoomLevel".<br/> Note that "zoomLevel" is only supported when `target="track"` |
-| threshold | "\|xe-x\|" \| number | **required**|
-| operation |  string | **required**, specify the logical operation to conduct between `threshold` and the `measure` of `target`<br/> > :"greater-than", "gt", "GT",<br/> < : "less-than", "lt", "LT", <br/> ≥ : "greater-than-or-equal-to", "gtet", "GTET"), <br/> ≤ : "less-than-or-equal-to", "ltet", "LTET"  |
-| conditionPadding | number | buffer px size of width or height when calculating the visibility, default = 0 |
-| transitionPadding | number | buffer px size of width or height for smooth transition, default = 0 |
+| properties        | type                 | description                                                                                                                                                                                                                                                                             |
+| ----------------- | -------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| target            | string               | **required**, support "track" \| "mark"                                                                                                                                                                                                                                                 |
+| measure           | string               | **required**, support "width"\|"height"\|"zoomLevel".<br/> Note that "zoomLevel" is only supported when `target="track"`                                                                                                                                                                |
+| threshold         | "\|xe-x\|" \| number | **required**                                                                                                                                                                                                                                                                            |
+| operation         | string               | **required**, specify the logical operation to conduct between `threshold` and the `measure` of `target`<br/> > :"greater-than", "gt", "GT",<br/> < : "less-than", "lt", "LT", <br/> ≥ : "greater-than-or-equal-to", "gtet", "GTET"), <br/> ≤ : "less-than-or-equal-to", "ltet", "LTET" |
+| conditionPadding  | number               | buffer px size of width or height when calculating the visibility, default = 0                                                                                                                                                                                                          |
+| transitionPadding | number               | buffer px size of width or height for smooth transition, default = 0                                                                                                                                                                                                                    |
 
 The `visibility` of corresponding marks are decided by whether the `measure` of `target` and the `threshold` satisfy the `operation`.
 
@@ -1007,4 +1104,4 @@ For example, in the code below, text marks only show when the width (`measure`) 
 ```
 
 <!-- ## Tooltip
-[source code](https://github.com/gosling-lang/gosling.js/blob/43626eaf21417bf36128a405dceeaa6ee00d0851/src/core/Gosling.schema.ts#L168) -->
+[:link: source code](https://github.com/gosling-lang/gosling.js/blob/43626eaf21417bf36128a405dceeaa6ee00d0851/src/core/Gosling.schema.ts#L168) -->
