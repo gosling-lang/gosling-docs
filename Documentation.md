@@ -36,6 +36,7 @@ You are welcome to try the [Gosling online editor](https://gosling-lang.github.i
 
 - [Overview](#overview)
 - [List of Contents](#list-of-contents)
+- [Genome Build](#genome-build)
 - [Data](#data)
   - [Supported Data Formats](#supported-data-formats)
     - [CSV](#csv)
@@ -78,6 +79,20 @@ You are welcome to try the [Gosling online editor](https://gosling-lang.github.i
   - [Linking Views](#linking-views)
   - [Brushing and Linking](#brushing-and-linking)
   - [Semantic Zooming](#semantic-zooming)
+
+# Genome Build
+
+Users can specify the genome build they want to use through the `assembly` property.
+
+```javascript
+{
+  "assembly": "hg38",
+  "tracks": [...],
+  ...
+}
+```
+
+Gosling supports the following genome build versions: hg38, hg19, hg17, hg16, mm10, and mm9.
 
 # Data
 
@@ -264,9 +279,6 @@ Currently, Gosling supports five types of data formats: [CSV](#csv), [JSON](#jso
 | genomicFields      | { index: number; name: string }[]                                    | **required**, specify the name of genomic data fields  |
 | valueFields        | { index: number; name: string; type: 'nominal' \| 'quantitative' }[] |                                                        |
 | exonIntervalFields | [{ index: number; name: string }, { index: number; name: string }]   |                                                        |
-
-
-
 
 
 
