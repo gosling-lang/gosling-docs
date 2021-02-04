@@ -1062,14 +1062,14 @@ Semantic zoom through `superpose` and `visibility`.
 `visibility` controls the visibility of visual marks, thus allowing the switch between different visualizations based on the zoom level.
 
 `visibility` is an object with the following properties:
-| properties        | type                 | description                                                                                                                                                                                                                                                                             |
-| ----------------- | -------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| target            | string               | **required**, support "track" \| "mark"                                                                                                                                                                                                                                                 |
-| measure           | string               | **required**, support "width"\|"height"\|"zoomLevel".<br/> Note that "zoomLevel" is only supported when `target="track"`                                                                                                                                                                |
-| threshold         | "\|xe-x\|" \| number | **required**                                                                                                                                                                                                                                                                            |
-| operation         | string               | **required**, specify the logical operation to conduct between `threshold` and the `measure` of `target`<br/> > :"greater-than", "gt", "GT",<br/> < : "less-than", "lt", "LT", <br/> ≥ : "greater-than-or-equal-to", "gtet", "GTET"), <br/> ≤ : "less-than-or-equal-to", "ltet", "LTET" |
-| conditionPadding  | number               | buffer px size of width or height when calculating the visibility, default = 0                                                                                                                                                                                                          |
-| transitionPadding | number               | buffer px size of width or height for smooth transition, default = 0                                                                                                                                                                                                                    |
+| properties  | type  | description|   
+|---|---|---|
+|target| string| **required**, support "track" \| "mark" |
+| measure | string | **required**, support "width"\|"height"\|"zoomLevel".|
+| threshold | "\|xe-x\|" \| number | **required**, when using `number`, the unit of a number is pixel with `width` and `height` measures while it is a base pair (bp) with `zoomLevel` |
+| operation |  string | **required**, specify the logical operation to conduct between `threshold` and the `measure` of `target`<br/> > :"greater-than", "gt", "GT",<br/> < : "less-than", "lt", "LT", <br/> ≥ : "greater-than-or-equal-to", "gtet", "GTET"), <br/> ≤ : "less-than-or-equal-to", "ltet", "LTET"  |
+  | conditionPadding | number | buffer px size of width or height when calculating the visibility, default = 0 |
+| transitionPadding | number | buffer px size of width or height for smooth transition, default = 0 |
 
 The `visibility` of corresponding marks are decided by whether the `measure` of `target` and the `threshold` satisfy the `operation`.
 
