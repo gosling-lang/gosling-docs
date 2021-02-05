@@ -80,19 +80,23 @@ You are welcome to try the [Gosling online editor](https://gosling-lang.github.i
   - [Brushing and Linking](#brushing-and-linking)
   - [Semantic Zooming](#semantic-zooming)
 
-# Genome Build
+# Genome Builds
 
-Users can specify the genome build they want to use through the `assembly` property.
+You can specify genome builds through an `assembly` property.
 
-```javascript
+```typescript
 {
-  "assembly": "hg38",
-  "tracks": [...],
+  "assembly": "hg38", // Globally define assembly to all tracks except ones that specify a certain assembly
+  "tracks": [{
+    ..., "assembly": "hg19" // Use different assembly for this track
+  }],
   ...
 }
 ```
 
-Gosling supports the following genome build versions: hg38, hg19, hg17, hg16, mm10, and mm9.
+Currently, Gosling supports the following six genome builds: "hg38", "hg19", "hg17", "hg16", "mm10", and "mm9".
+
+We will add more and also allow to use custom chromosome sizes (`chromSizes`).
 
 # Data
 
