@@ -80,8 +80,9 @@ This mapping is specified by the following properties:
 }
 ```
 
-**:tada: You have just created a scalable and interactive visualization in Gosling!**  
-You can interact with the visualization you just created in the online editor through zoom and pan.
+**:tada::tada::tada::tada::tada::tada::tada::tada:**  
+**You have just created a scalable and interactive visualization in Gosling!**  
+You can interact with the visualization you just created in the online editor through zoom and pan.  
 Or, you can keep reading the tutorial and make you visualizations even more fancier.
 
 ## Data Transform
