@@ -82,10 +82,10 @@ This mapping is specified by the following properties:
 
 **:tada: You have just created a scalable and interactive visualization in Gosling!**  
 You can interact with the visualization you just created in the online editor through zoom and pan.
-Or, you can keep reading the tutorial and make you visualizations even more fancier.
+Or, you can keep reading the tutorial and make your visualizations even more fancy.
 
 ## Data Transform
-Gossling supports filtering out uninterested data through the `dataTransform` propoerty.
+Gossling supports filtering out uninterested data through the `dataTransform` property.
 For example, we can add a filter to only visualize chromosomes whose stain result is one of "gpos25", "gpos50", "gpos75", or "gpos100".
 
 ```diff
@@ -177,7 +177,7 @@ In the code below, a chromosome is visualized as a `triangle-r` mark if its stai
 ## Customize Style
 
 You can freely modify the size of the visualization, add a title, or change the layout.
-Gosling supports an easy creation of circular layout through the `layout` property.
+Gosling supports easy creation of circular layout through the `layout` property.
 
 ```diff
 {
