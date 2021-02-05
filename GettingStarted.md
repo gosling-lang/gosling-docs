@@ -18,7 +18,7 @@ In this tutorial, we use a CSV data ([the complete data file](csvDataURL)).
 
 To start with, we load this data through URL to a visualization (i.e., a `track`).
 The `track.data` property specifies how to fetch and process the data.
-```json
+```javascript
 
 {
     "tracks":[{
