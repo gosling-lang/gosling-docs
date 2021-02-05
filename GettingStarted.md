@@ -84,7 +84,7 @@ This mapping is specified by the following properties:
 }
 ```
 
-<img src="https://raw.githubusercontent.com/wiki/gosling-lang/gosling.js/images/tutorial_0.png" alt="gosling vis" width="700"/>
+<img src="https://raw.githubusercontent.com/wiki/gosling-lang/gosling.js/images/tutorial_0.gif" alt="gosling vis" width="700"/>
 
 **:tada::tada::tada::tada::tada::tada::tada::tada:**  
 **You have just created a scalable and interactive visualization in Gosling!**  
