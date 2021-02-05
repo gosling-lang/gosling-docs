@@ -12,7 +12,7 @@ In this tutorial, we use a CSV data ([the complete data file](csvDataURL)).
 |---|---|---|---|--|
 |chr1|0|2300000|p36.33|gneg|
 |chr1|2300000|5300000|p36.32|gpos25|
-|chr1|5300000|7100000|p36.31|gneg|
+|chr1|5300000|770000|p36.31|gneg|
 |...|
 
 
@@ -25,6 +25,7 @@ The `track.data` property specifies how to fetch and process the data.
         // Load a csv data file through URL
         "data": {
             "url": "https://raw.githubusercontent.com/sehilyi/gemini-datasets/master/data/UCSC.HG38.Human.CytoBandIdeogram.csv",
+            "chromosomeField": "Chromosome",
             "type": "csv",
             "genomicFields": ["chromStart", "chromEnd"]
         }
@@ -53,10 +54,13 @@ This mapping is specified by the following properties:
 
 ```javascript
 {
+    // specify the size of the visualization
+    "arrangement": {"rowSizes": 70, "columnSizes": 700 },
     "tracks":[{
         // Load a csv data file through URL
         "data": {
             "url": "https://raw.githubusercontent.com/sehilyi/gemini-datasets/master/data/UCSC.HG38.Human.CytoBandIdeogram.csv",
+            "chromosomeField": "Chromosome",
             "type": "csv",
             "genomicFields": ["chromStart", "chromEnd"]
         },
@@ -80,6 +84,8 @@ This mapping is specified by the following properties:
 }
 ```
 
+<img src="https://raw.githubusercontent.com/wiki/gosling-lang/gosling.js/images/tutorial_0.png" alt="gosling vis" width="700"/>
+
 **:tada::tada::tada::tada::tada::tada::tada::tada:**  
 **You have just created a scalable and interactive visualization in Gosling!**  
 You can interact with the visualization you just created in the online editor through zoom and pan.
@@ -91,14 +97,16 @@ For example, we can add a filter to only visualize chromosomes whose stain resul
 
 ```diff
 {
+    "arrangement": {"rowSizes": 70, "columnSizes": 700 },
     "tracks":[{
         "data": {
             "url": "https://raw.githubusercontent.com/sehilyi/gemini-datasets/master/data/UCSC.HG38.Human.CytoBandIdeogram.csv",
+            "chromosomeField": "Chromosome",
             "type": "csv",
             "genomicFields": ["chromStart", "chromEnd"]
         },       
 +        "dataTransform": {
-+            "filter": [{"field": "Stain", oneOf: ["gpos25", "gpos50", "gpos75", "gpos100"]}]
++            "filter": [{"field": "Stain", "oneOf": ["gpos25", "gpos50", "gpos75", "gpos100"]}]
 +        },
         "mark": "rect",
         "x": {
@@ -111,12 +119,18 @@ For example, we can add a filter to only visualize chromosomes whose stain resul
         "color": {
             "field": "Stain", 
             "type": "nominal",
-            "domain": ["gpos25", "gpos50", "gpos75", "gpos100"],
-            "range": ["#D9D9D9","#979797","#636363", "black"]
+            "domain": ["gneg", "gpos25", "gpos50", "gpos75", "gpos100", "gvar"],
+            "range": ["white","#D9D9D9","#979797","#636363", "black","#A0A0F2"]
         }
     }]
 }
 ```
+
+<img src="https://raw.githubusercontent.com/wiki/gosling-lang/gosling.js/images/tutorial_dataTransform.png" alt="gosling vis dataTransform" width="700"/>
+
+gvar (<span style="color:#A0A0F2">purple rect</span>) and gneg (white rect) are not shown in the updated visualization.
+
+
 
 
 
@@ -126,16 +140,18 @@ In the code below, a chromosome is visualized as a `triangle-r` mark if its stai
 
 ```diff
 {
+    "arrangement": {"rowSizes": 70, "columnSizes": 700 },
     "tracks":[{
         "data": {
             "url": "https://raw.githubusercontent.com/sehilyi/gemini-datasets/master/data/UCSC.HG38.Human.CytoBandIdeogram.csv",
             "type": "csv",
+            "chromosomeField": "Chromosome",
             "genomicFields": ["chromStart", "chromEnd"]
         },       
-        "dataTransform": {
-            "filter": [{"field": "Stain", oneOf: ["gpos25", "gpos50", "gpos75", "gpos100"]}]
-        },
-        "mark": "rect",
+-       "dataTransform": {
+-           "filter": [{"field": "Stain", "oneOf": ["gpos25", "gpos50", "gpos75", "gpos100"]}]
+-       },
+-       "mark": "rect",
         "x": {
             "field": "chromStart",
             "type": "genomic",
@@ -143,13 +159,25 @@ In the code below, a chromosome is visualized as a `triangle-r` mark if its stai
             "axis": "top"
         },
         "xe": {"field": "chromEnd", "type": "genomic"},
-        "color": {
-            "field": "Stain", 
-            "type": "nominal",
-            "domain": ["gpos25", "gpos50", "gpos75", "gpos100"],
-            "range": ["#D9D9D9","#979797","#636363", "black"]
-        },
+-       "color": {
+-           "field": "Stain", 
+-           "type": "nominal",
+-           "domain": ["gpos25", "gpos50", "gpos75", "gpos100"],
+-           "range": ["#D9D9D9","#979797","#636363", "black"]
+-       },
 +       "superpose":[
++            {
++            "mark": "rect",
++            "dataTransform": {
++                    "filter": [{"field": "Stain", "oneOf": ["gpos25", "gpos50", "gpos75", "gpos100"]}]
++                },
++            "color": {
++                "field": "Stain", 
++                "type": "nominal",
++                "domain": ["gpos25", "gpos50", "gpos75", "gpos100"],
++                "range": ["#D9D9D9","#979797","#636363", "black"]
++            }
++            },
 +           {
 +             "mark": "triangle-r",
 +             "dataTransform": {
@@ -158,7 +186,7 @@ In the code below, a chromosome is visualized as a `triangle-r` mark if its stai
 +                 {"field": "Name", "include": "q"}
 +               ]
 +             },
-+             "color": {"value": "#B40101"}
++             "color": {"value": "#B70101"}
 +           },
 +           {
 +             "mark": "triangle-l",
@@ -168,46 +196,64 @@ In the code below, a chromosome is visualized as a `triangle-r` mark if its stai
 +                 {"field": "Name", "include": "p"}
 +               ]
 +             },
-+             "color": {"value": "#B40101"}
++             "color": {"value": "#B70101"}
 +           }
 +       ]
     }]
 }
 ```
 
+<img src="https://raw.githubusercontent.com/wiki/gosling-lang/gosling.js/images/tutorial_superpose.png" alt="gosling vis superpose" width="700"/>
+
 ## Customize Style
 
-You can freely modify the size of the visualization, add a title, or change the layout.
+You can freely modify the size of the `rect` mark, add a title, or change the layout.
 Gosling supports easy creation of circular layout through the `layout` property.
 
 ```diff
 {
 +   "title": "Get Started Example",
-+   "layout": "circular",
+-   "arrangement": {"rowSizes": 70, "columnSizes": 700 },
++   "arrangement": {"rowSizes": 700, "columnSizes": 700 },
     "tracks":[{
++       "layout": "circular",
++       "innerRadius": 220,
++       "outerRadius": 300,
         "data": {
             "url": "https://raw.githubusercontent.com/sehilyi/gemini-datasets/master/data/UCSC.HG38.Human.CytoBandIdeogram.csv",
+            "chromosomeField": "Chromosome",
             "type": "csv",
             "genomicFields": ["chromStart", "chromEnd"]
-        },       
-        "dataTransform": {
-            "filter": [{"field": "Stain", oneOf: ["gpos25", "gpos50", "gpos75", "gpos100"]}]
-        },
-        "mark": "rect",
+        }, 
         "x": {
             "field": "chromStart",
             "type": "genomic",
             "domain": {"chromosome": "1"},
             "axis": "top"
         },
-        "xe": {"field": "chromEnd", "type": "genomic"},
-        "color": {
-            "field": "Stain", 
-            "type": "nominal",
-            "domain": ["gpos25", "gpos50", "gpos75", "gpos100"],
-            "range": ["#D9D9D9","#979797","#636363", "black"]
-        },
+        "xe": {"field": "chromEnd", "type": "genomic"},        
         "superpose":[
+             {
+               "dataTransform": {
+                       "filter": [{"field": "Stain", "oneOf": ["gpos25", "gpos50", "gpos75", "gpos100"]}]
+                   },
+               "mark": "rect",
+               "x": {
+                   "field": "chromStart",
+                   "type": "genomic",
+                   "domain": {"chromosome": "1"},
+                   "axis": "top"
+               },
+               "xe": {"field": "chromEnd", "type": "genomic"},
+               "color": {
+                   "field": "Stain", 
+                   "type": "nominal",
+                   "domain": ["gpos25", "gpos50", "gpos75", "gpos100"],
+                   "range": ["#D9D9D9","#979797","#636363", "black"]
+               },
++              "stroke": {"value": "black"}, // stroke of the rect mark
++              "strokeWidth": {"value": 3}
+             },
             {
               "mark": "triangle-r",
               "dataTransform": {
@@ -216,7 +262,7 @@ Gosling supports easy creation of circular layout through the `layout` property.
                   {"field": "Name", "include": "q"}
                 ]
               },
-              "color": {"value": "#B40101"}
+              "color": {"value": "#B70101"}
             },
             {
               "mark": "triangle-l",
@@ -226,15 +272,13 @@ Gosling supports easy creation of circular layout through the `layout` property.
                   {"field": "Name", "include": "p"}
                 ]
               },
-              "color": {"value": "#B40101"}
+              "color": {"value": "#B70101"}
             }
-        ],
-+       "width": 1000,
-+       "height": 200
+        ]
     }]
 }
 ```
-
+<img src="https://raw.githubusercontent.com/wiki/gosling-lang/gosling.js/images/tutorial_style.png" alt="gosling vis style" width="500"/>
 
 ## More Examples
 You can find more examples [here](exampleURL).
