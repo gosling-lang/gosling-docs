@@ -18,7 +18,7 @@ In this tutorial, we use a CSV data ([the complete data file](csvDataURL)).
 
 To start with, we load this data through URL to a visualization (i.e., a `track`).
 The `track.data` property specifies how to fetch and process the data.
-```json
+```javascript
 
 {
     "tracks":[{
@@ -80,7 +80,8 @@ This mapping is specified by the following properties:
 }
 ```
 
-**:tada: You have just created a scalable and interactive visualization in Gosling!**  
+**:tada::tada::tada::tada::tada::tada::tada::tada:**  
+**You have just created a scalable and interactive visualization in Gosling!**  
 You can interact with the visualization you just created in the online editor through zoom and pan.
 Or, you can keep reading the tutorial and make your visualizations even more fancy.
 
