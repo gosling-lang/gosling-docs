@@ -5,7 +5,7 @@ Gosling is a declarative visualization grammar tailored for interative genomic v
 
 ### [Documentation](https://github.com/gosling-lang/gosling.js/wiki/Documentation) 
 
-### [Getting Started](https://github.com/gosling-lang/gosling.js/wiki/GettingStarted)
+### [Getting Started](https://github.com/gosling-lang/gosling.js/wiki/Getting-Started)
 
 ### [Examples](https://github.com/gosling-lang/gosling.js/wiki/Examples)
 
