@@ -1,7 +1,6 @@
 # Overview
-Gosling is a declarative visualization grammar tailored for interactive genomic visualizations. In Gosling, users can create interactive visualizations through a JSON syntax. This documentation describes how to write the JSON specification language to create interactive visualizations.   
-You are welcome to try the [Gosling online editor](https://gosling-lang.github.io/gosling.js/).
-
+Gosling is a declarative visualization grammar tailored for interactive genomic visualizations. In Gosling, users can create visualizations through a JSON syntax. This documentation describes how to write the JSON specification to create interactive visualizations.
+You are welcome to try the [Gosling online editor](https://gosling-lang.github.io/gosling.js/)!
 
 ```javascript
 // Gosling generates visualizations through a JSON specification language
@@ -996,7 +995,7 @@ Users can link two tracks by assigning the same `linkingID` to the `x` channel o
       "mark": "rect",
       "x": {
         ..., // other properties of x channel
-        "linkingID": "a unique string" // assing a linking id for the track A
+        "linkingID": "a unique string" // assign a linking id for the track A
       }
     },
     // track B
