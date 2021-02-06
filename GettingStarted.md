@@ -1,10 +1,10 @@
 ## Create your visualizations using Gosling ＼（＾▽＾）／
 
-This tutorial will guide you step by step in writing the JSON specification to create an interactive visualization in Gosling. You are encouraged to follow the tutorial and create visualizations in the [online editor](onlineEditorURL).
+This tutorial will guide you step by step in writing the JSON specification to create an interactive visualization in Gosling. You are encouraged to follow the tutorial and create visualizations in the [online editor][onlineEditorURL].
 
 ## Loading Data
 
-In this tutorial, we use a CSV data ([the complete data file](csvDataURL)).
+In this tutorial, we use a CSV data ([the complete data file][csvDataURL]).
 
 
 
@@ -281,7 +281,7 @@ Gosling supports easy creation of circular layout through the `layout` property.
 <img src="https://raw.githubusercontent.com/wiki/gosling-lang/gosling.js/images/tutorial_style.png" alt="gosling vis style" width="500"/>
 
 ## More Examples
-You can find more examples [here](exampleURL).
+You can find more examples [here][exampleURL].
 
 [onlineEditorURL]: http://gosling.js.org
 [exampleURL]: http://gosling.js.org
