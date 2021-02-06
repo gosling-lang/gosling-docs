@@ -6,8 +6,6 @@ This tutorial will guide you step by step in writing the JSON specification to c
 
 In this tutorial, we use a CSV data ([the complete data file][csvDataURL]).
 
-
-
 |Chromosome|chromStart|chromEnd|Name|Stain|
 |---|---|---|---|--|
 |chr1|0|2300000|p36.33|gneg|
@@ -92,7 +90,7 @@ You can interact with the visualization you just created in the online editor th
 Or, you can keep reading the tutorial and make your visualizations even more fancy.
 
 ## Data Transform
-Gossling supports filtering out uninterested data through the `dataTransform` property.
+Gosling supports filtering out uninterested data through the `dataTransform` property.
 For example, we can add a filter to only visualize chromosomes whose stain result is one of "gpos25", "gpos50", "gpos75", or "gpos100".
 
 ```diff
