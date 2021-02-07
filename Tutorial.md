@@ -1,9 +1,10 @@
-## Create your visualizations using Gosling ＼（＾▽＾）／
+# Tutorial
+- [Step 1. Creating Simple Cytogenetic Band]()
+- [Step 2. Adding Text Labels w/ Semantic Zooming]()
+- [Step 3. Juxtaposing Bar Charts for Epigenetic Signals]()
+- [Step 4. Converting to Circular Layout]()
 
-- [Creating Simple Cytogenetic Band]()
-- [Adding Text Labels w/ Semantic Zooming]()
-- [Juxtaposing Bar Charts for Epigenetic Signals]()
-- [Converting to Circular Layout]()
+## Create your visualizations using Gosling ＼（＾▽＾）／
 
 This tutorial will guide you step by step in writing the JSON specification to create an interactive cytoband visualization in Gosling. You are encouraged to follow the tutorial and create visualizations in the [online editor][onlineEditorURL].
 
