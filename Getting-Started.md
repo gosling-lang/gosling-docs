@@ -1,10 +1,10 @@
 ## Create your visualizations using Gosling ＼（＾▽＾）／
 
-This tutorial will guide you step by step in writing the JSON specification to create an interactive visualization in Gosling. You are encouraged to follow the tutorial and create visualizations in the [online editor][onlineEditorURL].
+This tutorial will guide you step by step in writing the JSON specification to create an interactive cytoband visualization in Gosling. You are encouraged to follow the tutorial and create visualizations in the [online editor][onlineEditorURL].
 
 ## Loading Data
 
-In this tutorial, we use a CSV data ([the complete data file][csvDataURL]).
+In this tutorial, we use a CSV data that contains UCSC hg38 cytoband information ([the complete data file][csvDataURL]).
 
 |Chromosome|chromStart|chromEnd|Name|Stain|
 |---|---|---|---|--|
@@ -50,11 +50,12 @@ This mapping is specified by the following properties:
 | range                     | [number, number]\| string[] | specify values of the visual channel                                               |
 
 
-```javascript
+```ts
 {
     // specify the size of the visualization
     "arrangement": {"rowSizes": 70, "columnSizes": 700 },
     "tracks":[{
+        "assembly": "hg38", // specify a genome build to use
         // Load a csv data file through URL
         "data": {
             "url": "https://raw.githubusercontent.com/sehilyi/gemini-datasets/master/data/UCSC.HG38.Human.CytoBandIdeogram.csv",
