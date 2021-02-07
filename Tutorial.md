@@ -1,4 +1,4 @@
-# Tutorial
+# Overview
 - [Step 1. Creating Simple Cytogenetic Band]()
 - [Step 2. Adding Text Labels w/ Semantic Zooming]()
 - [Step 3. Juxtaposing Bar Charts for Epigenetic Signals]()
