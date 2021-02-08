@@ -39,7 +39,7 @@ You are welcome to try the [Gosling online editor](https://gosling-lang.github.i
 - [Data](#data)
   - [Supported Data Formats](#supported-data-formats)
     - General Data That Doesn't Require HiGlass Server
-        - [CSV](#csv)
+        - [CSV](#csv) (Works with small BED, GFF files)
         - [JSON](#json)
         - BigWig (To-be-supported)
         - BAM (To-be-supported)
