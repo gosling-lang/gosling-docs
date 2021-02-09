@@ -14,12 +14,12 @@ In this document, we provide a list of public datasets in those two classes. For
 
 > **Tip.** When you are using online editor, you can check out a "Data Preview" panel on the right-bottom part of the interface to see how the actual data looks like.
 
-# List of Plain Datasets
+## List of Plain Datasets
 > Add as a table
 - Type: BigWig
 - URL: https://s3.amazonaws.com/gosling-lang.org/data/4DNFIMPI5A9N.bw
 - Source: https://data.4dnucleome.org/files-processed/4DNFIMPI5A9N/#file-overview
 - [Start visualizing this data in the editor]()
 
-# List of Pre-aggregated Datasets
+## List of Pre-aggregated Datasets
 - 
