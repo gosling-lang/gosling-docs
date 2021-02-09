@@ -32,9 +32,6 @@ You are welcome to try the [Gosling online editor](https://gosling-lang.github.i
 ```
 
 # List of Contents
-
-- [Overview](#overview)
-- [List of Contents](#list-of-contents)
 - [Genome Build](https://github.com/gosling-lang/gosling.js/wiki/Genome-Builds)
 - [Data](https://github.com/gosling-lang/gosling.js/wiki/Data)
   - [CSV](https://github.com/gosling-lang/gosling.js/wiki/Data#csv)
