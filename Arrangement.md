@@ -14,7 +14,8 @@ Using arrangement options supported in Gosling, you can juxtapose and superpose 
 
 # Grid-Based Arrangement
 [:link: source code](https://github.com/gosling-lang/gosling.js/blob/43626eaf21417bf36128a405dceeaa6ee00d0851/src/core/Gosling.schema.ts#L20)  
-specify the grid arrangement of multiple tracks
+
+Using a `arrangement` property, you can specify a grid arrangement of multiple tracks.
 
 | property                | type                        | description                                                                                                                                    |
 | ----------------------- | --------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
