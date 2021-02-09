@@ -1,14 +1,16 @@
-[This Page Is WIP]
+*********This Page Is WIP*********
 
 # Public Datasets
-To help using Gosling for the first time, we provide useful datasets to start with.
+To help using Gosling for the first time, this document provides some useful datasets that can be directly used in Gosling.
 
 For the flexible data exploration, Gosling supports two different kinds of datasets:
-1. **Plain datasets**: For the convenience, we support directly using files without requiring to preprocess data or using a dedicated server (i.e., HiGlass server). 
-<!--This includes BigWig, BED, BEDPE, and we will be supporting more genomic file formats in the near future.-->
-2. **Scalable datasets**: To allow scalable data exploration, we also support using precomputed datasets which requires the dedicated server.
 
-In this document, we provide a list of datasets in the two aforementioned classes.
+1. **Plain Datasets**: For the convenience, Gosling allows to use several data formats directly in the system without requiring to preprocess data or set up a dedicated server (i.e., HiGlass server).
+
+<!--This includes BigWig, BED, BEDPE, and we will be supporting more genomic file formats in the near future.-->
+2. **Pre-aggregated Datasets**: To allow scalable data exploration, Gosling supports using HiGlass' preprocessed datasets which requires the dedicated HiGlass server.
+
+In this document, we provide a list of datasets in those two classes. For the pre-aggregated datasets listed below, we provide them in our Gosling's server, so you do not need to set up your own HiGlass server to visualize them.
 
 > **Tip.** When you are using online editor, you can check out a "Data Preview" panel on the right-bottom part of the interface to see how the actual values look like.
 
