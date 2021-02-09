@@ -32,7 +32,7 @@ You are welcome to try the [Gosling online editor](https://gosling-lang.github.i
 ```
 
 # List of Contents
-- [Genome Builds](https://github.com/gosling-lang/gosling.js/wiki/Genome-Builds)
+- [Genome Build](https://github.com/gosling-lang/gosling.js/wiki/Genome-Builds)
 - [Data](https://github.com/gosling-lang/gosling.js/wiki/Data)
   - [CSV](https://github.com/gosling-lang/gosling.js/wiki/Data#csv)
   - [JSON](https://github.com/gosling-lang/gosling.js/wiki/Data#json)
