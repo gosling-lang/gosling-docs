@@ -1,5 +1,3 @@
-# Genome Builds
-
 You can specify genome builds through an `assembly` property.
 
 ```typescript
