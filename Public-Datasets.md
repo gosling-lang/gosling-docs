@@ -1,7 +1,7 @@
 [This Page Is WIP]
 
 # Public Datasets
-To help using Gosling for the first time, we provide useful public datasets to start with.
+To help using Gosling for the first time, we provide useful datasets to start with.
 
 For the flexible data exploration, Gosling supports two different kinds of datasets:
 1. **Plain datasets**: For the convenience, we support directly using files without requiring to preprocess data or using a dedicated server (i.e., HiGlass server). 
