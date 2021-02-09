@@ -48,7 +48,7 @@ You are welcome to try the [Gosling online editor](https://gosling-lang.github.i
   - [Rect](https://github.com/gosling-lang/gosling.js/wiki/Mark#rect)
   - [Text](https://github.com/gosling-lang/gosling.js/wiki/Mark#text)
   - [Link](https://github.com/gosling-lang/gosling.js/wiki/Mark#link)
-  - [Triangle](#triangle)
+  - [Triangle](https://github.com/gosling-lang/gosling.js/wiki/Mark#triangle)
 - [Visual Channel](https://github.com/gosling-lang/gosling.js/wiki/Visual-Channel)
   - [x](https://github.com/gosling-lang/gosling.js/wiki/Visual-Channel#x)
   - [xe](https://github.com/gosling-lang/gosling.js/wiki/Visual-Channel#xe)
