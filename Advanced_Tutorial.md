@@ -1,4 +1,4 @@
-In the [first tutorial](https://github.com/gosling-lang/gosling.js/wiki/GettingStarted), we introduce how to load data, encode data with marks, transform data, superpose multiple marks and obtain the following visualization.
+In the [first tutorial](https://github.com/gosling-lang/gosling.js/wiki/Tutorial), we introduce how to load data, encode data with marks, transform data, superpose multiple marks and obtain the following visualization.
 <img src="https://raw.githubusercontent.com/wiki/gosling-lang/gosling.js/images/tutorial_superpose.png" alt="gosling vis superpose" width="800"/>
 <details>
   <summary>click to expand</summary>
