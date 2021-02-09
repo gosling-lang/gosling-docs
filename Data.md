@@ -23,7 +23,13 @@ For the flexible data exploration, Gosling supports two different kinds of datas
 
 <!-- Gosling currently supports six types of data formats: [CSV](#csv), [JSON](#json), [BigWig](#bigwig), [Multivec](#multivec), [BED](#bed), [Vector](#vector).-->
 
-## Plain Datasets
+<!--### Tip
+
+Using some of data formats in Gosling requires you to specify the field names so that they can be used in describing visual encoding. For example, for using `"BigWig"` data formats, you need to specify how you want to call th-->
+
+## Plain Datasets 
+This class of datasets do not require setting up a dedicated server or pre-aggregating data.
+
 ### CSV
 
 Any small enough tabular data files, such as tsv, csv, BED, BEDPE, and GFF, can be loaded using `"csv"` data specification.
@@ -128,9 +134,10 @@ This format allows include data directly in the Gosling's JSON specification.
 | start    | string | assign a field name of the start position of genomic intervals |
 | end      | string | assign a field name of the end position of genomic intervals |
 
-# Pre-aggregated Datasets
+## Pre-aggregated Datasets
+This class of datasets make the data exploration more scalable, requiring you to set up a dedicated server and pre-aggregating data before using them.
 
-## Vector
+### Vector
 
 ```javascript
 {
@@ -157,7 +164,7 @@ This format allows include data directly in the Gosling's JSON specification.
 | start    | string | assign a field name of the start position of genomic intervals |
 | end      | string | assign a field name of the end position of genomic intervals |
 
-## Multivec
+### Multivec
 
 
 ```javascript
@@ -188,7 +195,7 @@ This format allows include data directly in the Gosling's JSON specification.
 | start    | string | assign a field name of the start position of genomic intervals |
 | end      | string | assign a field name of the end position of genomic intervals |
 
-## BED
+### BED
 ```javascript
 {
   "tracks":[{
@@ -218,9 +225,7 @@ This format allows include data directly in the Gosling's JSON specification.
 | type               | string                                                               | **required**, `"bed"`                                  |
 | url                | string                                                               | **required**, specify the URL address of the data file |
 | genomicFields      | { index: number; name: string }[]                                    | **required**, specify the name of genomic data fields  |
-| valueFields        | { index: number; name: string; type: 'nominal' \| 'quantitative' }[] |                                                        |
-| exonIntervalFields | [{ index: number; name: string }, { index: number; name: string }]   |                                                        |
-
+| valueFields        | { index: number; name: string; type: 'nominal' \| 'quantitative' }[] | specify the column indexes, field names to assign, and field types                                                     |
 
 
 
