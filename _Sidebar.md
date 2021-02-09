@@ -6,5 +6,6 @@
   * [Genome Builds](https://github.com/gosling-lang/gosling.js/wiki/Genome-Builds)
   * [Data](https://github.com/gosling-lang/gosling.js/wiki/Data)
   * [Mark](https://github.com/gosling-lang/gosling.js/wiki/Mark)
+  * [Channel](https://github.com/gosling-lang/gosling.js/wiki/Visual-Channel)
 * [Public Datasets](https://github.com/gosling-lang/gosling.js/wiki/Public-Datasets)
 <!-- * [FAQ]() -->
