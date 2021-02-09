@@ -10,7 +10,7 @@ For the flexible data exploration, Gosling supports two different kinds of datas
 <!--This includes BigWig, BED, BEDPE, and we will be supporting more genomic file formats in the near future.-->
 2. **Pre-aggregated Datasets**: To allow scalable data exploration, Gosling supports using HiGlass' preprocessed datasets which requires the dedicated HiGlass server.
 
-In this document, we provide a list of datasets in those two classes. For the pre-aggregated datasets listed below, we provide them in our Gosling's server, so you do not need to set up your own HiGlass server to visualize them.
+In this document, we provide a list of public datasets in those two classes. For the pre-aggregated datasets listed below, we provide them in our Gosling's server, so you do not need to set up your own HiGlass server to visualize them.
 
 > **Tip.** When you are using online editor, you can check out a "Data Preview" panel on the right-bottom part of the interface to see how the actual values look like.
 
