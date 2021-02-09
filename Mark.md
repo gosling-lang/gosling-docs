@@ -21,7 +21,7 @@ Gosling supports the following primitive `mark` types: `point`, `line`, `area`, 
 
 [:link: source code](https://github.com/gosling-lang/gosling.js/blob/master/src/core/mark)
 
-### Point
+# Point
 [:link: source code](https://github.com/gosling-lang/gosling.js/blob/master/src/core/mark/point.ts)
 
 The mark `point` represents one data point using a circular shape. Visual channels of the circle, such as radius, color, and vertical/horizontal position, are used to represent values of the data point. Popular charts such as scatter plots and bubble charts use `point` mark.
@@ -54,7 +54,7 @@ The mark `point` represents one data point using a circular shape. Visual channe
     }]
 }
 ```
-### Line
+# Line
 
 The mark `line` represents a set of data points using a line that connects these points.
 
@@ -86,7 +86,7 @@ The mark `line` represents a set of data points using a line that connects these
     }]
 }
 ```
-### Area
+# Area
 The mark `area` represents a set of data points as an area shape. The upper edge of the area shape is a line that connects all the points and the bottom edge is the x axis.
 
 <img src="https://github.com/gosling-lang/gosling.js/wiki/images/area_example.png" width="800" alt="area_example">  
@@ -119,7 +119,7 @@ The mark `area` represents a set of data points as an area shape. The upper edge
 }
 ```
 
-### Bar
+# Bar
 
 The `bar` mark is designed for drawing bar charts. Each bar shows the value of one data point through its height.
 
@@ -153,7 +153,7 @@ The `bar` mark is designed for drawing bar charts. Each bar shows the value of o
 }
 ```
 
-### Rect
+# Rect
 The `rect` mark is designed for representing genomic intervals using rectangular shapes. Left and right edge of the rectangle indicate the start and end genomic positions, respectively.
 
 <img src="https://github.com/gosling-lang/gosling.js/wiki/images/rect_example.png" width="800" alt="rect_example">  
@@ -195,7 +195,7 @@ The `rect` mark is designed for representing genomic intervals using rectangular
 
 ```
 
-### Text
+# Text
 
 The `text` mark is designed to display textual labels. For example, gene names and nucleobases can be displayed with a `text` mark.
 
@@ -230,7 +230,7 @@ The `text` mark is designed to display textual labels. For example, gene names a
 }
 ```
 
-### Link
+# Link
 
 The `link` mark is designed to show connections between chromosomes using an arc that connects two genomic intervals.
 
@@ -275,7 +275,7 @@ The `link` mark is designed to show connections between chromosomes using an arc
 }
 ```
 
-### Triangle
+# Triangle
 [:link: source code](https://github.com/gosling-lang/gosling.js/blob/master/src/core/mark/triangle.ts)  
 
 Gosling supports three types of triangle marks: `triangle-l`, `triangle-r`, `triangle-d`
