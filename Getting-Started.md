@@ -1,4 +1,4 @@
-# Overview
+# How To Use Gosling?
 We currently support three different ways of using Gosling.
 
 ## 1. Use Online Editor
