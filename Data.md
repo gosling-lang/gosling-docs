@@ -1,4 +1,3 @@
-# Data
 Users can specify the data of each visualization (i.e., `track`) through a `track.data` property.
 ```javascript
 {
@@ -13,12 +12,12 @@ Users can specify the data of each visualization (i.e., `track`) through a `trac
 
 
 
-## Supported Data Formats
+# Supported Data Formats
 
 <!-- Gosling currently supports six types of data formats: [CSV](#csv), [JSON](#json), [BigWig](#bigwig), [Multivec](#multivec), [BED](#bed), [Vector](#vector).-->
 
 
-### CSV
+## CSV
 ```javascript
 {
   "tracks": [
@@ -46,7 +45,7 @@ Users can specify the data of each visualization (i.e., `track`) through a `trac
 | chromosomeField    | string   | specify the name of chromosome data fields                   |
 | genomicFields      | string[] | specify the name of genomic data fields                      |
 
-### JSON
+## JSON
 
 ```javascript
 {
@@ -90,7 +89,7 @@ Users can specify the data of each visualization (i.e., `track`) through a `trac
 | chromosomeField    | string                            | specify the name of chromosome data fields                   |
 | genomicFields      | string[]                          | specify the name of genomic data fields                      |
 
-### BigWig
+## BigWig
 
 ```javascript
 {
@@ -117,7 +116,7 @@ Users can specify the data of each visualization (i.e., `track`) through a `trac
 | start    | string |                                                        |
 | end      | string |                                                        |
 
-### Vector
+## Vector
 
 ```javascript
 {
@@ -144,7 +143,7 @@ Users can specify the data of each visualization (i.e., `track`) through a `trac
 | start    | string |                                                        |
 | end      | string |                                                        |
 
-### Multivec
+## Multivec
 
 
 ```javascript
@@ -175,7 +174,7 @@ Users can specify the data of each visualization (i.e., `track`) through a `trac
 | start      | string   |                                                        |
 | end        | string   |                                                        |
 
-### BED
+## BED
 ```javascript
 {
   "tracks":[{
@@ -211,7 +210,7 @@ Users can specify the data of each visualization (i.e., `track`) through a `trac
 
 
 
-## Data Transform
+# Data Transform
 Gosling supports data transform through a set of data filters.  
 Only data points that pass the tests in all filters will be visualized.  
 
