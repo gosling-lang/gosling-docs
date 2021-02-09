@@ -8,8 +8,7 @@ Users can specify the data of each visualization (i.e., `track`) through a `trac
     ...
   }]
 }
-```
-
+``` 
 
 
 # Supported Data Formats
