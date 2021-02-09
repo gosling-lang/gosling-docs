@@ -1,4 +1,4 @@
-Visual marks (e.g., points, lines, and bars) are the basic graphical elements of a visualization (we call one visualization a `track` in Gosling).
+Visual marks (e.g., points, lines, and bars) are the basic graphical elements of a visualization. Note here that we call one visualization a `track` in Gosling.
 The core of constructing a visualization is to bind selected **data fields** to the **visual channels** (e.g., size, color, and position) of a chosen **mark type**.
 
 The `mark` property of a track is defined by a string that describes the mark type.
