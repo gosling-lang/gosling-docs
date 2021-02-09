@@ -49,5 +49,5 @@ We currently support three different ways of using Gosling.
 - How to set up your own HiGlass server for private data exploration?
    - HiGlass Server: https://github.com/higlass/higlass-server
    - HiGlass Docker: https://github.com/higlass/higlass-docker
-- To prepare your own HiGlass data
+- How to prepare your own HiGlass data?
    - HiGlass docs for data preparation: https://docs.higlass.io/data_preparation.html
