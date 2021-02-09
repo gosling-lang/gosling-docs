@@ -7,3 +7,5 @@ Gosling is a declarative visualization grammar tailored for interactive genomic 
 ### [Tutorial](https://github.com/gosling-lang/gosling.js/wiki/Tutorial)
 
 ### [Documentation](https://github.com/gosling-lang/gosling.js/wiki/Documentation)
+
+### [Public Datasets](https://github.com/gosling-lang/gosling.js/wiki/Public-Datasets)
