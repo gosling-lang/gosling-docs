@@ -14,7 +14,7 @@ Users can specify the data of each visualization (i.e., `track`) through `track.
 
 ## Supported Data Formats
 
-Currently, Gosling supports five types of data formats: [CSV](#csv), [JSON](#json), [Multivec](#multivec), [BED](#bed), [Vector](#vector).
+Currently, Gosling supports six types of data formats: [CSV](#csv), [JSON](#json), [BigWig](#bigwig), [Multivec](#multivec), [BED](#bed), [Vector](#vector).
 
 
 ### CSV
@@ -89,7 +89,32 @@ Currently, Gosling supports five types of data formats: [CSV](#csv), [JSON](#jso
 | chromosomeField    | string                            | specify the name of chromosome data fields                   |
 | genomicFields      | string[]                          | specify the name of genomic data fields                      |
 
+### BigWig
 
+```javascript
+{
+  "tracks":[{
+    "data": {
+      "url": 'https://s3.amazonaws.com/gosling-lang.org/data/4DNFIMPI5A9N.bw',
+      "type": "bigwig",
+      "column": "position",
+      "value": "peak"
+    },
+    ... // other configurations of this track
+  }]
+}
+```
+
+
+| property | type   | description                                            |
+| -------- | ------ | ------------------------------------------------------ |
+| type     | string | **required**, `"bigwig"`                               |
+| url      | string | **required**, specify the URL address of the data file |
+| column   | string | **required**                                           |
+| value    | string | **required**                                           |
+| bin      | number | bin the genomic interval in tiles                      |
+| start    | string |                                                        |
+| end      | string |                                                        |
 
 ### Vector
 
