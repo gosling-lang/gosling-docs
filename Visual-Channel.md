@@ -74,7 +74,7 @@ For example, the code below creates a mapping from the data `field` "Stain" to t
 }
 ```
 
-### x
+# x
 `x` specify a mark's position in the horizontal direction.
 
 Apart from the properties shared by all channels, `x` channel have the following unique properties:
@@ -85,7 +85,7 @@ Apart from the properties shared by all channels, `x` channel have the following
 | linkingID         | string | a unique linkingID is needed for [linking views](#linking-views) and [Brushing and Linking](#brushing-and-linking) |
 
 
-### xe
+# xe
 `xe` stands for the end of x axis. `xe` is usually used with `x` to specify the start position and the end position of a visual mark in the horizontal direction, respectively.
 
 Apart from the properties shared by all channels, `xe` channel have the following unique properties:
@@ -94,7 +94,7 @@ Apart from the properties shared by all channels, `xe` channel have the followin
 | aggregate         | string | support "max", "min", "count", "mean", "bin"                                |
 | axis              | string | specify the axis position, support "none", "top", "bottom", "left", "right" |
 
-### y
+# y
 `y` specify a mark's position in the vertical direction.
 
 Apart from the properties shared by all channels, `y` channel have the following unique properties:
@@ -103,17 +103,17 @@ Apart from the properties shared by all channels, `y` channel have the following
 | axis              | string           | specify the axis position, support "none", "top", "bottom", "left", "right" |
 | baseline          | string \| number |                                                                             |
 
-### ye
+# ye
 `ye` stands for the end of y axis. `ye` is usually used with `x` to specify the start position and the end position of a visual mark in the vertical direction, respectively.
 
-### x1 x1e y1 y1e
+# x1 x1e y1 y1e
 The four channels are used together only in `link` mark. In this case, `x` and `xe` are used with `x1` and `x1e` to specify a pair of genomic intervals that needs to be connected using band representations. Similarly, `y` and `ye` can be used with `y1` and `y1e` to show band connection along vertical axis.
 
 <img src="https://github.com/gosling-lang/gosling.js/wiki/images/x_x1_example.png" width="400" alt="x x1 example">  
 
 
 
-### row
+# row
 
 Channel `row` is used with channel `y` to stratify a visualization with categorical values.
 
@@ -160,14 +160,14 @@ Line charts are stratified with sample names.
 }
 ```
 
-### size
+# size
 Channel `size` indicates the size of the visual mark. It determines either the radius of a circle (`mark: point`), the vertical length of a triangle (`mark: triangle-r`, `mark: triangle-l`, `mark: triangle-d`), the vertical length of a rectangle (`mark: rect`), the thickness of a line (`mark: line`).
 
-### text
+# text
 
 `text` channel is used only in `text` mark to specify what textual information to display.
 
-### color
+# color
 Channel `color` specifies the filling color of the mark. Binding `color` with categorical values in `bar` and `area` marks stack marks that are positioned in the same genomic intervals to better show their cumulative values.
 
 Apart from the properties shared by all channels, the `color` channel have the following unique properties:
@@ -175,19 +175,19 @@ Apart from the properties shared by all channels, the `color` channel have the f
 | ----------------- | ------- | -------------------------------- |
 | legend            | boolean | whether to show the color legend |
 
-### stroke
+# stroke
 Channel `stroke` defines the outline color of the mark. Gosling supports `stroke` in the following marks: `rect`, `area`, `point`, `bar`, `link`.
 
-### strokeWidth
+# strokeWidth
 Channel `strokeWidth` defines the outline thickness of the mark shape. Gosling supports `strokeWidth` in the following marks: `rect`, `area`, `point`, `bar`, `link`.
 
-### opacity
+# opacity
 Channel `opacity` specifies the opacity of the mark shape.
 <!-- will it be better if we merge stroke, strokeWidth, background, opacity into a style option? -->
 
 
 
-## Style
+# Style
 
 `style` specifies the visual appearances of a track that are not bound with data fields.
 
