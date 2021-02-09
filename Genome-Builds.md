@@ -1,4 +1,4 @@
-You can specify genome builds through an `assembly` property.
+You can specify genome builds through an `assembly` property (default: `"hg38"`).
 
 ```typescript
 {
