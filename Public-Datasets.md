@@ -12,7 +12,7 @@ For the flexible data exploration, Gosling supports two different kinds of datas
 
 In this document, we provide a list of public datasets in those two classes. For the pre-aggregated ones listed below, we provide them in our Gosling's server, so you do not need to set up your own HiGlass server to visualize them.
 
-> **Tip.** When you are using online editor, you can check out a "Data Preview" panel on the right-bottom part of the interface to see how the actual values look like.
+> **Tip.** When you are using online editor, you can check out a "Data Preview" panel on the right-bottom part of the interface to see how the actual data look like.
 
 # Datasets Directly Supported
 > Add as a table
