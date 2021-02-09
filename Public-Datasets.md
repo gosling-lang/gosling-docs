@@ -16,6 +16,10 @@ In this document, we provide a list of public datasets in those two classes. For
 
 ## List of Plain Datasets
 > Add as a table
+- Type: CSV
+- URL: 
+- Description: hg38 cytoband
+- Soruce: UCSC
 > Support multiple of bigwigs
 - Type: BigWig
 - URL: https://s3.amazonaws.com/gosling-lang.org/data/4DNFIMPI5A9N.bw
@@ -28,6 +32,7 @@ In this document, we provide a list of public datasets in those two classes. For
 - URL: 
 - Description: Multiple samples of ChIP-seq and DNase-seq analysis
 - Source: Cistrome Browser (http://cistrome.org/db/#/)
+---
 
 - Type: Multivec (Originally, a FASTA file)
 - URL: 
