@@ -8,7 +8,7 @@ For the flexible data exploration, Gosling supports two different kinds of datas
 <!--This includes BigWig, BED, BEDPE, and we will be supporting more genomic file formats in the near future.-->
 2. **Scalable datasets**: To allow scalable data exploration, we also support using precomputed datasets which requires the dedicated server.
 
-In this document, we provide a list of datasets in the two aforementioned types.
+In this document, we provide a list of datasets in the two aforementioned classes.
 
 > **Tip.** When you are using online editor, you can check out a "Data Preview" panel on the right-bottom part of the interface to see how the actual values look like.
 
