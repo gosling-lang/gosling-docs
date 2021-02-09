@@ -1,6 +1,6 @@
 *********This Page Is WIP*********
 
-# Public Datasets
+# Overview
 To help using Gosling for the first time, this document provides some useful datasets that can be directly used in Gosling.
 
 For the flexible data exploration, Gosling supports two different kinds of datasets:
