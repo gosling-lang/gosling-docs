@@ -118,28 +118,5 @@ Try it in the online editor:
 
 [Ideogram (text + rect + triangle)](<https://gosling-lang.github.io/gosling.js/?full=false&spec=(V'titleK'Example%3A%20Superposed%20Tracks'_'layoutK'linear'_'arrangementK(V*'directionK'vertical'_*'columnSizesK800_*'rowSizesK80V)_'tracksK%5BV*(VXdataK(J'urlK'https%3A%2F%2Fraw.githubusercontent.com%2Fsehilyi%2Fgemini-datasets%2Fmaster%2Fdata%2FUCSC.HG38.Human.CytoBandIdeogram.csv'Q'typeK'csv'Q'c%3CFieldK'C%3C'Q'genomicFieldsK%5B'%60LchromEnd'%5DV**)_XsuperposeK%5BJ%7Dtext'QRMtrue)~textK('YNameL%25)Q*'%3BX%25QXZ%22'%40L%40L%40L%40LwhiteL%40'~visibilityK(JXoperationK'less-than'QXconditionK('widthK'%7Cxe-x%7CLtransitionPaddingK10)QXtargetK'mark'J*)Q*'styleK('textS%7BK0%26rect'QRMtrue)~%3BX%25QXZ%22J*Xwhite%3DD9D9D9%3D979797%3D636363'Q*X%40%3DA0A0F2'J**%5DJ*%5E-r'QRJ***M%24'q%3F~%2B%5E-l'QRJ***M%24'p%3F~%2B)J)V**%5D_XxK(J'Y%60'Q'%3EQ'domainK('c%3CK'1')Q'axisK'top'V**)_XxeK('YchromEndL%3E)_Xsizej20)_Xstrokej'gray')_Xs%7Bj0.5)_XstyleK('outlineK'white')V*)V%5D%0A)*%20%20JV***K!%20L'%2C%20'M('YStainLoneOfK%5B'acen'%5D%2C%20'notKQ%2CJR*'dataTransformK(JXfilterK%5BV%0A*X**'YfieldK'ZdomainK%5B'gnegLgpos25Lgpos50Lgpos75Lg_%2CVjK('valueK~%5DJ*)Q*'%22pos100Lgvar'%5DQXrangeK%5B%24false)Q***('YNameLincludeK%25typeK'nominal'%26)J)Q%7D%2Bcolorj'%23B40101'%3BcolorK(JXYStain'Q%3Chromosome%3D'Q*X%23%3EtypeK'genomic'%3FLnotKfalse)J**%40black%5E%26triangle%60chromStart%7BtrokeWidth%7D(J*'markK'%01%7D%7B%60%5E%40%3F%3E%3D%3C%3B%2B%26%25%24%22~j_ZYXVRQMLKJ*_>)
 
-
-
-
-## Style
-
-`style` specifies the visual appearances of a track that are not bound with data fields.
-
-| style properties | type                                                   | description                              |
-| ---------------- | ------------------------------------------------------ | ---------------------------------------- |
-| background       | string                                                 | color of the background                  |
-| dashed           | [number, number]                                       |
-| linePatterns     | { "type": "triangle-l" \| "triangle-r"; size: number } |
-| curve            | string                                                 | support "top", "bottom", "left", "right" |
-| align            | string                                                 | support "left", "right"                  |
-| dy               | number                                                 |
-| outline          | string                                                 |
-| outlineWidth     | number                                                 |
-| circularLink     | boolean                                                |
-| textFontSize     | number                                                 |
-| textStroke       | string                                                 |
-| textStrokeWidth  | number                                                 |
-| textFontWeight   | string                                                 | support "bold", "normal"                 |
-
 <!-- TODO: add channel.flip, channel.grid and other properties  -->
 
