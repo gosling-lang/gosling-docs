@@ -1,5 +1,4 @@
-# How To Use Gosling?
-We currently support three different ways of using Gosling.
+We currently support the following three ways of using Gosling.
 
 ## 1. Use Online Editor
 You can visit [Online Editor](gosling.js.org) to visualize your data directly in the website.
