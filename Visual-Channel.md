@@ -185,3 +185,24 @@ Channel `strokeWidth` defines the outline thickness of the mark shape. Gosling s
 Channel `opacity` specifies the opacity of the mark shape.
 <!-- will it be better if we merge stroke, strokeWidth, background, opacity into a style option? -->
 
+
+
+## Style
+
+`style` specifies the visual appearances of a track that are not bound with data fields.
+
+| style properties | type                                                   | description                              |
+| ---------------- | ------------------------------------------------------ | ---------------------------------------- |
+| background       | string                                                 | color of the background                  |
+| dashed           | [number, number]                                       |
+| linePatterns     | { "type": "triangle-l" \| "triangle-r"; size: number } |
+| curve            | string                                                 | support "top", "bottom", "left", "right" |
+| align            | string                                                 | support "left", "right"                  |
+| dy               | number                                                 |
+| outline          | string                                                 |
+| outlineWidth     | number                                                 |
+| circularLink     | boolean                                                |
+| textFontSize     | number                                                 |
+| textStroke       | string                                                 |
+| textStrokeWidth  | number                                                 |
+| textFontWeight   | string                                                 | support "bold", "normal"                 |
