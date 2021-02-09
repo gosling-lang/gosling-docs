@@ -1,11 +1,10 @@
 # Overview
 We currently support three different ways of using Gosling.
 
-1. Embed a Gosling component directly in a HTML file.
-2. Use `<GoslingComponent/>` in a React app.
-3. Use our online Editor to quickly visualize your own data without setting up anything.
+## 1. Use Online Editor
+You can visit [Online Editor](gosling.js.org) to visualize your data directly in the website.
 
-
+## 2. Embed Gosling Component in a HTML File
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -44,6 +43,9 @@ We currently support three different ways of using Gosling.
     </script>
 </html>
 ```
+
+# 3. Use `<GoslingComponent/>` in React App
+Please visit [gosling-react](https://github.com/gosling-lang/gosling-react) for more detailed instruction.
 
 ## Resources
 - How to set up your own HiGlass server for private data exploration?
