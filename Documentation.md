@@ -1,4 +1,3 @@
-# Overview
 Gosling is a declarative visualization grammar tailored for interactive genomic visualizations. In Gosling, users can create visualizations through a JSON syntax. This documentation describes how to write the JSON specification to create interactive visualizations.
 You are welcome to try the [Gosling online editor](https://gosling-lang.github.io/gosling.js/)!
 
@@ -69,8 +68,8 @@ You are welcome to try the [Gosling online editor](https://gosling-lang.github.i
   - [Arrangement](https://github.com/gosling-lang/gosling.js/wiki/Track#arrangement)
     - [Grid-based arrangement](https://github.com/gosling-lang/gosling.js/wiki/Track#grid-based-arrangement)
     - [Superposition](https://github.com/gosling-lang/gosling.js/wiki/Track#superposition)
-- [Interactions](#interactions)
-  - [Zooming and Panning](#zooming-and-panning)
-  - [Linking Views](#linking-views)
-  - [Brushing and Linking](#brushing-and-linking)
-  - [Semantic Zooming](#semantic-zooming)
+- [Interactions](https://github.com/gosling-lang/gosling.js/wiki/User-Interaction)
+  - [Zooming and Panning](https://github.com/gosling-lang/gosling.js/wiki/User-Interaction#zooming-and-panning)
+  - [Linking Views](https://github.com/gosling-lang/gosling.js/wiki/User-Interaction#linking-views)
+  - [Brushing and Linking](https://github.com/gosling-lang/gosling.js/wiki/User-Interaction#brushing-and-linking)
+  - [Semantic Zooming](https://github.com/gosling-lang/gosling.js/wiki/User-Interaction#semantic-zooming)
