@@ -1,10 +1,10 @@
 ## Create your visualizations using Gosling ＼（＾▽＾）／
 
-This tutorial will guide you step by step in writing the JSON specification to create an interactive visualization in Gosling. You are encouraged to follow the tutorial and create visualizations in the [online editor](onlineEditorURL).
+This tutorial will guide you step by step in writing the JSON specification to create an interactive visualization in Gosling. You are encouraged to follow the tutorial and create visualizations in the [online editor][onlineEditorURL].
 
 ## Loading Data
 
-In this tutorial, we use a CSV data ([the complete data file](csvDataURL)).
+In this tutorial, we use a CSV data ([the complete data file][csvDataURL].
 
 
 
@@ -91,7 +91,7 @@ This mapping is specified by the following properties:
 You can interact with the visualization you just created in the online editor through zoom and pan.
 Or, you can keep reading the tutorial and make your visualizations even more fancy.
 
-## Data Transform
+## Transforming Data
 Gossling supports filtering out uninterested data through the `dataTransform` property.
 For example, we can add a filter to only visualize chromosomes whose stain result is one of "gpos25", "gpos50", "gpos75", or "gpos100".
 
@@ -169,7 +169,7 @@ In the code below, a chromosome is visualized as a `triangle-r` mark if its stai
 +            {
 +            "mark": "rect",
 +            "dataTransform": {
-+                    "filter": [{"field": "Stain", "oneOf": ["gpos25", "gpos50", "gpos75", "gpos100"]}]
++                    "filter": [{"field": "Stain", "oneOf": ["acen"], "not": true}]
 +                },
 +            "color": {
 +                "field": "Stain", 
@@ -205,7 +205,7 @@ In the code below, a chromosome is visualized as a `triangle-r` mark if its stai
 
 <img src="https://raw.githubusercontent.com/wiki/gosling-lang/gosling.js/images/tutorial_superpose.png" alt="gosling vis superpose" width="700"/>
 
-## Customize Style
+<!-- ## Customize Style
 
 You can freely modify the size of the `rect` mark, add a title, or change the layout.
 Gosling supports easy creation of circular layout through the `layout` property.
@@ -278,10 +278,13 @@ Gosling supports easy creation of circular layout through the `layout` property.
     }]
 }
 ```
-<img src="https://raw.githubusercontent.com/wiki/gosling-lang/gosling.js/images/tutorial_style.png" alt="gosling vis style" width="500"/>
+<img src="https://raw.githubusercontent.com/wiki/gosling-lang/gosling.js/images/tutorial_style.png" alt="gosling vis style" width="500"/> -->
+
+## Coming Up Next
+In the [next tutorial](https://github.com/gosling-lang/gosling.js/wiki/Advanced_Tutorial), we introduce how to use semantic zooming, multiple tracks, and circular layout in Gosling.
 
 ## More Examples
-You can find more examples [here](exampleURL).
+You can find more examples [here][exampleURL].
 
 [onlineEditorURL]: http://gosling.js.org
 [exampleURL]: http://gosling.js.org
