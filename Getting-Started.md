@@ -4,7 +4,7 @@ We currently support three different ways of using Gosling.
 ## 1. Use Online Editor
 You can visit [Online Editor](gosling.js.org) to visualize your data directly in the website.
 
-## 2. (Beta) Embed Gosling Component in a HTML File
+## 2. Embed Gosling Component in a HTML File (Beta)
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -44,7 +44,7 @@ You can visit [Online Editor](gosling.js.org) to visualize your data directly in
 </html>
 ```
 
-## 3. (Beta) Use `<GoslingComponent/>` in React App
+## 3. Use `<GoslingComponent/>` in React App (Beta)
 Please visit [gosling-react](https://github.com/gosling-lang/gosling-react) for more detailed instruction.
 
 ## Resources
