@@ -1,3 +1,4 @@
+# Overview
 We currently support three different ways of using Gosling.
 
 1. Embed a Gosling component directly in a HTML file.
@@ -43,3 +44,9 @@ We currently support three different ways of using Gosling.
     </script>
 </html>
 ```
+
+## Resources
+- How to set up your own HiGlass server for private data exploration?
+   - HiGlass Server: https://github.com/higlass/higlass-server
+   - HiGlass Docker: https://github.com/higlass/higlass-docker
+
