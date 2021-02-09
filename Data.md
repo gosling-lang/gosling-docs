@@ -23,7 +23,7 @@ For the flexible data exploration, Gosling supports two different kinds of datas
 
 <!-- Gosling currently supports six types of data formats: [CSV](#csv), [JSON](#json), [BigWig](#bigwig), [Multivec](#multivec), [BED](#bed), [Vector](#vector).-->
 
-## Data Formats That Do Not Require HiGlass Server
+## Plain Datasets
 ### CSV
 
 Any small enough tabular data files, such as tsv, csv, BED, BEDPE, and GFF, can be loaded using `"csv"` data specification.
@@ -127,6 +127,8 @@ This format allows include data directly in the Gosling's JSON specification.
 | bin      | number | bin the genomic interval in tiles                      |
 | start    | string | assign a field name of the start position of genomic intervals |
 | end      | string | assign a field name of the end position of genomic intervals |
+
+# Pre-aggregated Datasets
 
 ## Vector
 
