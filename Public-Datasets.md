@@ -27,6 +27,11 @@ In this document, we provide a list of public datasets in those two classes. For
 - [Start visualizing this data in the editor]()
 
 ## List of Pre-aggregated Datasets
+- Type: Aggregated BED
+- URL: 
+- Description: hg38 gene annotation
+- Source: 
+
 > Need to confirm how many samples this data contains
 - Type: Multivec (Originally, multiple bigwig files)
 - URL: 
