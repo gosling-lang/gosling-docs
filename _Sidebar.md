@@ -8,5 +8,6 @@
   * [Mark](https://github.com/gosling-lang/gosling.js/wiki/Mark)
   * [Visual Channel](https://github.com/gosling-lang/gosling.js/wiki/Visual-Channel)
   * [Track](https://github.com/gosling-lang/gosling.js/wiki/Track)
+  * [User Interaction](https://github.com/gosling-lang/gosling.js/wiki/User-Interaction)
 * [Public Datasets](https://github.com/gosling-lang/gosling.js/wiki/Public-Datasets)
 <!-- * [FAQ]() -->
