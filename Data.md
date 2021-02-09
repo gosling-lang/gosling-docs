@@ -134,7 +134,7 @@ This format allows include data directly in the Gosling's JSON specification.
 | end      | string | assign a field name of the end position of genomic intervals |
 
 ## Pre-aggregated Datasets
-This class of datasets make the data exploration more scalable, requiring you to set up a dedicated server and pre-aggregating data before using them.
+This class of datasets makes the data exploration more scalable, requiring you to set up a dedicated server and pre-aggregating data before using them.
 
 ### Vector
 
