@@ -44,7 +44,7 @@ You can visit [Online Editor](gosling.js.org) to visualize your data directly in
 </html>
 ```
 
-# 3. (Beta) Use `<GoslingComponent/>` in React App
+## 3. (Beta) Use `<GoslingComponent/>` in React App
 Please visit [gosling-react](https://github.com/gosling-lang/gosling-react) for more detailed instruction.
 
 ## Resources
