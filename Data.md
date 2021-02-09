@@ -14,10 +14,20 @@ Users can specify the data of each visualization (i.e., `track`) through a `trac
 
 # Supported Data Formats
 
+For the flexible data exploration, Gosling supports two different kinds of datasets:
+
+1. **Plain Datasets**: For the convenience, Gosling allows to use several data formats directly in the system without requiring to preprocess data or set up a dedicated server (i.e., HiGlass server).
+
+<!--This includes BigWig, BED, BEDPE, and we will be supporting more genomic file formats in the near future.-->
+2. **Pre-aggregated Datasets**: To allow scalable data exploration, Gosling supports using HiGlass' preprocessed datasets which requires the dedicated HiGlass server.
+
 <!-- Gosling currently supports six types of data formats: [CSV](#csv), [JSON](#json), [BigWig](#bigwig), [Multivec](#multivec), [BED](#bed), [Vector](#vector).-->
 
+## Data Formats That Do Not Require HiGlass Server
+### CSV
 
-## CSV
+Any small enough tabular data files, such as tsv, csv, BED, BEDPE, and GFF, can be loaded using `"csv"` data specification.
+
 ```javascript
 {
   "tracks": [
@@ -41,11 +51,13 @@ Users can specify the data of each visualization (i.e., `track`) through a `trac
 | url                | string   | **required**, specify the URL address of the data file       |
 | separator          | string   | specify file separator, default=','                          |
 | sampleLength       | number   | specify the number of rows loaded from the url. default=1000 |
-| quantitativeFields | string[] | specify the name of quantitative data fields                 |
 | chromosomeField    | string   | specify the name of chromosome data fields                   |
+| quantitativeFields | string[] | specify the name of quantitative data fields                 |
 | genomicFields      | string[] | specify the name of genomic data fields                      |
 
 ## JSON
+
+This format allows include data directly in the Gosling's JSON specification.
 
 ```javascript
 {
@@ -110,11 +122,11 @@ Users can specify the data of each visualization (i.e., `track`) through a `trac
 | -------- | ------ | ------------------------------------------------------ |
 | type     | string | **required**, `"bigwig"`                               |
 | url      | string | **required**, specify the URL address of the data file |
-| column   | string | **required**                                           |
-| value    | string | **required**                                           |
+| column   | string | **required**, assign a field name of the middle position of genomic intervals |
+| value    | string | **required**, assign a field name of quantitative values |
 | bin      | number | bin the genomic interval in tiles                      |
-| start    | string |                                                        |
-| end      | string |                                                        |
+| start    | string | assign a field name of the start position of genomic intervals |
+| end      | string | assign a field name of the end position of genomic intervals |
 
 ## Vector
 
@@ -137,11 +149,11 @@ Users can specify the data of each visualization (i.e., `track`) through a `trac
 | -------- | ------ | ------------------------------------------------------ |
 | type     | string | **required**, `"vector"`                               |
 | url      | string | **required**, specify the URL address of the data file |
-| column   | string | **required**                                           |
-| value    | string | **required**                                           |
+| column   | string | **required**, assign a field name of the middle position of genomic intervals |
+| value    | string | **required**, assign a field name of quantitative values |
 | bin      | number | bin the genomic interval in tiles                      |
-| start    | string |                                                        |
-| end      | string |                                                        |
+| start    | string | assign a field name of the start position of genomic intervals |
+| end      | string | assign a field name of the end position of genomic intervals |
 
 ## Multivec
 
@@ -166,13 +178,13 @@ Users can specify the data of each visualization (i.e., `track`) through a `trac
 | ---------- | -------- | ------------------------------------------------------ |
 | type       | string   | **required**, `"multivec"`                             |
 | url        | string   | **required**, specify the URL address of the data file |
-| column     | string   | **required**                                           |
-| row        | string   | **required**                                           |
-| value      | string   | **required**                                           |
-| categories | string[] |                                                        |
+| column   | string | **required**, assign a field name of the middle position of genomic intervals |
+| value    | string | **required**, assign a field name of quantitative values   |
+| row        | string   | **required**, assign a field name of samples           |
+| categories | string[] | **required**, assign names of individual samples             |
 | bin        | number   | bin the genomic interval in tiles                      |
-| start      | string   |                                                        |
-| end        | string   |                                                        |
+| start    | string | assign a field name of the start position of genomic intervals |
+| end      | string | assign a field name of the end position of genomic intervals |
 
 ## BED
 ```javascript
