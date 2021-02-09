@@ -1,7 +1,6 @@
 # Overview
-Gosling is a declarative visualization grammar tailored for interactive genomic visualizations. In Gosling, users can create interactive visualizations through a JSON syntax. This documentation describes how to write the JSON specification language to create interactive visualizations.   
-You are welcome to try the [Gosling online editor](https://gosling-lang.github.io/gosling.js/).
-
+Gosling is a declarative visualization grammar tailored for interactive genomic visualizations. In Gosling, users can create visualizations through a JSON syntax. This documentation describes how to write the JSON specification to create interactive visualizations.
+You are welcome to try the [Gosling online editor](https://gosling-lang.github.io/gosling.js/)!
 
 ```javascript
 // Gosling generates visualizations through a JSON specification language
@@ -39,11 +38,17 @@ You are welcome to try the [Gosling online editor](https://gosling-lang.github.i
 - [Genome Build](#genome-build)
 - [Data](#data)
   - [Supported Data Formats](#supported-data-formats)
-    - [CSV](#csv)
-    - [JSON](#json)
-    - [Vector](#vector)
-    - [Multivec](#multivec)
-    - [BED](#bed)
+    - General Data That Doesn't Require HiGlass Server
+        - [CSV](#csv) (Works for small BED, BEDPE, and GFF files)
+        - [JSON](#json)
+        - BigWig (To-be-supported)
+        - BAM (To-be-supported)
+        - FASTA (To-be-supported)
+        - Zarr (To-be-supported)
+    - Scalable HiGlass Data Formats
+        - [Vector](#vector) (BigWig)
+        - [Multivec](#multivec) (Multiple BigWigs, FASTA)
+        - [BED](#bed) (BED, BEDPE, BedGraph)
   - [Data Transform](#data-transform)
 - [Mark](#mark)
   - [Types of Mark](#types-of-mark)
@@ -996,7 +1001,7 @@ Users can link two tracks by assigning the same `linkingID` to the `x` channel o
       "mark": "rect",
       "x": {
         ..., // other properties of x channel
-        "linkingID": "a unique string" // assing a linking id for the track A
+        "linkingID": "a unique string" // assign a linking id for the track A
       }
     },
     // track B
