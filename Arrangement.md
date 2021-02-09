@@ -1,4 +1,4 @@
-In Gosling, we call one visualization a track. A Gosling configuration specifies an array of `tracks`.
+A single visualization is called a 'track' in Gosling, and multiple tracks can be specified as an array in a `tracks` property.
 
 ```javascript
 {
@@ -10,7 +10,9 @@ In Gosling, we call one visualization a track. A Gosling configuration specifies
 }
 ```
 
-# Grid-based arrangement
+Using arrangement options supported in Gosling, you can juxtapose and superpose tracks in a flexible way.
+
+# Grid-Based Arrangement
 [:link: source code](https://github.com/gosling-lang/gosling.js/blob/43626eaf21417bf36128a405dceeaa6ee00d0851/src/core/Gosling.schema.ts#L20)  
 specify the grid arrangement of multiple tracks
 
@@ -27,12 +29,11 @@ specify the grid arrangement of multiple tracks
 
 <!-- is it possible that several tracks under one layout have different type (linear and circular) -->
 
-### Superposition
+# Superposition
 [:link: source code](https://github.com/gosling-lang/gosling.js/blob/43626eaf21417bf36128a405dceeaa6ee00d0851/src/core/Gosling.schema.ts#L213)
 
 
-`superposition` enables users to superpose multiple marks on top of each other.  
-`superposition` is an array of objects, each object specifies one visual mark. Each visual mark inherits the properties (e.g., `data`, `x`, `y`) defined in this track, unless these properties are redefined in this object.  
+A `superpose` property enables you to overlay multiple tracks/marks on top of each other. `superpose` is an array of objects, and each object specifies one visual mark. Each visual mark inherits the properties (e.g., `data`, `x`, and `y`) defined in the corresponding track definition unless these properties are redefined in this object.  
 
 ```javascript
 {
