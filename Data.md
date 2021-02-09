@@ -1,8 +1,9 @@
-Users can specify the data of each visualization (i.e., `track`) through `track.data`.
+# Data
+Users can specify the data of each visualization (i.e., `track`) through a `track.data` property.
 ```javascript
 {
   "tracks":[{
-    "data": {...}, // specify the data used in this visualization
+    "data": {...}, // specify the data used in this track
     "mark": "rect",
     "color": ...,
     ...
@@ -14,7 +15,7 @@ Users can specify the data of each visualization (i.e., `track`) through `track.
 
 ## Supported Data Formats
 
-Currently, Gosling supports six types of data formats: [CSV](#csv), [JSON](#json), [BigWig](#bigwig), [Multivec](#multivec), [BED](#bed), [Vector](#vector).
+<!-- Gosling currently supports six types of data formats: [CSV](#csv), [JSON](#json), [BigWig](#bigwig), [Multivec](#multivec), [BED](#bed), [Vector](#vector).-->
 
 
 ### CSV
