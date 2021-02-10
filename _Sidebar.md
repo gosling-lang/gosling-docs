@@ -10,5 +10,6 @@
   * [Arrangement](https://github.com/gosling-lang/gosling.js/wiki/Arrangement)
   * [Layout](https://github.com/gosling-lang/gosling.js/wiki/Layout)
   * [User Interaction](https://github.com/gosling-lang/gosling.js/wiki/User-Interaction)
+  * [Semantic Zoom](https://github.com/gosling-lang/gosling.js/wiki/Semantic-Zoom)
 * [Public Datasets](https://github.com/gosling-lang/gosling.js/wiki/Public-Datasets)
 <!-- * [FAQ]() -->
