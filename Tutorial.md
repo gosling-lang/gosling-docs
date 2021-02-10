@@ -288,7 +288,7 @@ Gosling supports easy creation of circular layout through the `layout` property.
 <img src="https://raw.githubusercontent.com/wiki/gosling-lang/gosling.js/images/tutorial_style.png" alt="gosling vis style" width="500"/> -->
 
 ## Coming Up Next
-In the [next tutorial](https://github.com/gosling-lang/gosling.js/wiki/Advanced_Tutorial), we introduce how to use semantic zooming, multiple tracks, and circular layout in Gosling.
+In the [next tutorial](https://github.com/gosling-lang/gosling.js/wiki/Advanced-Tutorial), we introduce how to use semantic zooming, multiple tracks, and circular layout in Gosling.
 
 You can find more examples [here][exampleURL].
 
