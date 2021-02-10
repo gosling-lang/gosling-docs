@@ -138,7 +138,7 @@ This class of datasets makes the data exploration more scalable, requiring you t
 
 ### Vector
 
-Any data formats that contain 1-dimensional quantitative values along genomic position (e.g., bigwig) can be converted into HiGlass' `"vector"` format data. Find out more about this format at [HiGlass Docs](https://docs.higlass.io/data_preparation.html#bigwig-files).
+One-dimensional quantitative values along genomic position (e.g., bigwig) can be converted into HiGlass' `"vector"` format data. Find out more about this format at [HiGlass Docs](https://docs.higlass.io/data_preparation.html#bigwig-files).
 
 ```javascript
 {
@@ -167,6 +167,7 @@ Any data formats that contain 1-dimensional quantitative values along genomic po
 
 ### Multivec
 
+Two-dimensional quantitative values, one axis for genomic coordinate and the other for different samples, can be converted into HiGlass' `"multivec"` data. For example, multiple BigWig files can be converted into a single multivec file. You can also convert sequence data (FASTA) into this format where rows will be different nucleotide bases (e.g., A, T, G, C) and quantitative values represent the frequency. Find out more about this format at [HiGlass Docs](https://docs.higlass.io/data_preparation.html#multivec-files).
 
 ```javascript
 {
