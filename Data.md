@@ -62,7 +62,7 @@ Any small enough tabular data files, such as tsv, csv, BED, BEDPE, and GFF, can 
 
 ## JSON
 
-This format allows include data directly in the Gosling's JSON specification.
+This format allows to include data directly in the Gosling's JSON specification.
 
 ```javascript
 {
@@ -134,9 +134,11 @@ This format allows include data directly in the Gosling's JSON specification.
 | end      | string | assign a field name of the end position of genomic intervals |
 
 ## Pre-aggregated Datasets
-This class of datasets makes the data exploration more scalable, requiring you to set up a dedicated server and pre-aggregating data before using them.
+This class of datasets makes the data exploration more scalable, requiring you to set up a dedicated server and pre-aggregate data before using them.
 
 ### Vector
+
+One-dimensional quantitative values along genomic position (e.g., bigwig) can be converted into HiGlass' `"vector"` format data. Find out more about this format at [HiGlass Docs](https://docs.higlass.io/data_preparation.html#bigwig-files).
 
 ```javascript
 {
@@ -165,6 +167,7 @@ This class of datasets makes the data exploration more scalable, requiring you t
 
 ### Multivec
 
+Two-dimensional quantitative values, one axis for genomic coordinate and the other for different samples, can be converted into HiGlass' `"multivec"` data. For example, multiple BigWig files can be converted into a single multivec file. You can also convert sequence data (FASTA) into this format where rows will be different nucleotide bases (e.g., A, T, G, C) and quantitative values represent the frequency. Find out more about this format at [HiGlass Docs](https://docs.higlass.io/data_preparation.html#multivec-files).
 
 ```javascript
 {
@@ -195,6 +198,8 @@ This class of datasets makes the data exploration more scalable, requiring you t
 | end      | string | assign a field name of the end position of genomic intervals |
 
 ### BED
+Regular BED files can be pre-aggregated for the scalable data exploration. Find our more about this format at [HiGlass Docs](https://docs.higlass.io/data_preparation.html#bed-files).
+
 ```javascript
 {
   "tracks":[{

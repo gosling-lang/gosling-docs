@@ -1,7 +1,28 @@
+* ### [Home](https://github.com/gosling-lang/gosling.js/wiki)
+* ### [Examples]()
+* ### [Getting Started](https://github.com/gosling-lang/gosling.js/wiki/Getting-Started)
+* ### [Tutorial](https://github.com/gosling-lang/gosling.js/wiki/Tutorial)
+  * [Basic Tutorial](https://github.com/gosling-lang/gosling.js/wiki/Tutorial)
+  * [Advanced Tutorial](https://github.com/gosling-lang/gosling.js/wiki/Advanced-Tutorial)
+* ### [Documentation](https://github.com/gosling-lang/gosling.js/wiki/Documentation)
+  * [Genome Builds](https://github.com/gosling-lang/gosling.js/wiki/Genome-Builds)
+  * [Data](https://github.com/gosling-lang/gosling.js/wiki/Data)
+  * [Mark](https://github.com/gosling-lang/gosling.js/wiki/Mark)
+  * [Visual Channel](https://github.com/gosling-lang/gosling.js/wiki/Visual-Channel)
+  * [Arrangement](https://github.com/gosling-lang/gosling.js/wiki/Arrangement)
+  * [Layout](https://github.com/gosling-lang/gosling.js/wiki/Layout)
+  * [User Interaction](https://github.com/gosling-lang/gosling.js/wiki/User-Interaction)
+  * [Semantic Zoom](https://github.com/gosling-lang/gosling.js/wiki/Semantic-Zoom)
+* ### [Public Datasets](https://github.com/gosling-lang/gosling.js/wiki/Public-Datasets)
+<!-- * [FAQ]() -->
+<!--Which one is better?..-->
+<!--
 * [Home](https://github.com/gosling-lang/gosling.js/wiki)
 * [Examples]()
 * [Getting Started](https://github.com/gosling-lang/gosling.js/wiki/Getting-Started)
 * [Tutorial](https://github.com/gosling-lang/gosling.js/wiki/Tutorial)
+  * [Basic Tutorial](https://github.com/gosling-lang/gosling.js/wiki/Tutorial)
+  * [Advanced Tutorial](https://github.com/gosling-lang/gosling.js/wiki/Advanced_Tutorial)
 * [Documentation](https://github.com/gosling-lang/gosling.js/wiki/Documentation)
   * [Genome Builds](https://github.com/gosling-lang/gosling.js/wiki/Genome-Builds)
   * [Data](https://github.com/gosling-lang/gosling.js/wiki/Data)
@@ -11,5 +32,6 @@
   * [Layout](https://github.com/gosling-lang/gosling.js/wiki/Layout)
   * [User Interaction](https://github.com/gosling-lang/gosling.js/wiki/User-Interaction)
   * [Semantic Zoom](https://github.com/gosling-lang/gosling.js/wiki/Semantic-Zoom)
-* [Public Datasets](https://github.com/gosling-lang/gosling.js/wiki/Public-Datasets)
+* ### [Public Datasets](https://github.com/gosling-lang/gosling.js/wiki/Public-Datasets)
+-->
 <!-- * [FAQ]() -->
