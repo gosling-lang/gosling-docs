@@ -198,6 +198,8 @@ Two-dimensional quantitative values, one axis for genomic coordinate and the oth
 | end      | string | assign a field name of the end position of genomic intervals |
 
 ### BED
+Regular BED files can be pre-aggregated for the scalable data exploration. Find our more about this format at [HiGlass Docs](https://docs.higlass.io/data_preparation.html#bed-files).
+
 ```javascript
 {
   "tracks":[{
