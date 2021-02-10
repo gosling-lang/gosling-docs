@@ -15,7 +15,7 @@ Using arrangement options supported in Gosling, you can juxtapose and superpose 
 # Grid-Based Arrangement
 [:link: source code](https://github.com/gosling-lang/gosling.js/blob/43626eaf21417bf36128a405dceeaa6ee00d0851/src/core/Gosling.schema.ts#L20)  
 
-Using a `arrangement` property, you can specify a grid arrangement of multiple tracks.
+Using a `arrangement` property, you can specify a grid arrangement of multiple tracks. Each track listed in a `tracks` property will be positioned in a cell one by one. You can use a `span` property in a track definition to make the track being positioned across multiple cells in the grid. For example, `span: 2` make a track positioned across two cells.
 
 | property                | type                        | description                                                                                                                                    |
 | ----------------------- | --------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
