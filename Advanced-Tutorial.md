@@ -20,6 +20,7 @@ In the [first tutorial](https://github.com/gosling-lang/gosling.js/wiki/Tutorial
             "axis": "top"
         },
         "xe": {"field": "chromEnd", "type": "genomic"},
+        "size": {"value": 20},
         "superpose":[
              {
              "mark": "rect",
@@ -53,7 +54,9 @@ In the [first tutorial](https://github.com/gosling-lang/gosling.js/wiki/Tutorial
               },
               "color": {"value": "#B70101"}
             }
-        ]
+        ],
+        "stroke": {"value": "gray"},
+        "strokeWidth": {"value": 0.5}
     }]
 }
 ```
@@ -94,6 +97,7 @@ In other words, the text marks appear when the width (`measure`) of the text mar
         "axis": "top"
       },
       "xe": {"field": "chromEnd", "type": "genomic"},
+      "size": {"value": 20},
       "superpose": [
 +        {
 +          "mark": "text",
@@ -156,7 +160,9 @@ In other words, the text marks appear when the width (`measure`) of the text mar
           },
           "color": {"value": "#B40101"}
         }
-      ]
+      ],
+      "stroke": {"value": "gray"},
+      "strokeWidth": {"value": 0.5}
     }
   ]
 }
@@ -174,8 +180,7 @@ These two tracks share the same `x` coordidate. As a result, we link these two t
   "arrangement": {
     "columnSizes": 700, 
 -    "rowSizes": [70], 
-+    "rowSizes": [70, 25], 
-    "rowGaps": 0
++    "rowSizes": [70, 25]
   },
   "tracks": [
 +     {
@@ -214,6 +219,7 @@ These two tracks share the same `x` coordidate. As a result, we link these two t
 +        "linkingID": "link-1"
       },
       "xe": {"field": "chromEnd", "type": "genomic"},
+      "size": {"value": 20},
       "superpose": [
         {
           "mark": "text",
@@ -277,7 +283,9 @@ These two tracks share the same `x` coordidate. As a result, we link these two t
           },
           "color": {"value": "#B40101"}
         }
-      ]
+      ],
+      "stroke": {"value": "gray"},
+      "strokeWidth": {"value": 0.5}
     }
   ]
 }
@@ -297,7 +305,7 @@ The size of each track is specified by `innterRadius` and `outerRadius`. We can 
 -     "columnSizes": 800,
 -    "rowSizes": [60, 25], 
 +    "columnSizes": 600,
-+    "rowSizes": 600, 
++    "rowSizes": 600
   },
   "tracks": [
      {
@@ -338,6 +346,7 @@ The size of each track is specified by `innterRadius` and `outerRadius`. We can 
         "linkingID": "link-1"
       },
       "xe": {"field": "chromEnd", "type": "genomic"},
+      "size": {"value": 20},
       "superpose": [
         {
           "mark": "text",
@@ -401,7 +410,9 @@ The size of each track is specified by `innterRadius` and `outerRadius`. We can 
           },
           "color": {"value": "#B40101"}
         }
-      ]
+      ],
+      "stroke": {"value": "gray"},
+      "strokeWidth": {"value": 0.5},
 +      "superposeOnPreviousTrack": true
     }
   ]

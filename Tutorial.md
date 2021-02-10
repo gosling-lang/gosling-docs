@@ -2,10 +2,12 @@
 
 This tutorial will guide you step by step in writing the JSON specification to create an interactive cytoband visualization in Gosling. 
 You will learn about:
+- [Create your visualizations using Gosling ＼（＾▽＾）／](#create-your-visualizations-using-gosling-)
 - [Loading Data](#loading-data)
 - [Encoding Data with Marks](#encoding-data-with-marks)
 - [Transforming Data](#transforming-data)
 - [Superposing Multiple Marks](#superposing-multiple-marks)
+- [Coming Up Next](#coming-up-next)
   
 You are encouraged to follow the tutorial and create visualizations in the [online editor][onlineEditorURL].
 
@@ -86,7 +88,10 @@ This mapping is specified by the following properties:
             "type": "nominal",
             "domain": ["gneg", "gpos25", "gpos50", "gpos75", "gpos100", "gvar"],
             "range": ["white","#D9D9D9","#979797","#636363", "black","#A0A0F2"]
-        }
+        },
+        // specify the height of the visual marks
+        "size": {"value": 20}
+        
     }]
 }
 ```
@@ -128,7 +133,8 @@ For example, we can add a filter to only visualize chromosomes whose stain resul
             "type": "nominal",
             "domain": ["gneg", "gpos25", "gpos50", "gpos75", "gpos100", "gvar"],
             "range": ["white","#D9D9D9","#979797","#636363", "black","#A0A0F2"]
-        }
+        },
+        "size": {"value": 20}
     }]
 }
 ```
@@ -172,6 +178,7 @@ In the code below, a chromosome is visualized as a `triangle-r` mark if its stai
 -           "domain": ["gpos25", "gpos50", "gpos75", "gpos100"],
 -           "range": ["#D9D9D9","#979797","#636363", "black"]
 -       },
+        "size": {"value": 20},
 +       "superpose":[
 +            {
 +            "mark": "rect",
