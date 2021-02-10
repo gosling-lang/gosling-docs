@@ -32,12 +32,14 @@ Advanced zooming technique, called Semantic Zooming, allows you to dynamically s
 
 > Sehi: I will add an example with gene annotation <=> density plot
 
+## Example: Sequence Visualization
 <img src="https://github.com/gosling-lang/gosling.js/wiki/images/semantic_zoom_1.png" alt="semantic_zoom_fine" width="700">
 
 <img src="https://github.com/gosling-lang/gosling.js/wiki/images/semantic_zoom_0.png" alt="semantic_zoom_coarse" width="700">  
 
 [Try this example in the online editor](<https://gosling-lang.github.io/gosling.js/?full=false&spec=(J'titleNExample%3A%20Semantic%20Zooming'V'subtitleNhide%25annotation%20and%20only%20show%20bar%20charts%20when%20zooming%20out'V'arrangement6(J*'directionNvertical'V*'columnSizes6800V*'rowSizes6180J)V'tracks6%5BJ*(JLdata6(5'urlNhttps%3A%2F%2Fresgen.io%2Fapi%2Fv1%2Ftileset_info%2F%3Fd%3DWipsnEDMStahGPpRfH9adA'BQtileset'J**)VLmetadata6(5Qhiglass-multivec'B'rowNbase'B'columnN%3C'valueNcount'B'categoriesjstartNstart'B'endNend'J**)V**%20'x6(5'U%3CQ%24B'domain6KB'axisNtop'J**)VLcolor6(5'Ubase'BQnominal'B'domainjlegend6trueJ**)VLy6%3BQquantitative')VLsuperpose6%5B5(%2B)B(5*%2BB*'s%26~61)B*'stroke%3EXgtet'BY620I5L%221%235)B%2F%2F%25mark5(5*'dataTransform6(5Lfilter6%5B%3B'oneOf6%5B0%5DI'not6true)%5D5*)B*'markNtext'B*'x6(5LUstart'BLtypeN%24BLdomain6KBLaxisNtop'5*)B*'xe6('Uend'IQ%24)B*'color%3E*'y~670)BXless-than'BYN%7Cxe-x%7C'5**I'%223%23B*%20'text6('Ubase'IQnominal')B'style6(5LtextFontSize624BLtextS%2660BLtextFontWeightNbold'5)5)J**%5DJ*%20J*%20J*)J%5D%0A)*%20%205J***6!%20B%2C5I%2C%20J%0A*K('chromosomeN1'I'interval6%5B3000000I3000010%5D)L**'N6'Q'typeNUfieldNV%2CJX*'visibility6(5LoperationNYLmeasureNwidth'BLthresholdj6%5B'A'I'T'I'G'I'C'%5DB'~6('value%22transitionPadding6%230BLtargetNmark'5*)%24genomic'%25%20text%20%26trokeWidth%2B'markNbar'%3B('Ucount'I%3Cposition'B%3E~Nwhite')B%01%3E%3C%3B%2B%26%25%24%23%22~jYXVUQNLKJIB65*_>)
 
+## Example: Cyto Band
 <img src="https://github.com/gosling-lang/gosling.js/wiki/images/semantic_zoom_2.png" alt="semantic_zoom_coarse" height="60" width="700">  
 
 <img src="https://github.com/gosling-lang/gosling.js/wiki/images/semantic_zoom_3.png" alt="semantic_zoom_fine" height="60" width="700"> 
@@ -50,7 +52,7 @@ Semantic zoom through `superpose` and `visibility`.
 [`superpose`](#superposition) overlaps multiple marks on top of one other, thus allowing users to create different visualizations for the same data.
 `visibility` controls the visibility of visual marks, thus allowing the switch between different visualizations based on the zoom level.
 
-`visibility` is an object with the following properties:
+`visibility` is an array of object with the following properties:
 | properties  | type  | description|   
 |---|---|---|
 |target| string| **required**, support "track" \| "mark" |
@@ -79,13 +81,12 @@ For example, in the code below, text marks only show when the width (`measure`) 
       //text marks only show when the width of mark is great than 20 
       {
         "mark": "text",
-        "visibility": {
+        "visibility": [{
           "operation": "greater-than",
           "measure": "width",
           "threshold": "20",
-          "target": "mark",
-          
-        }  
+          "target": "mark"
+        }] 
       }
     ]
   }]
