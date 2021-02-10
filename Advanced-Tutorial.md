@@ -173,7 +173,7 @@ In other words, the text marks appear when the width (`measure`) of the text mar
 ## Multiple Linked Tracks
 
 We may wish to add another track to the `tracks` to represent the same data from different aspects.
-These two tracks share the same `x` coordidate. As a result, we link these two track by assigning them the same  `linkingID`. The zooming and panning performed in one track will be automatically applied to the linked track.  
+These two tracks share the same `x` coordinate. As a result, we link these two tracks by assigning them the same  `linkingID`. The zooming and panning performed in one track will be automatically applied to the linked track.  
 
 ```diff
 {
@@ -296,7 +296,7 @@ These two tracks share the same `x` coordidate. As a result, we link these two t
 ## Circular Layout
 
 We can easily turn the visualization into a circular layout through the `layout` property.
-The size of each track is specified by `innterRadius` and `outerRadius`. We can also stack these two tracks together by setting `superposeOnPreviousTrack` as true.
+The size of each track is specified by `innerRadius` and `outerRadius`. We can also stack these two tracks together by setting `superposeOnPreviousTrack` as true.
 
 ```diff
 {
