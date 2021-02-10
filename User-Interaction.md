@@ -101,7 +101,7 @@ Users can use **brushing** to select a subset of the data items using a rectangl
 # Semantic Zooming
 [:link: source code](https://github.com/gosling-lang/gosling.js/blob/43626eaf21417bf36128a405dceeaa6ee00d0851/src/core/gosling.schema.ts#L278)
 
-Semantic zoom allows users to switch between different visualizations of the same data through zooming in/out. When zooming in, the same data will be represented in a different way in which more details are shown. 
+Advanced zooming technique, called Semantic Zooming, allows you to dynamically switch between visual representations upon zooming in and out. For example, detailed information of nucleotide bases can be shown with textual labels when zoomed in while it can be switched to show the overall distribution of the bases without the text labels when zoomed out.
 
 <img src="https://github.com/gosling-lang/gosling.js/wiki/images/semantic_zoom_0.png" alt="semantic_zoom_coarse" width="700">  
 
