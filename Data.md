@@ -62,7 +62,7 @@ Any small enough tabular data files, such as tsv, csv, BED, BEDPE, and GFF, can 
 
 ## JSON
 
-This format allows include data directly in the Gosling's JSON specification.
+This format allows to include data directly in the Gosling's JSON specification.
 
 ```javascript
 {
