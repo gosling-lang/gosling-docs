@@ -69,7 +69,8 @@ This tutorial continues from this example and introduces more advances functions
 
 ## Semantic Zooming
 
-[Semantic zoom](https://github.com/gosling-lang/gosling.js/wiki/Documentation#semantic-zooming) allows users to switch between different visualizations of the same data through zooming in/out. When zooming in, the same data will be represented in a different way in which more details are shown. 
+Apart from the default zoom and pan interactions, 
+[semantic zoom](https://github.com/gosling-lang/gosling.js/wiki/Documentation#semantic-zooming) is supported in Gosling and allows users to switch between different visualizations of the same data through zooming in/out. When zooming in, the same data will be represented in a different way in which more details are shown. 
 
 Let's say, for this visualization, we want text annotations to show up when zooming in.
 We add `text` marks to the `superpose` property and specify when the `text` marks should appear through the `visibility` property.
@@ -172,8 +173,10 @@ In other words, the text marks appear when the width (`measure`) of the text mar
 
 ## Multiple Linked Tracks
 
-We may wish to add another track to the `tracks` to represent the same data from different aspects.
-These two tracks share the same `x` coordinate. As a result, we link these two tracks by assigning them the same  `linkingID`. The zooming and panning performed in one track will be automatically applied to the linked track.  
+We may wish to represent the same data from different aspects using different types of visualization.
+To achieve this, we add an area chart (i.e., a new `track`) to the `tracks` property. 
+Since these tracks share the same `x` coordinate, we wish to link these two tracks: the zooming and panning performed in one track will be automatically applied to the linked track.  
+In Gosling, `tracks` can be linked by assigning `x` the same  `linkingID`. 
 
 ```diff
 {
@@ -296,7 +299,7 @@ These two tracks share the same `x` coordinate. As a result, we link these two t
 ## Circular Layout
 
 We can easily turn the visualization into a circular layout through the `layout` property.
-The size of each track is specified by `innerRadius` and `outerRadius`. We can also stack these two tracks together by setting `superposeOnPreviousTrack` as true.
+The size of each track is specified through the `innerRadius` and `outerRadius` properties. We can also stack these two tracks together by setting `superposeOnPreviousTrack` as true.
 
 ```diff
 {
