@@ -17,13 +17,13 @@
 <!-- * [FAQ]() -->
 <!--Which one is better?..-->
 <!--
-* ### [Home](https://github.com/gosling-lang/gosling.js/wiki)
-* ### [Examples]()
-* ### [Getting Started](https://github.com/gosling-lang/gosling.js/wiki/Getting-Started)
-* ### [Tutorial](https://github.com/gosling-lang/gosling.js/wiki/Tutorial)
+* [Home](https://github.com/gosling-lang/gosling.js/wiki)
+* [Examples]()
+* [Getting Started](https://github.com/gosling-lang/gosling.js/wiki/Getting-Started)
+* [Tutorial](https://github.com/gosling-lang/gosling.js/wiki/Tutorial)
   * [Basic Tutorial](https://github.com/gosling-lang/gosling.js/wiki/Tutorial)
   * [Advanced Tutorial](https://github.com/gosling-lang/gosling.js/wiki/Advanced_Tutorial)
-* ### [Documentation](https://github.com/gosling-lang/gosling.js/wiki/Documentation)
+* [Documentation](https://github.com/gosling-lang/gosling.js/wiki/Documentation)
   * [Genome Builds](https://github.com/gosling-lang/gosling.js/wiki/Genome-Builds)
   * [Data](https://github.com/gosling-lang/gosling.js/wiki/Data)
   * [Mark](https://github.com/gosling-lang/gosling.js/wiki/Mark)
