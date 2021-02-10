@@ -77,6 +77,9 @@ We add `text` marks to the `superpose` property and specify when the `text` mark
 We may wish the text marks to appear when the distance between chromStart and chromEnd is big enough to place a text mark.
 In other words, the text marks appear when the width (`measure`) of the text mark (`target`) is less than (`operation`) than `|xe-x|`.
 
+
+<img src="https://raw.githubusercontent.com/wiki/gosling-lang/gosling.js/images/tutorial_text_label.png" alt="gosling semantic zoom" width="800"/>
+
 ```diff
 {
   "arrangement": {
@@ -169,7 +172,6 @@ In other words, the text marks appear when the width (`measure`) of the text mar
 }
 ```
 
-<img src="https://raw.githubusercontent.com/wiki/gosling-lang/gosling.js/images/tutorial_text_label.png" alt="gosling semantic zoom" width="800"/>
 
 ## Multiple Linked Tracks
 
@@ -177,6 +179,9 @@ We may wish to represent the same data from different aspects using different ty
 To achieve this, we add an area chart (i.e., a new `track`) to the `tracks` property. 
 Since these tracks share the same `x` coordinate, we wish to link these two tracks: the zooming and panning performed in one track will be automatically applied to the linked track.  
 In Gosling, `tracks` can be linked by assigning `x` the same  `linkingID`. 
+
+
+<img src="https://raw.githubusercontent.com/wiki/gosling-lang/gosling.js/images/tutorial_multi_track.png" alt="gosling multi tracks" width="800"/>
 
 ```diff
 {
@@ -294,12 +299,13 @@ In Gosling, `tracks` can be linked by assigning `x` the same  `linkingID`.
 }
 ```
 
-<img src="https://raw.githubusercontent.com/wiki/gosling-lang/gosling.js/images/tutorial_multi_track.png" alt="gosling multi tracks" width="800"/>
 
 ## Circular Layout
 
 We can easily turn the visualization into a circular layout through the `layout` property.
 The size of each track is specified through the `innerRadius` and `outerRadius` properties. We can also stack these two tracks together by setting `superposeOnPreviousTrack` as true.
+
+<img src="https://raw.githubusercontent.com/wiki/gosling-lang/gosling.js/images/tutorial_circular.png" alt="gosling circular" width="600"/>
 
 ```diff
 {
@@ -422,4 +428,3 @@ The size of each track is specified through the `innerRadius` and `outerRadius` 
 }
 ```
 
-<img src="https://raw.githubusercontent.com/wiki/gosling-lang/gosling.js/images/tutorial_circular.png" alt="gosling circular" width="600"/>
