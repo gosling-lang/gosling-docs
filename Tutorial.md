@@ -89,9 +89,11 @@ This mapping is specified by the following properties:
             "domain": ["gneg", "gpos25", "gpos50", "gpos75", "gpos100", "gvar"],
             "range": ["white","#D9D9D9","#979797","#636363", "black","#A0A0F2"]
         },
-        // specify the height of the visual marks
-        "size": {"value": 20}
-        
+        // customize the style of the visual marks. 
+        // default values will be used if not specifyed.
+        "size": {"value": 20},
+        "stroke": {"value": "gray"},
+        "strokeWidth": {"value": 0.5}
     }]
 }
 ```
@@ -134,7 +136,9 @@ For example, we can add a filter to only visualize chromosomes whose stain resul
             "domain": ["gneg", "gpos25", "gpos50", "gpos75", "gpos100", "gvar"],
             "range": ["white","#D9D9D9","#979797","#636363", "black","#A0A0F2"]
         },
-        "size": {"value": 20}
+        "size": {"value": 20},
+        "stroke": {"value": "gray"},
+        "strokeWidth": {"value": 0.5}
     }]
 }
 ```
@@ -178,7 +182,6 @@ In the code below, a chromosome is visualized as a `triangle-r` mark if its stai
 -           "domain": ["gpos25", "gpos50", "gpos75", "gpos100"],
 -           "range": ["#D9D9D9","#979797","#636363", "black"]
 -       },
-        "size": {"value": 20},
 +       "superpose":[
 +            {
 +            "mark": "rect",
@@ -212,7 +215,10 @@ In the code below, a chromosome is visualized as a `triangle-r` mark if its stai
 +             },
 +             "color": {"value": "#B70101"}
 +           }
-+       ]
++       ],
+        "size": {"value": 20},
+        "stroke": {"value": "gray"},
+        "strokeWidth": {"value": 0.5}
     }]
 }
 ```

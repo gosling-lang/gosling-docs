@@ -20,7 +20,6 @@ In the [first tutorial](https://github.com/gosling-lang/gosling.js/wiki/Tutorial
             "axis": "top"
         },
         "xe": {"field": "chromEnd", "type": "genomic"},
-        "size": {"value": 20},
         "superpose":[
              {
              "mark": "rect",
@@ -55,6 +54,7 @@ In the [first tutorial](https://github.com/gosling-lang/gosling.js/wiki/Tutorial
               "color": {"value": "#B70101"}
             }
         ],
+        "size": {"value": 20},
         "stroke": {"value": "gray"},
         "strokeWidth": {"value": 0.5}
     }]
@@ -97,7 +97,6 @@ In other words, the text marks appear when the width (`measure`) of the text mar
         "axis": "top"
       },
       "xe": {"field": "chromEnd", "type": "genomic"},
-      "size": {"value": 20},
       "superpose": [
 +        {
 +          "mark": "text",
@@ -161,6 +160,7 @@ In other words, the text marks appear when the width (`measure`) of the text mar
           "color": {"value": "#B40101"}
         }
       ],
+      "size": {"value": 20},
       "stroke": {"value": "gray"},
       "strokeWidth": {"value": 0.5}
     }
@@ -219,7 +219,6 @@ These two tracks share the same `x` coordinate. As a result, we link these two t
 +        "linkingID": "link-1"
       },
       "xe": {"field": "chromEnd", "type": "genomic"},
-      "size": {"value": 20},
       "superpose": [
         {
           "mark": "text",
@@ -284,6 +283,7 @@ These two tracks share the same `x` coordinate. As a result, we link these two t
           "color": {"value": "#B40101"}
         }
       ],
+      "size": {"value": 20},
       "stroke": {"value": "gray"},
       "strokeWidth": {"value": 0.5}
     }
@@ -346,7 +346,6 @@ The size of each track is specified by `innerRadius` and `outerRadius`. We can a
         "linkingID": "link-1"
       },
       "xe": {"field": "chromEnd", "type": "genomic"},
-      "size": {"value": 20},
       "superpose": [
         {
           "mark": "text",
@@ -411,6 +410,7 @@ The size of each track is specified by `innerRadius` and `outerRadius`. We can a
           "color": {"value": "#B40101"}
         }
       ],
+      "size": {"value": 20},
       "stroke": {"value": "gray"},
       "strokeWidth": {"value": 0.5},
 +      "superposeOnPreviousTrack": true
