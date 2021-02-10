@@ -407,3 +407,5 @@ The size of each track is specified by `innterRadius` and `outerRadius`. We can 
   ]
 }
 ```
+
+<img src="https://raw.githubusercontent.com/wiki/gosling-lang/gosling.js/images/tutorial_circular.png" alt="gosling circular" width="600"/>
