@@ -3,7 +3,7 @@
 * ### [Getting Started](https://github.com/gosling-lang/gosling.js/wiki/Getting-Started)
 * ### [Tutorial](https://github.com/gosling-lang/gosling.js/wiki/Tutorial)
   * [Basic Tutorial](https://github.com/gosling-lang/gosling.js/wiki/Tutorial)
-  * [Advanced Tutorial](https://github.com/gosling-lang/gosling.js/wiki/Advanced_Tutorial)
+  * [Advanced Tutorial](https://github.com/gosling-lang/gosling.js/wiki/Advanced-Tutorial)
 * ### [Documentation](https://github.com/gosling-lang/gosling.js/wiki/Documentation)
   * [Genome Builds](https://github.com/gosling-lang/gosling.js/wiki/Genome-Builds)
   * [Data](https://github.com/gosling-lang/gosling.js/wiki/Data)
