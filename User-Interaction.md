@@ -30,6 +30,8 @@ Users can set the `static` property of all tracks at the root level or specify i
 
 Advanced zooming technique, called Semantic Zooming, allows you to dynamically switch between visual representations upon zooming in and out. For example, detailed information of nucleotide bases can be shown with textual labels when zoomed in while it can be switched to show the overall distribution of the bases without the text labels when zoomed out.
 
+> Sehi: I will add an example with gene annotation <=> density plot
+
 <img src="https://github.com/gosling-lang/gosling.js/wiki/images/semantic_zoom_1.png" alt="semantic_zoom_fine" width="700">
 
 <img src="https://github.com/gosling-lang/gosling.js/wiki/images/semantic_zoom_0.png" alt="semantic_zoom_coarse" width="700">  
