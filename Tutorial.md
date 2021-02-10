@@ -2,12 +2,10 @@
 
 This tutorial will guide you step by step in writing the JSON specification to create an interactive cytoband visualization in Gosling. 
 You will learn about:
-- [Create your visualizations using Gosling ＼（＾▽＾）／](#create-your-visualizations-using-gosling-)
 - [Loading Data](#loading-data)
 - [Encoding Data with Marks](#encoding-data-with-marks)
 - [Transforming Data](#transforming-data)
 - [Superposing Multiple Marks](#superposing-multiple-marks)
-- [Coming Up Next](#coming-up-next)
   
 You are encouraged to follow the tutorial and create visualizations in the [online editor][onlineEditorURL].
 
