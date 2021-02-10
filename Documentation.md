@@ -72,4 +72,4 @@ You are welcome to try the [Gosling online editor](https://gosling-lang.github.i
   - [Zooming and Panning](https://github.com/gosling-lang/gosling.js/wiki/User-Interaction#zooming-and-panning)
   - [Linking Views](https://github.com/gosling-lang/gosling.js/wiki/User-Interaction#linking-views)
   - [Brushing and Linking](https://github.com/gosling-lang/gosling.js/wiki/User-Interaction#brushing-and-linking)
-  - [Semantic Zooming](https://github.com/gosling-lang/gosling.js/wiki/User-Interaction#semantic-zooming)
+- [Semantic Zooming](https://github.com/gosling-lang/gosling.js/wiki/Semantic-Zoom)
