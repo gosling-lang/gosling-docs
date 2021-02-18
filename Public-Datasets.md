@@ -47,4 +47,4 @@ In this document, we provide a list of public datasets in those two classes. For
 - Type: BED
 - URL: https://server.gosling-lang.org/api/v1/tileset_info/?d=clinvar
 - Description: hg38 ClinVar data
-- Source: 
+- Source: https://ftp.ncbi.nlm.nih.gov/pub/clinvar/vcf_GRCh38/
