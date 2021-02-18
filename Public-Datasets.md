@@ -44,7 +44,28 @@ In this document, we provide a list of public datasets in those two classes. For
 - Description: hg38 sequence
 - Source: UCSC (https://hgdownload.soe.ucsc.edu/goldenPath/hg38/bigZips/)
 
-- Type: BED
-- URL: https://server.gosling-lang.org/api/v1/tileset_info/?d=clinvar
+
+- Type: BEDDB (Originally, a VCF file)
+- URL: https://server.gosling-lang.org/api/v1/tileset_info/?d=clinvar-beddb
 - Description: hg38 ClinVar data
 - Source: https://ftp.ncbi.nlm.nih.gov/pub/clinvar/vcf_GRCh38/
+
+
+- Type: Multivec (Originally, a VCF file)
+- URL: https://server.gosling-lang.org/api/v1/tileset_info/?d=clinvar-multivec
+- Description: Density of ClinVar data by seven pathogenicity categories 
+- Source: https://ftp.ncbi.nlm.nih.gov/pub/clinvar/vcf_GRCh38/
+
+```ts
+categories: [
+    'Benign',
+    'Benign/Likely_benign',
+    'Likely_benign',
+    'Uncertain_significance',
+    'Likely_pathogenic',
+    'Pathogenic/Likely_pathogenic',
+    'Pathogenic',
+    'risk_factor',
+    'Conflicting_interpretations_of_pathogenicity'
+]
+```
