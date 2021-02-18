@@ -43,3 +43,8 @@ In this document, we provide a list of public datasets in those two classes. For
 - URL: 
 - Description: hg38 sequence
 - Source: UCSC (https://hgdownload.soe.ucsc.edu/goldenPath/hg38/bigZips/)
+
+- Type: BED
+- URL: https://server.gosling-lang.org/api/v1/tileset_info/?d=clinvar
+- Description: hg38 ClinVar data
+- Source: 
