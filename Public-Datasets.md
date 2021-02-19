@@ -20,6 +20,7 @@ In this document, we provide a list of public datasets in those two classes. For
 - URL: 
 - Description: hg38 cytoband
 - Soruce: UCSC
+---
 > Support multiple of bigwigs
 - Type: BigWig
 - URL: https://s3.amazonaws.com/gosling-lang.org/data/4DNFIMPI5A9N.bw
@@ -32,11 +33,14 @@ In this document, we provide a list of public datasets in those two classes. For
 - Description: hg38 gene annotation
 - Source: 
 
+---
+
 > Need to confirm how many samples this data contains
 - Type: Multivec (Originally, multiple bigwig files)
 - URL: 
 - Description: Multiple samples of ChIP-seq and DNase-seq analysis
 - Source: Cistrome Browser (http://cistrome.org/db/#/)
+
 ---
 
 - Type: Multivec (Originally, a FASTA file)
@@ -44,13 +48,14 @@ In this document, we provide a list of public datasets in those two classes. For
 - Description: hg38 sequence
 - Source: UCSC (https://hgdownload.soe.ucsc.edu/goldenPath/hg38/bigZips/)
 
+---
 
 - Type: BEDDB (Originally, a VCF file)
 - URL: https://server.gosling-lang.org/api/v1/tileset_info/?d=clinvar-beddb
 - Description: hg38 ClinVar data
 - Source: https://ftp.ncbi.nlm.nih.gov/pub/clinvar/vcf_GRCh38/
 
-
+---
 - Type: Multivec (Originally, a VCF file)
 - URL: https://server.gosling-lang.org/api/v1/tileset_info/?d=clinvar-multivec
 - Description: Density of ClinVar data by seven pathogenicity categories 
