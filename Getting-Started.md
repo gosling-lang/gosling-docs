@@ -3,7 +3,7 @@ We currently support the following three ways of using Gosling.
 ## 1. Use Online Editor
 You can visit [Online Editor](gosling.js.org) to visualize your data directly in the website.
 
-## 2. Embed Gosling Component in a HTML File (Beta)
+## 2. Embed Gosling Component in a HTML File
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -19,7 +19,7 @@ You can visit [Online Editor](gosling.js.org) to visualize your data directly in
         <script crossorigin type="text/javascript" src="https://unpkg.com/react@16/umd/react.development.js"></script>
         <script crossorigin type="text/javascript" src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
         <script crossorigin type="text/javascript" src="https://unpkg.com/pixi.js@5/dist/pixi.js"></script>
-        <script crossorigin type="text/javascript" src="https://unpkg.com/gosling.js@0.0.24/dist/gosling.js"></script>
+        <script crossorigin type="text/javascript" src="https://unpkg.com/gosling.js@0.0.26/dist/gosling.js"></script>
     </body>
     <script>
       gosling.embed(
@@ -43,7 +43,7 @@ You can visit [Online Editor](gosling.js.org) to visualize your data directly in
 </html>
 ```
 
-## 3. Use `<GoslingComponent/>` in React App (Beta)
+## 3. Use `<GoslingComponent/>` in React App
 Please visit [gosling-react](https://github.com/gosling-lang/gosling-react) for more detailed instruction.
 
 ## Resources
