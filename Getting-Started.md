@@ -43,7 +43,53 @@ You can visit [Online Editor](gosling.js.org) to visualize your data directly in
 </html>
 ```
 
-## 3. Use `<GoslingComponent/>` in React App
+## 3. Use Gosling.js in React App
+
+Install `gosling.js` and its dependent libraries:
+
+```sh
+yarn add gosling.js pixi.js react@16.13.1 react-dom@16.13.1
+```
+
+Add the following style sheets to your base `html` file:
+```html
+<head>
+  ...
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/higlass@1.11.3/dist/hglib.css">
+</head>
+```
+
+Use the Gosling.js' react component to visualize your data:
+
+```js
+import { validateGoslingSpec, GoslingComponent } from "gosling.js";
+
+...
+
+// validate the spec
+const validity = validateGoslingSpec(EXMAPLE_GOSLING_SPEC);
+
+if(validity.state === 'error') {
+    console.warn('Gosling spec is invalid!', validity.message);
+    return;
+}
+
+...
+
+function App() {
+  
+  ...
+
+  return (
+    <GoslingComponent
+      spec={EXAMPLE_GOSLING_SPEC}
+      compiled={(spec, vConf) => { /* Callback function when compiled */ }}
+    />
+  );
+}
+```
+
 Please visit [gosling-react](https://github.com/gosling-lang/gosling-react) for more detailed instruction.
 
 ## Resources
