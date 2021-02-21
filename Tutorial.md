@@ -98,7 +98,7 @@ This mapping is specified by the following properties:
 }
 ```
 
-<img src="https://raw.githubusercontent.com/wiki/gosling-lang/gosling.js/images/tutorial_0.gif" alt="gosling vis" width="700"/>
+<img src="https://raw.githubusercontent.com/wiki/gosling-lang/gosling.js/images/tutorial/tutorial_0.gif" alt="gosling vis" width="700"/>
 
 **:tada::tada::tada::tada::tada::tada::tada::tada:**  
 **You have just created a scalable and interactive visualization in Gosling!**  
@@ -143,7 +143,7 @@ For example, we can add a filter to only visualize chromosomes whose stain resul
 }
 ```
 
-<img src="https://raw.githubusercontent.com/wiki/gosling-lang/gosling.js/images/tutorial_dataTransform.png" alt="gosling vis dataTransform" width="700"/>
+<img src="https://raw.githubusercontent.com/wiki/gosling-lang/gosling.js/images/tutorial/tutorial_dataTransform.png" alt="gosling vis dataTransform" width="700"/>
 
 gvar (<span style="color:#A0A0F2">purple rect</span>) and gneg (white rect) are not shown in the updated visualization.
 
@@ -223,7 +223,7 @@ In the code below, a chromosome is visualized as a `triangle-r` mark if its stai
 }
 ```
 
-<img src="https://raw.githubusercontent.com/wiki/gosling-lang/gosling.js/images/tutorial_superpose.png" alt="gosling vis superpose" width="700"/>
+<img src="https://raw.githubusercontent.com/wiki/gosling-lang/gosling.js/images/tutorial/tutorial_superpose.png" alt="gosling vis superpose" width="700"/>
 
 <!-- ## Customize Style
 
@@ -298,7 +298,7 @@ Gosling supports easy creation of circular layout through the `layout` property.
     }]
 }
 ```
-<img src="https://raw.githubusercontent.com/wiki/gosling-lang/gosling.js/images/tutorial_style.png" alt="gosling vis style" width="500"/> -->
+<img src="https://raw.githubusercontent.com/wiki/gosling-lang/gosling.js/images/tutorial/tutorial_style.png" alt="gosling vis style" width="500"/> -->
 
 ## Coming Up Next
 In the [next tutorial](https://github.com/gosling-lang/gosling.js/wiki/Advanced-Tutorial), we introduce how to use semantic zooming, multiple tracks, and circular layout in Gosling.
