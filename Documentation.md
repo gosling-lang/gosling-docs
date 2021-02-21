@@ -22,11 +22,7 @@ You are welcome to try the [Gosling online editor](https://gosling-lang.github.i
       ... // another track
     },
     ...
-  ],
-  // specify the arrangement of multiple tracks
-  "arrangement":{
-    ...
-  }
+  ]
 }
 ```
 
@@ -63,12 +59,12 @@ You are welcome to try the [Gosling online editor](https://gosling-lang.github.i
   - [strokeWidth](https://github.com/gosling-lang/gosling.js/wiki/Visual-Channel#strokewidth)
   - [opacity](https://github.com/gosling-lang/gosling.js/wiki/Visual-Channel#opacity)
   - [Style](https://github.com/gosling-lang/gosling.js/wiki/Track#style)
-- [Arrangement](https://github.com/gosling-lang/gosling.js/wiki/Track#arrangement)
-  - [Grid-based arrangement](https://github.com/gosling-lang/gosling.js/wiki/Track#grid-based-arrangement)
-  - [Superposition](https://github.com/gosling-lang/gosling.js/wiki/Track#superposition)
-- [Layout](https://github.com/gosling-lang/gosling.js/wiki/Track#layout)
+- [Visualization Composition](https://github.com/gosling-lang/gosling.js/wiki/Composition)
+  - [Overlayed Tracks](https://github.com/gosling-lang/gosling.js/wiki/Composition#overlayed-tracks)
+  - [Multiple Tracks](https://github.com/gosling-lang/gosling.js/wiki/Composition#multiple-tracks)
+  - [Multiple Views](https://github.com/gosling-lang/gosling.js/wiki/Composition#multiple-views)
 - [Interactions](https://github.com/gosling-lang/gosling.js/wiki/User-Interaction)
   - [Zooming and Panning](https://github.com/gosling-lang/gosling.js/wiki/User-Interaction#zooming-and-panning)
   - [Linking Views](https://github.com/gosling-lang/gosling.js/wiki/User-Interaction#linking-views)
   - [Brushing and Linking](https://github.com/gosling-lang/gosling.js/wiki/User-Interaction#brushing-and-linking)
-- [Semantic Zooming](https://github.com/gosling-lang/gosling.js/wiki/Semantic-Zoom)
+  - [Semantic Zooming](https://github.com/gosling-lang/gosling.js/wiki/Semantic-Zoom)
