@@ -63,9 +63,10 @@ This mapping is specified by the following properties:
 
 ```javascript
 {
-    // specify the size of the visualization
-    "arrangement": {"rowSizes": 70, "columnSizes": 700 },
     "tracks":[{
+        // specify the size of the visualization
+        "width": 700,
+        "height": 70,
         // Load a csv data file through URL
         "data": {
             "url": "https://raw.githubusercontent.com/sehilyi/gemini-datasets/master/data/UCSC.HG38.Human.CytoBandIdeogram.csv",
@@ -100,7 +101,7 @@ This mapping is specified by the following properties:
 
 <img src="https://raw.githubusercontent.com/wiki/gosling-lang/gosling.js/images/tutorial/tutorial_0.gif" alt="gosling vis" width="700"/>
 
-**:tada::tada::tada::tada::tada::tada::tada::tada:**  
+**:tada:  :tada:  :tada: :tada: :tada: :tada: :tada: :tada:**  
 **You have just created a scalable and interactive visualization in Gosling!**  
 You can interact with the visualization you just created in the online editor through zoom and pan.
 Or, you can keep reading the tutorial and make your visualizations even more fancy.
@@ -111,8 +112,9 @@ For example, we can add a filter to only visualize chromosomes whose stain resul
 
 ```diff
 {
-    "arrangement": {"rowSizes": 70, "columnSizes": 700 },
     "tracks":[{
+        "width": 700,
+        "height": 70,
         "data": {
             "url": "https://raw.githubusercontent.com/sehilyi/gemini-datasets/master/data/UCSC.HG38.Human.CytoBandIdeogram.csv",
             "chromosomeField": "Chromosome",
@@ -157,8 +159,9 @@ In the code below, a chromosome is visualized as a `triangle-r` mark if its stai
 
 ```diff
 {
-    "arrangement": {"rowSizes": 70, "columnSizes": 700 },
-    "tracks":[{
+    "tracks":[{ 
+        "width": 700,
+        "height": 70,
         "data": {
             "url": "https://raw.githubusercontent.com/sehilyi/gemini-datasets/master/data/UCSC.HG38.Human.CytoBandIdeogram.csv",
             "type": "csv",
@@ -182,7 +185,7 @@ In the code below, a chromosome is visualized as a `triangle-r` mark if its stai
 -           "domain": ["gpos25", "gpos50", "gpos75", "gpos100"],
 -           "range": ["#D9D9D9","#979797","#636363", "black"]
 -       },
-+       "superpose":[
++       "overlay":[
 +            {
 +            "mark": "rect",
 +            "dataTransform": {
@@ -191,8 +194,8 @@ In the code below, a chromosome is visualized as a `triangle-r` mark if its stai
 +            "color": {
 +                "field": "Stain", 
 +                "type": "nominal",
-+                "domain": ["gpos25", "gpos50", "gpos75", "gpos100"],
-+                "range": ["#D9D9D9","#979797","#636363", "black"]
++                "domain": ["gneg", "gpos25", "gpos50", "gpos75", "gpos100", "gvar"],
++                "range": ["white","#D9D9D9","#979797","#636363", "black","#A0A0F2"]
 +            }
 +            },
 +           {
@@ -225,83 +228,11 @@ In the code below, a chromosome is visualized as a `triangle-r` mark if its stai
 
 <img src="https://raw.githubusercontent.com/wiki/gosling-lang/gosling.js/images/tutorial/tutorial_superpose.png" alt="gosling vis superpose" width="700"/>
 
-<!-- ## Customize Style
-
-You can freely modify the size of the `rect` mark, add a title, or change the layout.
-Gosling supports easy creation of circular layout through the `layout` property.
-
-```diff
-{
-+   "title": "Get Started Example",
--   "arrangement": {"rowSizes": 70, "columnSizes": 700 },
-+   "arrangement": {"rowSizes": 700, "columnSizes": 700 },
-    "tracks":[{
-+       "layout": "circular",
-+       "innerRadius": 220,
-+       "outerRadius": 300,
-        "data": {
-            "url": "https://raw.githubusercontent.com/sehilyi/gemini-datasets/master/data/UCSC.HG38.Human.CytoBandIdeogram.csv",
-            "chromosomeField": "Chromosome",
-            "type": "csv",
-            "genomicFields": ["chromStart", "chromEnd"]
-        }, 
-        "x": {
-            "field": "chromStart",
-            "type": "genomic",
-            "domain": {"chromosome": "1"},
-            "axis": "top"
-        },
-        "xe": {"field": "chromEnd", "type": "genomic"},        
-        "superpose":[
-             {
-               "dataTransform": {
-                       "filter": [{"field": "Stain", "oneOf": ["gpos25", "gpos50", "gpos75", "gpos100"]}]
-                   },
-               "mark": "rect",
-               "x": {
-                   "field": "chromStart",
-                   "type": "genomic",
-                   "domain": {"chromosome": "1"},
-                   "axis": "top"
-               },
-               "xe": {"field": "chromEnd", "type": "genomic"},
-               "color": {
-                   "field": "Stain", 
-                   "type": "nominal",
-                   "domain": ["gpos25", "gpos50", "gpos75", "gpos100"],
-                   "range": ["#D9D9D9","#979797","#636363", "black"]
-               },
-+              "stroke": {"value": "black"}, // stroke of the rect mark
-+              "strokeWidth": {"value": 3}
-             },
-            {
-              "mark": "triangle-r",
-              "dataTransform": {
-                "filter": [
-                  {"field": "Stain", "oneOf": ["acen"]},
-                  {"field": "Name", "include": "q"}
-                ]
-              },
-              "color": {"value": "#B70101"}
-            },
-            {
-              "mark": "triangle-l",
-              "dataTransform": {
-                "filter": [
-                  {"field": "Stain", "oneOf": ["acen"]},
-                  {"field": "Name", "include": "p"}
-                ]
-              },
-              "color": {"value": "#B70101"}
-            }
-        ]
-    }]
-}
-```
-<img src="https://raw.githubusercontent.com/wiki/gosling-lang/gosling.js/images/tutorial/tutorial_style.png" alt="gosling vis style" width="500"/> -->
 
 ## Coming Up Next
-In the [next tutorial](https://github.com/gosling-lang/gosling.js/wiki/Advanced-Tutorial), we introduce how to use semantic zooming, multiple tracks, and circular layout in Gosling.
+[Tutorial 2](https://github.com/gosling-lang/gosling.js/wiki/Tutorial_multi_tracks): how to use semantic zooming, multiple tracks, and circular layout in Gosling.
+
+[Tutorial 3](https://github.com/gosling-lang/gosling.js/wiki/Tutorial_multi_viewss): how to arrange and link multiple views in Gosling.
 
 You can find more examples [here][exampleURL].
 

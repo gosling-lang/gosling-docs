@@ -1,12 +1,13 @@
-In the [first tutorial](https://github.com/gosling-lang/gosling.js/wiki/Tutorial), we introduce how to load data, encode data with marks, transform data, superpose multiple marks and obtain the following visualization.
-<img src="https://raw.githubusercontent.com/wiki/gosling-lang/gosling.js/images/tutorial/tutorial_superpose.png" alt="gosling vis superpose" width="800"/>
+In the [first tutorial](https://github.com/gosling-lang/gosling.js/wiki/Tutorial), we introduce how to load data, encode data with marks, transform data, overlay multiple marks and obtain the following visualization.
+<img src="https://raw.githubusercontent.com/wiki/gosling-lang/gosling.js/images/tutorial/tutorial_overlay.png" alt="gosling vis overlay" width="800"/>
 <details>
   <summary>click to expand the code</summary>
 
 ```javascript
 {
-    "arrangement": {"rowSizes": 70, "columnSizes": 700 },
     "tracks":[{
+        "width": 700,
+        "height": 70,
         "data": {
             "url": "https://raw.githubusercontent.com/sehilyi/gemini-datasets/master/data/UCSC.HG38.Human.CytoBandIdeogram.csv",
             "type": "csv",
@@ -20,7 +21,7 @@ In the [first tutorial](https://github.com/gosling-lang/gosling.js/wiki/Tutorial
             "axis": "top"
         },
         "xe": {"field": "chromEnd", "type": "genomic"},
-        "superpose":[
+        "overlay":[
              {
              "mark": "rect",
              "dataTransform": {
@@ -73,7 +74,7 @@ Apart from the default zoom and pan interactions,
 [semantic zoom](https://github.com/gosling-lang/gosling.js/wiki/Documentation#semantic-zooming) is supported in Gosling and allows users to switch between different visualizations of the same data through zooming in/out. When zooming in, the same data will be represented in a different way in which more details are shown. 
 
 Let's say, for this visualization, we want text annotations to show up when zooming in.
-We add `text` marks to the `superpose` property and specify when the `text` marks should appear through the `visibility` property.
+We add `text` marks to the `overlay` property and specify when the `text` marks should appear through the `visibility` property.
 We may wish the text marks to appear when the distance between chromStart and chromEnd is big enough to place a text mark.
 In other words, the text marks appear when the width (`measure`) of the text mark (`target`) is less than (`operation`) than `|xe-x|`.
 
@@ -82,12 +83,10 @@ In other words, the text marks appear when the width (`measure`) of the text mar
 
 ```diff
 {
-  "arrangement": {
-    "columnSizes": 700, 
-    "rowSizes": 70
-  },
   "tracks": [
     {
+      "width": 700,
+      "height": 70,
       "data": {
         "url": "https://raw.githubusercontent.com/sehilyi/gemini-datasets/master/data/UCSC.HG38.Human.CytoBandIdeogram.csv",
         "type": "csv",
@@ -101,7 +100,7 @@ In other words, the text marks appear when the width (`measure`) of the text mar
         "axis": "top"
       },
       "xe": {"field": "chromEnd", "type": "genomic"},
-      "superpose": [
+      "overlay": [
 +        {
 +          "mark": "text",
 +          "dataTransform": {
@@ -185,13 +184,11 @@ In Gosling, `tracks` can be linked by assigning `x` the same  `linkingID`.
 
 ```diff
 {
-  "arrangement": {
-    "columnSizes": 700, 
--    "rowSizes": [70], 
-+    "rowSizes": [70, 25]
-  },
++ "spacing": 0,  
   "tracks": [
 +     {
++      "width": 700,
++      "height": 40,  
 +      "data": {
 +        "url": "https://resgen.io/api/v1/tileset_info/?d=UvVPeLHuRDiYA3qwFlm7xQ",
 +        "type": "multivec",
@@ -212,13 +209,14 @@ In Gosling, `tracks` can be linked by assigning `x` the same  `linkingID`.
 +      "color": {"field": "sample", "type": "nominal"}
 +    },
     {
+      "width": 700,
+      "height": 70,
       "data": {
         "url": "https://raw.githubusercontent.com/sehilyi/gemini-datasets/master/data/UCSC.HG38.Human.CytoBandIdeogram.csv",
         "type": "csv",
         "chromosomeField": "Chromosome",
         "genomicFields": ["chromStart", "chromEnd"]
       },
-      ,
       "x": {
         "field": "chromStart",
         "type": "genomic",
@@ -227,7 +225,7 @@ In Gosling, `tracks` can be linked by assigning `x` the same  `linkingID`.
 +        "linkingID": "link-1"
       },
       "xe": {"field": "chromEnd", "type": "genomic"},
-      "superpose": [
+      "overlay": [
         {
           "mark": "text",
           "dataTransform": {
@@ -303,23 +301,18 @@ In Gosling, `tracks` can be linked by assigning `x` the same  `linkingID`.
 ## Circular Layout
 
 We can easily turn the visualization into a circular layout through the `layout` property.
-The size of each track is specified through the `innerRadius` and `outerRadius` properties. We can also stack these two tracks together by setting `superposeOnPreviousTrack` as true.
+The size of each track is specified through the `innerRadius` and `outerRadius` properties. We can also stack these two tracks together by setting `overlayOnPreviousTrack` as true.
 
 <img src="https://raw.githubusercontent.com/wiki/gosling-lang/gosling.js/images/tutorial/tutorial_circular.png" alt="gosling circular" width="600"/>
 
 ```diff
 {
 + "layout": "circular",
-  "arrangement": {
--     "columnSizes": 800,
--    "rowSizes": [60, 25], 
-+    "columnSizes": 600,
-+    "rowSizes": 600
-  },
+  "spacing": 0,  
   "tracks": [
-     {
-+      "innerRadius": 200,
-+      "outerRadius": 300,
+     { 
+      "width": 700,
+      "height": 40,  
       "data": {
         "url": "https://resgen.io/api/v1/tileset_info/?d=UvVPeLHuRDiYA3qwFlm7xQ",
         "type": "multivec",
@@ -339,9 +332,9 @@ The size of each track is specified through the `innerRadius` and `outerRadius` 
       "y": {"field": "peak", "type": "quantitative"},
       "color": {"field": "sample", "type": "nominal"}
     },
-    {
-+      "innerRadius": 175,
-+      "outerRadius": 200,
+    { 
+      "width": 700,
+      "height": 70,  
       "data": {
         "url": "https://raw.githubusercontent.com/sehilyi/gemini-datasets/master/data/UCSC.HG38.Human.CytoBandIdeogram.csv",
         "type": "csv",
@@ -355,7 +348,7 @@ The size of each track is specified through the `innerRadius` and `outerRadius` 
         "linkingID": "link-1"
       },
       "xe": {"field": "chromEnd", "type": "genomic"},
-      "superpose": [
+      "overlay": [
         {
           "mark": "text",
           "dataTransform": {
@@ -421,8 +414,7 @@ The size of each track is specified through the `innerRadius` and `outerRadius` 
       ],
       "size": {"value": 20},
       "stroke": {"value": "gray"},
-      "strokeWidth": {"value": 0.5},
-+      "superposeOnPreviousTrack": true
+      "strokeWidth": {"value": 0.5}
     }
   ]
 }
