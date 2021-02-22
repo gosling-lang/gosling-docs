@@ -15,13 +15,11 @@ In this document, we provide a list of public datasets in those two classes. For
 > **Tip.** When you are using online editor, you can check out a "Data Preview" panel on the right-bottom part of the interface to see how the actual data looks like.
 
 ## List of Plain Datasets
-> Add as a table
 - Type: CSV
 - URL: 
 - Description: hg38 cytoband
 - Soruce: UCSC
 ---
-> Support multiple of bigwigs
 - Type: BigWig
 - URL: https://s3.amazonaws.com/gosling-lang.org/data/4DNFIMPI5A9N.bw
 - Source: 4DN (https://data.4dnucleome.org/files-processed/4DNFIMPI5A9N/#file-overview)
@@ -34,17 +32,15 @@ In this document, we provide a list of public datasets in those two classes. For
 - Source: 
 
 ---
-
-> Need to confirm how many samples this data contains
 - Type: Multivec (Originally, multiple bigwig files)
-- URL: 
+- URL: TBA
 - Description: Multiple samples of ChIP-seq and DNase-seq analysis
 - Source: Cistrome Browser (http://cistrome.org/db/#/)
 
 ---
 
 - Type: Multivec (Originally, a FASTA file)
-- URL: 
+- URL: TBA
 - Description: hg38 sequence
 - Source: UCSC (https://hgdownload.soe.ucsc.edu/goldenPath/hg38/bigZips/)
 
