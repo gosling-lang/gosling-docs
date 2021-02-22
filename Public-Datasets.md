@@ -24,7 +24,11 @@ In this document, we provide a list of public datasets in those two classes. For
 - URL: https://s3.amazonaws.com/gosling-lang.org/data/4DNFIMPI5A9N.bw
 - Source: 4DN (https://data.4dnucleome.org/files-processed/4DNFIMPI5A9N/#file-overview)
 - [Start visualizing this data in the editor]()
-
+---
+- Type: CSV
+- URL: https://s3.amazonaws.com/gosling-lang.org/data/COVID/NC_045512.2-Genes.csv
+- Description: Gene Annotations of SARS-CoV-2 in NC_045512.2
+- Source: https://genome.ucsc.edu/covid19.html
 ## List of Pre-aggregated Datasets
 - Type: Aggregated BED
 - URL: 
