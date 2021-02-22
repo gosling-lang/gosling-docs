@@ -82,7 +82,7 @@ Apart from the properties shared by all channels, `x` channel have the following
 | ----------------- | ------ | ------------------------------------------------------------------------------------------------------------------ |
 | aggregate         | string | support "max", "min", "count", "mean", "bin"                                                                       |
 | axis              | string | specify the axis position, support "none", "top", "bottom", "left", "right"                                        |
-| linkingID         | string | a unique linkingID is needed for [linking views](#linking-views) and [Brushing and Linking](#brushing-and-linking) |
+| linkingId         | string | a unique linkingId is needed for [linking views](#linking-views) and [Brushing and Linking](#brushing-and-linking) |
 
 
 # xe

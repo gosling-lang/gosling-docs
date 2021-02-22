@@ -1,4 +1,4 @@
-In the [first tutorial](https://github.com/gosling-lang/gosling.js/wiki/Tutorial), we introduce how to load data, encode data with marks, transform data, overlay multiple marks and obtain the following visualization.
+In [Tutorial 1](https://github.com/gosling-lang/gosling.js/wiki/Tutorial), we introduce how to load data, encode data with marks, transform data, overlay multiple marks and obtain the following visualization.
 <img src="https://raw.githubusercontent.com/wiki/gosling-lang/gosling.js/images/tutorial/tutorial_overlay.png" alt="gosling vis overlay" width="800"/>
 <details>
   <summary>click to expand the code</summary>
@@ -177,14 +177,14 @@ In other words, the text marks appear when the width (`measure`) of the text mar
 We may wish to represent the same data from different aspects using different types of visualization.
 To achieve this, we add an area chart (i.e., a new `track`) to the `tracks` property. 
 Since these tracks share the same `x` coordinate, we wish to link these two tracks: the zooming and panning performed in one track will be automatically applied to the linked track.  
-In Gosling, `tracks` can be linked by assigning `x` the same  `linkingID`. 
+In Gosling, `tracks` can be linked by assigning `x` the same  `linkingId`. 
 
 
 <img src="https://raw.githubusercontent.com/wiki/gosling-lang/gosling.js/images/tutorial/tutorial_multi_track.png" alt="gosling multi tracks" width="800"/>
 
 ```diff
 {
-+ "spacing": 0,  
++ "spacing": 5,  
   "tracks": [
 +     {
 +      "width": 700,
@@ -203,14 +203,15 @@ In Gosling, `tracks` can be linked by assigning `x` the same  `linkingID`.
 +        "type": "genomic",
 +        "domain": {"chromosome": "1"},
 +        "axis": "top",
-+        "linkingID": "link-1"
++        "linkingId": "link-1"
 +      },
 +      "y": {"field": "peak", "type": "quantitative"},
 +      "color": {"field": "sample", "type": "nominal"}
 +    },
     {
       "width": 700,
-      "height": 70,
+-     "height": 70,
++     "height": 20,
       "data": {
         "url": "https://raw.githubusercontent.com/sehilyi/gemini-datasets/master/data/UCSC.HG38.Human.CytoBandIdeogram.csv",
         "type": "csv",
@@ -222,7 +223,7 @@ In Gosling, `tracks` can be linked by assigning `x` the same  `linkingID`.
         "type": "genomic",
         "domain": {"chromosome": "1"},
 -        "axis": "top"
-+        "linkingID": "link-1"
++        "linkingId": "link-1"
       },
       "xe": {"field": "chromEnd", "type": "genomic"},
       "overlay": [
@@ -308,7 +309,8 @@ The size of each track is specified through the `innerRadius` and `outerRadius` 
 ```diff
 {
 + "layout": "circular",
-  "spacing": 0,  
++ "centerRadius": 0.6,
+  "spacing": 5,  
   "tracks": [
      { 
       "width": 700,
@@ -327,14 +329,14 @@ The size of each track is specified through the `innerRadius` and `outerRadius` 
         "type": "genomic",
         "domain": {"chromosome": "1"},
         "axis": "top",
-        "linkingID": "link-1"
+        "linkingId": "link-1"
       },
       "y": {"field": "peak", "type": "quantitative"},
       "color": {"field": "sample", "type": "nominal"}
     },
     { 
       "width": 700,
-      "height": 70,  
+      "height": 20,  
       "data": {
         "url": "https://raw.githubusercontent.com/sehilyi/gemini-datasets/master/data/UCSC.HG38.Human.CytoBandIdeogram.csv",
         "type": "csv",
@@ -345,7 +347,7 @@ The size of each track is specified through the `innerRadius` and `outerRadius` 
         "field": "chromStart",
         "type": "genomic",
         "domain": {"chromosome": "1"},
-        "linkingID": "link-1"
+        "linkingId": "link-1"
       },
       "xe": {"field": "chromEnd", "type": "genomic"},
       "overlay": [
