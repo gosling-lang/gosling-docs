@@ -4,7 +4,7 @@
 * ### [Tutorial](https://github.com/gosling-lang/gosling.js/wiki/Tutorial)
   * [Tutorial 1: Single Track Visualization](https://github.com/gosling-lang/gosling.js/wiki/Tutorial)
   * [Turotial 2: Multi-Track Visualization](https://github.com/gosling-lang/gosling.js/wiki/Tutorial_multi_tracks)
-  * * [Turotial 3: Multi-View Visualization](https://github.com/gosling-lang/gosling.js/wiki/Tutorial_multi_views)
+  * [Turotial 3: Multi-View Visualization](https://github.com/gosling-lang/gosling.js/wiki/Tutorial_multi_views)
 * ### [Documentation](https://github.com/gosling-lang/gosling.js/wiki/Documentation)
   * [Genome Builds](https://github.com/gosling-lang/gosling.js/wiki/Genome-Builds)
   * [Data](https://github.com/gosling-lang/gosling.js/wiki/Data)
