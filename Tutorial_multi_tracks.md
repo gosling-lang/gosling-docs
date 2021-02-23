@@ -302,14 +302,20 @@ In Gosling, `tracks` can be linked by assigning `x` the same  `linkingId`.
 ## Circular Layout
 
 We can easily turn the visualization into a circular layout through the `layout` property.
-The size of each track is specified through the `innerRadius` and `outerRadius` properties. We can also stack these two tracks together by setting `overlayOnPreviousTrack` as true.
 
 <img src="https://raw.githubusercontent.com/wiki/gosling-lang/gosling.js/images/tutorial/tutorial_circular.png" alt="gosling circular" width="600"/>
 
 ```diff
-{
 + "layout": "circular",
 + "centerRadius": 0.6,
+```
+
+<details>
+<summary><b>Click here to expand the complete code</b></summary>
+```javscript
+{
+  "layout": "circular",
+  "centerRadius": 0.6,
   "spacing": 5,  
   "tracks": [
      { 
@@ -421,4 +427,4 @@ The size of each track is specified through the `innerRadius` and `outerRadius` 
   ]
 }
 ```
-
+</details>
