@@ -138,7 +138,7 @@ We then creat two linear detailed views for two different chromosomes, e.g., chr
 
 **Detailed View 1**
 
-<img src="https://raw.githubusercontent.com/wiki/gosling-lang/gosling.js/images/tutorial/tutorial_detail_view1.png" alt="gosling detailed view 1" width="600"/>
+<img src="https://raw.githubusercontent.com/wiki/gosling-lang/gosling.js/images/tutorial/tutorial_detail_view1.png" alt="gosling detailed view 1" width="340"/>
 
 ```diff
 +   {
