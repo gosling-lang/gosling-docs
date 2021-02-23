@@ -1,4 +1,4 @@
-In [Tutorial 2](https://github.com/gosling-lang/gosling.js/wiki/Tutorial_multi_tracks), we introduce how to creat a multi-track visualization, as shown below.
+In [Tutorial 2](https://github.com/gosling-lang/gosling.js/wiki/Tutorial_multi_tracks), we introduce how to create a multi-track visualization, as shown below.
 
 <img src="https://raw.githubusercontent.com/wiki/gosling-lang/gosling.js/images/tutorial/tutorial_circular.png" alt="gosling circular" width="600"/>
 
@@ -123,17 +123,18 @@ In [Tutorial 2](https://github.com/gosling-lang/gosling.js/wiki/Tutorial_multi_t
 </details>
 
 In Gosling, we call a visualization with several `tracks` as **a single view**.
-Sometimes, we may wish to creat a visualization with **multiple views**, e.g., one overview + several detailed views.
+Sometimes, we may wish to create a visualization with **multiple views**, e.g., one overview + several detailed views.
 
-## Creat Multiple Views
+## create Multiple Views
 
-Let's say we use the above circular visualization as the overview that visualize all the chromosome. 
+Let's say we use the above circular visualization as the overview that visualizes all the chromosomes. 
+To achieve this, we remove the specified `x.domain` in the overview.
 **Overview**
 ```diff
 -  "domain": {"chromosome": "1"},
 ```
 
-We then creat two linear detailed views for two different chromosomes, e.g., chromosome 2 and chromosome 5.
+We then create two linear detailed views for two different chromosomes, e.g., chromosome 2 and chromosome 5.
 
 
 **Detailed View 1**
@@ -556,7 +557,7 @@ In Gosling, multiple views can be arranged using the `arrangement` property.
 ## Link Multiple Views
 We need to link the overview and the two detailed views.
 We `overlay` two `brush` objects to the overview, and link the two `brush` objects to the two detailed views using `linkingId` (i.e., "detail-1", "detail-2").
-To help users , we assing same color to the `brush` of the overview and the `background` of the correspoindg detailed view.
+To help users visually link the brush objects and the detailed views, we assign the same color to the `brush` of the overview and the `background` of the corresponding detailed view.
 
 **Overview**
 ```diff
