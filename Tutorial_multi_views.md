@@ -3,7 +3,7 @@ In [Tutorial 2](https://github.com/gosling-lang/gosling.js/wiki/Tutorial_multi_t
 <img src="https://raw.githubusercontent.com/wiki/gosling-lang/gosling.js/images/tutorial/tutorial_circular.png" alt="gosling circular" width="600"/>
 
 <details>
-  <summary>click to expand the complete code</summary>
+<summary><b>Click here to expand the complete code</b></summary>
 
 ```javascript
 {
@@ -122,12 +122,12 @@ In [Tutorial 2](https://github.com/gosling-lang/gosling.js/wiki/Tutorial_multi_t
 ```
 </details>
 
-In Gosling, we call a visualization with several `tracks` as a single view.
-Sometimes, we may wish to creat a visualization with multiple views, e.g., an overview + several detailed views.
+In Gosling, we call a visualization with several `tracks` as **a single view**.
+Sometimes, we may wish to creat a visualization with **multiple views**, e.g., one overview + several detailed views.
 
 ## Creat Multiple Views
 
-Let's say we use this circular visualization as the overview that visualize all the chromosome. 
+Let's say we use the above circular visualization as the overview that visualize all the chromosome. 
 **Overview**
 ```diff
 -  "domain": {"chromosome": "1"},
@@ -135,34 +135,40 @@ Let's say we use this circular visualization as the overview that visualize all 
 
 We then creat two linear detailed views for two different chromosomes, e.g., chromosome 2 and chromosome 5.
 
+
 **Detailed View 1**
+
+<img src="https://raw.githubusercontent.com/wiki/gosling-lang/gosling.js/images/tutorial/tutorial_detail_view1.png" alt="gosling detailed view 1" width="600"/>
+
 ```diff
 +   {
 +     "layout": "linear",
 +     "tracks": [{ 
 +       "row": {"field": "sample", "type": "nominal"},
-+     "width": 340,
-+     "height": 300,  
-+     "data": {
-+       "url": "https://resgen.io/api/v1/tileset_info/?d=UvVPeLHuRDiYA3qwFlm7xQ",
-+       "type": "multivec",
-+       "row": "sample",
-+       "column": "position",
-+       "value": "peak",
-+       "categories": ["sample 1", "sample 2", "sample 3", "sample 4"]
-+     },
-+     "mark": "area",
-+     "x": {
-+       "field": "position",
-+       "type": "genomic",
-+       "domain": {"chromosome": "2"}
-+       "axis": "top"
-+     },
-+     "y": {"field": "peak", "type": "quantitative"},
-+     "color": {"field": "sample", "type": "nominal"}
++       "width": 340,
++       "height": 300,  
++       "data": {
++         "url": "https://resgen.io/api/v1/tileset_info/?d=UvVPeLHuRDiYA3qwFlm7xQ",
++         "type": "multivec",
++         "row": "sample",
++         "column": "position",
++         "value": "peak",
++         "categories": ["sample 1", "sample 2", "sample 3", "sample 4"]
++       },
++       "mark": "area",
++       "x": {
++         "field": "position",
++         "type": "genomic",
++         "domain": {"chromosome": "2"}
++         "axis": "top"
++       },
++       "y": {"field": "peak", "type": "quantitative"},
++       "color": {"field": "sample", "type": "nominal"}
 +   }]
 +   }
 ```
+
+
 
 **Detailed View 2** is the same as **Detailed View 1** except the `x.domain`.
 
@@ -225,7 +231,7 @@ In Gosling, multiple views can be arranged using the `arrangement` property.
 ```
 
 <details>
-<summary>Click here to expand the complete code</summary>
+<summary><b>Click here to expand the complete code</b></summary>
 
 ```javascript
 {
@@ -548,6 +554,9 @@ In Gosling, multiple views can be arranged using the `arrangement` property.
 
 
 ## Link Multiple Views
+We need to link the overview and the two detailed views.
+We `overlay` two `brush` objects to the overview, and link the two `brush` objects to the two detailed views using `linkingId` (i.e., "detail-1", "detail-2").
+To help users , we assing same color to the `brush` of the overview and the `background` of the correspoindg detailed view.
 
 **Overview**
 ```diff
@@ -599,7 +608,7 @@ In Gosling, multiple views can be arranged using the `arrangement` property.
 <img src="https://raw.githubusercontent.com/wiki/gosling-lang/gosling.js/images/tutorial/tutorial_multi_views.gif" alt="gosling linked multi-views" width="600"/>
 
 <details>
-<summary>Click here to expand the complete code</summary>
+<summary><b>Click here to expand the complete code</b></summary>
 
 ```javascript
 {
@@ -781,7 +790,6 @@ In Gosling, multiple views can be arranged using the `arrangement` property.
                                 "field": "position",
                                 "type": "genomic",
                                 "domain": { "chromosome": "5" },
-
                                 "linkingId": "detail-2",
                                 "axis": "top"
                             },
