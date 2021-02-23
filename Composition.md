@@ -101,7 +101,7 @@ Each track of the `tracks` share the same `layout` preporty and are vertically c
 | spacing | number | specify the space between tracks|
 | static | boolean | whether to disable [Zooming and Panning](https://github.com/gosling-lang/gosling.js/wiki/User-Interaction#zooming-and-panning), default=false. | 
 | assembly | string | currently support "hg38", "hg19", "hg18", "hg17", "hg16", "mm10", "mm9"| 
-| xLinkID | string | specify an ID for [linking multiple views](https://github.com/gosling-lang/gosling.js/wiki/User-Interaction#linking-views)|
+| xLinkingId | string | specify an ID for [linking multiple views](https://github.com/gosling-lang/gosling.js/wiki/User-Interaction#linking-views)|
 | centerRadius | number | specify the proportion of the radius of the center white space. A number between [0,1], default=0.3|
 
 
