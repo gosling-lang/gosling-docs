@@ -8,7 +8,7 @@ The key features of Gosling compared to existing visualization libraries are as 
 
 - **Visual Scalability**: Gosling supports an advanced zooming technique, called *Semantic Zooming*, which allows flexible and seamless visual exploration of large genome-mapped data. This allows you to dynamically switch between different visual encoding strategies that are appropriate for given zoom scale. <!--For example, you can show nucleotide bases of genomic sequence when zoomed in while show overall distribution of the bases using stacked bar chart when zoomed out.-->
 
-- **Expressiveness**: Gosling is designed to support the thorough taxonomy of genomic data visualization<sup id="fnc1">[1](#fn1)</sup>. This allows you to, for example, use a circular layout (i.e., displaying genomic coordinates in a polar system), in addition to a linear layout, and easily switch between the two.
+- **Expressiveness**: Gosling is designed to cover the most part of the taxonomy for genomic data visualization<sup id="fnc1">[1](#fn1)</sup>. This allows you to, for example, use a circular layout (i.e., displaying genomic coordinates in a polar system), in addition to a linear layout, and easily switch between the two.
 
 - **Interactivity**: Gosling support diverse user interactions that help different visual analytics use cases, including zooming and panning and brushing and linking.
 
