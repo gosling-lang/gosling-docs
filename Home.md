@@ -10,7 +10,7 @@ The key features of Gosling compared to existing visualization libraries are as 
 
 - **Expressiveness**: Gosling is designed to cover the most part of the taxonomy for genomic data visualization<sup id="fnc1">[1](#fn1)</sup>. This, for example, allows you to use a circular layout (i.e., displaying genomic coordinates in a polar system), in addition to a linear layout, and easily switch between the two.
 
-- **Interactivity**: Gosling support diverse user interactions that help different visual analytics use cases, including zooming and panning and brushing and linking.
+- **Interactivity**: Gosling support diverse user interactions, including zooming and panning and brushing and linking, that are helpful for different visual analytics use cases.
 
 ---
 <b id="fn1">[1]</b>: Nusrat, Harbig, and Gehlenborg, Tasks, Techniques, and Tools for Genomic Data Visualization, Computer Graphics Forum, 2019. [⏎](#fnc1)
