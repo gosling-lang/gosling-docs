@@ -133,5 +133,5 @@ Goslings supports multi-view visualizations. How multiple views are arranged is 
 }
 ```
 
-Gosling supports two types of arrangemet: "parallel" and "serial".
-<img src="https://raw.githubusercontent.com/wiki/gosling-lang/gosling.js/images/multi-views.png" alt="arrangement of multiple views" width="600"/> </td>
+Gosling supports four types of arrangemet: "parallel", "serial", "vertical", "horizontal".
+<img src="https://raw.githubusercontent.com/wiki/gosling-lang/gosling.js/images/multi_views.png" alt="arrangement of multiple views" width="700"/> </td>
