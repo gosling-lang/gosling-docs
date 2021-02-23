@@ -6,7 +6,7 @@ Advanced zooming technique, called Semantic Zooming, allows you to dynamically s
 
 [Try this example in the online editor](<https://gosling-lang.github.io/gosling.js/?full=false&spec=(X'titleN'Basic%20Semantic%20Zoom%20Example~X'subtitleN'Zoom%20in%20and%20out%20to%20see%20how%20different%20visual%20encoding%20can%20be%20applied%20depending%20on%20the%20zoom%20level~X'layoutN'linear~%20X'centerRadiusN0.5%2CX'tracksN%5BX*(X**'dataN(-'typeN'multivec~-'urlN'https%3A%2F%2Fresgen.io%2Fapi%2Fv1%2Ftileset_info%2F%3Fd%3DUvVPeLHuRDiYA3qwFlm7xQ~-'valueN'y~-'rowN'_~-'columnN'x~-'categoriesN%5B'_'%5D%2C-'binSizeN12X**)%25markN'rect~X**'x%26start%22xe%26end%22styleN('outlineN'black~%20'outlineWidthN1)%25widthN620%25heightN130%2C%0AX**'overlayN%5BKE79F00MJGO800000IjK57B4E9MJGO80000I%24O800000IjK029F73MJGO8000I%24O80000IjK0072B2MJGO800I%24O8000IjKD45E00MJGO80I%24O800IjKCB7AA7MJGO8I%24O80I*)-*%5D-)X**%5DX*)X%5D%0A)*%20%20-X***8*'targetN'mark~-***'thresholdN1000I%2C-***'measure!*'zoomLevel'-*J-**(-***'operationN'K-(-*'colorN('valueN'%23M')%2C-*'visibilityN%5BN!%20OT~-**X%0A*j*)-*%5D-)%2C~'%2C%22~%20'typeN'genomic')%25%24*)%2CJL%25%2CX**'%26N('fieldN'%01%26%25%24%22~jXONMKJI8-*_>)
 
-For example, detailed information of nucleotide bases can be shown with textual labels when zoomed in while it can be switched to show the overall distribution of the bases without the text labels when zoomed out.
+For example, detailed information of nucleotide bases can be shown with textual labels when zoomed in while it can be switched to show the overall distribution of the bases using a stacked bar chart when zoomed out.
 
 ## Example: Sequence Visualization
 <img src="https://github.com/gosling-lang/gosling.js/wiki/images/semantic_zoom_1.png" alt="semantic_zoom_fine" width="700">
