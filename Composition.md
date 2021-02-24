@@ -1,9 +1,9 @@
 
-## Overlayed Tracks
+## Overlaid Tracks
 [:link: source code](https://github.com/gosling-lang/gosling.js/blob/43626eaf21417bf36128a405dceeaa6ee00d0851/src/core/Gosling.schema.ts#L213)
 
 
-Gosling enables you to overlay multiple tracks/marks on top of each other. There are two ways for overlaying: specifying all overlayed marks/tracks in `overlay`, overlaying one `track` to previous `track` using `track.overlayOnPreviousTrack: true`.
+Gosling enables you to overlay multiple tracks/marks on top of each other. There are two ways for overlaying: (1) specifying all overlaid marks/tracks in `overlay` and (2) overlaying one `track` to previous `track` using `track.overlayOnPreviousTrack: true`.
 
 One `overlay` is composed of an array of objects, in which each object specifies one visual mark. Each visual mark inherits the properties (e.g., `data`, `x`, and `y`) defined in the corresponding track definition unless these properties are redefined in this object.  
 
@@ -31,13 +31,13 @@ One `overlay` is composed of an array of objects, in which each object specifies
 }
 ```
 
-When ``track.overlayOnPreviousTrack: true`, a `track` is overlayed on its previous track.
+When `track.overlayOnPreviousTrack: true`, a `track` is overlaid on its previous track.
 ```javascript
 {
   "tracks": [
     //first track
     {...},
-    // second track that is overlayed on the first track
+    // second track that is overlaid on the first track
     {
       ...,
       "overlayOnPreviousTrack": true
@@ -101,7 +101,7 @@ Each track of the `tracks` share the same `layout` preporty and are vertically c
 | spacing | number | specify the space between tracks|
 | static | boolean | whether to disable [Zooming and Panning](https://github.com/gosling-lang/gosling.js/wiki/User-Interaction#zooming-and-panning), default=false. | 
 | assembly | string | currently support "hg38", "hg19", "hg18", "hg17", "hg16", "mm10", "mm9"| 
-| xLinkID | string | specify an ID for [linking multiple views](https://github.com/gosling-lang/gosling.js/wiki/User-Interaction#linking-views)|
+| xLinkingId | string | specify an ID for [linking multiple views](https://github.com/gosling-lang/gosling.js/wiki/User-Interaction#linking-views)|
 | centerRadius | number | specify the proportion of the radius of the center white space. A number between [0,1], default=0.3|
 
 
