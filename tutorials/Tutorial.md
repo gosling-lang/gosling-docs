@@ -226,7 +226,7 @@ In the code below, a chromosome is visualized as a `triangle-r` mark if its stai
 }
 ```
 
-<img src="https://raw.githubusercontent.com/gosling-lang/gosling-docs/master/images/tutorial/tutorial_superpose.png" alt="gosling vis superpose" width="700"/>
+<img src="https://raw.githubusercontent.com/gosling-lang/gosling-docs/master/images/tutorial/tutorial_overlay.png" alt="gosling vis superpose" width="700"/>
 
 
 ## Coming Up Next
