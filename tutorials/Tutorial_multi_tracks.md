@@ -1,5 +1,5 @@
 In [Tutorial 1](https://github.com/gosling-lang/gosling.js/wiki/Tutorial), we introduce how to load data, encode data with marks, transform data, overlay multiple marks and obtain the following visualization.
-<img src="https://raw.githubusercontent.com/wiki/gosling-lang/gosling.js/images/tutorial/tutorial_overlay.png" alt="gosling vis overlay" width="800"/>
+<img src="https://raw.githubusercontent.com/gosling-lang/gosling-docs/master/images/tutorial/tutorial_overlay.png" alt="gosling vis overlay" width="800"/>
 <details>
   <summary>click to expand the code</summary>
 
@@ -79,7 +79,7 @@ We may wish the text marks to appear when the distance between chromStart and ch
 In other words, the text marks appear when the width (`measure`) of the text mark (`target`) is less than (`operation`) than `|xe-x|`.
 
 
-<img src="https://raw.githubusercontent.com/wiki/gosling-lang/gosling.js/images/tutorial/tutorial_text_label.png" alt="gosling semantic zoom" width="800"/>
+<img src="https://raw.githubusercontent.com/gosling-lang/gosling-docs/master/images/tutorial/tutorial_text_label.png" alt="gosling semantic zoom" width="800"/>
 
 ```diff
 {
@@ -180,7 +180,7 @@ Since these tracks share the same `x` coordinate, we wish to link these two trac
 In Gosling, `tracks` can be linked by assigning `x` the same  `linkingId`. 
 
 
-<img src="https://raw.githubusercontent.com/wiki/gosling-lang/gosling.js/images/tutorial/tutorial_multi_track.png" alt="gosling multi tracks" width="800"/>
+<img src="https://raw.githubusercontent.com/gosling-lang/gosling-docs/master/images/tutorial/tutorial_multi_track.png" alt="gosling multi tracks" width="800"/>
 
 ```diff
 {
@@ -303,7 +303,7 @@ In Gosling, `tracks` can be linked by assigning `x` the same  `linkingId`.
 
 We can easily turn the visualization into a circular layout through the `layout` property.
 
-<img src="https://raw.githubusercontent.com/wiki/gosling-lang/gosling.js/images/tutorial/tutorial_circular.png" alt="gosling circular" width="600"/>
+<img src="https://raw.githubusercontent.com/gosling-lang/gosling-docs/master/images/tutorial/tutorial_circular.png" alt="gosling circular" width="600"/>
 
 ```diff
 + "layout": "circular",

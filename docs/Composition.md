@@ -89,8 +89,8 @@ Each track of the `tracks` share the same `layout` preporty and are vertically c
         </td>
     </tr>
     <tr>
-        <td> <img src="https://raw.githubusercontent.com/wiki/gosling-lang/gosling.js/images/tracks_linear.png" alt="linear tracks" width="400"/> </td>
-        <td> <img src="https://raw.githubusercontent.com/wiki/gosling-lang/gosling.js/images/tracks_circular.png" alt="circular tracks" width="200"/></td>
+        <td> <img src="https://raw.githubusercontent.com/gosling-lang/gosling-docs/master/images/tracks_linear.png" alt="linear tracks" width="400"/> </td>
+        <td> <img src="https://raw.githubusercontent.com/gosling-lang/gosling-docs/master/images/tracks_circular.png" alt="circular tracks" width="200"/></td>
     </tr>
 </table>
 
@@ -134,4 +134,4 @@ Goslings supports multi-view visualizations. How multiple views are arranged is 
 ```
 
 Gosling supports four types of arrangemet: "parallel", "serial", "vertical", "horizontal".
-<img src="https://raw.githubusercontent.com/wiki/gosling-lang/gosling.js/images/multi_views.png" alt="arrangement of multiple views" width="700"/> </td>
+<img src="https://raw.githubusercontent.com/gosling-lang/gosling-docs/master/images/multi_views.png" alt="arrangement of multiple views" width="700"/> </td>

@@ -1,6 +1,6 @@
 In [Tutorial 2](https://github.com/gosling-lang/gosling.js/wiki/Tutorial_multi_tracks), we introduce how to create a multi-track visualization, as shown below.
 
-<img src="https://raw.githubusercontent.com/wiki/gosling-lang/gosling.js/images/tutorial/tutorial_circular.png" alt="gosling circular" width="600"/>
+<img src="https://raw.githubusercontent.com/gosling-lang/gosling-docs/master/images/tutorial/tutorial_circular.png" alt="gosling circular" width="600"/>
 
 <details>
 <summary><b>Click here to expand the complete code</b></summary>
@@ -139,7 +139,7 @@ We then create two linear detailed views for two different chromosomes, e.g., ch
 
 **Detailed View 1**
 
-<img src="https://raw.githubusercontent.com/wiki/gosling-lang/gosling.js/images/tutorial/tutorial_detail_view1.png" alt="gosling detailed view 1" width="340"/>
+<img src="https://raw.githubusercontent.com/gosling-lang/gosling-docs/master/images/tutorial/tutorial_detail_view1.png" alt="gosling detailed view 1" width="340"/>
 
 ```diff
 +   {
@@ -606,7 +606,7 @@ To help users visually link the brush objects and the detailed views, we assign 
 +  }
 ```
 
-<img src="https://raw.githubusercontent.com/wiki/gosling-lang/gosling.js/images/tutorial/tutorial_multi_views.gif" alt="gosling linked multi-views" width="600"/>
+<img src="https://raw.githubusercontent.com/gosling-lang/gosling-docs/master/images/tutorial/tutorial_multi_views.gif" alt="gosling linked multi-views" width="600"/>
 
 <details>
 <summary><b>Click here to expand the complete code</b></summary>
