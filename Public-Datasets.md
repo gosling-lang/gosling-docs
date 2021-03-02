@@ -1,5 +1,3 @@
-*********This Page Is WIP*********
-
 # Overview
 To help using Gosling for the first time, this document provides some useful datasets that can be directly used in Gosling.
 
@@ -30,10 +28,10 @@ In this document, we provide a list of public datasets in those two classes. For
 - Description: Gene Annotations of SARS-CoV-2 in NC_045512.2
 - Source: https://genome.ucsc.edu/covid19.html
 ## List of Pre-aggregated Datasets
-- Type: Aggregated BED
-- URL: 
+- Type: BEDDB (Originally, a bed file)
+- URL: "https://server.gosling-lang.org/api/v1/tileset_info/?d=gene-annotation"
 - Description: hg38 gene annotation
-- Source: 
+- Source: http://hgdownload.cse.ucsc.edu/goldenPath/hg38/database/
 
 ---
 - Type: Multivec (Originally, multiple bigwig files)
