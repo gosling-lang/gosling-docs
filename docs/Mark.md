@@ -17,7 +17,7 @@ The `mark` property of a track is defined by a string that describes the mark ty
     ... // other visualization properties
 }
 ```
-Gosling supports the following primitive `mark` types: `point`, `line`, `area`, `bar`, `rect`, `text`, `link`, `rule`, `triangle`. Composite mark (i.e., glyph) is also supported through the [`superpose`](#superposition) property.
+Gosling supports the following primitive `mark` types: `point`, `line`, `area`, `bar`, `rect`, `text`, `link`, `rule`, `triangle`. Composite mark (i.e., glyph) is also supported through the [`overlay`](https://github.com/gosling-lang/gosling-docs/blob/master/docs/Composition.md#overlaid-tracks)) property.
 
 [:link: source code](https://github.com/gosling-lang/gosling.js/blob/master/src/core/mark)
 
@@ -197,7 +197,7 @@ The `rect` mark is designed for representing genomic intervals using rectangular
 
 # Text
 
-The `text` mark is designed to display textual labels. For example, gene names and nucleobases can be displayed with a `text` mark.
+The `text` mark is designed to display textual labels. For example, gene names and nucleobases can be displayed with `text` marks.
 
 <img src="https://raw.githubusercontent.com/gosling-lang/gosling-docs/master/images/text_example.png" width="800" alt="text_example">  
 
@@ -280,7 +280,3 @@ The `link` mark is designed to show connections between chromosomes using an arc
 
 Gosling supports three types of triangle marks: `triangleLeft`, `triangleRight`, `triangleBottom`
 
-[Try it in the online editor](<https://gosling-lang.github.io/gosling.js/?full=false&spec=>)
-
-<!-- ### Brush
-### Glyph -->

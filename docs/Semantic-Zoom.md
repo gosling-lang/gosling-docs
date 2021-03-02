@@ -25,7 +25,7 @@ For example, detailed information of nucleotide bases can be shown with textual 
 
 
 Semantic zoom through `overlay` and `visibility`.
-[`overlay`](#superposition) overlaps multiple marks on top of one other, thus allowing users to create different visualizations for the same data.
+[`overlay`](https://github.com/gosling-lang/gosling-docs/blob/master/docs/Composition.md#overlaid-tracks) overlaps multiple marks on top of one other, thus allowing users to create different visualizations for the same data.
 `visibility` controls the visibility of visual marks, thus allowing the switch between different visualizations based on the zoom level.
 
 `visibility` is an array of object with the following properties:

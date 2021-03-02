@@ -24,9 +24,6 @@ Users can set the `static` property of all tracks at the root level or specify i
 }
 ```
 
-<!-- ## Tooltip
-[:link: source code](https://github.com/gosling-lang/gosling.js/blob/43626eaf21417bf36128a405dceeaa6ee00d0851/src/core/Gosling.schema.ts#L168) -->
-
 # Linking Views
 [:link: source code](ttps://github.com/gosling-lang/gosling.js/blob/43626eaf21417bf36128a405dceeaa6ee00d0851/src/core/Gosling.schema.ts#L328)
 
@@ -76,7 +73,7 @@ Users can use **brushing** to select a subset of the data items using a rectangl
       ..., 
 
       // create a rectangle brush
-      "superpose": [
+      "overlay": [
         {}, // this dummy object cannot be removed
         {
           "mark": "rect-brush", 
