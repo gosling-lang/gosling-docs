@@ -1,5 +1,5 @@
 We currently support the following ways of using Gosling.
-- [Creat Your Visualization in Gosling Online Editor](#creat-your-visualization-in-gosling-online-editor)
+- [Create Your Visualization in Gosling Online Editor](#create-your-visualization-in-gosling-online-editor)
 - [Load a Gosling Spec From your Github Gist](#load-a-gosling-spec-from-your-github-gist)
 - [Embed Gosling Component in a HTML File](#embed-gosling-component-in-a-html-file)
 - [Use Gosling.js in React App](#use-goslingjs-in-react-app)

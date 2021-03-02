@@ -27,12 +27,15 @@ Users can set the `static` property of all tracks at the root level or specify i
 # Linking Views
 [:link: source code](ttps://github.com/gosling-lang/gosling.js/blob/43626eaf21417bf36128a405dceeaa6ee00d0851/src/core/Gosling.schema.ts#L328)
 
-When two tracks are linked, the zooming and panning performed in one track will be automatically applied to the linked track. 
+When views/tracks are linked, the zooming and panning performed in one view/track will be automatically applied to the linked views/tracks. 
 
 [Try it in the online editor](<https://gosling-lang.github.io/gosling.js/?gist=wangqianwen0418/362d370f31379a6d9f367d1c33adfc31>)
 
-Users can link two tracks by assigning the same `linkingId` to the `x` channel of the two tracks.
+Views and tracks can be linked through an user-assigned id.
+This id is assigned to a `track` through the `x.linkingId` property, and assigned to a `view` through the `xLinkingId` property.
+
 ```javascript
+// linking serveral tracks
 {
   "tracks":[
     // track A
@@ -54,6 +57,35 @@ Users can link two tracks by assigning the same `linkingId` to the `x` channel o
       }
     },
     ... // other tracks
+  ]
+}
+```
+
+```javascript
+// linking views and tracks
+{
+  "views": [
+    {
+      // view A
+      "xLinkingId": "detail",
+      ....
+    },
+    {
+      // view B
+      "xLinkingId": "detail",
+      ....
+    },
+    {
+      // view C
+      "tracks":[
+        {
+          // this track wil be linked to view A and view B
+          "x": {"linkingId": "detail", ...}, 
+          ...
+        },
+        {...} // without the linkingId, this track will not be linked
+      ]
+    }
   ]
 }
 ```
