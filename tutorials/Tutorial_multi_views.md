@@ -93,7 +93,7 @@ In [Tutorial 2](https://github.com/gosling-lang/gosling-docs/blob/master/tutoria
           }
         },
         {
-          "mark": "triangle-r",
+          "mark": "triangleRight",
           "dataTransform": {
             "filter": [
               {"field": "Stain", "oneOf": ["acen"]},
@@ -103,7 +103,7 @@ In [Tutorial 2](https://github.com/gosling-lang/gosling-docs/blob/master/tutoria
           "color": {"value": "#B40101"}
         },
         {
-          "mark": "triangle-l",
+          "mark": "triangleLeft",
           "dataTransform": {
             "filter": [
               {"field": "Stain", "oneOf": ["acen"]},
@@ -404,7 +404,7 @@ In Gosling, multiple views can be arranged using the `arrangement` property.
                             }
                         },
                         {
-                            "mark": "triangle-r",
+                            "mark": "triangleRight",
                             "dataTransform": {
                                 "filter": [
                                     {
@@ -424,7 +424,7 @@ In Gosling, multiple views can be arranged using the `arrangement` property.
                             }
                         },
                         {
-                            "mark": "triangle-l",
+                            "mark": "triangleLeft",
                             "dataTransform": {
                                 "filter": [
                                     {
@@ -713,7 +713,7 @@ To help users visually link the brush objects and the detailed views, we assign 
                                 }
                             },
                             {
-                                "mark": "triangle-r",
+                                "mark": "triangleRight",
                                 "dataTransform": {
                                     "filter": [
                                         { "field": "Stain", "oneOf": ["acen"] },
@@ -723,7 +723,7 @@ To help users visually link the brush objects and the detailed views, we assign 
                                 "color": { "value": "#B40101" }
                             },
                             {
-                                "mark": "triangle-l",
+                                "mark": "triangleLeft",
                                 "dataTransform": {
                                     "filter": [
                                         { "field": "Stain", "oneOf": ["acen"] },

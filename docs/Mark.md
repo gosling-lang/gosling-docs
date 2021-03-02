@@ -278,7 +278,7 @@ The `link` mark is designed to show connections between chromosomes using an arc
 # Triangle
 [:link: source code](https://github.com/gosling-lang/gosling.js/blob/master/src/core/mark/triangle.ts)  
 
-Gosling supports three types of triangle marks: `triangle-l`, `triangle-r`, `triangle-d`
+Gosling supports three types of triangle marks: `triangleLeft`, `triangleRight`, `triangleBottom`
 
 [Try it in the online editor](<https://gosling-lang.github.io/gosling.js/?full=false&spec=>)
 

@@ -35,7 +35,7 @@ In [Tutorial 1](https://github.com/gosling-lang/gosling-docs/blob/master/tutoria
              }
              },
             {
-              "mark": "triangle-r",
+              "mark": "triangleRight",
               "dataTransform": {
                 "filter": [
                   {"field": "Stain", "oneOf": ["acen"]},
@@ -45,7 +45,7 @@ In [Tutorial 1](https://github.com/gosling-lang/gosling-docs/blob/master/tutoria
               "color": {"value": "#B70101"}
             },
             {
-              "mark": "triangle-l",
+              "mark": "triangleLeft",
               "dataTransform": {
                 "filter": [
                   {"field": "Stain", "oneOf": ["acen"]},
@@ -142,7 +142,7 @@ In other words, the text marks appear when the width (`measure`) of the text mar
           }
         },
         {
-          "mark": "triangle-r",
+          "mark": "triangleRight",
           "dataTransform": {
             "filter": [
               {"field": "Stain", "oneOf": ["acen"]},
@@ -152,7 +152,7 @@ In other words, the text marks appear when the width (`measure`) of the text mar
           "color": {"value": "#B40101"}
         },
         {
-          "mark": "triangle-l",
+          "mark": "triangleLeft",
           "dataTransform": {
             "filter": [
               {"field": "Stain", "oneOf": ["acen"]},
@@ -269,7 +269,7 @@ In Gosling, `tracks` can be linked by assigning `x` the same  `linkingId`.
           }
         },
         {
-          "mark": "triangle-r",
+          "mark": "triangleRight",
           "dataTransform": {
             "filter": [
               {"field": "Stain", "oneOf": ["acen"]},
@@ -279,7 +279,7 @@ In Gosling, `tracks` can be linked by assigning `x` the same  `linkingId`.
           "color": {"value": "#B40101"}
         },
         {
-          "mark": "triangle-l",
+          "mark": "triangleLeft",
           "dataTransform": {
             "filter": [
               {"field": "Stain", "oneOf": ["acen"]},
@@ -399,7 +399,7 @@ We can easily turn the visualization into a circular layout through the `layout`
           }
         },
         {
-          "mark": "triangle-r",
+          "mark": "triangleRight",
           "dataTransform": {
             "filter": [
               {"field": "Stain", "oneOf": ["acen"]},
@@ -409,7 +409,7 @@ We can easily turn the visualization into a circular layout through the `layout`
           "color": {"value": "#B40101"}
         },
         {
-          "mark": "triangle-l",
+          "mark": "triangleLeft",
           "dataTransform": {
             "filter": [
               {"field": "Stain", "oneOf": ["acen"]},

@@ -161,7 +161,7 @@ Line charts are stratified with sample names.
 ```
 
 # size
-Channel `size` indicates the size of the visual mark. It determines either the radius of a circle (`mark: point`), the vertical length of a triangle (`mark: triangle-r`, `mark: triangle-l`, `mark: triangle-d`), the vertical length of a rectangle (`mark: rect`), the thickness of a line (`mark: line`).
+Channel `size` indicates the size of the visual mark. It determines either the radius of a circle (`mark: point`), the vertical length of a triangle (`mark: triangleRight`, `mark: triangleLeft`, `mark: triangleBottom`), the vertical length of a rectangle (`mark: rect`), the thickness of a line (`mark: line`).
 
 # text
 
@@ -195,7 +195,7 @@ Channel `opacity` specifies the opacity of the mark shape.
 | ---------------- | ------------------------------------------------------ | ---------------------------------------- |
 | background       | string                                                 | color of the background                  |
 | dashed           | [number, number]                                       |
-| linePatterns     | { "type": "triangle-l" \| "triangle-r"; size: number } |
+| linePatterns     | { "type": "triangleLeft" \| "triangleRight"; size: number } |
 | curve            | string                                                 | support "top", "bottom", "left", "right" |
 | align            | string                                                 | support "left", "right"                  |
 | dy               | number                                                 |

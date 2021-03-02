@@ -155,7 +155,7 @@ gvar (<span style="color:#A0A0F2">purple rect</span>) and gneg (white rect) are 
 
 ## Overlaying Multiple Marks
 Multiple `mark` shapes can be put on the top of one another through the `overlay` property.
-In the code below, a chromosome is visualized as a `triangle-r` mark if its stain result is `acen` and its name includes `q`; a chromosome is visualized as a `triangle-l` mark if its stain result is `acen` and its name includes `p`. The `rect` mark, the `triangle-r` mark, and the `triangle-l` mark are overlaid on the same genomic coordinate through the `overlay` property.
+In the code below, a chromosome is visualized as a `triangleRight` mark if its stain result is `acen` and its name includes `q`; a chromosome is visualized as a `triangleLeft` mark if its stain result is `acen` and its name includes `p`. The `rect` mark, the `triangleRight` mark, and the `triangleLeft` mark are overlaid on the same genomic coordinate through the `overlay` property.
 
 ```diff
 {
@@ -199,7 +199,7 @@ In the code below, a chromosome is visualized as a `triangle-r` mark if its stai
 +            }
 +            },
 +           {
-+             "mark": "triangle-r",
++             "mark": "triangleRight",
 +             "dataTransform": {
 +               "filter": [
 +                 {"field": "Stain", "oneOf": ["acen"]},
@@ -209,7 +209,7 @@ In the code below, a chromosome is visualized as a `triangle-r` mark if its stai
 +             "color": {"value": "#B70101"}
 +           },
 +           {
-+             "mark": "triangle-l",
++             "mark": "triangleLeft",
 +             "dataTransform": {
 +               "filter": [
 +                 {"field": "Stain", "oneOf": ["acen"]},
