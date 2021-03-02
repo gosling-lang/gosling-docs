@@ -70,8 +70,7 @@ This tutorial continues from this example and introduces more advances functions
 
 ## Semantic Zooming
 
-Apart from the default zoom and pan interactions, 
-[semantic zoom](https://github.com/gosling-lang/gosling.js/wiki/Documentation#semantic-zooming) is supported in Gosling and allows users to switch between different visualizations of the same data through zooming in/out. When zooming in, the same data will be represented in a different way in which more details are shown. 
+Apart from the default zoom and pan interactions, [semantic zoom](https://github.com/gosling-lang/gosling-docs/blob/master/docs/Semantic-Zoom.md) is supported in Gosling and allows users to switch between different visualizations of the same data through zooming in/out. When zooming in, the same data will be represented in a different way in which more details are shown. 
 
 Let's say, for this visualization, we want text annotations to show up when zooming in.
 We add `text` marks to the `overlay` property and specify when the `text` marks should appear through the `visibility` property.
