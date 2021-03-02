@@ -1,3 +1,28 @@
+In Gosling, a simple visualization (e.g., a bar chart ) is called a `track` and an array of `tracks` compose one `view`.
+
+
+```javascript
+{
+  "views": [
+    {
+      // a single view contains multiple tracks
+      "tracks": [
+        {/** track **/},
+        {/** track **/}
+      ]
+    },
+    {
+      /** view **/
+    }
+    ...
+  ]
+}
+```
+
+Users can create an advanced visual interface by composing different `tracks` and `views`.
+- [Overlaid Tracks](#overlaid-tracks)
+- [Multiple Tracks](#multiple-tracks)
+- [Multiple Views](#multiple-views)
 
 ## Overlaid Tracks
 [:link: source code](https://github.com/gosling-lang/gosling.js/blob/43626eaf21417bf36128a405dceeaa6ee00d0851/src/core/Gosling.schema.ts#L213)
