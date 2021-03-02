@@ -44,7 +44,7 @@ In this document, we provide a list of public datasets in those two classes. For
 ---
 
 - Type: Multivec (Originally, a FASTA file)
-- URL: TBA
+- URL: https://server.gosling-lang.org/api/v1/tileset_info/?d=sequence-multivec
 - Description: hg38 sequence
 - Source: UCSC (https://hgdownload.soe.ucsc.edu/goldenPath/hg38/bigZips/)
 
