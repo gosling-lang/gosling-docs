@@ -6,7 +6,7 @@ You will learn about:
 - [Loading Data](#loading-data)
 - [Encoding Data with Marks](#encoding-data-with-marks)
 - [Transforming Data](#transforming-data)
-- [Superposing Multiple Marks](#superposing-multiple-marks)
+- [Overlaying Multiple Marks](#overlaying-multiple-marks)
 - [Coming Up Next](#coming-up-next)
   
 You are encouraged to follow the tutorial and create visualizations in the [online editor][onlineEditorURL].
@@ -153,9 +153,9 @@ gvar (<span style="color:#A0A0F2">purple rect</span>) and gneg (white rect) are 
 
 
 
-## Superposing Multiple Marks
-Multiple `mark` shapes can be put on the top of one another through the `superpose` property.
-In the code below, a chromosome is visualized as a `triangle-r` mark if its stain result is `acen` and its name includes `q`; a chromosome is visualized as a `triangle-l` mark if its stain result is `acen` and its name includes `p`. The `rect` mark, the `triangle-r` mark, and the `triangle-l` mark are superposed on the same genomic coordinate through the `superpose` property.
+## Overlaying Multiple Marks
+Multiple `mark` shapes can be put on the top of one another through the `overlay` property.
+In the code below, a chromosome is visualized as a `triangle-r` mark if its stain result is `acen` and its name includes `q`; a chromosome is visualized as a `triangle-l` mark if its stain result is `acen` and its name includes `p`. The `rect` mark, the `triangle-r` mark, and the `triangle-l` mark are overlaid on the same genomic coordinate through the `overlay` property.
 
 ```diff
 {
@@ -226,7 +226,7 @@ In the code below, a chromosome is visualized as a `triangle-r` mark if its stai
 }
 ```
 
-<img src="https://raw.githubusercontent.com/gosling-lang/gosling-docs/master/images/tutorial/tutorial_overlay.png" alt="gosling vis superpose" width="700"/>
+<img src="https://raw.githubusercontent.com/gosling-lang/gosling-docs/master/images/tutorial/tutorial_overlay.png" alt="gosling vis overlay" width="700"/>
 
 
 ## Coming Up Next
