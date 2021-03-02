@@ -5,7 +5,7 @@ We currently support the following ways of using Gosling.
 - [Use Gosling.js in React App](#use-goslingjs-in-react-app)
 - [Resources](#resources)
 
-## Creat Your Visualization in Gosling Online Editor
+## Create Your Visualization in Gosling Online Editor
 You can visit [Online Editor](gosling.js.org) to visualize your data directly in the website.
 
 ## Load a Gosling Spec From your Github Gist
