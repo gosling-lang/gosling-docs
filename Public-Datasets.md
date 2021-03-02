@@ -37,7 +37,7 @@ In this document, we provide a list of public datasets in those two classes. For
 
 ---
 - Type: Multivec (Originally, multiple bigwig files)
-- URL: TBA
+- URL: https://server.gosling-lang.org/api/v1/tileset_info/?d=cistrome-multivec
 - Description: Multiple samples of ChIP-seq and DNase-seq analysis
 - Source: Cistrome Browser (http://cistrome.org/db/#/)
 
