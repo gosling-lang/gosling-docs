@@ -10,6 +10,16 @@ Users can specify the data of each visualization (i.e., `track`) through a `trac
 }
 ``` 
 
+- [Supported Data Formats](#supported-data-formats)
+  - [Plain Datasets](#plain-datasets)
+    - [CSV](#csv)
+  - [JSON](#json)
+  - [BigWig](#bigwig)
+  - [Pre-aggregated Datasets](#pre-aggregated-datasets)
+    - [Vector](#vector)
+    - [Multivec](#multivec)
+    - [BED](#bed)
+- [Data Transform](#data-transform)
 
 # Supported Data Formats
 

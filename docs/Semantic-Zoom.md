@@ -1,3 +1,5 @@
+# Semantic Zoom
+
 [:link: source code](https://github.com/gosling-lang/gosling.js/blob/43626eaf21417bf36128a405dceeaa6ee00d0851/src/core/gosling.schema.ts#L278)
 
 Advanced zooming technique, called Semantic Zooming, allows you to dynamically switch between visual representations upon zooming in and out. 

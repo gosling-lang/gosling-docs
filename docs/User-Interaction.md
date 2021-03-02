@@ -1,3 +1,7 @@
+- [Zooming and Panning](#zooming-and-panning)
+- [Linking Views](#linking-views)
+- [Brushing and Linking](#brushing-and-linking)
+
 # Zooming and Panning
 [:link: source code](https://github.com/gosling-lang/gosling.js/blob/43626eaf21417bf36128a405dceeaa6ee00d0851/src/core/gosling.schema.ts#L7)
 

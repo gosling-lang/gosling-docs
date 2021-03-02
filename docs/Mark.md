@@ -19,7 +19,14 @@ The `mark` property of a track is defined by a string that describes the mark ty
 ```
 Gosling supports the following primitive `mark` types: `point`, `line`, `area`, `bar`, `rect`, `text`, `link`, `rule`, `triangle`. Composite mark (i.e., glyph) is also supported through the [`overlay`](https://github.com/gosling-lang/gosling-docs/blob/master/docs/Composition.md#overlaid-tracks)) property.
 
-[:link: source code](https://github.com/gosling-lang/gosling.js/blob/master/src/core/mark)
+- [Point](#point)
+- [Line](#line)
+- [Area](#area)
+- [Bar](#bar)
+- [Rect](#rect)
+- [Text](#text)
+- [Link](#link)
+- [Triangle](#triangle)
 
 # Point
 [:link: source code](https://github.com/gosling-lang/gosling.js/blob/master/src/core/mark/point.ts)

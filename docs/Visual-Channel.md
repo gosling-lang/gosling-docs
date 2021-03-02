@@ -28,6 +28,20 @@ The visual appearance of a mark is controlled by a set of visual channels (e.g.,
 
 ```
 
+- [x](#x)
+- [xe](#xe)
+- [y](#y)
+- [ye](#ye)
+- [x1 x1e y1 y1e](#x1-x1e-y1-y1e)
+- [row](#row)
+- [size](#size)
+- [text](#text)
+- [color](#color)
+- [stroke](#stroke)
+- [strokeWidth](#strokewidth)
+- [opacity](#opacity)
+- [Style](#style)
+
 
 As the table shown below, different marks have different visual channels.
 
