@@ -139,7 +139,7 @@ This format allows to include data directly in the Gosling's JSON specification.
 | url      | string | **required**, specify the URL address of the data file |
 | column   | string | **required**, assign a field name of the middle position of genomic intervals |
 | value    | string | **required**, assign a field name of quantitative values |
-| bin      | number | bin the genomic interval in tiles                      |
+| binSize  | number | bin the genomic interval in tiles                      |
 | start    | string | assign a field name of the start position of genomic intervals |
 | end      | string | assign a field name of the end position of genomic intervals |
 
