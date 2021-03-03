@@ -186,18 +186,18 @@ In the code below, a chromosome is visualized as a `triangleRight` mark if its s
 -           "range": ["#D9D9D9","#979797","#636363", "black"]
 -       },
 +       "overlay":[
-+            {
-+            "mark": "rect",
-+            "dataTransform": {
-+                    "filter": [{"field": "Stain", "oneOf": ["acen"], "not": true}]
-+                },
-+            "color": {
-+                "field": "Stain", 
-+                "type": "nominal",
-+                "domain": ["gneg", "gpos25", "gpos50", "gpos75", "gpos100", "gvar"],
-+                "range": ["white","#D9D9D9","#979797","#636363", "black","#A0A0F2"]
-+            }
-+            },
++           {
++             "mark": "rect",
++             "dataTransform": {
++                     "filter": [{"field": "Stain", "oneOf": ["acen"], "not": true}]
++                 },
++             "color": {
++                 "field": "Stain", 
++                 "type": "nominal",
++                 "domain": ["gneg", "gpos25", "gpos50", "gpos75", "gpos100", "gvar"],
++                 "range": ["white","#D9D9D9","#979797","#636363", "black","#A0A0F2"]
++              }
++           },
 +           {
 +             "mark": "triangleRight",
 +             "dataTransform": {

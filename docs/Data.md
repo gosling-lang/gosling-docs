@@ -139,7 +139,7 @@ This format allows to include data directly in the Gosling's JSON specification.
 | url      | string | **required**, specify the URL address of the data file |
 | column   | string | **required**, assign a field name of the middle position of genomic intervals |
 | value    | string | **required**, assign a field name of quantitative values |
-| bin      | number | bin the genomic interval in tiles                      |
+| binSize  | number | specifiy the genomic interval                       |
 | start    | string | assign a field name of the start position of genomic intervals |
 | end      | string | assign a field name of the end position of genomic intervals |
 
@@ -171,7 +171,7 @@ One-dimensional quantitative values along genomic position (e.g., bigwig) can be
 | url      | string | **required**, specify the URL address of the data file |
 | column   | string | **required**, assign a field name of the middle position of genomic intervals |
 | value    | string | **required**, assign a field name of quantitative values |
-| bin      | number | bin the genomic interval in tiles                      |
+| binSize      | number | specify the genomic interval                       |
 | start    | string | assign a field name of the start position of genomic intervals |
 | end      | string | assign a field name of the end position of genomic intervals |
 
@@ -203,7 +203,7 @@ Two-dimensional quantitative values, one axis for genomic coordinate and the oth
 | value    | string | **required**, assign a field name of quantitative values   |
 | row        | string   | **required**, assign a field name of samples           |
 | categories | string[] | **required**, assign names of individual samples             |
-| bin        | number   | bin the genomic interval in tiles                      |
+| binSize        | number   | specify the genomic interval                       |
 | start    | string | assign a field name of the start position of genomic intervals |
 | end      | string | assign a field name of the end position of genomic intervals |
 
