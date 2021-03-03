@@ -29,7 +29,7 @@ In this document, we provide a list of public datasets in those two classes. For
 - Source: https://genome.ucsc.edu/covid19.html
 ## List of Pre-aggregated Datasets
 - Type: BEDDB (Originally, a bed file)
-- URL: "https://server.gosling-lang.org/api/v1/tileset_info/?d=gene-annotation"
+- URL: https://server.gosling-lang.org/api/v1/tileset_info/?d=gene-annotation
 - Description: hg38 gene annotation
 - Source: http://hgdownload.cse.ucsc.edu/goldenPath/hg38/database/
 
