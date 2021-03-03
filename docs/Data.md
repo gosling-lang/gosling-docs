@@ -255,8 +255,8 @@ Only data points that pass the tests in all filters will be visualized.
     // only use data whose type is 'gene' and whose strand is NOT '+' 
     "dataTransform": {
       "filter": [
-          { "field": "type", oneOf: ["gene"] },
-          { "field": "strand", oneOf: ["+"], "not": true }
+          { "field": "type", "oneOf": ["gene"] },
+          { "field": "strand", "oneOf": ["+"], "not": true }
       ]
   },
     "mark": "rect",
