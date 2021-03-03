@@ -14,7 +14,7 @@ In this document, we provide a list of public datasets in those two classes. For
 
 ## List of Plain Datasets
 - Type: CSV
-- URL: 
+- URL: https://raw.githubusercontent.com/sehilyi/gemini-datasets/master/data/UCSC.HG38.Human.CytoBandIdeogram.csv
 - Description: hg38 cytoband
 - Soruce: UCSC
 ---
@@ -27,6 +27,11 @@ In this document, we provide a list of public datasets in those two classes. For
 - URL: https://s3.amazonaws.com/gosling-lang.org/data/COVID/NC_045512.2-Genes.csv
 - Description: Gene Annotations of SARS-CoV-2 in NC_045512.2
 - Source: https://genome.ucsc.edu/covid19.html
+---
+- Type: CSV
+- URL: https://raw.githubusercontent.com/sehilyi/gemini-datasets/master/data/circos-segdup-edited.txt
+- Description: Circos Segmental Duplication
+- Source: https://github.com/nicgirault/circosJS/blob/master/demo/data/segdup.csv
 ## List of Pre-aggregated Datasets
 - Type: BEDDB (Originally, a bed file)
 - URL: https://server.gosling-lang.org/api/v1/tileset_info/?d=gene-annotation
