@@ -13,9 +13,9 @@ Users can specify the data of each visualization (i.e., `track`) through a `trac
 - [Supported Data Formats](#supported-data-formats)
   - [Plain Datasets](#plain-datasets)
     - [CSV](#csv)
-  - [JSON](#json)
-  - [BigWig](#bigwig)
-  - [Pre-aggregated Datasets](#pre-aggregated-datasets)
+    - [JSON](#json)
+    - [BigWig](#bigwig)
+  - [Aggregated Datasets](#aggregated-datasets)
     - [Vector](#vector)
     - [Multivec](#multivec)
     - [BEDDB](#beddb)
@@ -25,19 +25,14 @@ Users can specify the data of each visualization (i.e., `track`) through a `trac
 
 For the flexible data exploration, Gosling supports two different kinds of datasets:
 
-1. **Plain Datasets**: For the convenience, Gosling allows to use several data formats directly in the system without requiring to preprocess data or set up a dedicated server (i.e., HiGlass server).
+1. **Plain Datasets**: These datasets can be directly used in Gosling without requiring any data processing.
 
 <!--This includes BigWig, BED, BEDPE, and we will be supporting more genomic file formats in the near future.-->
-2. **Pre-aggregated Datasets**: To allow scalable data exploration, Gosling supports using HiGlass' preprocessed datasets which requires the dedicated HiGlass server.
+2. **Aggregated Datasets**: This class of datasets are aggregated to reduce the data size and scale the interactive exploration. You can set up a [**HiGlass server**](https://docs.higlass.io/) and aggregate data before using them in Gosling.
 
-<!-- Gosling currently supports six types of data formats: [CSV](#csv), [JSON](#json), [BigWig](#bigwig), [Multivec](#multivec), [BED](#bed), [Vector](#vector).-->
-
-<!--### Tip
-
-Using some of data formats in Gosling requires you to specify the field names so that they can be used in describing visual encoding. For example, for using `"BigWig"` data formats, you need to specify how you want to call th-->
 
 ## Plain Datasets 
-This class of datasets do not require setting up a dedicated server or pre-aggregating data.
+This class of datasets require no data preprocessing and can be directly used for creating visualization .
 
 ### CSV
 
@@ -70,7 +65,7 @@ Any small enough tabular data files, such as tsv, csv, BED, BEDPE, and GFF, can 
 | quantitativeFields | string[] | specify the name of quantitative data fields                 |
 | genomicFields      | string[] | specify the name of genomic data fields                      |
 
-## JSON
+### JSON
 
 This format allows to include data directly in the Gosling's JSON specification.
 
@@ -116,7 +111,7 @@ This format allows to include data directly in the Gosling's JSON specification.
 | chromosomeField    | string                            | specify the name of chromosome data fields                   |
 | genomicFields      | string[]                          | specify the name of genomic data fields                      |
 
-## BigWig
+### BigWig
 
 ```javascript
 {
@@ -143,12 +138,12 @@ This format allows to include data directly in the Gosling's JSON specification.
 | start    | string | assign a field name of the start position of genomic intervals |
 | end      | string | assign a field name of the end position of genomic intervals |
 
-## Pre-aggregated Datasets
-This class of datasets makes the data exploration more scalable, requiring you to set up a dedicated server and pre-aggregate data before using them.
+## Aggregated Datasets
+This class of datasets are aggregated to reduce the data size and scale the interactive exploration. You can set up a [HiGlass server](https://docs.higlass.io/) and aggregate data before using them.
 
 ### Vector
 
-One-dimensional quantitative values along genomic position (e.g., bigwig) can be converted into HiGlass' `"vector"` format data. Find out more about this format at [HiGlass Docs](https://docs.higlass.io/data_preparation.html#bigwig-files).
+One-dimensional quantitative values along genomic position (e.g., bigwig) can be converted into HiGlass `"vector"` format data. Find out more about this format at [HiGlass Docs](https://docs.higlass.io/data_preparation.html#bigwig-files).
 
 ```javascript
 {
