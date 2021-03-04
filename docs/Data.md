@@ -18,7 +18,7 @@ Users can specify the data of each visualization (i.e., `track`) through a `trac
   - [Pre-aggregated Datasets](#pre-aggregated-datasets)
     - [Vector](#vector)
     - [Multivec](#multivec)
-    - [BED](#bed)
+    - [BEDDB](#beddb)
 - [Data Transform](#data-transform)
 
 # Supported Data Formats
@@ -207,15 +207,15 @@ Two-dimensional quantitative values, one axis for genomic coordinate and the oth
 | start    | string | assign a field name of the start position of genomic intervals |
 | end      | string | assign a field name of the end position of genomic intervals |
 
-### BED
-Regular BED files can be pre-aggregated for the scalable data exploration. Find our more about this format at [HiGlass Docs](https://docs.higlass.io/data_preparation.html#bed-files).
+### BEDDB
+Regular BED, or similar, files can be pre-aggregated for the scalable data exploration. Find our more about this format at [HiGlass Docs](https://docs.higlass.io/data_preparation.html#bed-files).
 
 ```javascript
 {
   "tracks":[{
     "data": {
       "url": "https://higlass.io/api/v1/tileset_info/?d=OHJakQICQD6gTD7skx4EWA",
-      "type": "bed",
+      "type": "beddb",
       "genomicFields": [
           {"index": 1, "name": "start"},
           {"index": 2, "name": "end"}
@@ -236,7 +236,7 @@ Regular BED files can be pre-aggregated for the scalable data exploration. Find 
 
 | property           | type                                                                 | description                                            |
 | ------------------ | -------------------------------------------------------------------- | ------------------------------------------------------ |
-| type               | string                                                               | **required**, `"bed"`                                  |
+| type               | string                                                               | **required**, `"beddb"`                                |
 | url                | string                                                               | **required**, specify the URL address of the data file |
 | genomicFields      | { index: number; name: string }[]                                    | **required**, specify the name of genomic data fields  |
 | valueFields        | { index: number; name: string; type: 'nominal' \| 'quantitative' }[] | specify the column indexes, field names to assign, and field types                                                     |
