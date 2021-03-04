@@ -70,7 +70,7 @@ Any small enough tabular data files, such as tsv, csv, BED, BEDPE, and GFF, can 
 | quantitativeFields | string[] | specify the name of quantitative data fields                 |
 | genomicFields      | string[] | specify the name of genomic data fields                      |
 
-## JSON
+### JSON
 
 This format allows to include data directly in the Gosling's JSON specification.
 
@@ -116,7 +116,7 @@ This format allows to include data directly in the Gosling's JSON specification.
 | chromosomeField    | string                            | specify the name of chromosome data fields                   |
 | genomicFields      | string[]                          | specify the name of genomic data fields                      |
 
-## BigWig
+### BigWig
 
 ```javascript
 {
