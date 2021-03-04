@@ -11,11 +11,11 @@ Users can specify the data of each visualization (i.e., `track`) through a `trac
 ``` 
 
 - [Supported Data Formats](#supported-data-formats)
-  - [Plain Datasets](#plain-datasets)
+  - [Plain Datasets (No HiGlass Server)](#plain-datasets-no-higlass-server)
     - [CSV](#csv)
-  - [JSON](#json)
-  - [BigWig](#bigwig)
-  - [Pre-aggregated Datasets](#pre-aggregated-datasets)
+    - [JSON](#json)
+    - [BigWig](#bigwig)
+  - [Pre-aggregated Datasets (HiGlass Server)](#pre-aggregated-datasets-higlass-server)
     - [Vector](#vector)
     - [Multivec](#multivec)
     - [BEDDB](#beddb)
@@ -36,7 +36,7 @@ For the flexible data exploration, Gosling supports two different kinds of datas
 
 Using some of data formats in Gosling requires you to specify the field names so that they can be used in describing visual encoding. For example, for using `"BigWig"` data formats, you need to specify how you want to call th-->
 
-## Plain Datasets 
+## Plain Datasets (No HiGlass Server)
 This class of datasets do not require setting up a dedicated server or pre-aggregating data.
 
 ### CSV
@@ -143,7 +143,7 @@ This format allows to include data directly in the Gosling's JSON specification.
 | start    | string | assign a field name of the start position of genomic intervals |
 | end      | string | assign a field name of the end position of genomic intervals |
 
-## Pre-aggregated Datasets
+## Pre-aggregated Datasets (HiGlass Server)
 This class of datasets makes the data exploration more scalable, requiring you to set up a dedicated server and pre-aggregate data before using them.
 
 ### Vector
