@@ -11,11 +11,11 @@ Users can specify the data of each visualization (i.e., `track`) through a `trac
 ``` 
 
 - [Supported Data Formats](#supported-data-formats)
-  - [Plain Datasets](#plain-datasets-no-higlass-server)
+  - [Plain Datasets (No HiGlass Server)](#plain-datasets-no-higlass-server)
     - [CSV](#csv)
     - [JSON](#json)
     - [BigWig](#bigwig)
-  - [Pre-aggregated Datasets](#pre-aggregated-datasets-higlass-server)
+  - [Pre-aggregated Datasets (HiGlass Server)](#pre-aggregated-datasets-higlass-server)
     - [Vector](#vector)
     - [Multivec](#multivec)
     - [BEDDB](#beddb)
@@ -25,14 +25,12 @@ Users can specify the data of each visualization (i.e., `track`) through a `trac
 
 For the flexible data exploration, Gosling supports two different kinds of datasets:
 
-1. **Plain Datasets**: These datasets can be directly used in Gosling without requiring any data processing.
+1. **Plain Datasets** (No HiGlass Server): These datasets can be directly used in Gosling without requiring any data preprocessing.
 
+2. **Pre-aggregated Datasets** (HiGlass Server): These datasets are preprocessed for the scalable data exploration and require a HiGlass server to access them in Gosling. To learn more about preprocessing your data and setting up the server, please visit the [HiGlass website](https://docs.higlass.io/).
 
-<!--This includes BigWig, BED, BEDPE, and we will be supporting more genomic file formats in the near future.-->
-2. **Pre-aggregated Datasets**: This class of datasets are aggregated to reduce the data size and scale the interactive exploration. You can set up a [**HiGlass server**](https://docs.higlass.io/) to aggregate datasets before using them in Gosling.
-
-## Plain Datasets
-This class of datasets require no data preprocessing and can be directly used for creating visualization .
+## Plain Datasets (No HiGlass Server)
+These datasets can be directly used in Gosling without requiring any data preprocessing.
 
 ### CSV
 
@@ -138,8 +136,8 @@ This format allows to include data directly in the Gosling's JSON specification.
 | start    | string | assign a field name of the start position of genomic intervals |
 | end      | string | assign a field name of the end position of genomic intervals |
 
-## Pre-aggregated Datasets
-This class of datasets are aggregated to reduce the data size and scale the interactive exploration. You can set up a [**HiGlass server**](https://docs.higlass.io/) to aggregate datasets before using them in Gosling.
+## Pre-aggregated Datasets (HiGlass Server)
+These datasets are preprocessed for the scalable data exploration and require a HiGlass server to access them in Gosling. To learn more about preprocessing your data and setting up the server, please visit the [HiGlass website](https://docs.higlass.io/).
 
 
 ### Vector
