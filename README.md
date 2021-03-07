@@ -2,7 +2,7 @@
 
 <img width="1549" alt="teaser" src="https://user-images.githubusercontent.com/9922882/109850598-ae4cd280-7c20-11eb-931b-985a763864e8.png">
 
-Gosling is a declarative visualization grammar tailored for interactive genomic visualizations. In Gosling, users can create interactive visualizations for genomic data through a JSON syntax.
+[Gosling.js](https://github.com/gosling-lang/gosling.js) is a declarative grammar for interactive (epi)genomics visualization on the Web.
 
 ## List of Contents
 
