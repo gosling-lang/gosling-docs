@@ -109,7 +109,8 @@ Users can use **brushing** to select a subset of the data items using a rectangl
       ..., 
 
       // create a rectangle brush
-      "overlay": [
+      "alignment": "overlay",
+      "tracks": [
         {}, // this dummy object cannot be removed
         {
           "mark": "rect-brush", 
