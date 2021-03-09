@@ -21,7 +21,8 @@ In [Tutorial 1](https://github.com/gosling-lang/gosling-docs/blob/master/tutoria
             "axis": "top"
         },
         "xe": {"field": "chromEnd", "type": "genomic"},
-        "overlay":[
+        "alignment": "overlay",
+        "tracks":[
              {
              "mark": "rect",
              "dataTransform": {
@@ -99,7 +100,8 @@ In other words, the text marks appear when the width (`measure`) of the text mar
         "axis": "top"
       },
       "xe": {"field": "chromEnd", "type": "genomic"},
-      "overlay": [
+      "alignment": "overlay",
+      "tracks": [
 +        {
 +          "mark": "text",
 +          "dataTransform": {
@@ -225,7 +227,8 @@ In Gosling, `tracks` can be linked by assigning `x` the same  `linkingId`.
 +        "linkingId": "link-1"
       },
       "xe": {"field": "chromEnd", "type": "genomic"},
-      "overlay": [
+      "alignment": "overlay",
+      "tracks": [
         {
           "mark": "text",
           "dataTransform": {
@@ -355,7 +358,8 @@ We can easily turn the visualization into a circular layout through the `layout`
         "linkingId": "link-1"
       },
       "xe": {"field": "chromEnd", "type": "genomic"},
-      "overlay": [
+      "alignment": "overlay",
+      "tracks": [
         {
           "mark": "text",
           "dataTransform": {
