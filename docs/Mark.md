@@ -17,7 +17,7 @@ The `mark` property of a track is defined by a string that describes the mark ty
     ... // other visualization properties
 }
 ```
-Gosling supports the following primitive `mark` types: `point`, `line`, `area`, `bar`, `rect`, `text`, `link`, `rule`, `triangle`. Composite mark (i.e., glyph) is also supported through the [`overlay`](https://github.com/gosling-lang/gosling-docs/blob/master/docs/Composition.md#overlaid-tracks)) property.
+Gosling supports the following primitive `mark` types: `point`, `line`, `area`, `bar`, `rect`, `text`, `link`, `rule`, `triangle`. Composite mark (i.e., glyph) is also supported through the [`alignment`](https://github.com/gosling-lang/gosling-docs/blob/master/docs/Composition.md#overlaid-tracks)) property.
 
 - [Point](#point)
 - [Line](#line)
