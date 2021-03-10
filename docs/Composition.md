@@ -71,12 +71,11 @@ When setting `alignment` as `"stack"`, multiple `tracks` are vertically concante
         </td>
     </tr>
     <tr>
-        <td> <img src="https://raw.githubusercontent.com/gosling-lang/gosling-docs/master/images/alignment_stack.png" alt="linear tracks" width="400"/> </td>
-        <td> <img src="https://raw.githubusercontent.com/gosling-lang/gosling-docs/master/images/alignment_overlay.png" alt="circular tracks" width="200"/></td>
+        <td> <img src="https://raw.githubusercontent.com/gosling-lang/gosling-docs/master/images/alignment_stack.png" alt="stack tracks" width="300"/> </td>
+        <td> <img src="https://raw.githubusercontent.com/gosling-lang/gosling-docs/master/images/alignment_overlay.png" alt="overlay tracks" width="300"/></td>
     </tr>
 </table>
 
-When setting `alignment` as `"stack"`, each track of the `tracks` shares the same `layout` preporty and are vertically concantenated.
 <table>
     <tr>
         <td>  
@@ -170,7 +169,7 @@ Gosling supports four types of arrangemet: `"parallel"`, `"serial"`, `"vertical"
 
 
 ## Inherit Property in Nested Structure 
-```javascript
+<!-- ```javascript
 {
   "tracks": [
      {/** single track **/},
@@ -192,21 +191,24 @@ Gosling supports four types of arrangemet: `"parallel"`, `"serial"`, `"vertical"
   ]
 }
 
-```
+``` -->
 
 
-One `overlay` is composed of an array of objects, in which each object specifies one visual `mark`. Each visual mark inherits the properties (e.g., `data`, `x`, and `y`) defined in the parent `track` definition unless these properties are redefined in this object.  
+One `track` can have a nested structure and contains children `tracks`. 
+Each children `track` inherits the properties (e.g., `data`, `x`, and `y`) defined in the parent `track` unless these properties are redefined in this object.  
 
 ```javascript
 {
   "tracks": [
     {
+      // the parent track
       "data": ... , // specify data
       "x": ...,
       "y": ...,
       "color":...,
       "alignment": "overlay",
       "tracks": [
+        // the children tracks
         // point mark and line mark have the same data, x, y, color encoding
         {
           "mark": "line", 
