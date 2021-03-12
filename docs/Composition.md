@@ -39,95 +39,22 @@ The `alignment` propoerty allow users to either `"overlay"` or `"stack"` several
 
 When setting `alignment` as `"overlay"`, multiple `tracks` are overlaid on top of one other. 
 When setting `alignment` as `"stack"`, multiple `tracks` are vertically concantenated.
-<table>
-    <tr>
-        <td>  
-        <pre>
-<code>
-{
-  "layout": "linear",
-  "alignment": "stack",
-  "tracks": [
-    {/**track_1**/},
-    {/**track_2**/}
-  ]   
-}
-</code>
-        </pre>
-        </td>
-        <td>
-        <pre>
-<code>
-{
-  "layout": "linear",
-  "alignment": "overlay",
-  "tracks": [
-    {/**track_1**/},
-    {/**track_2**/}
-  ]   
-}
-</code>
-        </pre>
-        </td>
-    </tr>
-    <tr>
-        <td> <img src="https://raw.githubusercontent.com/gosling-lang/gosling-docs/master/images/alignment_stack.png" alt="stack tracks" width="300"/> </td>
-        <td> <img src="https://raw.githubusercontent.com/gosling-lang/gosling-docs/master/images/alignment_overlay.png" alt="overlay tracks" width="300"/></td>
-    </tr>
-</table>
-
-<table>
-    <tr>
-        <td>  
-        <pre>
-<code>
-{
-  "layout": "linear",
-  "alignment": "stack",
-  "tracks": [
-    {/**track_1**/},
-    {/**track_2**/},
-    {/**track_3**/}
-  ]   
-}
-</code>
-        </pre>
-        </td>
-        <td>
-        <pre>
-<code>
-{
-  "layout": "circular",
-  "alignment": "stack",
-  "tracks": [
-    {/**track_1**/},
-    {/**track_2**/},
-    {/**track_3**/}
-  ]   
-}
-</code>
-        </pre>
-        </td>
-    </tr>
-    <tr>
-        <td> <img src="https://raw.githubusercontent.com/gosling-lang/gosling-docs/master/images/tracks_linear.png" alt="linear tracks" width="400"/> </td>
-        <td> <img src="https://raw.githubusercontent.com/gosling-lang/gosling-docs/master/images/tracks_circular.png" alt="circular tracks" width="200"/></td>
-    </tr>
-</table>
-
+The default value of `alignment` is `"stack"`.
 
 
 
 Multiple `tracks` can compose one single `view`, which has the following properties:
 |property|type|description|
 |--|--|--|
-| layout | string | specify the layout type of all children tracks, either "linear" or "circular" |
+| layout | string | specify the layout type of all tracks, either "linear" or "circular" |
+| alignment | string | specify how to align tracks, either "stack" or "overlay". default="stack" |
 | spacing | number | specify the space between tracks|
 | static | boolean | whether to disable [Zooming and Panning](https://github.com/gosling-lang/gosling-docs/blob/master/docs/User-Interaction.md#zooming-and-panning), default=false. | 
 | assembly | string | currently support "hg38", "hg19", "hg18", "hg17", "hg16", "mm10", "mm9"| 
 | xLinkingId | string | specify an ID for [linking multiple views](https://github.com/gosling-lang/gosling-docs/blob/master/docs/User-Interaction.md#linking-views)|
 | centerRadius | number | specify the proportion of the radius of the center white space. A number between [0,1], default=0.3|
-
+| width | number | required when setting `alignment: overlay`|
+| height | number | required when setting `alignment: overlay`|
 
 ## Arrange Multiple Views
 Goslings supports multi-view visualizations. How multiple views are arranged is controlled by the `arrangement` property.
@@ -185,12 +112,10 @@ Gosling supports four types of arrangemet: `"parallel"`, `"serial"`, `"vertical"
 }
 
 ``` -->
-
-
-One `track` can have a nested structure and contains children `tracks`. 
-Each children `track` inherits the properties (e.g., `data`, `x`, and `y`) defined in the parent `track` unless these properties are redefined in this object.  
+Both `view` and `track` supports nested structures: one `view` can have several children `views` and one `track` can have several children `tracks`. Properties can be inherited from upper-level specifications or overwritten locally.
 
 ```javascript
+// nested structures in tracks
 {
   "tracks": [
     {
@@ -212,6 +137,22 @@ Each children `track` inherits the properties (e.g., `data`, `x`, and `y`) defin
           "size": {"field": "peak", "type": "quantitative", "range": [0, 6]} 
         }
       ]
+    }
+  ]
+}
+```
+
+```javascript
+// nested structures in views
+{
+  "arrangement": "parallel",
+  "views": [
+    {/** view **/ }, 
+    {/** view **/ }, 
+    {
+      // a view with children views
+      "arrangement": "parallel",
+      "views": [...]
     }
   ]
 }
