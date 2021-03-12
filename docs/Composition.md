@@ -115,8 +115,25 @@ Gosling supports four types of arrangemet: `"parallel"`, `"serial"`, `"vertical"
 Both `view` and `track` supports nested structures: one `view` can have several children `views` and one `track` can have several children `tracks`. Properties can be inherited from upper-level specifications or overwritten locally.
 
 ```javascript
+// nested structures in views
+{
+  "arrangement": "parallel",
+  "views": [
+    {/** view **/ }, 
+    {/** view **/ }, 
+    {
+      // a view with children views
+      "arrangement": "parallel",
+      "views": [...]
+    }
+  ]
+}
+```
+
+```javascript
 // nested structures in tracks
 {
+  "alignment":"overlay",
   "tracks": [
     {
       // the parent track
@@ -141,25 +158,10 @@ Both `view` and `track` supports nested structures: one `view` can have several 
   ]
 }
 ```
-
-```javascript
-// nested structures in views
-{
-  "arrangement": "parallel",
-  "views": [
-    {/** view **/ }, 
-    {/** view **/ }, 
-    {
-      // a view with children views
-      "arrangement": "parallel",
-      "views": [...]
-    }
-  ]
-}
-```
+It is recommended to use nested tracks ONLY IF a user wants to use overlaid tracks inside stacked tracks.
 
 
-Try it in the online editor:
+Try examples in the online editor:
 
 [Line chart (line + point)](<https://gosling-lang.github.io/gosling.js/?gist=wangqianwen0418/dd5bd5aa70f2eb68f92f42788f046188>)
 
