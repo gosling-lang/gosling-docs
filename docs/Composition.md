@@ -41,7 +41,7 @@ When setting `alignment` as `"overlay"`, multiple `tracks` are overlaid on top o
 When setting `alignment` as `"stack"`, multiple `tracks` are vertically concantenated.
 The default value of `alignment` is `"stack"`.
 
-
+<img src="https://raw.githubusercontent.com/gosling-lang/gosling-docs/master/images/alignment.png" alt="alignment of multiple tracks" width="700"/> 
 
 Multiple `tracks` can compose one single `view`, which has the following properties:
 |property|type|description|
@@ -85,7 +85,7 @@ Goslings supports multi-view visualizations. How multiple views are arranged is 
 ```
 
 Gosling supports four types of arrangemet: `"parallel"`, `"serial"`, `"vertical"`, `"horizontal"`.
-<img src="https://raw.githubusercontent.com/gosling-lang/gosling-docs/master/images/multi_views.png" alt="arrangement of multiple views" width="700"/> </td>
+<img src="https://raw.githubusercontent.com/gosling-lang/gosling-docs/master/images/multi_views.png" alt="arrangement of multiple views" width="700"/> 
 
 
 ## Inherit Property in Nested Structure 
