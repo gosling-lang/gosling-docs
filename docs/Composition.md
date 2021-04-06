@@ -37,7 +37,7 @@ We use the `arrangement` property to specify how we compose several `views`.
 The `alignment` propoerty allow users to either `"overlay"` or `"stack"` several tracks.
 
 
-When setting `alignment` as `"overlay"`, multiple `tracks` are overlaid on top of one other. 
+When setting `alignment` as `"overlay"`, multiple `tracks` are overlaid on top of others.
 When setting `alignment` as `"stack"`, multiple `tracks` are vertically concantenated.
 The default value of `alignment` is `"stack"`.
 

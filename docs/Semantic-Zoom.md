@@ -22,7 +22,7 @@ For example, detailed information of nucleotide bases can be shown with textual 
 [Try this example in the online editor](<https://gosling-lang.github.io/gosling.js/?gist=wangqianwen0418/509f253bf1b815d225f593218ee13211>)
 
 
-Semantic zoom is achieved through by controlling `alignment` and `visibility`.
+Semantic zoom is achieved by controlling `alignment` and `visibility`.
 [`alignment`](https://github.com/gosling-lang/gosling-docs/blob/master/docs/Composition.md#overlaid-tracks) allow users to overlap multiple marks on top of one other, thus allowing users to create different visualizations for the same data.
 `visibility` controls the visibility of visual marks, thus allowing the switch between different visualizations based on the zoom level.
 
