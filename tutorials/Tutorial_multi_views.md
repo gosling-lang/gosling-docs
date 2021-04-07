@@ -49,7 +49,8 @@ In [Tutorial 2](https://github.com/gosling-lang/gosling-docs/blob/master/tutoria
         "linkingId": "link-1"
       },
       "xe": {"field": "chromEnd", "type": "genomic"},
-      "overlay": [
+      "alignment": "overlay",
+      "tracks": [
         {
           "mark": "text",
           "dataTransform": {
@@ -274,7 +275,8 @@ In Gosling, multiple views can be arranged using the `arrangement` property.
                         "field": "sample",
                         "type": "nominal"
                     },
-                    "overlay": [
+                    "alignment": "overlay",
+                    "tracks": [
                         {
                             "mark": "area"
                         },
@@ -318,7 +320,8 @@ In Gosling, multiple views can be arranged using the `arrangement` property.
                         "field": "chromEnd",
                         "type": "genomic"
                     },
-                    "overlay": [
+                    "alignment": "overlay",
+                    "tracks": [
                         {
                             "mark": "text",
                             "dataTransform": {
@@ -556,12 +559,13 @@ In Gosling, multiple views can be arranged using the `arrangement` property.
 
 ## Link Multiple Views
 We need to link the overview and the two detailed views.
-We `overlay` two `brush` objects to the overview, and link the two `brush` objects to the two detailed views using `linkingId` (i.e., "detail-1", "detail-2").
+We overlay two `brush` objects to the overview, and link the two `brush` objects to the two detailed views using `linkingId` (i.e., "detail-1", "detail-2").
 To help users visually link the brush objects and the detailed views, we assign the same color to the `brush` of the overview and the `background` of the corresponding detailed view.
 
 **Overview**
 ```diff
-+ "overlay": [
++ "alignment": "overlay",
++ "tracks": [
 +    {
 +        "mark": "area"
 +    },
@@ -640,7 +644,8 @@ To help users visually link the brush objects and the detailed views, we assign 
                         },
                         "y": { "field": "peak", "type": "quantitative" },
                         "color": { "field": "sample", "type": "nominal" },
-                        "overlay": [
+                        "alignment": "overlay",
+                        "tracks": [
                             { "mark": "area" },
                             {
                                 "mark": "brush",
@@ -669,7 +674,8 @@ To help users visually link the brush objects and the detailed views, we assign 
                             "linkingId": "link-1"
                         },
                         "xe": { "field": "chromEnd", "type": "genomic" },
-                        "overlay": [
+                        "alignment": "overlay",
+                        "tracks": [
                             {
                                 "mark": "text",
                                 "dataTransform": {
