@@ -11,33 +11,26 @@ Users can specify the data of each visualization (i.e., `track`) through a `trac
 ``` 
 
 - [Supported Data Formats](#supported-data-formats)
-  - [Plain Datasets](#plain-datasets)
+  - [Plain Datasets (No HiGlass Server)](#plain-datasets-no-higlass-server)
     - [CSV](#csv)
-  - [JSON](#json)
-  - [BigWig](#bigwig)
-  - [Pre-aggregated Datasets](#pre-aggregated-datasets)
+    - [JSON](#json)
+    - [BigWig](#bigwig)
+  - [Pre-aggregated Datasets (HiGlass Server)](#pre-aggregated-datasets-higlass-server)
     - [Vector](#vector)
     - [Multivec](#multivec)
-    - [BED](#bed)
+    - [BEDDB](#beddb)
 - [Data Transform](#data-transform)
 
 # Supported Data Formats
 
 For the flexible data exploration, Gosling supports two different kinds of datasets:
 
-1. **Plain Datasets**: For the convenience, Gosling allows to use several data formats directly in the system without requiring to preprocess data or set up a dedicated server (i.e., HiGlass server).
+1. **Plain Datasets** (No HiGlass Server): These datasets can be directly used in Gosling without requiring any data preprocessing.
 
-<!--This includes BigWig, BED, BEDPE, and we will be supporting more genomic file formats in the near future.-->
-2. **Pre-aggregated Datasets**: To allow scalable data exploration, Gosling supports using HiGlass' preprocessed datasets which requires the dedicated HiGlass server.
+2. **Pre-aggregated Datasets** (HiGlass Server): These datasets are preprocessed for the scalable data exploration and require a HiGlass server to access them in Gosling. To learn more about preprocessing your data and setting up the server, please visit the [HiGlass website](https://docs.higlass.io/).
 
-<!-- Gosling currently supports six types of data formats: [CSV](#csv), [JSON](#json), [BigWig](#bigwig), [Multivec](#multivec), [BED](#bed), [Vector](#vector).-->
-
-<!--### Tip
-
-Using some of data formats in Gosling requires you to specify the field names so that they can be used in describing visual encoding. For example, for using `"BigWig"` data formats, you need to specify how you want to call th-->
-
-## Plain Datasets 
-This class of datasets do not require setting up a dedicated server or pre-aggregating data.
+## Plain Datasets (No HiGlass Server)
+These datasets can be directly used in Gosling without requiring any data preprocessing.
 
 ### CSV
 
@@ -70,7 +63,7 @@ Any small enough tabular data files, such as tsv, csv, BED, BEDPE, and GFF, can 
 | quantitativeFields | string[] | specify the name of quantitative data fields                 |
 | genomicFields      | string[] | specify the name of genomic data fields                      |
 
-## JSON
+### JSON
 
 This format allows to include data directly in the Gosling's JSON specification.
 
@@ -116,7 +109,7 @@ This format allows to include data directly in the Gosling's JSON specification.
 | chromosomeField    | string                            | specify the name of chromosome data fields                   |
 | genomicFields      | string[]                          | specify the name of genomic data fields                      |
 
-## BigWig
+### BigWig
 
 ```javascript
 {
@@ -143,8 +136,9 @@ This format allows to include data directly in the Gosling's JSON specification.
 | start    | string | assign a field name of the start position of genomic intervals |
 | end      | string | assign a field name of the end position of genomic intervals |
 
-## Pre-aggregated Datasets
-This class of datasets makes the data exploration more scalable, requiring you to set up a dedicated server and pre-aggregate data before using them.
+## Pre-aggregated Datasets (HiGlass Server)
+These datasets are preprocessed for the scalable data exploration and require a HiGlass server to access them in Gosling. To learn more about preprocessing your data and setting up the server, please visit the [HiGlass website](https://docs.higlass.io/).
+
 
 ### Vector
 
@@ -207,15 +201,15 @@ Two-dimensional quantitative values, one axis for genomic coordinate and the oth
 | start    | string | assign a field name of the start position of genomic intervals |
 | end      | string | assign a field name of the end position of genomic intervals |
 
-### BED
-Regular BED files can be pre-aggregated for the scalable data exploration. Find our more about this format at [HiGlass Docs](https://docs.higlass.io/data_preparation.html#bed-files).
+### BEDDB
+Regular BED, or similar, files can be pre-aggregated for the scalable data exploration. Find our more about this format at [HiGlass Docs](https://docs.higlass.io/data_preparation.html#bed-files).
 
 ```javascript
 {
   "tracks":[{
     "data": {
       "url": "https://higlass.io/api/v1/tileset_info/?d=OHJakQICQD6gTD7skx4EWA",
-      "type": "bed",
+      "type": "beddb",
       "genomicFields": [
           {"index": 1, "name": "start"},
           {"index": 2, "name": "end"}
@@ -236,7 +230,7 @@ Regular BED files can be pre-aggregated for the scalable data exploration. Find 
 
 | property           | type                                                                 | description                                            |
 | ------------------ | -------------------------------------------------------------------- | ------------------------------------------------------ |
-| type               | string                                                               | **required**, `"bed"`                                  |
+| type               | string                                                               | **required**, `"beddb"`                                |
 | url                | string                                                               | **required**, specify the URL address of the data file |
 | genomicFields      | { index: number; name: string }[]                                    | **required**, specify the name of genomic data fields  |
 | valueFields        | { index: number; name: string; type: 'nominal' \| 'quantitative' }[] | specify the column indexes, field names to assign, and field types                                                     |

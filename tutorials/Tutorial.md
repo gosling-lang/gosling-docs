@@ -154,8 +154,8 @@ gvar (<span style="color:#A0A0F2">purple rect</span>) and gneg (white rect) are 
 
 
 ## Overlaying Multiple Marks
-Multiple `mark` shapes can be put on the top of one another through the `overlay` property.
-In the code below, a chromosome is visualized as a `triangleRight` mark if its stain result is `acen` and its name includes `q`; a chromosome is visualized as a `triangleLeft` mark if its stain result is `acen` and its name includes `p`. The `rect` mark, the `triangleRight` mark, and the `triangleLeft` mark are overlaid on the same genomic coordinate through the `overlay` property.
+Multiple `mark` shapes can be put on the top of one another by setting `alignment` as `"overlay"`.
+In the code below, a chromosome is visualized as a `triangleRight` mark if its stain result is `acen` and its name includes `q`; a chromosome is visualized as a `triangleLeft` mark if its stain result is `acen` and its name includes `p`. The `rect` mark, the `triangleRight` mark, and the `triangleLeft` mark are overlaid on the same genomic coordinate by setting `alignment` as `"overlay"`.
 
 ```diff
 {
@@ -185,7 +185,8 @@ In the code below, a chromosome is visualized as a `triangleRight` mark if its s
 -           "domain": ["gpos25", "gpos50", "gpos75", "gpos100"],
 -           "range": ["#D9D9D9","#979797","#636363", "black"]
 -       },
-+       "overlay":[
++       "alignment": "overlay",
++       "tracks":[
 +           {
 +             "mark": "rect",
 +             "dataTransform": {
