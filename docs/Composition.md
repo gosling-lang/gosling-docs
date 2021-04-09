@@ -51,7 +51,7 @@ Multiple `tracks` can compose one single `view`, which has the following propert
 | spacing | number | specify the space between tracks in pixels (if `layout` is `linear`) or in percentage ranging from `0` to `100` (if `layout` is `circular`) |
 | static | boolean | whether to disable [Zooming and Panning](https://github.com/gosling-lang/gosling-docs/blob/master/docs/User-Interaction.md#zooming-and-panning), default=false. | 
 | assembly | string | currently support "hg38", "hg19", "hg18", "hg17", "hg16", "mm10", "mm9"| 
-| xLinkingId | string | specify an ID for [linking multiple views](https://github.com/gosling-lang/gosling-docs/blob/master/docs/User-Interaction.md#linking-views)|
+| linkingId | string | specify an ID for [linking multiple views](https://github.com/gosling-lang/gosling-docs/blob/master/docs/User-Interaction.md#linking-views)|
 | centerRadius | number | specify the proportion of the radius of the center white space. A number between [0,1], default=0.3|
 | width | number | required when setting `alignment: overlay`|
 | height | number | required when setting `alignment: overlay`|

@@ -36,7 +36,7 @@ When views/tracks are linked, the zooming and panning performed in one view/trac
 [Try it in the online editor](<https://gosling-lang.github.io/gosling.js/?gist=wangqianwen0418/362d370f31379a6d9f367d1c33adfc31>)
 
 Views and tracks can be linked through an user-assigned id.
-This id is assigned to a `track` through the `x.linkingId` property, and assigned to a `view` through the `xLinkingId` property.
+This id is assigned to a `track` through the `x.linkingId` property, and assigned to a `view` through the `linkingId` property.
 
 ```javascript
 // linking serveral tracks
@@ -71,12 +71,12 @@ This id is assigned to a `track` through the `x.linkingId` property, and assigne
   "views": [
     {
       // view A
-      "xLinkingId": "detail",
+      "linkingId": "detail",
       ....
     },
     {
       // view B
-      "xLinkingId": "detail",
+      "linkingId": "detail",
       ....
     },
     {
