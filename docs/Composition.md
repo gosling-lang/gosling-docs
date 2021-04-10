@@ -1,3 +1,7 @@
+---
+title: Composition
+---
+
 One `track` is the minimum visualization unit in Gosling.
 Multiple `tracks` with the same [`layout`]((https://github.com/gosling-lang/gosling-docs/blob/master/docs/Layout.md)) compose a `view` and a Gosling visualization can have multiple `views`.
 
@@ -89,29 +93,7 @@ Gosling supports four types of arrangemet: `"parallel"`, `"serial"`, `"vertical"
 
 
 ## Inherit Property in Nested Structure 
-<!-- ```javascript
-{
-  "tracks": [
-     {/** single track **/},
-     {/** single track **/},
-     {  ..., // Shared track definition
-        alignment: 'overlay', tracks: [...]
-     },
-  ]
-}
-```
 
-```javascript
-{
-  "views": [
-     {/** single view **/},
-     {/** single view **/},
-     {  arrangement: 'serial', views: [...]
-     },
-  ]
-}
-
-``` -->
 Both `view` and `track` supports nested structures: one `view` can have several children `views` and one `track` can have several children `tracks`. Properties can be inherited from upper-level specifications or overwritten locally.
 
 ```javascript

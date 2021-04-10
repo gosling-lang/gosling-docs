@@ -1,3 +1,7 @@
+---
+titile: Tutorial
+slug: /
+---
 ## Create your visualizations using Gosling ＼（＾▽＾）／
 
 This tutorial will guide you step by step in writing the JSON specification to create an interactive cytoband visualization in Gosling. 

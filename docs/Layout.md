@@ -1,8 +1,11 @@
+---
+title: Layout
+---
 In each track, genomic coordinate can be represented in either a circular or linear layout. 
 
 In the following figure the upper track is using a linear layout while the bottom one is a circular layout.
 
-<img src="https://raw.githubusercontent.com/gosling-lang/gosling-docs/master/images/linear_circular.png" alt="linear vs circular" width="600">    
+<img src="https://raw.githubusercontent.com/gosling-lang/gosling-docs/master/images/linear_circular.png" alt="linear vs circular" width="600"/>    
 
 [:link: source code](https://github.com/gosling-lang/gosling.js/blob/43626eaf21417bf36128a405dceeaa6ee00d0851/src/core/Gosling.schema.ts#L22)
 
@@ -34,7 +37,7 @@ or specify the layout of a certain track in each track definition.
       },
       ...
     ],
-    ...//
+    ...
 }
 ```
 

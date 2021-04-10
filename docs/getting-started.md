@@ -1,3 +1,7 @@
+---
+title: Getting Started
+slug: /
+---
 We currently support the following ways of using Gosling.
 - [Create Your Visualization in Gosling Online Editor](#create-your-visualization-in-gosling-online-editor)
 - [Load a Gosling Spec From Your Github Gist](#load-a-gosling-spec-from-your-github-gist)

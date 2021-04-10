@@ -1,3 +1,6 @@
+---
+titile: Create Multi-track Visualizations
+---
 In [Tutorial 1](https://github.com/gosling-lang/gosling-docs/blob/master/tutorials/Tutorial.md), we introduce how to load data, encode data with marks, transform data, overlay multiple marks and obtain the following visualization.
 <img src="https://raw.githubusercontent.com/gosling-lang/gosling-docs/master/images/tutorial/tutorial_overlay.png" alt="gosling vis overlay" width="800"/>
 <details>
@@ -314,6 +317,7 @@ We can easily turn the visualization into a circular layout through the `layout`
 
 <details>
 <summary><b>Click here to expand the complete code</b></summary>
+
 ```javscript
 {
   "layout": "circular",

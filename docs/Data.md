@@ -1,3 +1,6 @@
+---
+title: Data
+---
 Users can specify the data of each visualization (i.e., `track`) through a `track.data` property.
 ```javascript
 {

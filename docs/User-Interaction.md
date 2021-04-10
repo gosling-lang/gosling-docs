@@ -1,3 +1,6 @@
+---
+title: User Interaction
+---
 - [Zooming and Panning](#zooming-and-panning)
 - [Linking Views](#linking-views)
 - [Brushing and Linking](#brushing-and-linking)
