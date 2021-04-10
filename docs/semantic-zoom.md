@@ -25,7 +25,7 @@ For example, detailed information of nucleotide bases can be shown with textual 
 
 
 Semantic zoom is achieved by controlling `alignment` and `visibility`.
-[`alignment`](https://github.com/gosling-lang/gosling-docs/blob/master/docs/Composition.md#overlaid-tracks) allow users to overlap multiple marks on top of one other, thus allowing users to create different visualizations for the same data.
+[`alignment`](https://github.com/gosling-lang/gosling-docs/blob/master/docs/composition.md#overlaid-tracks) allow users to overlap multiple marks on top of one other, thus allowing users to create different visualizations for the same data.
 `visibility` controls the visibility of visual marks, thus allowing the switch between different visualizations based on the zoom level.
 
 `visibility` is an array of object with the following properties:

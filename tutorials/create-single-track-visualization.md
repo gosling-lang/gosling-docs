@@ -234,9 +234,9 @@ In the code below, a chromosome is visualized as a `triangleRight` mark if its s
 
 
 ## Coming Up Next
-[Tutorial 2](https://github.com/gosling-lang/gosling-docs/blob/master/tutorials/Tutorial_multi_tracks.md): how to use semantic zooming, multiple tracks, and circular layout in Gosling.
+[Tutorial 2](https://github.com/gosling-lang/gosling-docs/blob/master/tutorials/create-multi-track-visualization.md): how to use semantic zooming, multiple tracks, and circular layout in Gosling.
 
-[Tutorial 3](https://github.com/gosling-lang/gosling-docs/blob/master/tutorials/Tutorial_multi_views.md): how to arrange and link multiple views in Gosling.
+[Tutorial 3](https://github.com/gosling-lang/gosling-docs/blob/master/tutorials/create-multi-view-visualization.md): how to arrange and link multiple views in Gosling.
 
 You can find more examples [here][exampleURL].
 

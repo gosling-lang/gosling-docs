@@ -8,16 +8,16 @@
 
 ### [Getting Started](https://github.com/gosling-lang/gosling-docs/blob/master/docs/getting-started.md)
 ### Tutorial
-* [Tutorial 1: Single Track Visualization](https://github.com/gosling-lang/gosling-docs/blob/master/tutorials/Tutorial.md)
-* [Tutorial 2: Multi-Track Visualization](https://github.com/gosling-lang/gosling-docs/blob/master/tutorials/Tutorial_multi_tracks.md)
-* [Tutorial 3: Multi-View Visualization](https://github.com/gosling-lang/gosling-docs/blob/master/tutorials/Tutorial_multi_views.md)
+* [Tutorial 1: Single Track Visualization](https://github.com/gosling-lang/gosling-docs/blob/master/tutorials/create-single-track-visualization.md)
+* [Tutorial 2: Multi-Track Visualization](https://github.com/gosling-lang/gosling-docs/blob/master/tutorials/create-multi-track-visualization.md)
+* [Tutorial 3: Multi-View Visualization](https://github.com/gosling-lang/gosling-docs/blob/master/tutorials/create-multi-view-visualization.md)
 ### Documentation
-* [Genome Builds](https://github.com/gosling-lang/gosling-docs/blob/master/docs/Genome-Builds.md)
-* [Data](https://github.com/gosling-lang/gosling-docs/blob/master/docs/Data.md)
-* [Mark](https://github.com/gosling-lang/gosling-docs/blob/master/docs/Mark.md)
-* [Visual Channel](https://github.com/gosling-lang/gosling-docs/blob/master/docs/Visual-Channel.md)
-* [Composition](https://github.com/gosling-lang/gosling-docs/blob/master/docs/Composition.md)
-* [User Interaction](https://github.com/gosling-lang/gosling-docs/blob/master/docs/User-Interaction.md)
-* [Semantic Zoom](https://github.com/gosling-lang/gosling-docs/blob/master/docs/Semantic-Zoom.md)
+* [Genome Builds](https://github.com/gosling-lang/gosling-docs/blob/master/docs/genome-builds.md)
+* [Data](https://github.com/gosling-lang/gosling-docs/blob/master/docs/data.md)
+* [Mark](https://github.com/gosling-lang/gosling-docs/blob/master/docs/mark.md)
+* [Visual Channel](https://github.com/gosling-lang/gosling-docs/blob/master/docs/visual-channel.md)
+* [Composition](https://github.com/gosling-lang/gosling-docs/blob/master/docs/composition.md)
+* [User Interaction](https://github.com/gosling-lang/gosling-docs/blob/master/docs/user-interaction.md)
+* [Semantic Zoom](https://github.com/gosling-lang/gosling-docs/blob/master/docs/semantic-zoom.md)
 ### [Public Datasets](https://github.com/gosling-lang/gosling-docs/blob/master/docs/public-datasets.md)
 
