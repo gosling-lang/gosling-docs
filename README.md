@@ -6,7 +6,7 @@
 
 ## List of Contents
 
-### [Getting Started](https://github.com/gosling-lang/gosling-docs/blob/master/Getting-Started.md)
+### [Getting Started](https://github.com/gosling-lang/gosling-docs/blob/master/docs/getting-started.md)
 ### Tutorial
 * [Tutorial 1: Single Track Visualization](https://github.com/gosling-lang/gosling-docs/blob/master/tutorials/Tutorial.md)
 * [Tutorial 2: Multi-Track Visualization](https://github.com/gosling-lang/gosling-docs/blob/master/tutorials/Tutorial_multi_tracks.md)
@@ -19,5 +19,5 @@
 * [Composition](https://github.com/gosling-lang/gosling-docs/blob/master/docs/Composition.md)
 * [User Interaction](https://github.com/gosling-lang/gosling-docs/blob/master/docs/User-Interaction.md)
 * [Semantic Zoom](https://github.com/gosling-lang/gosling-docs/blob/master/docs/Semantic-Zoom.md)
-### [Public Datasets](https://github.com/gosling-lang/gosling-docs/blob/master/Public-Datasets.md)
+### [Public Datasets](https://github.com/gosling-lang/gosling-docs/blob/master/docs/public-datasets.md)
 

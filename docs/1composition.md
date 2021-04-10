@@ -3,7 +3,7 @@ title: Composition
 ---
 
 One `track` is the minimum visualization unit in Gosling.
-Multiple `tracks` with the same [`layout`]((https://github.com/gosling-lang/gosling-docs/blob/master/docs/Layout.md)) compose a `view` and a Gosling visualization can have multiple `views`.
+Multiple `tracks` with the same [`layout`](https://github.com/gosling-lang/gosling-docs/blob/master/docs/Layout.md) compose a `view` and a Gosling visualization can have multiple `views`.
 
 In Gosling, users can create an advanced visual interface by composing different `tracks` and `views`.
 We use the `alignment` property to specify how we compose several `tracks`. 

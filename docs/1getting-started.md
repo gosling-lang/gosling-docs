@@ -10,7 +10,7 @@ We currently support the following ways of using Gosling.
 - [Resources](#resources)
 
 ## Create Your Visualization in Gosling Online Editor
-You can visit [Online Editor](gosling.js.org) to visualize your data directly in the website.
+You can visit [Online Editor](https://gosling.js.org) to visualize your data directly in the website.
 
 ## Load a Gosling Spec From Your Github Gist
 1. To load a spec you first have to create a gist with a file named gosling.js* that specifies the spec.
