@@ -1,5 +1,5 @@
 ---
-titile: Create Multi-view Visualizations
+title: Multi-view Visualizations
 ---
 In [Tutorial 2](https://github.com/gosling-lang/gosling-docs/blob/master/tutorials/Tutorial_multi_tracks.md), we introduce how to create a multi-track visualization, as shown below.
 

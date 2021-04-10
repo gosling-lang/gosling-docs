@@ -1,12 +1,11 @@
 ---
-titile: Tutorial
+title: Create Single Track Visualization
+hide_title: false
 slug: /
 ---
-## Create your visualizations using Gosling ＼（＾▽＾）／
 
 This tutorial will guide you step by step in writing the JSON specification to create an interactive cytoband visualization in Gosling. 
 You will learn about:
-- [Create your visualizations using Gosling ＼（＾▽＾）／](#create-your-visualizations-using-gosling-)
 - [Loading Data](#loading-data)
 - [Encoding Data with Marks](#encoding-data-with-marks)
 - [Transforming Data](#transforming-data)
@@ -151,7 +150,7 @@ For example, we can add a filter to only visualize chromosomes whose stain resul
 
 <img src="https://raw.githubusercontent.com/gosling-lang/gosling-docs/master/images/tutorial/tutorial_dataTransform.png" alt="gosling vis dataTransform" width="700"/>
 
-gvar (<span style="color:#A0A0F2">purple rect</span>) and gneg (white rect) are not shown in the updated visualization.
+gvar (purple rect) and gneg (white rect) are not shown in the updated visualization.
 
 
 
