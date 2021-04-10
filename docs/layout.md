@@ -7,7 +7,7 @@ In the following figure the upper track is using a linear layout while the botto
 
 <img src="https://raw.githubusercontent.com/gosling-lang/gosling-docs/master/images/linear_circular.png" alt="linear vs circular" width="600"/>    
 
-[:link: source code](https://github.com/gosling-lang/gosling.js/blob/43626eaf21417bf36128a405dceeaa6ee00d0851/src/core/Gosling.schema.ts#L22)
+<!-- [:link: source code](https://github.com/gosling-lang/gosling.js/blob/43626eaf21417bf36128a405dceeaa6ee00d0851/src/core/Gosling.schema.ts#L22) -->
 
 Users can either specify the layout of entire tracks on the root level
 

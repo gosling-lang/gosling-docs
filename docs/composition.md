@@ -36,7 +36,7 @@ We use the `arrangement` property to specify how we compose several `views`.
 - [Inherit Property in Nested Structure](#inherit-property-in-nested-structure)
 
 ## Align Multiple Tracks
-[:link: source code](https://github.com/gosling-lang/gosling.js/blob/43626eaf21417bf36128a405dceeaa6ee00d0851/src/core/Gosling.schema.ts#L213)
+<!-- [:link: source code](https://github.com/gosling-lang/gosling.js/blob/43626eaf21417bf36128a405dceeaa6ee00d0851/src/core/Gosling.schema.ts#L213) -->
 
 The `alignment` propoerty allow users to either `"overlay"` or `"stack"` several tracks.
 
