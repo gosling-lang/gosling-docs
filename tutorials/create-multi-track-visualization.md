@@ -1,4 +1,7 @@
-In [Tutorial 1](https://github.com/gosling-lang/gosling-docs/blob/master/tutorials/Tutorial.md), we introduce how to load data, encode data with marks, transform data, overlay multiple marks and obtain the following visualization.
+---
+title: Multi-track Visualizations
+---
+In [Tutorial 1](https://github.com/gosling-lang/gosling-docs/blob/master/tutorials/create-single-track-visualization.md), we introduce how to load data, encode data with marks, transform data, overlay multiple marks and obtain the following visualization.
 <img src="https://raw.githubusercontent.com/gosling-lang/gosling-docs/master/images/tutorial/tutorial_overlay.png" alt="gosling vis overlay" width="800"/>
 <details>
   <summary>click to expand the code</summary>
@@ -71,7 +74,7 @@ This tutorial continues from this example and introduces more advances functions
 
 ## Semantic Zooming
 
-Apart from the default zoom and pan interactions, [semantic zoom](https://github.com/gosling-lang/gosling-docs/blob/master/docs/Semantic-Zoom.md) is supported in Gosling and allows users to switch between different visualizations of the same data through zooming in/out. When zooming in, the same data will be represented in a different way in which more details are shown. 
+Apart from the default zoom and pan interactions, [semantic zoom](https://github.com/gosling-lang/gosling-docs/blob/master/docs/semantic-zoom.md) is supported in Gosling and allows users to switch between different visualizations of the same data through zooming in/out. When zooming in, the same data will be represented in a different way in which more details are shown. 
 
 Let's say, for this visualization, we want text annotations to show up when zooming in.
 We add `text` marks to the `overlay` property and specify when the `text` marks should appear through the `visibility` property.
@@ -314,6 +317,7 @@ We can easily turn the visualization into a circular layout through the `layout`
 
 <details>
 <summary><b>Click here to expand the complete code</b></summary>
+
 ```javscript
 {
   "layout": "circular",

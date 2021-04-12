@@ -1,4 +1,7 @@
-In [Tutorial 2](https://github.com/gosling-lang/gosling-docs/blob/master/tutorials/Tutorial_multi_tracks.md), we introduce how to create a multi-track visualization, as shown below.
+---
+title: Multi-view Visualizations
+---
+In [Tutorial 2](https://github.com/gosling-lang/gosling-docs/blob/master/tutorials/create-multi-track-visualization.md), we introduce how to create a multi-track visualization, as shown below.
 
 <img src="https://raw.githubusercontent.com/gosling-lang/gosling-docs/master/images/tutorial/tutorial_circular.png" alt="gosling circular" width="600"/>
 

@@ -1,8 +1,11 @@
-## Create your visualizations using Gosling ＼（＾▽＾）／
+---
+title: Create Single Track Visualization
+hide_title: false
+slug: /
+---
 
 This tutorial will guide you step by step in writing the JSON specification to create an interactive cytoband visualization in Gosling. 
 You will learn about:
-- [Create your visualizations using Gosling ＼（＾▽＾）／](#create-your-visualizations-using-gosling-)
 - [Loading Data](#loading-data)
 - [Encoding Data with Marks](#encoding-data-with-marks)
 - [Transforming Data](#transforming-data)
@@ -147,7 +150,7 @@ For example, we can add a filter to only visualize chromosomes whose stain resul
 
 <img src="https://raw.githubusercontent.com/gosling-lang/gosling-docs/master/images/tutorial/tutorial_dataTransform.png" alt="gosling vis dataTransform" width="700"/>
 
-gvar (<span style="color:#A0A0F2">purple rect</span>) and gneg (white rect) are not shown in the updated visualization.
+gvar (purple rect) and gneg (white rect) are not shown in the updated visualization.
 
 
 
@@ -231,9 +234,9 @@ In the code below, a chromosome is visualized as a `triangleRight` mark if its s
 
 
 ## Coming Up Next
-[Tutorial 2](https://github.com/gosling-lang/gosling-docs/blob/master/tutorials/Tutorial_multi_tracks.md): how to use semantic zooming, multiple tracks, and circular layout in Gosling.
+[Tutorial 2](https://github.com/gosling-lang/gosling-docs/blob/master/tutorials/create-multi-track-visualization.md): how to use semantic zooming, multiple tracks, and circular layout in Gosling.
 
-[Tutorial 3](https://github.com/gosling-lang/gosling-docs/blob/master/tutorials/Tutorial_multi_views.md): how to arrange and link multiple views in Gosling.
+[Tutorial 3](https://github.com/gosling-lang/gosling-docs/blob/master/tutorials/create-multi-view-visualization.md): how to arrange and link multiple views in Gosling.
 
 You can find more examples [here][exampleURL].
 

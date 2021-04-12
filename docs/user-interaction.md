@@ -1,9 +1,12 @@
+---
+title: User Interaction
+---
 - [Zooming and Panning](#zooming-and-panning)
 - [Linking Views](#linking-views)
 - [Brushing and Linking](#brushing-and-linking)
 
 # Zooming and Panning
-[:link: source code](https://github.com/gosling-lang/gosling.js/blob/43626eaf21417bf36128a405dceeaa6ee00d0851/src/core/gosling.schema.ts#L7)
+<!-- [:link: source code](https://github.com/gosling-lang/gosling.js/blob/43626eaf21417bf36128a405dceeaa6ee00d0851/src/core/gosling.schema.ts#L7) -->
 
 Each visualization in Gosling supports the Zooming and Panning interaction.
 Users can zoom in/out a visualization using the scrolling up/down actions.
@@ -29,7 +32,7 @@ Users can set the `static` property of all tracks at the root level or specify i
 ```
 
 # Linking Views
-[:link: source code](ttps://github.com/gosling-lang/gosling.js/blob/43626eaf21417bf36128a405dceeaa6ee00d0851/src/core/Gosling.schema.ts#L328)
+<!-- [:link: source code](https://github.com/gosling-lang/gosling.js/blob/43626eaf21417bf36128a405dceeaa6ee00d0851/src/core/Gosling.schema.ts#L328) -->
 
 When views/tracks are linked, the zooming and panning performed in one view/track will be automatically applied to the linked views/tracks. 
 
