@@ -264,6 +264,7 @@ Only data points that pass the tests in all filters will be visualized.
 
 Users can apply three types of filters: `oneOf`, `inRange`, `include`.
 One filter has the following properties:
+
 | property | type                 | description                                                                          |
 | -------- | -------------------- | ------------------------------------------------------------------------------------ |
 | field    | string               | **required**, a filter is applied based on the values of the specified data field    |

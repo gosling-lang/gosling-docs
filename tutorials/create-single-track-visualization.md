@@ -56,6 +56,7 @@ The `color` indicates the stain value.
 
 For each visual channel, Gosling creates a mapping from the values of the data field (e.g., [gnes, gpos25, gpos50, ...]) to the values of the visual channel (e.g., color). We call the values of data field **domain** and the values of the visual channel **range**.
 This mapping is specified by the following properties:
+
 | visual channel properties | type                        | description                                                                        |
 | ------------------------- | --------------------------- | ---------------------------------------------------------------------------------- |
 | field                     | string                      | specify name of the data field                                                     |

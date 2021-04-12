@@ -95,6 +95,7 @@ For example, the code below creates a mapping from the data `field` "Stain" to t
 `x` specify a mark's position in the horizontal direction.
 
 Apart from the properties shared by all channels, `x` channel have the following unique properties:
+
 | unique properties | type   | description                                                                                                        |
 | ----------------- | ------ | ------------------------------------------------------------------------------------------------------------------ |
 | aggregate         | string | support "max", "min", "count", "mean", "bin"                                                                       |
@@ -106,6 +107,7 @@ Apart from the properties shared by all channels, `x` channel have the following
 `xe` stands for the end of x axis. `xe` is usually used with `x` to specify the start position and the end position of a visual mark in the horizontal direction, respectively.
 
 Apart from the properties shared by all channels, `xe` channel have the following unique properties:
+
 | unique properties | type   | description                                                                 |
 | ----------------- | ------ | --------------------------------------------------------------------------- |
 | aggregate         | string | support "max", "min", "count", "mean", "bin"                                |
@@ -115,6 +117,7 @@ Apart from the properties shared by all channels, `xe` channel have the followin
 `y` specify a mark's position in the vertical direction.
 
 Apart from the properties shared by all channels, `y` channel have the following unique properties:
+
 | unique properties | type             | description                                                                 |
 | ----------------- | ---------------- | --------------------------------------------------------------------------- |
 | axis              | string           | specify the axis position, support "none", "top", "bottom", "left", "right" |
@@ -188,6 +191,7 @@ Channel `size` indicates the size of the visual mark. It determines either the r
 Channel `color` specifies the filling color of the mark. Binding `color` with categorical values in `bar` and `area` marks stack marks that are positioned in the same genomic intervals to better show their cumulative values.
 
 Apart from the properties shared by all channels, the `color` channel have the following unique properties:
+
 | unique properties | type    | description                      |
 | ----------------- | ------- | -------------------------------- |
 | legend            | boolean | whether to show the color legend |
