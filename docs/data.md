@@ -65,6 +65,7 @@ Any small enough tabular data files, such as tsv, csv, BED, BEDPE, and GFF, can 
 | chromosomeField    | string   | specify the name of chromosome data fields                   |
 | quantitativeFields | string[] | specify the name of quantitative data fields                 |
 | genomicFields      | string[] | specify the name of genomic data fields                      |
+| headerNames        | string[] | specify the names of data fields if a CSV file is headerless |
 
 ### JSON
 
