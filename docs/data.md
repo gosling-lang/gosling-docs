@@ -24,7 +24,7 @@ Users can specify the data of each visualization (i.e., `track`) through a `trac
     - [BEDDB](#beddb)
 - [Data Transform](#data-transform)
 
-# Supported Data Formats
+## Supported Data Formats
 
 For the flexible data exploration, Gosling supports two different kinds of datasets:
 
@@ -32,10 +32,10 @@ For the flexible data exploration, Gosling supports two different kinds of datas
 
 2. **Pre-aggregated Datasets** (HiGlass Server): These datasets are preprocessed for the scalable data exploration and require a HiGlass server to access them in Gosling. To learn more about preprocessing your data and setting up the server, please visit the [HiGlass website](https://docs.higlass.io/).
 
-## Plain Datasets (No HiGlass Server)
+### Plain Datasets (No HiGlass Server)
 These datasets can be directly used in Gosling without requiring any data preprocessing.
 
-### CSV
+#### CSV
 
 Any small enough tabular data files, such as tsv, csv, BED, BEDPE, and GFF, can be loaded using `"csv"` data specification.
 
@@ -67,7 +67,7 @@ Any small enough tabular data files, such as tsv, csv, BED, BEDPE, and GFF, can 
 | genomicFields      | string[] | specify the name of genomic data fields                      |
 | headerNames        | string[] | specify the names of data fields if a CSV file is headerless |
 
-### JSON
+#### JSON
 
 This format allows to include data directly in the Gosling's JSON specification.
 
@@ -113,7 +113,7 @@ This format allows to include data directly in the Gosling's JSON specification.
 | chromosomeField    | string                            | specify the name of chromosome data fields                   |
 | genomicFields      | string[]                          | specify the name of genomic data fields                      |
 
-### BigWig
+#### BigWig
 
 ```javascript
 {
@@ -140,11 +140,11 @@ This format allows to include data directly in the Gosling's JSON specification.
 | start    | string | assign a field name of the start position of genomic intervals |
 | end      | string | assign a field name of the end position of genomic intervals |
 
-## Pre-aggregated Datasets (HiGlass Server)
+### Pre-aggregated Datasets (HiGlass Server)
 These datasets are preprocessed for the scalable data exploration and require a HiGlass server to access them in Gosling. To learn more about preprocessing your data and setting up the server, please visit the [HiGlass website](https://docs.higlass.io/).
 
 
-### Vector
+#### Vector
 
 One-dimensional quantitative values along genomic position (e.g., bigwig) can be converted into HiGlass' `"vector"` format data. Find out more about this format at [HiGlass Docs](https://docs.higlass.io/data_preparation.html#bigwig-files).
 
@@ -173,7 +173,7 @@ One-dimensional quantitative values along genomic position (e.g., bigwig) can be
 | start    | string | assign a field name of the start position of genomic intervals |
 | end      | string | assign a field name of the end position of genomic intervals |
 
-### Multivec
+#### Multivec
 
 Two-dimensional quantitative values, one axis for genomic coordinate and the other for different samples, can be converted into HiGlass' `"multivec"` data. For example, multiple BigWig files can be converted into a single multivec file. You can also convert sequence data (FASTA) into this format where rows will be different nucleotide bases (e.g., A, T, G, C) and quantitative values represent the frequency. Find out more about this format at [HiGlass Docs](https://docs.higlass.io/data_preparation.html#multivec-files).
 
@@ -205,7 +205,7 @@ Two-dimensional quantitative values, one axis for genomic coordinate and the oth
 | start    | string | assign a field name of the start position of genomic intervals |
 | end      | string | assign a field name of the end position of genomic intervals |
 
-### BEDDB
+#### BEDDB
 Regular BED, or similar, files can be pre-aggregated for the scalable data exploration. Find our more about this format at [HiGlass Docs](https://docs.higlass.io/data_preparation.html#bed-files).
 
 ```javascript
@@ -241,7 +241,7 @@ Regular BED, or similar, files can be pre-aggregated for the scalable data explo
 
 
 
-# Data Transform
+## Data Transform
 Gosling supports data transform through a set of data filters.  
 Only data points that pass the tests in all filters will be visualized.  
 
