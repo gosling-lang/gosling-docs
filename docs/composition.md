@@ -83,14 +83,16 @@ A `circular` layout is controlled by the following properties:
 | property     | type   | description                                                                     |
 | ------------ | ------ | ------------------------------------------------------------------------------- |
 | width        | number | width (in pixel) of the view                                                    |
-| height       | number | you need to specify the height of each track to control the ratio of their heights |
+| height       | number | you need to specify the height of each track to control the ratio of their ticknesses |
 | centerRadius | number | `radius of the center white space` / `radius of the whole view`. default = 0.3  |
+
+<!-- 
 |              |        | <a> the below properties, if specified, will override the above properties </a> |
 | outerRadius  | number | default = min(track.width, track.height) / 2                                    |
 | innerRadius  | number | default = max(outerRadius - 80, 0)                                              |
 | startAngle   | number | default = 0                                                                     |
 | endAngle     | number | default = 360                                                                   |
-
+ -->
 
 
 ## Align Multiple Tracks in One View
