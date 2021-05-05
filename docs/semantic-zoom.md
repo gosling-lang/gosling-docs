@@ -29,6 +29,7 @@ Semantic zoom is achieved by controlling `alignment` and `visibility`.
 `visibility` controls the visibility of visual marks, thus allowing the switch between different visualizations based on the zoom level.
 
 `visibility` is an array of object with the following properties:
+
 | properties  | type  | description|   
 |---|---|---|
 |target| string| **required**, support "track" \| "mark" |
