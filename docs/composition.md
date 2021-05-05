@@ -2,17 +2,19 @@
 title: Composition
 ---
 
-One `track` is the minimum visualization unit in Gosling.
-Multiple `tracks` with the same `layout` compose a `view` and a Gosling visualization can have multiple `views`.  
+<!-- Overview -->
+A **track** is a unit building block in Gosling which can be represented as a bar chart, a line chart, or an ideogram. For the concurrent analysis of multiple datasets, multiple tracks can be grouped into **views** and navigated synchronously. In other words, a view defines the genomic location for all the tracks it contains, and the tracks define the data to be visualized.
 
 <!-- :pushpin: `mark + channel` :arrow_forward: `one track` :arrow_forward:`tracks` :arrow_forward: `one view` :arrow_forward: `views` :arrow_forward: `a multi-view visualization` -->
 
-:pushpin: `a multi-view visualization` :arrow_forward: `views` :arrow_forward: `tracks` :arrow_forward: `mark+channel`  
+<!-- :pushpin: `a multi-view visualization` :arrow_forward: `views` :arrow_forward: `tracks` :arrow_forward: `mark+channel`   -->
 
-In Gosling, users can create an advanced visual interface by composing different `tracks` and `views`.  
-We use the `layout` property to control the genomic coordinate layout in one `view`.  
-We use the `alignment` property to specify how we compose several `tracks` in one `view`.   
-We use the `arrangement` property to specify how we compose several `views`.
+<!-- Overview of Properties -->
+In Gosling, you can compose multiple tracks and views in diverse ways using the following properties:
+
+1. You can display genomic positions of a view either in Cartesian coordinates (**linear**) or in polar coordinates (**circular**) using the `layout` property.  
+2. You can determine to either **overlay** or **stack** multiple tracks when composing them into a view using a `alignment` property.   
+3. You use juxtapose multiple views in four different ways (i.e., **parallel**, **serial**, **vertical**, **horizontal**) using the `arrangement` property.
 
 ```javascript
 {
@@ -21,7 +23,7 @@ We use the `arrangement` property to specify how we compose several `views`.
     {
       // a single view can contain multiple tracks
       "layout": "circular", // specify the layout of a view
-      "alignment": "stack", // alignment property specifies how several tracks are aligned
+      "alignment": "stack", // specify how to align several tracks
       "tracks": [
         {/** track 1 **/},
         {/** track 2 **/},
@@ -29,7 +31,7 @@ We use the `arrangement` property to specify how we compose several `views`.
       ]
     },
     {
-      /** view **/
+      /** another view **/
     }
     ...
   ]
@@ -157,7 +159,7 @@ Gosling supports four types of arrangemet: `"parallel"`, `"serial"`, `"vertical"
 
 ## Inherit Property in Nested Structure 
 
-Both `view` and `track` supports nested structures: one `view` can have several children `views` and one `track` can have several children `tracks`. Properties can be inherited from upper-level specifications or overwritten locally.
+Both `view` and `track` supports nested structures: One `view` can have several children `views`, and one `track` can have several children `tracks`. Properties can be inherited from upper-level specifications or overwritten locally.
 
 ```javascript
 // nested structures in views
@@ -203,7 +205,8 @@ Both `view` and `track` supports nested structures: one `view` can have several 
   ]
 }
 ```
-It is recommended to use nested tracks **ONLY IF** a user wants to use overlaid tracks inside stacked tracks.
+
+Use the nested structure if you want to use overlaid tracks inside stacked tracks.
 
 
 Try examples in the online editor:
