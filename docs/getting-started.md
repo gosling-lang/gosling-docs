@@ -106,7 +106,7 @@ function App() {
 }
 ```
 
-Please visit [gosling-react](https://github.com/gosling-lang/gosling-react) for more detailed instruction.
+Please visit [gosling-react](https://github.com/gosling-lang/gosling-react) for more detailed instruction. Also, visit [gosling-api-example](https://github.com/gosling-lang/gosling-api-example) to learn more about Gosling.js APIs, such as quick navigation to particular genes with animated transition.
 
 ## Resources
 - How to set up your own HiGlass server for private data exploration?
