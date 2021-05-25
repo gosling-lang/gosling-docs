@@ -35,7 +35,7 @@ For example, https://gosling.js.org/?gist=flekschas/e6e388332814886d4d714efd0e88
         <script crossorigin type="text/javascript" src="https://unpkg.com/react@16/umd/react.development.js"></script>
         <script crossorigin type="text/javascript" src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
         <script crossorigin type="text/javascript" src="https://unpkg.com/pixi.js@5/dist/pixi.js"></script>
-        <script crossorigin type="text/javascript" src="https://unpkg.com/gosling.js@0.0.26/dist/gosling.js"></script>
+        <script crossorigin type="text/javascript" src="https://unpkg.com/gosling.js@0.8.1/dist/gosling.js"></script>
     </body>
     <script>
       gosling.embed(
@@ -50,7 +50,10 @@ For example, https://gosling.js.org/?gist=flekschas/e6e388332814886d4d714efd0e88
                 "column": "position",
                 "value": "peak",
                 "categories": ["sample 1", "sample 2", "sample 3", "sample 4"]
-              }
+              },
+              "mark": "bar",
+              "x": { "field": "position", "type": "genomic"},
+              "y": { "field": "peak", "type": "quantitative"},
             }
           ]
         }
