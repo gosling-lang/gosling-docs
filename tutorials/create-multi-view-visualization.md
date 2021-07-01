@@ -56,9 +56,7 @@ In [Tutorial 2](https://github.com/gosling-lang/gosling-docs/blob/master/tutoria
       "tracks": [
         {
           "mark": "text",
-          "dataTransform": {
-            "filter": [{"field": "Stain", "oneOf": ["acen"], "not": true}]
-          },
+          "dataTransform":  [{"type":"filter", "field": "Stain", "oneOf": ["acen"], "not": true}],
           "text": {"field": "Name", "type": "nominal"},
           "color": {
             "field": "Stain",
@@ -79,9 +77,7 @@ In [Tutorial 2](https://github.com/gosling-lang/gosling-docs/blob/master/tutoria
         },
         {
           "mark": "rect",
-          "dataTransform": {
-            "filter": [{"field": "Stain", "oneOf": ["acen"], "not": true}]
-          },
+          "dataTransform": [{"type":"filter", "field": "Stain", "oneOf": ["acen"], "not": true}],
           "color": {
             "field": "Stain",
             "type": "nominal",
@@ -98,22 +94,18 @@ In [Tutorial 2](https://github.com/gosling-lang/gosling-docs/blob/master/tutoria
         },
         {
           "mark": "triangleRight",
-          "dataTransform": {
-            "filter": [
-              {"field": "Stain", "oneOf": ["acen"]},
-              {"field": "Name", "include": "q"}
-            ]
-          },
+          "dataTransform": [
+              {"type":"filter", "field": "Stain", "oneOf": ["acen"]},
+              {"type":"filter", "field": "Name", "include": "q"}
+            ],
           "color": {"value": "#B40101"}
         },
         {
           "mark": "triangleLeft",
-          "dataTransform": {
-            "filter": [
-              {"field": "Stain", "oneOf": ["acen"]},
-              {"field": "Name", "include": "p"}
-            ]
-          },
+          "dataTransform": [
+              {"type":"filter", "field": "Stain", "oneOf": ["acen"]},
+              {"type":"filter", "field": "Name", "include": "p"}
+            ],
           "color": {"value": "#B40101"}
         }
       ],
@@ -327,17 +319,16 @@ In Gosling, multiple views can be arranged using the `arrangement` property.
                     "tracks": [
                         {
                             "mark": "text",
-                            "dataTransform": {
-                                "filter": [
+                            "dataTransform": [
                                     {
+                                        "type":"filter", 
                                         "field": "Stain",
                                         "oneOf": [
                                             "acen"
                                         ],
                                         "not": true
                                     }
-                                ]
-                            },
+                                ],
                             "text": {
                                 "field": "Name",
                                 "type": "nominal"
@@ -377,17 +368,16 @@ In Gosling, multiple views can be arranged using the `arrangement` property.
                         },
                         {
                             "mark": "rect",
-                            "dataTransform": {
-                                "filter": [
+                            "dataTransform": [
                                     {
+                                        "type":"filter", 
                                         "field": "Stain",
                                         "oneOf": [
                                             "acen"
                                         ],
                                         "not": true
                                     }
-                                ]
-                            },
+                                ],
                             "color": {
                                 "field": "Stain",
                                 "type": "nominal",
@@ -411,40 +401,40 @@ In Gosling, multiple views can be arranged using the `arrangement` property.
                         },
                         {
                             "mark": "triangleRight",
-                            "dataTransform": {
-                                "filter": [
+                            "dataTransform": [
                                     {
+                                        "type":"filter", 
                                         "field": "Stain",
                                         "oneOf": [
                                             "acen"
                                         ]
                                     },
                                     {
+                                        "type":"filter", 
                                         "field": "Name",
                                         "include": "q"
                                     }
-                                ]
-                            },
+                                ],
                             "color": {
                                 "value": "#B40101"
                             }
                         },
                         {
                             "mark": "triangleLeft",
-                            "dataTransform": {
-                                "filter": [
+                            "dataTransform": [
                                     {
+                                        "type":"filter", 
                                         "field": "Stain",
                                         "oneOf": [
                                             "acen"
                                         ]
                                     },
                                     {
+                                        "type":"filter", 
                                         "field": "Name",
                                         "include": "p"
                                     }
-                                ]
-                            },
+                                ],
                             "color": {
                                 "value": "#B40101"
                             }
@@ -681,9 +671,7 @@ To help users visually link the brush objects and the detailed views, we assign 
                         "tracks": [
                             {
                                 "mark": "text",
-                                "dataTransform": {
-                                    "filter": [{ "field": "Stain", "oneOf": ["acen"], "not": true }]
-                                },
+                                "dataTransform": [{"type":"filter",  "field": "Stain", "oneOf": ["acen"], "not": true }],
                                 "text": { "field": "Name", "type": "nominal" },
                                 "color": {
                                     "field": "Stain",
@@ -704,9 +692,7 @@ To help users visually link the brush objects and the detailed views, we assign 
                             },
                             {
                                 "mark": "rect",
-                                "dataTransform": {
-                                    "filter": [{ "field": "Stain", "oneOf": ["acen"], "not": true }]
-                                },
+                                "dataTransform": [{"type":"filter", "field": "Stain", "oneOf": ["acen"], "not": true }],
                                 "color": {
                                     "field": "Stain",
                                     "type": "nominal",
@@ -723,22 +709,18 @@ To help users visually link the brush objects and the detailed views, we assign 
                             },
                             {
                                 "mark": "triangleRight",
-                                "dataTransform": {
-                                    "filter": [
-                                        { "field": "Stain", "oneOf": ["acen"] },
-                                        { "field": "Name", "include": "q" }
-                                    ]
-                                },
+                                "dataTransform": [
+                                        {"type":"filter", "field": "Stain", "oneOf": ["acen"] },
+                                        {"type":"filter", "field": "Name", "include": "q" }
+                                    ],
                                 "color": { "value": "#B40101" }
                             },
                             {
                                 "mark": "triangleLeft",
-                                "dataTransform": {
-                                    "filter": [
-                                        { "field": "Stain", "oneOf": ["acen"] },
-                                        { "field": "Name", "include": "p" }
-                                    ]
-                                },
+                                "dataTransform":  [
+                                        {"type":"filter", "field": "Stain", "oneOf": ["acen"] },
+                                        {"type":"filter", "field": "Name", "include": "p" }
+                                    ],
                                 "color": { "value": "#B40101" }
                             }
                         ],
