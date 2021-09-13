@@ -56,6 +56,7 @@ The `color` indicates the stain value.
 
 For each visual channel, Gosling creates a mapping from the values of the data field (e.g., [gnes, gpos25, gpos50, ...]) to the values of the visual channel (e.g., color). We call the values of data field **domain** and the values of the visual channel **range**.
 This mapping is specified by the following properties:
+
 | visual channel properties | type                        | description                                                                        |
 | ------------------------- | --------------------------- | ---------------------------------------------------------------------------------- |
 | field                     | string                      | specify name of the data field                                                     |
@@ -124,9 +125,7 @@ For example, we can add a filter to only visualize chromosomes whose stain resul
             "type": "csv",
             "genomicFields": ["chromStart", "chromEnd"]
         },       
-+        "dataTransform": {
-+            "filter": [{"field": "Stain", "oneOf": ["gpos25", "gpos50", "gpos75", "gpos100"]}]
-+        },
++        "dataTransform": [{"type":"filter", "field": "Stain", "oneOf": ["gpos25", "gpos50", "gpos75", "gpos100"]}],
         "mark": "rect",
         "x": {
             "field": "chromStart",
@@ -171,9 +170,7 @@ In the code below, a chromosome is visualized as a `triangleRight` mark if its s
             "chromosomeField": "Chromosome",
             "genomicFields": ["chromStart", "chromEnd"]
         },       
--       "dataTransform": {
--           "filter": [{"field": "Stain", "oneOf": ["gpos25", "gpos50", "gpos75", "gpos100"]}]
--       },
+-       "dataTransform": [{"type":"filter", "field": "Stain", "oneOf": ["gpos25", "gpos50", "gpos75", "gpos100"]}],
 -       "mark": "rect",
         "x": {
             "field": "chromStart",
@@ -192,9 +189,7 @@ In the code below, a chromosome is visualized as a `triangleRight` mark if its s
 +       "tracks":[
 +           {
 +             "mark": "rect",
-+             "dataTransform": {
-+                     "filter": [{"field": "Stain", "oneOf": ["acen"], "not": true}]
-+                 },
++             "dataTransform": [{"type":"filter", "field": "Stain", "oneOf": ["acen"], "not": true}],
 +             "color": {
 +                 "field": "Stain", 
 +                 "type": "nominal",
@@ -204,22 +199,18 @@ In the code below, a chromosome is visualized as a `triangleRight` mark if its s
 +           },
 +           {
 +             "mark": "triangleRight",
-+             "dataTransform": {
-+               "filter": [
-+                 {"field": "Stain", "oneOf": ["acen"]},
-+                 {"field": "Name", "include": "q"}
-+               ]
-+             },
++             "dataTransform": [
++                 {"type":"filter", "field": "Stain", "oneOf": ["acen"]},
++                 {"type":"filter", "field": "Name", "include": "q"}
++               ],
 +             "color": {"value": "#B70101"}
 +           },
 +           {
 +             "mark": "triangleLeft",
-+             "dataTransform": {
-+               "filter": [
-+                 {"field": "Stain", "oneOf": ["acen"]},
-+                 {"field": "Name", "include": "p"}
-+               ]
-+             },
++             "dataTransform": [
++                 {"type":"filter", "field": "Stain", "oneOf": ["acen"]},
++                 {"type":"filter", "field": "Name", "include": "p"}
++               ],
 +             "color": {"value": "#B70101"}
 +           }
 +       ],

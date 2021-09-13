@@ -5,7 +5,7 @@ title: User Interaction
 - [Linking Views](#linking-views)
 - [Brushing and Linking](#brushing-and-linking)
 
-# Zooming and Panning
+## Zooming and Panning
 <!-- [:link: source code](https://github.com/gosling-lang/gosling.js/blob/43626eaf21417bf36128a405dceeaa6ee00d0851/src/core/gosling.schema.ts#L7) -->
 
 Each visualization in Gosling supports the Zooming and Panning interaction.
@@ -31,7 +31,7 @@ Users can set the `static` property of all tracks at the root level or specify i
 }
 ```
 
-# Linking Views
+## Linking Views
 <!-- [:link: source code](https://github.com/gosling-lang/gosling.js/blob/43626eaf21417bf36128a405dceeaa6ee00d0851/src/core/Gosling.schema.ts#L328) -->
 
 When views/tracks are linked, the zooming and panning performed in one view/track will be automatically applied to the linked views/tracks. 
@@ -97,7 +97,7 @@ This id is assigned to a `track` through the `x.linkingId` property, and assigne
 }
 ```
 
-# Brushing and Linking
+## Brushing and Linking
 Users can use **brushing** to select a subset of the data items using a rectangle. Users can modify the left and right edge of the rectangle to modify the selection. The selected data items can be linked to data items in another track.
 
 [Try it in the online editor](<https://gosling-lang.github.io/gosling.js/?gist=wangqianwen0418/5f48d40b8f2335abe40c289ae85cb4ae>)

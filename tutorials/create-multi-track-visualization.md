@@ -28,9 +28,7 @@ In [Tutorial 1](https://github.com/gosling-lang/gosling-docs/blob/master/tutoria
         "tracks":[
              {
              "mark": "rect",
-             "dataTransform": {
-                     "filter": [{"field": "Stain", "oneOf": ["acen"], "not": true}]
-                 },
+             "dataTransform": [{"type":"filter", "field": "Stain", "oneOf": ["acen"], "not": true}],
              "color": {
                  "field": "Stain", 
                  "type": "nominal",
@@ -40,22 +38,18 @@ In [Tutorial 1](https://github.com/gosling-lang/gosling-docs/blob/master/tutoria
              },
             {
               "mark": "triangleRight",
-              "dataTransform": {
-                "filter": [
-                  {"field": "Stain", "oneOf": ["acen"]},
-                  {"field": "Name", "include": "q"}
-                ]
-              },
+              "dataTransform": [
+                  {"type":"filter", "field": "Stain", "oneOf": ["acen"]},
+                  {"type":"filter", "field": "Name", "include": "q"}
+                ],
               "color": {"value": "#B70101"}
             },
             {
               "mark": "triangleLeft",
-              "dataTransform": {
-                "filter": [
-                  {"field": "Stain", "oneOf": ["acen"]},
-                  {"field": "Name", "include": "p"}
-                ]
-              },
+              "dataTransform": [
+                  {"type":"filter", "field": "Stain", "oneOf": ["acen"]},
+                  {"type":"filter", "field": "Name", "include": "p"}
+                ],
               "color": {"value": "#B70101"}
             }
         ],
@@ -71,6 +65,7 @@ This tutorial continues from this example and introduces more advances functions
 - [Semantic Zooming](#semantic-zooming)
 - [Multiple Linked Tracks](#multiple-linked-tracks)
 - [Circular Layout](#circular-layout)
+
 
 ## Semantic Zooming
 
@@ -107,9 +102,7 @@ In other words, the text marks appear when the width (`measure`) of the text mar
       "tracks": [
 +        {
 +          "mark": "text",
-+          "dataTransform": {
-+            "filter": [{"field": "Stain", "oneOf": ["acen"], "not": true}]
-+          },
++          "dataTransform": [{"type":"filter", "field": "Stain", "oneOf": ["acen"], "not": true}],
 +          "text": {"field": "Name", "type": "nominal"},
 +          "color": {
 +            "field": "Stain",
@@ -129,9 +122,7 @@ In other words, the text marks appear when the width (`measure`) of the text mar
 +        },
         {
           "mark": "rect",
-          "dataTransform": {
-            "filter": [{"field": "Stain", "oneOf": ["acen"], "not": true}]
-          },
+          "dataTransform": [{"type":"filter", "field": "Stain", "oneOf": ["acen"], "not": true}],
           "color": {
             "field": "Stain",
             "type": "nominal",
@@ -148,22 +139,18 @@ In other words, the text marks appear when the width (`measure`) of the text mar
         },
         {
           "mark": "triangleRight",
-          "dataTransform": {
-            "filter": [
-              {"field": "Stain", "oneOf": ["acen"]},
-              {"field": "Name", "include": "q"}
-            ]
-          },
+          "dataTransform": [
+              {"type":"filter", "field": "Stain", "oneOf": ["acen"]},
+              {"type":"filter", "field": "Name", "include": "q"}
+            ],
           "color": {"value": "#B40101"}
         },
         {
           "mark": "triangleLeft",
-          "dataTransform": {
-            "filter": [
-              {"field": "Stain", "oneOf": ["acen"]},
-              {"field": "Name", "include": "p"}
-            ]
-          },
+          "dataTransform": [
+              {"type":"filter", "field": "Stain", "oneOf": ["acen"]},
+              {"type":"filter", "field": "Name", "include": "p"}
+            ],
           "color": {"value": "#B40101"}
         }
       ],
@@ -234,9 +221,7 @@ In Gosling, `tracks` can be linked by assigning `x` the same  `linkingId`.
       "tracks": [
         {
           "mark": "text",
-          "dataTransform": {
-            "filter": [{"field": "Stain", "oneOf": ["acen"], "not": true}]
-          },
+          "dataTransform": [{"type":"filter", "field": "Stain", "oneOf": ["acen"], "not": true}],
           "text": {"field": "Name", "type": "nominal"},
           "color": {
             "field": "Stain",
@@ -257,9 +242,7 @@ In Gosling, `tracks` can be linked by assigning `x` the same  `linkingId`.
         },
         {
           "mark": "rect",
-          "dataTransform": {
-            "filter": [{"field": "Stain", "oneOf": ["acen"], "not": true}]
-          },
+          "dataTransform": [{"type":"filter", "field": "Stain", "oneOf": ["acen"], "not": true}],
           "color": {
             "field": "Stain",
             "type": "nominal",
@@ -276,22 +259,18 @@ In Gosling, `tracks` can be linked by assigning `x` the same  `linkingId`.
         },
         {
           "mark": "triangleRight",
-          "dataTransform": {
-            "filter": [
-              {"field": "Stain", "oneOf": ["acen"]},
-              {"field": "Name", "include": "q"}
-            ]
-          },
+          "dataTransform": [
+              {"type":"filter", "field": "Stain", "oneOf": ["acen"]},
+              {"type":"filter", "field": "Name", "include": "q"}
+            ],
           "color": {"value": "#B40101"}
         },
         {
           "mark": "triangleLeft",
-          "dataTransform": {
-            "filter": [
-              {"field": "Stain", "oneOf": ["acen"]},
-              {"field": "Name", "include": "p"}
-            ]
-          },
+          "dataTransform": [
+              {"type":"filter", "field": "Stain", "oneOf": ["acen"]},
+              {"type":"filter", "field": "Name", "include": "p"}
+            ],
           "color": {"value": "#B40101"}
         }
       ],
@@ -366,9 +345,7 @@ We can easily turn the visualization into a circular layout through the `layout`
       "tracks": [
         {
           "mark": "text",
-          "dataTransform": {
-            "filter": [{"field": "Stain", "oneOf": ["acen"], "not": true}]
-          },
+          "dataTransform": [{"type":"filter", "field": "Stain", "oneOf": ["acen"], "not": true}],
           "text": {"field": "Name", "type": "nominal"},
           "color": {
             "field": "Stain",
@@ -389,9 +366,7 @@ We can easily turn the visualization into a circular layout through the `layout`
         },
         {
           "mark": "rect",
-          "dataTransform": {
-            "filter": [{"field": "Stain", "oneOf": ["acen"], "not": true}]
-          },
+          "dataTransform": [{"type":"filter", "field": "Stain", "oneOf": ["acen"], "not": true}],
           "color": {
             "field": "Stain",
             "type": "nominal",
@@ -408,22 +383,18 @@ We can easily turn the visualization into a circular layout through the `layout`
         },
         {
           "mark": "triangleRight",
-          "dataTransform": {
-            "filter": [
-              {"field": "Stain", "oneOf": ["acen"]},
-              {"field": "Name", "include": "q"}
-            ]
-          },
+          "dataTransform": [
+              {"type":"filter", "field": "Stain", "oneOf": ["acen"]},
+              {"type":"filter", "field": "Name", "include": "q"}
+            ],
           "color": {"value": "#B40101"}
         },
         {
           "mark": "triangleLeft",
-          "dataTransform": {
-            "filter": [
-              {"field": "Stain", "oneOf": ["acen"]},
-              {"field": "Name", "include": "p"}
-            ]
-          },
+          "dataTransform": [
+              {"type":"filter", "field": "Stain", "oneOf": ["acen"]},
+              {"type":"filter", "field": "Name", "include": "p"}
+            ],
           "color": {"value": "#B40101"}
         }
       ],

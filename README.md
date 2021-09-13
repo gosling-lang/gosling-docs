@@ -4,6 +4,8 @@
 
 [Gosling.js](https://github.com/gosling-lang/gosling.js) is a declarative grammar for interactive (epi)genomics visualization on the Web.
 
+### The Docs and Interactive Tutorials are now hosted at http://gosling-lang.org/
+<!-- 
 ## List of Contents
 
 ### [Getting Started](https://github.com/gosling-lang/gosling-docs/blob/master/docs/getting-started.md)
@@ -19,5 +21,5 @@
 * [Composition](https://github.com/gosling-lang/gosling-docs/blob/master/docs/composition.md)
 * [User Interaction](https://github.com/gosling-lang/gosling-docs/blob/master/docs/user-interaction.md)
 * [Semantic Zoom](https://github.com/gosling-lang/gosling-docs/blob/master/docs/semantic-zoom.md)
-### [Public Datasets](https://github.com/gosling-lang/gosling-docs/blob/master/docs/public-datasets.md)
+### [Public Datasets](https://github.com/gosling-lang/gosling-docs/blob/master/docs/public-datasets.md) -->
 
