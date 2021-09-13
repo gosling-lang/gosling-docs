@@ -1,3 +1,4 @@
 #!/usr/bin/bash
-
-cp ../../gosling.js/schema/gosling.schema.json ./
+cd ../../gosling.js
+yarn run schema
+cp ./schema/gosling.schema.json ../gosling-docs/docs_auto

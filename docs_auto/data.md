@@ -82,11 +82,3 @@ One-dimensional quantitative values along genomic position (e.g., bigwig) can be
 |type| string | **required**,must be `"matrix"`,  |
 |url| string | **required**, |
 
-### BAMData
-**properties of BAMData**
-| property | type | description |
-|----|----|-----|
-|indexUrl| string | **required**, |
-|type| string | **required**,must be `"bam"`,  |
-|url| string | **required**, |
-

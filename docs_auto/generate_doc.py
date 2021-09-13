@@ -5,17 +5,13 @@ import json
 # help me test in ipy
 
 
-def get_definition(obj_name, json_schema):
+def json2table(defs, obj_name, doc_name):
 
-    assert obj_name in json_schema["definitions"], f"{obj_name} is not in gosling schema"
-    defs = json_schema["definitions"][obj_name]
-    return defs
-
-
-def json2table(defs, obj_name):
+    if 'description' in defs and defs['description'] == 'experimental':
+        return
 
     # with open(f'./{obj_name}.md', 'w') as f:
-    with open(f'./data.md', 'a') as f:
+    with open(doc_name, 'a') as f:
 
         f.write(f"### {obj_name}\n")
         try:
@@ -49,9 +45,10 @@ def json2table(defs, obj_name):
         f.write('\n')
 
 
-def generate_table(obj_name, json_schema):
-    defs = get_definition(obj_name, json_schema)
-    json2table(defs, obj_name)
+def generate_table(obj_name, json_schema, doc_name):
+    assert obj_name in json_schema["definitions"], f"{obj_name} is not in gosling schema"
+    defs = json_schema["definitions"][obj_name]
+    json2table(defs, obj_name, doc_name)
 
 
 # %%
@@ -62,13 +59,13 @@ def generate_data_md():
 
     data_list = [f["$ref"].replace('#/definitions/', '')
                  for f in json_schema["definitions"]['DataDeep']['anyOf']]
-    # data_list = ['JSONData', 'CSVData', 'BIGWIGData', 'MultivecData', 'BEDDBData',
-    # 'VectorData', 'MatrixData', 'BAMData']
+
+    doc_name = './data.md'
     with open(f'./data.md', 'w') as f:
         f.write('## Data\n')
 
     for d in data_list:
-        generate_table(d, json_schema)
+        generate_table(d, json_schema, doc_name)
 
 
 # %%
