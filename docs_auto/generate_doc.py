@@ -5,7 +5,14 @@ import json
 # help me test in ipy
 
 
-def json2table(defs, obj_name, doc_name):
+def obj2str(defs):
+    obj_string = {}
+    for k in defs['properties']:
+        obj_string[k] = defs['properties'][k]['type']
+    return json.dumps(obj_string)
+
+
+def obj2table(defs, obj_name, doc_name):
 
     if 'description' in defs and defs['description'] == 'experimental':
         return
@@ -31,24 +38,38 @@ def json2table(defs, obj_name, doc_name):
         for p in property_names:
             property_info = defs['properties'][p]
             p_type = property_info['type']
+
             p_const = property_info['const'] if 'const' in property_info else ''
 
-            required_info = '**required**,' if p in defs['required'] else ''
-            default_info = f'must be `"{p_const}"`, ' if p_const != '' else ''
-            description = property_info['description'] if 'description' in property_info else ''
+            notes = []
+            if p in defs['required']:
+                notes.append('**required**')
+            if p_const != '':
+                notes.append(f'must be `"{p_const}"`')
+            if 'description' in property_info:
+                if property_info['description'] == 'experimental':
+                    continue
+                notes.append(property_info['description'])
 
-            if description == 'experimental':
-                continue
+            if p_type == 'array':
+                if 'type' in property_info['items']:
+                    p_type = f"array of {property_info['items']['type']}"
+                    if property_info['items']['type'] == 'object':
+                        notes.append(
+                            f". Each object in the array follows the format {obj2str(property_info['items'])}")
+            if p_type == 'object':
+                notes.append(
+                    f"This object follows the format {obj2str(property_info)}")
 
             f.write(
-                f"|{p}| {p_type} | {required_info + default_info + description} |\n")
+                f"|{p}| {p_type} | {'. '.join(notes)} |\n")
         f.write('\n')
 
 
 def generate_table(obj_name, json_schema, doc_name):
     assert obj_name in json_schema["definitions"], f"{obj_name} is not in gosling schema"
     defs = json_schema["definitions"][obj_name]
-    json2table(defs, obj_name, doc_name)
+    obj2table(defs, obj_name, doc_name)
 
 
 # %%
